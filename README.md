@@ -7,7 +7,7 @@ helloworld project for test
 
 # The <i>ADD</i> command is confusing for a SVN user.
 A brief tutorial:
-<a target="_blank: href='https://www.atlassian.com/git/tutorials/using-branches/git-merge'>https://www.atlassian.com/git/tutorials/using-branches/git-merge</a>
+https://www.atlassian.com/git/tutorials/using-branches/git-merge
 
 # Start a new feature
 git checkout -b new-feature master
