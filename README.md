@@ -5,7 +5,8 @@ helloworld project for test
 	online edit
 	edited at host1
 
-
+# The <i>ADD</i> command is confusing for a SVN user.
+A brief tutorial:
 https://www.atlassian.com/git/tutorials/using-branches/git-merge
 
 # Start a new feature
