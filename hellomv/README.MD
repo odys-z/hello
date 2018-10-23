@@ -1,14 +1,14 @@
 # About
-This is for maven startup practice
+This is for maven startup practice<br>
 
 # Troubleshooting
 - "https:" in path
-This makes windows complaining when pulling.
-To shot:
-In linux,
+This makes windows complaining when pulling.<br>
+To shot:<br>
+In linux,<br>
 mv hellomv ../../../<br>
-rm https\: -r
+rm https\: -r<br>
 git commit<br>
-pull, push
-
-Then pull in windows.
+pull, push<br>
+<br>
+Then pull in windows.<br>
