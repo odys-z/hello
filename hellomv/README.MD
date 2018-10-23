@@ -2,7 +2,7 @@
 This is for maven startup practice<br>
 
 # Troubleshooting
-- "https:" in path
+- "https:" in path<br>
 This makes windows complaining when pulling.<br>
 To shot:<br>
 In linux,<br>
