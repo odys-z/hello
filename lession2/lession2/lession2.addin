@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>My sample application</Name>
+    <Assembly>F:\revit\works\git-repo\hello\lession2\lession2\bin\Debug\lession2.dll</Assembly>
+    <AddInId>17760704-F742-4951-8576-C261D1993107</AddInId>
+    <FullClassName>io.odysz.hello.revit.Ex01</FullClassName>
+    <VendorId>IFRS</VendorId>
+    <VendorDescription>Inforise, Inc, inforise.com.cn</VendorDescription>
+  </AddIn>
+</RevitAddIns>
