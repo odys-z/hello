@@ -24,6 +24,16 @@ namespace lession2.UI {
             
         }
 
+        private void exportFBX() {
+            // https://forums.autodesk.com/t5/revit-api-forum/how-to-export-with-all-categories-of-3d-view-of-rvt-file-to-fbx/m-p/7112555
+            UIApplication uiApp = commandData.Application;
+            Document doc = uiApp.ActiveUIDocument.Document;
+            
+            ViewSet viewSet = new ViewSet();
+            viewSet.Insert(doc.ActiveViewSet);
+            doc.Export("C:/......PATH......", "nameFBXExportedFile", viewSet, new FBXExportOptions());
+        }
+
         /// <summary>
         /// Find families
         /// </summary>
