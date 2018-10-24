@@ -21,17 +21,23 @@ namespace lession2.UI {
         }
 
         private void btnExpt_Click(object sender, EventArgs e) {
-            
+            MessageBox.Show("1");
+            exportFBX();
+            MessageBox.Show("2");
         }
 
         private void exportFBX() {
-            // https://forums.autodesk.com/t5/revit-api-forum/how-to-export-with-all-categories-of-3d-view-of-rvt-file-to-fbx/m-p/7112555
+            /* https://forums.autodesk.com/t5/revit-api-forum/how-to-export-with-all-categories-of-3d-view-of-rvt-file-to-fbx/m-p/7112555
             UIApplication uiApp = commandData.Application;
             Document doc = uiApp.ActiveUIDocument.Document;
             
             ViewSet viewSet = new ViewSet();
             viewSet.Insert(doc.ActiveViewSet);
             doc.Export("C:/......PATH......", "nameFBXExportedFile", viewSet, new FBXExportOptions());
+            */
+            ViewSet viewSet = new ViewSet();
+            viewSet.Insert(view);
+            document.Export("f:/revit/temp", "lesson2.fbx", viewSet, new FBXExportOptions());
         }
 
         /// <summary>

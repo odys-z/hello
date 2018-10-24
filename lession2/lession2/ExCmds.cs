@@ -53,7 +53,8 @@ namespace io.odysz.hello.revit.lession2 {
                 ref string message, ElementSet elements) {
             // TaskDialog.Show("Revit", "Hello World");
             Document doc = revit.Application.ActiveUIDocument.Document;
-            HelloForm f = new HelloForm(doc, revit.View);
+
+            HelloForm f = new HelloForm(doc, doc.ActiveView);
             f.Show();
             return Result.Succeeded;
         }
