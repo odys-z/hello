@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lession2.UI {
+namespace io.odysz.hello.revit.lession2 {
     public partial class HelloForm : System.Windows.Forms.Form {
         private Document document;
         private Autodesk.Revit.DB.View view;
@@ -21,9 +21,8 @@ namespace lession2.UI {
         }
 
         private void btnExpt_Click(object sender, EventArgs e) {
-            MessageBox.Show("1");
-            exportFBX();
-            MessageBox.Show("2");
+            // exportFBX();
+            SmClient.Test(txtConn);
         }
 
         private void exportFBX() {

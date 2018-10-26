@@ -1,4 +1,4 @@
-﻿namespace lession2.UI {
+﻿namespace io.odysz.hello.revit.lession2 {
     partial class HelloForm {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
             this.txtFamilies = new System.Windows.Forms.TextBox();
             this.txtWall = new System.Windows.Forms.TextBox();
             this.txtFireAlarms = new System.Windows.Forms.TextBox();
+            this.txtConn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +98,20 @@
             this.txtFireAlarms.Size = new System.Drawing.Size(208, 232);
             this.txtFireAlarms.TabIndex = 5;
             // 
+            // txtConn
+            // 
+            this.txtConn.Location = new System.Drawing.Point(438, 268);
+            this.txtConn.Multiline = true;
+            this.txtConn.Name = "txtConn";
+            this.txtConn.Size = new System.Drawing.Size(429, 122);
+            this.txtConn.TabIndex = 6;
+            // 
             // HelloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 590);
+            this.Controls.Add(this.txtConn);
             this.Controls.Add(this.txtFireAlarms);
             this.Controls.Add(this.txtWall);
             this.Controls.Add(this.txtFamilies);
@@ -125,5 +135,6 @@
         private System.Windows.Forms.TextBox txtFamilies;
         private System.Windows.Forms.TextBox txtWall;
         private System.Windows.Forms.TextBox txtFireAlarms;
+        private System.Windows.Forms.TextBox txtConn;
     }
 }

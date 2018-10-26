@@ -4,7 +4,6 @@ using System.Reflection;
 using Autodesk.Revit.DB;
 
 using System.Windows.Media.Imaging;
-using lession2.UI;
 
 namespace io.odysz.hello.revit.lession2 {
     /// <summary>
