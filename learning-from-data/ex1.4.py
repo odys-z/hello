@@ -1,5 +1,8 @@
 # https://raw.githubusercontent.com/sfotiadis/learning_from_data/master/excercise%201.4%20-%20perceptron.py
 
+# sudo apt-get install python3-numpy
+# sudo apt-get install python3-matplotlib
+
 # coding: utf-8
 
 # In[133]:
