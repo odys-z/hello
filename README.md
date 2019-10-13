@@ -36,3 +36,23 @@ git checkout master
 git merge new-feature
 git branch -d new-feature
 ~~~
+
+## Manage Branch
+
+- list branch, create branch, swith branch
+
+~~~
+    git branch
+    git branch v1.0
+    git checkout v1.0
+~~~
+
+- merge, push, delete
+
+~~~
+    git push origin v1.0
+    git checkout master
+    git merget v1.0
+    git push origin master
+    git push origin --delete v1.0
+~~~
