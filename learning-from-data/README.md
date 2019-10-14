@@ -37,6 +37,6 @@ Upgrade pip3
 
 And if you are not lucky, the PLA seams trying endlessly without error converged.
 
-![001 ex1.4](imgs/001 ex1.4.png)
+![001 ex1.4](imgs/001%20ex1.4.png)
 
-![002 ex1.4](imgs/002 ex1.4.png)
+![002 ex1.4](imgs/002%20ex1.4.png)
