@@ -35,7 +35,8 @@ Upgrade pip3
     pip3 install --upgrade pip
 ~~~
 
-And if you are not lucky, the PLA seams trying endlessly without error converged.
+And if you are not lucky, the PLA looks like will trying endlessly without error
+converged.
 
 ![001 ex1.4](imgs/001%20ex1.4.png)
 
