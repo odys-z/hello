@@ -18,9 +18,13 @@ class Test(unittest.TestCase):
         self.assertEqual(2, s)
         
         print('\n --------------------')
-        s = self.subarraysWithKDistinct([1,2,1,2,3], 2)
-        ''' [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3] '''
-        self.assertEqual(7, s)
+        s = self.subarraysWithKDistinct([2,1,2,1,2], 2)
+        self.assertEqual(10, s)
+
+#         print('\n --------------------')
+#         s = self.subarraysWithKDistinct([1,2,1,2,3], 2)
+#         ''' [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3] '''
+#         self.assertEqual(7, s)
 
     def subarraysWithKDistinct(self, A: List[int], K: int) -> int:
         n = len(A)

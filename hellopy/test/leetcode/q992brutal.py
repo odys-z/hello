@@ -36,19 +36,23 @@ class Test(unittest.TestCase):
             Explanation: Subarrays formed with exactly 3 different integers:
             [1,2,1,3], [2,1,3], [1,3,4].
         '''
-        s = self.subarraysWithKDistinct([1,2], 1)
-        print(s) # 2
-        self.assertEqual(2, s)
-        s = self.subarraysWithKDistinct([1,2,1,2,3], 2)
-        ''' [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3] '''
-        print(s) # 7
-        self.assertEqual(7, s)
-        s = self.subarraysWithKDistinct([1,2,3,1,2], 2)
-        print(s) # 4
-        self.assertEqual(4, s)
-        s = self.subarraysWithKDistinct([1,2,1,3,4], 3)
+#         s = self.subarraysWithKDistinct([1,2], 1)
+#         print(s) # 2
+#         self.assertEqual(2, s)
+#         s = self.subarraysWithKDistinct([1,2,1,2,3], 2)
+#         ''' [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3] '''
+#         print(s) # 7
+#         self.assertEqual(7, s)
+#         s = self.subarraysWithKDistinct([1,2,3,1,2], 2)
+#         print(s) # 4
+#         self.assertEqual(4, s)
+#         s = self.subarraysWithKDistinct([1,2,1,3,4], 3)
+#         print(s) # 3
+#         self.assertEqual(3, s)
+        s = self.subarraysWithKDistinct([2,1,2,1,2], 2)
         print(s) # 3
-        self.assertEqual(3, s)
+        self.assertEqual(10, s)
+
         s = self.subarraysWithKDistinct(
             [27, 27, 43, 28, 11, 20, 1, 4, 49, 18, 37, 31, 31, 7, 3, 31, 50, 6, 50, 46, 4, 13, 31, 49, 15, 52, 25, 31, 35, 4, 11, 50, 40, 1, 49, 14, 46, 16, 11, 16, 39, 26, 13, 4, 37, 39, 46, 27, 49, 39, 49, 50, 37, 9, 30, 45, 51, 47, 18, 49, 24, 24, 46, 47, 18, 46, 52, 47, 50, 4, 39, 22, 50, 40, 3, 52, 24, 50, 38, 30, 14, 12, 1, 5, 52, 44, 3, 49, 45, 37, 40, 35, 50, 50, 23, 32, 1, 2],
             20)
@@ -84,7 +88,7 @@ class Test(unittest.TestCase):
 
             # This show the expensive loops that runs for 0 size keys to the usable length
             # See console logs for k = 20 in data/console-*.txt
-            # print("keyset = %s, count = %s\tix[%s: %s] %s" % (searching, count, start, ix, arr[start: ix + 1]))
+            print("keyset = %s, count = %s\tix[%s: %s] %s" % (searching, count, start, ix, arr[start: ix + 1]))
 
         return count
 

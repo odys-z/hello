@@ -25,11 +25,11 @@ class SlidingKeys(object):
             self.keys[key] = 1
 
     def lookAhead(self, keyIx) -> int:
-        ''' Is the new element acceptable? (no key-set changing)
+        """ Is the new element acceptable? (no key-set changing)
             Returns
             -------
                 key size
-        '''
+        """
         ahead = self.arr[keyIx]
         if ahead in self.keys:
             '''Won't make any change '''
@@ -69,34 +69,40 @@ class SlidingKeys(object):
             self.start += 1
             return True
 
+    def popFront(self):
+        if (self.start + self.K > self.next):
+            return False
+        else:
+            self.remove(self.next)
+            self.next -= 1
+            return True
+
     def moveFront(self, toIx):
         self.next = toIx
     
     def doHeuristics(self):
-        ''' heusristical distance is 1 '''
+        ''' heuristically search (backward shrink) '''
         heuristical = SlidingKeys(self.arr, self.K)
         heuristical.keys = self.keys.copy()
         heuristical.next = self.next
-        heuristical.start = self.start
+        heuristical.start = self.start + 1
         # heuristical.updateKey(tryIx)
         reslt = 0
-        if (heuristical.len() >= heuristical.K):
-            if not heuristical.slidRear():
-                return 0
+        while (heuristical.len() >= heuristical.K):
+            if not heuristical.popFront():
+                # return reslt
+                break
 
             if heuristical.len() == heuristical.K:
                 reslt += 1
-                print("rear cnt = %s key-size = %s keyset = %s\n\tarr[%s: %s]"
-                      % (1, heuristical.len(), heuristical.keys, heuristical.start, heuristical.next))
+                print("rear cnt = %s key-size = %s keyset = %s\n\theur[%s: %s]"
+                      % (1, heuristical.len(), heuristical.keys, heuristical.start, heuristical.next - 1))
                 ''' at list K > 0, start can't reach next 
                 if (heuristical.start == heuristical.next):
                     heuristical.moveFront(heuristical.next + 1)
                 '''
                 # break # break beacuse trying only a new front
 
-#             elif heuristical.len() < heuristical.K:
-#                 ''' not a subarry can be found '''
-#                 break
         print('found %s while shrinking' % reslt)
         return reslt
         
@@ -134,20 +140,27 @@ class Test(unittest.TestCase):
             Output: 3
             Explanation: Subarrays formed with exactly 3 different integers:
             [1,2,1,3], [2,1,3], [1,3,4].
-        '''
-#         s = self.subarraysWithKDistinct([1,2], 1)
-#         print(s)
+        s = self.subarraysWithKDistinct([1,2], 1)
+        self.assertEqual(2, s)
+
         s = self.subarraysWithKDistinct([1,2,1,2,3], 2)
-        ''' [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3] '''
-        print(s) # 7
-#         s = self.subarraysWithKDistinct([1,2,3,1,2], 2)
-#         print(s) # 4
-#         s = self.subarraysWithKDistinct([1,2,1,3,4], 3)
-#         print(s) # 3
-#         s = self.subarraysWithKDistinct(
-#             [27, 27, 43, 28, 11, 20, 1, 4, 49, 18, 37, 31, 31, 7, 3, 31, 50, 6, 50, 46, 4, 13, 31, 49, 15, 52, 25, 31, 35, 4, 11, 50, 40, 1, 49, 14, 46, 16, 11, 16, 39, 26, 13, 4, 37, 39, 46, 27, 49, 39, 49, 50, 37, 9, 30, 45, 51, 47, 18, 49, 24, 24, 46, 47, 18, 46, 52, 47, 50, 4, 39, 22, 50, 40, 3, 52, 24, 50, 38, 30, 14, 12, 1, 5, 52, 44, 3, 49, 45, 37, 40, 35, 50, 50, 23, 32, 1, 2],
-#             20)
-#         print(s)
+        # [1 2] [1 2 1] [1 2 1 2] [2 1] [2 1 2] [1 2] [2 3]
+        self.assertEqual(7, s)
+
+        s = self.subarraysWithKDistinct([1,2,3,1,2], 2)
+        self.assertEqual(4, s)
+
+        s = self.subarraysWithKDistinct([1,2,1,3,4], 3)
+        self.assertEqual(3, s)
+        '''
+
+        s = self.subarraysWithKDistinct([2,1,2,1,2], 2)
+        self.assertEqual(10, s)
+
+        s = self.subarraysWithKDistinct(
+            [27, 27, 43, 28, 11, 20, 1, 4, 49, 18, 37, 31, 31, 7, 3, 31, 50, 6, 50, 46, 4, 13, 31, 49, 15, 52, 25, 31, 35, 4, 11, 50, 40, 1, 49, 14, 46, 16, 11, 16, 39, 26, 13, 4, 37, 39, 46, 27, 49, 39, 49, 50, 37, 9, 30, 45, 51, 47, 18, 49, 24, 24, 46, 47, 18, 46, 52, 47, 50, 4, 39, 22, 50, 40, 3, 52, 24, 50, 38, 30, 14, 12, 1, 5, 52, 44, 3, 49, 45, 37, 40, 35, 50, 50, 23, 32, 1, 2],
+            20)
+        self.assertEqual(149, s)
 
     def searchWin(self, winKeys, arr, K) -> set:
         ''' search K-distinct next from "next",
@@ -165,8 +178,6 @@ class Test(unittest.TestCase):
             right1 = winKeys.lookAhead(ix)
             if (right1 > K):
 #                 winKeys.moveFront(ix + 1)
-                '''shrink the subarray (slidRear until less than K)'''
-                count += winKeys.doHeuristics()
                 break
             elif (right1 == K):
                 count += 1
@@ -190,12 +201,15 @@ class Test(unittest.TestCase):
             ''' find all possible string start at i ''' 
 
             if keysOfA.len() == K:
+                ''' replaced by heuristics '''
                 reslt += 1
                 print("count = %s key-size = %s keyset = %s\n\tarr[%s: %s]"
                       % (reslt, keysOfA.len(), keysOfA.keys, keysOfA.start, keysOfA.next))
                 if (keysOfA.start == keysOfA.next):
-                    ''' When rear is front, purge front to the next to avoid fake counting '''
+                    # When rear is front, purge front to the next to avoid fake counting 
                     keysOfA.moveFront(keysOfA.next + 1)
+            reslt += keysOfA.doHeuristics()
+            '''shrink the subarray (slidRear until less than K)'''
                 
             # elif keysOfA.len() < K:
             found = self.searchWin(keysOfA, A, K)
