@@ -40,45 +40,139 @@ class Solution:
         R, C = len(grid), len(grid[0])
 
         # TODO use sparse matrix
-        colhead = [0] * C
-        rowhead = [0] * R
-        mat = [[(0, 0)] * (C) for _ in range(R)]
+        global colhead
+        colhead = [0 for _ in range(C)]
+        global rowhead
+        rowhead = [0 for _ in range(R)]
+        mat = [[[x + 1, y + 1] for y in range(C)] for x in range(R)]
 
-        for cx in colhead:
-            r0 = colhead[cx]
-            rotten = grid[r0][cx]
-            up = grid[r0 - 1][cx] if r0 - 1 >= 0 else -1
-            down = grid[r0 + 1][cx] if r0 + 1 == R else -1
+        hour = -1
+        rotted = -1
+        while rotted != 0:
+            hour = hour + 1
+            rotted = 0
+            rottings = []
+            for cx in range(C):
+                rx = colhead[cx]
+                while (rx < R):
+                    rotten = grid[rx][cx]
+#                     up = grid[rx - 1][cx] if rx - 1 >= 0 else -1
+                    down = grid[rx + 1][cx] if rx + 1 < R else -1
 
-            if rotten == -1:
-                colhead[cx] = colhead[cx] + 1
-                continue
-            elif rotten == 3: # if this is rotting, turn rotten
-                if (down == 2 or up == 2):
-                    linkColumn(mat, r0, cx)
-            elif rotten == 2:
-                linkColumn(mat, r0, cx)
-            elif rotten == 1:
-                grid[r0][cx] == 3 # rotting
+                    if rotten == -1:
+                        colhead[cx] = colhead[cx] + 1
+                        rx = rx + 1
+                        continue
+#                     elif rotten == 3: # if this is rottings, turn rotten
+#                         if down == 2 or up == 2:
+#                             rx = linkColumn(mat, rx, cx, up, down)
+                    elif rotten == 2:
+                        rx = linkColumn(mat, rx, cx, down)
+                    elif rotten == 1:
+                        if down == 2:
+                            # grid[rx][cx] == 3 # rottings
+                            rottings.append([rx, cx])
+                            rotted = rotted + 1
+                            rx = mat[rx + 1][cx][0] if rx + 1 < R else rx + 1
+                        else:
+                            rx = rx + 1
+                    else: # rotten = 0
+                        rx = mat[rx + 1][cx][0] if rx + 1 < R else rx + 1
+            
+            for rx in range(R):
+                cx = rowhead[rx]
+                while (cx < C):
+                    rotten = grid[rx][cx]
+#                     left = grid[rx][cx - 1] if cx - 1 >= 0 else -1
+                    right = grid[rx][cx + 1] if cx + 1 < C else -1
 
-            if rotten == 3:
-                grid[r0][cx] == 2
-        
-        for rx in rowhead:
-            c0 = rowhead[rx]
+                    if rotten == -1:
+                        rowhead[cx] = rowhead[cx] + 1
+                        cx = cx + 1
+                        continue
+#                     elif rotten == 3: # if this is rottings, turn rotten
+#                         if down == 2 or up == 2:
+#                             cx = linkRow(mat, rx, cx, left, down)
+                    elif rotten == 2:
+                        cx = linkRow(mat, rx, cx, right)
+                    elif rotten == 1:
+                        if right == 2:
+                            # grid[rx][cx] == 3 # rottings
+                            rottings.append([rx, cx])
+                            rotted = rotted + 1
+                            cx = mat[rx][cx + 1][1] if cx + 1 < C else cx + 1
+                        else:
+                            cx = cx + 1
+                    else: # rotten = 0
+                        cx = mat[rx][cx + 1][1] if cx + 1 < C else cx + 1
+            
+            for r, c in rottings:
+                grid[r][c] = 2
+            
+            print(grid)
+        return hour
 
-def linkColumn(mat, r, c):
-    pass
+colhead = []
+rowhead = []
 
-def linkRow(mat, r, c):
-    pass
+# How?
+# How?
+# How?
+def linkColumn(mat, r, c, down):
+    # first rotten jump here
+    if colhead[c] < len(rowhead):
+        mat[colhead[c]][c][0] = c
+
+#     if up == 2 and c > 0:
+#         cell = mat[r - 1][c]
+#         # mat[r][c][0] = cell[0] if cell[0] >= 0 else r - 1
+#         mat[r][c][0] = cell[0]
+#         if mat[r][c][0] < 0:
+#             colhead[c] = r
+
+    # this is turning rotten, link down
+    if down == 2:
+        if r < len(mat) - 1:
+            cell = mat[r + 1][c]
+            # mat[r][c][0] = cell[0] if cell[0] < len(mat) else r + 1
+            mat[r][c][0] = cell[0]
+        else:
+            mat[r][c][0] = len(rowhead)
+        return mat[r][c][0]
+    return r + 1
+
+def linkRow(mat, r, c, right):
+#     if left == 2 and r > 0:
+#         cell = mat[r][c - 1]
+#         # mat[r][c][1] = cell[1] if cell[1] >= 0 else c - 1
+#         mat[r][c][1] = cell[1]
+#         if mat[r][c][1] < 0:
+#             rowhead[c] = r
+
+    # first rotten jump here
+    if rowhead[r] < len(colhead):
+        mat[r][rowhead[r]][1] = r
+
+    if right == 2:
+        if c < len(mat[r]) - 1:
+            cell = mat[r][c + 1]
+            # mat[r][c][1] = cell[1] if cell[1] < len(mat[r]) else c + 1
+            mat[r][c][1] = cell[1]
+        else:
+            mat[r][c][1] = len(colhead)
+        return mat[r][c][1]
+    return c + 1
 
 class Test(unittest.TestCase):
 
-
     def test994(self):
         s = Solution()
-        self.assertEqual(4, s.orangesRotting([[2,1,1],[1,1,0],[0,1,1]]))
+        # self.assertEqual(4, s.orangesRotting([[2,1,1],[1,1,0],[0,1,1]]))
+#         self.assertEqual(4, s.myOrange([[2,1,1],[1,1,0],[0,1,1]]))
+#         print('')
+#         self.assertEqual(2, s.myOrange([[1,1,1],[1,2,0],[0,1,1]]))
+        print('')
+        self.assertEqual(4, s.myOrange([[1,1,1,1,1],[1,1,1,1,1],[0,1,2,0,1],[0,1,1,1,0],[1,1,1,1,1]]))
 
 
 if __name__ == "__main__":
