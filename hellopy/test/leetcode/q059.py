@@ -44,6 +44,10 @@ class Solution(object):
         l = u = 0  # left up
         r = d = n - 1 # right down
         peerMat(n, mat, odds(n), u, d, l, r)
+        
+        print(mat)
+        return [mat[i : i + n] for i in range(0, len(mat),  n)]
+
 
 s = Solution()
 m = s.generateMatrix(3)
