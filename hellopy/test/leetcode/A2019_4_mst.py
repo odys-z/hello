@@ -65,8 +65,6 @@ class Solution2:
         graph = dict() # node-id: [to-node]
 
         for e in edges:
-            connected.add(e[0])
-            connected.add(e[1])
             if e[0] not in graph:
                 graph[e[0]] = {e[1]: 0}
             else:
@@ -88,20 +86,20 @@ class Solution2:
             else:
                 graph[e[1]].update({e[0]: e[2]})
             
-        res = 0
         count = 0
         allcost = 0
-        toRepair = heapq.heapify([(0, 1)])
+        toRepair = [(0, 1)]
+        heapq.heapify(toRepair)
         while toRepair:
             cost, toNode = heapq.heappop(toRepair)
-            if cost > 0 and toNode not in connected:
+            if toNode not in connected:
                 connected.add(toNode)
                 allcost += cost
                 for edge in graph[toNode]:
                     if edge not in connected:
-                        heapq.heappush(toRepair, (cost, edge))
+                        heapq.heappush(toRepair, (graph[toNode][edge], edge))
                     count += 1
-        return res, count
+        return allcost, count
 
 class Test(unittest.TestCase):
 
@@ -111,11 +109,17 @@ class Test(unittest.TestCase):
         print(s.minCostForRepair(5, [[1, 2], [2, 3], [3, 4], [4, 5], [1, 5]], [[1, 2, 12], [3, 4, 30], [1, 5, 8]]))
         print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [3, 5], [1, 6], [2, 4]], [[1, 6, 410], [2, 4, 800]]))
         print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [5, 6], [1, 5], [2, 4], [3, 4]], [[1, 5, 110], [2, 4, 84], [3, 4, 79]]))
-        
+         
         s=Solution2()
-        print(s.minCostForRepair(5, [[1, 2], [2, 3], [3, 4], [4, 5], [1, 5]], [[1, 2, 12], [3, 4, 30], [1, 5, 8]]))
-        print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [3, 5], [1, 6], [2, 4]], [[1, 6, 410], [2, 4, 800]]))
-        print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [5, 6], [1, 5], [2, 4], [3, 4]], [[1, 5, 110], [2, 4, 84], [3, 4, 79]]))
+        print(s.minCostForRepair(5, [[1, 2], [2, 3], [3, 4], [4, 5], [1, 5]],
+                                 [[1, 2, 12], [3, 4, 30], [1, 5, 8]]))
+        print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [3, 5], [1, 6], [2, 4]],
+                                 [[1, 6, 410], [2, 4, 800]]))
+        print(s.minCostForRepair(6, [[1, 2], [2, 3], [4, 5], [5, 6], [1, 5], [2, 4], [3, 4]],
+                                 [[1, 5, 110], [2, 4, 84], [3, 4, 79]]))
+
+        self.assertEqual(20, s.minCostForRepair(5, [[1, 2], [2, 3], [3, 4], [4, 5], [1, 5]],
+                                                [[1, 2, 12], [3, 4, 30], [1, 5, 8]])[0])
 
 
 if __name__ == "__main__":
