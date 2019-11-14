@@ -1,6 +1,8 @@
 '''
 Max Of Min Altitudes
-
+- Find max of min in paths
+- Use a pipe line yielding next tile in diagonal searching sequence
+ 
 https://leetcode.com/discuss/interview-question/383669/
 
 Created on 13 Nov 2019
