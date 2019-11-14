@@ -1,6 +1,9 @@
 '''
 https://leetcode.com/discuss/interview-question/357310
 
+reference:
+https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/
+
 Created on 14 Nov 2019
 
 @author: ody
