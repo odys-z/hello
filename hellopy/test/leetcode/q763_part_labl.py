@@ -1,4 +1,15 @@
 '''
+Longest string made up of only vowels
+https://leetcode.com/discuss/interview-question/233724
+
+Sample Input
+2
+earthproblem
+letsgosomewhere
+Sample Output
+3
+2
+
 Created on 16 Nov 2019
 
 @author: ody
