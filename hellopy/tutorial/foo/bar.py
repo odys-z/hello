@@ -16,3 +16,5 @@ class Class1(object):
         '''
         self.type = 'io.odysz.hello.test.Class1'
         
+class Sub1(Class1):
+    pass
