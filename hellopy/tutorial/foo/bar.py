@@ -3,18 +3,17 @@ Created on 18 Nov 2019
 
 @author: odys-z@github.com
 '''
+from tutorial.foo.foo import Class1
 
-class Class1(object):
+class Bar1(Class1):
     '''
     classdocs
     '''
 
 
-    def __init__(self, params = None):
+    def __init__(self):
         '''
         Constructor
         '''
-        self.type = 'io.odysz.hello.test.Class1'
+        Class1.__init__(self, 'io.odysz.test.Bar1')
         
-class Sub1(Class1):
-    pass
