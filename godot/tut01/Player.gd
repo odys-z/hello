@@ -10,7 +10,8 @@ func start(pos):
     position = pos
     show()
     $CollisionShape2D.disabled = false
-	
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()

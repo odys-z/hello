@@ -1,7 +1,9 @@
+# extends KinematicBody2D
 extends RigidBody2D
+
 export var min_speed = 150  # Minimum speed range.
 export var max_speed = 250  # Maximum speed range.
-var mob_types = ["walk", "swim", "fly"]
+var mob_types = ["w", "s", "f"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
