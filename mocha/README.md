@@ -46,7 +46,7 @@ npm test
 - A helpful diagram for understanding
 [test run cycle overview from Mocha doc](https://mochajs.org/#run-cycle-overview)
 
-# First test case
+# Your first test case
 
 see test/test-target.case.js
 
@@ -55,6 +55,23 @@ Also note the test configuration:
 - Test entries for webpack is provided in test/all-tests.js
 
 - which in turn specify that all files ended with '.case.js' will be tested.
+
+```
+import {TargetClass, TargetFunc} from '../src/target.js';
+import { expect } from 'chai';
+var assert = require('assert');
+
+describe('tests sample target', function() {
+  let clssTarget, funcTarget
+  before(function() {
+	clssTarget = new TargetClass();
+  });
+
+  it('test funcA()', function() {
+	assert.equal('ok', clssTarget.funcA('hi'));
+  });
+});
+```
 
 # Troubleshooting
 
