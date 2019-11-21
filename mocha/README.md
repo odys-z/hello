@@ -13,6 +13,8 @@ install Webpack
 npm install --save-dev webpack
 ```
 
+install Mocha and dependencies
+
 ```
 npm install webpack-node-externals --save-dev
 npm install --save-dev mocha chai mocha-webpack
@@ -24,6 +26,13 @@ create a spec
 
 ```
 touch spec-helper.js
+```
+
+run test (TODO webpack config needing fixed)
+
+```
+webpack -config webpack-test.config.js # ignore the server error
+npm test
 ```
 
 # References
