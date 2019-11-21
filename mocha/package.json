@@ -1,0 +1,24 @@
+{
+  "name": "temp-never-publish",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "hello mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha-webpack --webpack-config webpack-test.config.js \"spec/**/*.spec.js\" || true"
+  },
+  "keywords": [
+    "temp"
+  ],
+  "author": "odys-z@github.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "preload-webpack-plugin": "^3.0.0-beta.4",
+    "webpack": "^4.41.2",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}
