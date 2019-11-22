@@ -35,7 +35,7 @@ webpack -config webpack-test.config.js # ignore the server error
 npm test
 ```
 
-# References
+## More readings and references
 
 - [TeejayVanSlyke, How to set up a test runner for modern JavaScript using Webpack, Mocha, and Chai](http://teejayvanslyke.com/how-to-set-up-a-test-runner-for-modern-javascript.html)
 
@@ -100,3 +100,12 @@ events.js: 167
 ```
 
 Avoid start Node server.
+
+Try this:
+
+Remove webpack onBuildExit plugin, which is calling mocha. Then in test scripts,
+call webpack first.
+
+```
+    "test": "webpack --config mocha-osm.config.js && mocha-webpack --webpack-config mocha-osm.config.js \"spec/**/*.spec.js\" || true"
+```
