@@ -73,6 +73,32 @@ describe('tests sample target', function() {
 });
 ```
 
+## using chai-stats
+
+To assert number almost equals, we need [chai-stats](https://www.chaijs.com/plugins/chai-stats/).
+
+```
+    npm install chai-stats
+```
+
+in test-case.js
+
+```
+import chai from 'chai'
+import { expect, assert } from 'chai'
+import chaiStats from 'chai-stats'
+
+before(function() {
+		chai.use(chaiStats);
+	});
+```
+
+Tip: not
+
+```
+import {chaiStats} from 'chai-stats'
+```
+
 # Troubleshooting
 
 - Chunk.parents
