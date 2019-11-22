@@ -9,12 +9,15 @@ func _ready():
 func game_over():
 	$Scoretime.stop()
 	$Mobtime.stop()
+	$BGM.stop()
+	$DownSound.play()
 	$HUD.show_message("Game Over")
 
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$Startime.start()
+	$BGM.play()
 
 func _on_Stratime_timeout():
     $Mobtime.start()

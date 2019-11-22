@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://mobs.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Hudscene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/House In a Forest Loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://art/gameover.wav" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -41,6 +43,12 @@ rotation = 1.57497
 position = Vector2( 250, 400 )
 
 [node name="Mob" parent="." instance=ExtResource( 2 )]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="DownSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="Startime" to="." method="_on_Stratime_timeout"]
 [connection signal="timeout" from="Mobtime" to="." method="_on_Mobtime_timeout"]
