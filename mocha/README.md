@@ -107,5 +107,5 @@ Remove webpack onBuildExit plugin, which is calling mocha. Then in test scripts,
 call webpack first.
 
 ```
-    "test": "webpack --config mocha-osm.config.js && mocha-webpack --webpack-config mocha-osm.config.js \"spec/**/*.spec.js\" || true"
+    "test": "webpack --config webpack-test.config.js && mocha-webpack --webpack-config webpack-test.config.js \"spec/**/*.spec.js\" || true"
 ```
