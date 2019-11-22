@@ -46,6 +46,8 @@ npm test
 - A helpful diagram for understanding
 [test run cycle overview from Mocha doc](https://mochajs.org/#run-cycle-overview)
 
+- [chai-stats Assert API](https://www.chaijs.com/api/assert/)
+
 # Your first test case
 
 see test/test-target.case.js
@@ -98,6 +100,11 @@ Tip: not this
 ```
 import {chaiStats} from 'chai-stats'
 ```
+# TODO
+
+We need a browser environment to run tests.
+
+https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
 
 # Troubleshooting
 
