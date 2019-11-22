@@ -93,7 +93,7 @@ before(function() {
 	});
 ```
 
-Tip: not
+Tip: not this
 
 ```
 import {chaiStats} from 'chai-stats'
