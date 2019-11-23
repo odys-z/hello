@@ -1,5 +1,5 @@
 '''
-Tutorial: How to use generator and yeild in python
+Tutorial: How to use generator and yield in python
 
 see https://realpython.com/introduction-to-python-generators/
 cvs data:

@@ -114,6 +114,11 @@ class Solution:
                         right -= 1
         return ans
 
+
+class SolutionDist(object):
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        pass
+
 '''
 Runtime: 76 ms, faster than 97.07% of Python3 online submissions for 3Sum Closest.
 Memory Usage: 12.6 MB, less than 100.00% of Python3 online submissions for 3Sum Closest.
