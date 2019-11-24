@@ -16,6 +16,7 @@ Created on 23 Nov 2019
 '''
 import unittest
 from typing import List
+from heapq import heapify, heappush, heappop
 
 
 '''
@@ -115,9 +116,51 @@ class Solution:
         return ans
 
 
-class SolutionDist(object):
+def NumPipe(h : List):
+    for ix, e in enumerate(h):
+        yield(ix, e)
+        
+class SolutionPipe(object):
     def threeSumClosest(self, nums: List[int], target: int) -> int:
-        pass
+        nums.sort()
+        dists = []
+
+        for ix1 in range(len(nums)):
+            for ix2 in range(ix1):
+                dists.append((nums[ix1] + nums[ix2], ix1, ix2))
+        dists.sort(key = lambda e: e[0])
+        
+        p1_2 = NumPipe(reversed(dists))
+        p0 = NumPipe(nums)
+        try: 
+            n1_2 =  next(p1_2)
+            n0 = next(p0)
+            closest = n0[1] + n1_2[1][0] # e.n1 + n2
+            while True:
+                ix0, ix1, ix2 = n0[0], n1_2[1][1], n1_2[1][2]
+                if ix0 == ix1 or ix0 == ix2:
+                    n1_2 = next(p1_2)
+                    continue
+                sum3 = nums[ix0] + n1_2[1][0]
+                if sum3 == target:
+                    return sum3
+                elif sum3 < target and abs(target - sum3) < abs(closest):
+                        closest = sum3
+                elif sum3 > target and abs(target - sum3) < abs(closest):
+                        closest = sum3
+
+                # now sum3 != target
+                if sum3 > target:
+                    n1_2 = next(p1_2)
+                else:
+                    n0 = next(p0)
+                    
+        except StopIteration:
+            pass
+        
+        return closest
+
+                    
 
 '''
 Runtime: 76 ms, faster than 97.07% of Python3 online submissions for 3Sum Closest.
@@ -176,6 +219,19 @@ class Test(unittest.TestCase):
         
     def testMimic(self):
         s = SolMimic40ms()
+        self.assertEqual(3, s.threeSumClosest([0, 1, 2], 0))
+        self.assertEqual(3, s.threeSumClosest([0, 1, 2], -5))
+        self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4], 1))
+        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1))
+        self.assertEqual(1, s.threeSumClosest([-1, 2, 7, 0], 1))
+        self.assertEqual(1, s.threeSumClosest([-1, 2, 1, -4, 5, 7, 0], 1))
+        self.assertEqual(82, s.threeSumClosest([1,2,4,8,16,32,64,128], 82))
+        self.assertEqual(1, s.threeSumClosest([-1,2,1,-4, 5,7, 0, 11, 12, 51,22,33,-5,-7,-8,-21], 1))
+    
+        self.assertEqual(905, s.threeSumClosest(arr, 905))
+    
+    def testNeway(self):
+        s = SolutionPipe()
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], 0))
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], -5))
         self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4], 1))
