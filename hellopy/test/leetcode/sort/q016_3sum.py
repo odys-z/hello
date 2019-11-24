@@ -119,7 +119,8 @@ class Solution:
 def NumPipe(h : List):
     for ix, e in enumerate(h):
         yield(ix, e)
-        
+
+''' Using grouped sub-sum, but with terrible performance '''
 class SolutionPipe(object):
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums.sort()
@@ -144,9 +145,9 @@ class SolutionPipe(object):
                 sum3 = nums[ix0] + n1_2[1][0]
                 if sum3 == target:
                     return sum3
-                elif sum3 < target and abs(target - sum3) < abs(closest):
+                elif sum3 < target and abs(target - sum3) < abs(target - closest):
                         closest = sum3
-                elif sum3 > target and abs(target - sum3) < abs(closest):
+                elif sum3 > target and abs(target - sum3) < abs(target - closest):
                         closest = sum3
 
                 # now sum3 != target
@@ -209,7 +210,7 @@ class Test(unittest.TestCase):
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], 0))
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], -5))
         self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4], 1))
-        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1))
+        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1)) # wrong input, output not identical
         self.assertEqual(1, s.threeSumClosest([-1, 2, 7, 0], 1))
         self.assertEqual(1, s.threeSumClosest([-1, 2, 1, -4, 5, 7, 0], 1))
         self.assertEqual(82, s.threeSumClosest([1,2,4,8,16,32,64,128], 82))
@@ -222,7 +223,7 @@ class Test(unittest.TestCase):
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], 0))
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], -5))
         self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4], 1))
-        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1))
+        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1)) # wrong input, output not identical
         self.assertEqual(1, s.threeSumClosest([-1, 2, 7, 0], 1))
         self.assertEqual(1, s.threeSumClosest([-1, 2, 1, -4, 5, 7, 0], 1))
         self.assertEqual(82, s.threeSumClosest([1,2,4,8,16,32,64,128], 82))
@@ -235,7 +236,7 @@ class Test(unittest.TestCase):
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], 0))
         self.assertEqual(3, s.threeSumClosest([0, 1, 2], -5))
         self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4], 1))
-        self.assertEqual(0, s.threeSumClosest([-1, 2, 1, -4, 5], 1))
+        self.assertEqual(2, s.threeSumClosest([-1, 2, 1, -4, 5], 1)) # wrong input, output not identical
         self.assertEqual(1, s.threeSumClosest([-1, 2, 7, 0], 1))
         self.assertEqual(1, s.threeSumClosest([-1, 2, 1, -4, 5, 7, 0], 1))
         self.assertEqual(82, s.threeSumClosest([1,2,4,8,16,32,64,128], 82))
