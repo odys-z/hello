@@ -35,6 +35,13 @@ webpack -config webpack-test.config.js # ignore the server error
 npm test
 ```
 
+## Debug with [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
+
+```
+    npm i --save-dev karma karma-chrome-launcher karma-mocha karma-chai
+    npm i --save-dev karma-webpack
+```
+
 ## More readings and references
 
 - [TeejayVanSlyke, How to set up a test runner for modern JavaScript using Webpack, Mocha, and Chai](http://teejayvanslyke.com/how-to-set-up-a-test-runner-for-modern-javascript.html)
