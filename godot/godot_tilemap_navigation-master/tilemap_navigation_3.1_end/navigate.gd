@@ -37,18 +37,19 @@ func _process(delta: float) -> void:
 		if d > 10:
 			$Sprite.position = $Sprite.position.linear_interpolate(dots[0].position, (speed * delta)/d)
 		else:
-			dots.remove(0)		
+			self.remove_child(dots[0])
+			dots.remove(0)
 
 func createPath(points):
-	if !points:
-		for dot in dots:
-			dot.hide()
-		dots.clear()
+	for dot in dots:
+		self.remove_child(dot)
+	dots.clear()
 	
 	if points.size() > 0:
 		for point in points:
 			var dot = endot.instance()
 			dot.position = point
+			self.add_child(dot)
 			dot.show()
 			dots.append(dot)
 	
