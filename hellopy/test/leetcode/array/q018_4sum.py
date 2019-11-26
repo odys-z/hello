@@ -66,7 +66,7 @@ class Solution:
         mnSum = float("inf")
         sums = []
         
-        # task in this n^2 iteration slow down things (188ms)
+        # task in this n^2 iteration slow things down (188ms)
         for i, v0 in enumerate(nums[:-1]):
             for j in range(i + 1, len(nums)):
                 s = v0 + nums[j]
