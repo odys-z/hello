@@ -30,33 +30,60 @@ class ListNode:
         self.next = None
 
 class Solution:
+    ''' I like this but slow: 92 ms '''
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if not lists:
-            return []
+            return None
 
         h = Heapk(key = lambda n : n.val)
         for n0 in lists:
             if n0:
-                # heappush(h, (n0.val, n0))
                 h.push(n0)
+        if h.len() == 0:
+            return None
 
-        # heapify(h)
-        # _, ending = heappop(h)
         ending = h.pop()
-        ans = [ending]
+        if ending.next:
+            h.push(ending.next)
+        first = ending
 
         while h.len():
-            # _, e = heappop(h)
             e = h.pop()
             if e.next:
-                # heappush(h, (e.val, e.next))
-                h.push(e)
+                h.push(e.next)
             ending.next = e
-            ans.append(e)
             ending = e
 
-        return ans
+        return first
 
+class Solupy:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        srtlist = []
+        for n in lists:
+            while n:
+                srtlist.append(n)
+                n = n.next
+        
+        allist = sorted(srtlist, key = lambda n : n.val)
+        
+        if not allist:
+            return None
+
+        # brutal 84 ms
+        first = allist[0]
+        prev = first
+        for nx in allist[1:]:
+            prev.next = nx
+            prev = nx
+        
+        # another way is reduce - but slower, 88 ms:
+        # reduce(linkup, allist)
+
+        return first
+
+def linkup(p, n):
+    p.next = n
+    return n
 
 class Test(unittest.TestCase):
 
@@ -64,13 +91,29 @@ class Test(unittest.TestCase):
     def testHeap(self):
         s = Solution()
 
+        self.assertEqual([],
+             toOutput(s.mergeKLists(buildInput([[], []]))))
+
         self.assertEqual([1, 1, 2, 3, 4, 4, 5, 6],
-             toOutput(s.mergeKLists(buildInput([[1, 4, 5], [0, 3, 4], [2, 6]]))))
+             toOutput(s.mergeKLists(buildInput([[1, 4, 5], [1, 3, 4], [2, 6]]))))
+        
+    def testPylist(self):
+        s = Solupy()
+        self.assertEqual([],
+             toOutput(s.mergeKLists(buildInput([[], []]))))
+
+        self.assertEqual([],
+             toOutput(s.mergeKLists(buildInput([[]]))))
+
+        self.assertEqual([1, 1, 2, 3, 4, 4, 5, 6],
+             toOutput(s.mergeKLists(buildInput([[1, 4, 5], [1, 3, 4], [2, 6]]))))
 
 def toOutput(lst: List[ListNode]) -> List[int]:
     out = []
-    for n in lst:
+    n = lst
+    while n:
         out.append(n.val)
+        n = n.next
     return out
 
 def buildInput(nums: List[List[int]]) -> List[ListNode]:
@@ -84,7 +127,12 @@ def buildInput(nums: List[List[int]]) -> List[ListNode]:
                     prevn.next = reslt[lx]
                 reslt[lx] = prevn
 
-    print(reslt)
+    for res in reslt:
+        while res:
+            print(res.val, end = ', ')
+            res = res.next
+        print('')
+
     return reslt
 
 if __name__ == "__main__":

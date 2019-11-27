@@ -17,7 +17,7 @@ class Heapk(object):
         i = 0
         while True:
             yield i
-            i += 0
+            i += 1
     
     inc = Inc();
 
@@ -42,3 +42,4 @@ class Heapk(object):
         
     def len(self):
         return len(self.hp)
+    
