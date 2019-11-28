@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fritzy/ecs": "file:../ecs-js",
-    "rot-js": "^2.0.3",
+    "rot-js": "^2.1.1",
     "staydown": "^2.0.1"
   },
   "devDependencies": {
-    "parcel": "^1.12.3"
+    "@fritzy/ecs": "^0.3.0",
+    "parcel": "^1.12.4"
   },
   "browserslist": [
     "last 1 chrome versions"

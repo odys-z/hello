@@ -77,14 +77,10 @@ export default class Game {
     });
 
     this.player = this.ecs.createEntity({
-      Character: {
-      },
-      Player: {
-      },
-      Coordinate: {
-      },
-      Inventory: {
-      },
+      Character: { },
+      // Player: { },
+      Coordinate: { },
+      Inventory: { },
       EquipmentSlot: {
         leftHand: {
           description: 'left hand',
