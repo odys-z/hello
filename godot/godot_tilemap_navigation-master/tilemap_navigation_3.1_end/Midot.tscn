@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hexagonTerrain_sheet.png" type="Texture" id=1]
+
+[node name="Midot" type="Sprite"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 50.8296, -23.4706 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 439, 467, 20, 23 )
+region_filter_clip = true

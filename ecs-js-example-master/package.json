@@ -1,0 +1,22 @@
+{
+  "name": "ecs-js-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rot-js": "^2.1.1",
+    "staydown": "^2.0.1"
+  },
+  "devDependencies": {
+    "@fritzy/ecs": "^0.3.0",
+    "parcel": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+}
