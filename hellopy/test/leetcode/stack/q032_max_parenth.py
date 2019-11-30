@@ -20,7 +20,6 @@ Created on 29 Nov 2019
 @author: odys-z@github.com
 '''
 import unittest
-import re
 
 class Solution20ms:
     ''' actually 44ms '''
@@ -48,6 +47,7 @@ class Solution2:
         if not s: return 0
         
         stack = [-1]
+        # import re
         # s = re.sub(r'^\)+', '', s)
         
         maxlen = 0
@@ -60,6 +60,42 @@ class Solution2:
                     stack.append(ix)
                 maxlen = max(maxlen, ix - stack[-1])
         return maxlen
+    
+class SolutionDp:
+    ''' see solution 2 of https://leetcode.com/problems/longest-valid-parentheses/solution/
+    '''
+    def longestValidParentheses(self, s: str) -> int:
+        if not s: return 0
+        
+        ix = 0
+        while ix < len(s) and s[ix] == ')': 
+            ix += 1
+        s = s[ix:]
+
+        # dp = [-1 for _ in s] 
+        dp = [-1] * len(s)
+        maxl = 0
+ 
+        for ix, c in enumerate(s):
+            if c == ')':
+                c0 = s[ix - 1]
+                if c0 == '(':
+                    dp[ix] = 2
+                    prevIx = ix - 2
+                    if prevIx >= 0 and dp[prevIx] > 0:
+                        dp[ix] += dp[prevIx]
+                elif dp[ix - 1] > 0: # c0 == ')' and valid
+                    prevIx = ix - dp[ix - 1] - 1
+                    if prevIx >= 0 and s[prevIx] == '(':
+                        dp[ix] = dp[ix - 1] + 2
+                        if prevIx > 0:
+                            prevlen = dp[prevIx - 1]
+                            dp[ix] += prevlen if prevlen > 0 else 0
+                if maxl < dp[ix]:
+                    maxl = dp[ix]
+            else:
+                dp[ix] = 0
+        return maxl
         
 
 class Solution:
@@ -107,24 +143,33 @@ class Test(unittest.TestCase):
     def testName(self):
         # s = Solution()
         # s = Solution20ms()
-        s = Solution2()
+        # s = Solution2()
+        s = SolutionDp()
         self.assertEqual(0, s.longestValidParentheses(''))
         self.assertEqual(0, s.longestValidParentheses('('))
         self.assertEqual(0, s.longestValidParentheses(')'))
-        self.assertEqual(2, s.longestValidParentheses(')()'))
-        self.assertEqual(0, s.longestValidParentheses('))'))
         self.assertEqual(0, s.longestValidParentheses(')('))
+        self.assertEqual(2, s.longestValidParentheses('()'))
+        self.assertEqual(0, s.longestValidParentheses('))'))
         self.assertEqual(0, s.longestValidParentheses('(('))
+        self.assertEqual(2, s.longestValidParentheses(')()'))
         self.assertEqual(2, s.longestValidParentheses('(()('))
         self.assertEqual(2, s.longestValidParentheses(')())('))
+        self.assertEqual(4, s.longestValidParentheses('(()()'))
+        self.assertEqual(6, s.longestValidParentheses('(()())'))
         self.assertEqual(2, s.longestValidParentheses(')()))('))
         self.assertEqual(4, s.longestValidParentheses(')()()'))
-        self.assertEqual(4, s.longestValidParentheses('(()()'))
+        self.assertEqual(4, s.longestValidParentheses('(()))())('))
 
         self.assertEqual(2, s.longestValidParentheses('(()(((()'))
         self.assertEqual(4, s.longestValidParentheses(')()())'))
         self.assertEqual(10, s.longestValidParentheses(')()(((())))('))
+        self.assertEqual(6, s.longestValidParentheses('(())()('))
         self.assertEqual(6, s.longestValidParentheses('(())()(()(('))
+        self.assertEqual(16, s.longestValidParentheses('(((()())))(()())'))
+        self.assertEqual(16, s.longestValidParentheses('(((()()))(()()))'))
+        self.assertEqual(16, s.longestValidParentheses('((()())((()())))'))
+        self.assertEqual(16, s.longestValidParentheses('((()((()())())))'))
 
         self.assertEqual(0, s.longestValidParentheses('((('))
         self.assertEqual(0, s.longestValidParentheses(')((('))
