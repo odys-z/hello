@@ -13,6 +13,9 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
+/**Try tiled resource loading.
+ * See tutorial: https://www.gamefromscratch.com/post/2014/04/16/LibGDX-Tutorial-11-Tiled-Maps-Part-1-Simple-Orthogonal-Maps.aspx
+ */
 public class Tiled01 extends ApplicationAdapter implements InputProcessor {
 	SpriteBatch batch;
 	Texture oz;

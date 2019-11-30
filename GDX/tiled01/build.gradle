@@ -104,6 +104,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.ashley:ashley:$ashleyVersion"
         compile "com.kotcrab.vis:vis-ui:1.3.0"
+        compile "com.codeandweb.physicseditor:gdx-pe-loader:1.1.0"
     }
 }
 
