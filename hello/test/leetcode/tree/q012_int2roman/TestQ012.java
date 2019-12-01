@@ -60,34 +60,42 @@ class TestQ012 {
 	@BeforeEach
 	void setUp() throws Exception {
 //		s = new Solution();
-		s = new SolutionRef();
+//		s = new SolutionRef();
+		s = new SolutionRanktable();
 	}
 
 	@Test
 	void test() {
-		assertEquals("I", s.intToRoman(1));
-		assertEquals("III", s.intToRoman(3));
-		assertEquals("IV", s.intToRoman(4));
-		assertEquals("V", s.intToRoman(5));
-		assertEquals("VI", s.intToRoman(6));
-		assertEquals("IX", s.intToRoman(9));
-		assertEquals("X", s.intToRoman(10));
-		assertEquals("XI", s.intToRoman(11));
-		assertEquals("XIV", s.intToRoman(14));
-		assertEquals("XV", s.intToRoman(15));
-		assertEquals("XVI", s.intToRoman(16));
-		assertEquals("XIX", s.intToRoman(19));
-		assertEquals("XX", s.intToRoman(20));
-		assertEquals("LVIII", s.intToRoman(58));
-		assertEquals("XCIX", s.intToRoman(99));
-		assertEquals("C", s.intToRoman(100));
-		assertEquals("CI", s.intToRoman(101));
-		assertEquals("CCI", s.intToRoman(201));
-		assertEquals("CD", s.intToRoman(400));
-		assertEquals("CDI", s.intToRoman(401));
-		assertEquals("M", s.intToRoman(1000));
-		assertEquals("MI", s.intToRoman(1001));
-		assertEquals("MCMXCIV", s.intToRoman(1994));
+        assertEquals("I", s.intToRoman(1));
+        assertEquals("III", s.intToRoman(3));
+        assertEquals("IV", s.intToRoman(4));
+        assertEquals("V", s.intToRoman(5));
+        assertEquals("VI", s.intToRoman(6));
+        assertEquals("IX", s.intToRoman(9));
+        assertEquals("X", s.intToRoman(10));
+        assertEquals("XI", s.intToRoman(11));
+        assertEquals("XIV", s.intToRoman(14));
+        assertEquals("XV", s.intToRoman(15));
+        assertEquals("XVI", s.intToRoman(16));
+        assertEquals("XIX", s.intToRoman(19));
+        assertEquals("XX", s.intToRoman(20));
+        assertEquals("XXIV", s.intToRoman(24));
+        assertEquals("XXXIX", s.intToRoman(39));
+        assertEquals("LVIII", s.intToRoman(58));
+        assertEquals("XCIX", s.intToRoman(99));
+        assertEquals("C", s.intToRoman(100));
+        assertEquals("CI", s.intToRoman(101));
+        assertEquals("CCI", s.intToRoman(201));
+        assertEquals("CD", s.intToRoman(400));
+        assertEquals("CDI", s.intToRoman(401));
+        assertEquals("DCCCLXXVI", s.intToRoman(876));
+        assertEquals("CMLXXXVII", s.intToRoman(987));
+        assertEquals("MMMCDXXXII", s.intToRoman(3432));
+        assertEquals("MMMCDXXXIX", s.intToRoman(3439));
+        assertEquals("MMMCDXCIX", s.intToRoman(3499));
+        assertEquals("M", s.intToRoman(1000));
+        assertEquals("MI", s.intToRoman(1001));
+        assertEquals("MCMXCIV", s.intToRoman(1994));
 	}
 
 }
