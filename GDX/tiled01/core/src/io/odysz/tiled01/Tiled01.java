@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -44,6 +46,12 @@ public class Tiled01 extends ApplicationAdapter implements InputProcessor {
 		camera.update();
 		tiledMap = new TmxMapLoader().load("w32h32.tmx");
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+
+		MapObjects objs = tiledMap.getLayers().get("static bodies").getObjects();
+		for (MapObject obj: objs) {
+			String s = obj.getName();
+			System.out.print(s);
+		}
 
 		Gdx.input.setInputProcessor(this);
 	}
