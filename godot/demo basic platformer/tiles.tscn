@@ -8,7 +8,6 @@ extents = Vector2( 32.0483, 32.1519 )
 [node name="Tiles" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0.487671, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
