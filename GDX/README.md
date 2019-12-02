@@ -22,3 +22,10 @@ LibGDX objects is in the create method.
 - [BDX](https://github.com/GoranM/bdx)
 
 [reading](https://www.gamefromscratch.com/post/2015/03/16/Create-a-3D-game-in-Blender-using-LibGDX-and-BDX.aspx)
+
+- Extending [Tiled](https://github.com/bjorn/tiled)
+
+Can spritize?
+
+* hack memo: [AddRemoveMapObjects](https://github.com/bjorn/tiled/blob/5333aca582c245bdde338fd0bb7fd6951318b18a/src/tiled/addremovemapobject.h) extends [QUndoCommand](https://doc.qt.io/qt-5/qundocommand.html#details)
+([introduction](http://www.informit.com/articles/article.aspx?p=1187104&seqNum=3))
