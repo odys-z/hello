@@ -8,12 +8,19 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
+import com.badlogic.gdx.maps.tiled.TiledMapTileSets;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+
+import java.util.Iterator;
 
 /**Try tiled resource loading.
  * See tutorial: https://www.gamefromscratch.com/post/2014/04/16/LibGDX-Tutorial-11-Tiled-Maps-Part-1-Simple-Orthogonal-Maps.aspx
@@ -50,7 +57,37 @@ public class Tiled01 extends ApplicationAdapter implements InputProcessor {
 		MapObjects objs = tiledMap.getLayers().get("static bodies").getObjects();
 		for (MapObject obj: objs) {
 			String s = obj.getName();
-			System.out.print(s);
+			System.out.println(s);
+		}
+
+		TiledMapTileSets tilesets = tiledMap.getTileSets();
+		for (TiledMapTileSet tset : tilesets) {
+			System.out.println(String.format("ts %s size: %s", tset.getName(), tset.size()));
+			Iterator<TiledMapTile> it = tset.iterator();
+			while(it.hasNext()){
+				TiledMapTile mptile = it.next();
+				TextureRegion rg = mptile.getTextureRegion();
+				System.out.println(String.format("%s	  xy: %s, %s; wh: %s, %s",
+						mptile.getId(), rg.getRegionX(), rg.getRegionY(), rg.getRegionWidth(), rg.getRegionHeight()));
+			}
+		}
+
+		TiledMapTileLayer tilayer = (TiledMapTileLayer) tiledMap.getLayers().get("tiles01");
+		int tw = tilayer.getWidth();
+		int th = tilayer.getHeight();
+		System.out.println(String.format("w: %s, h: %s", tw, th));
+		for (int r = th - 1; r > 0; r--) {
+			for (int c = 0; c < tw; c ++) {
+				TiledMapTileLayer.Cell cell = tilayer.getCell(c, r);
+				TiledMapTile t = cell.getTile();
+				if (t.getId() == 79)
+					System.out.print("   ");
+				else if (t.getId() >= 230)
+					System.out.print("[O]");
+				else
+					System.out.print("[ ]");
+			}
+			System.out.println("|");
 		}
 
 		Gdx.input.setInputProcessor(this);
