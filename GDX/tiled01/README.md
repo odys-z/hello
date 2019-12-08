@@ -289,5 +289,63 @@ It's been load by TmxMapLoader.loadTileset(), as instances of AnimatedTiledMapTi
 
 The AnimatedTiledMapTile class override getTextureRegion() method, which is called by
 OrthoCachedTiledMapRenderer.renderTileLayer(). In getTextureRegion(), the currrent
-frame index is changed according to time a flag, lastTiledMapRenderTime, which is
+frame index is changed according to a time stamp, lastTiledMapRenderTime, which is
 updated each time by application rendering call to OrthoCachedTiledMapRenderer.render().
+
+Loaded animated tiles are an array of tiles. Break at OrthoCachedTiledMapRenderer.
+renderTileLayer(), tiles 236 is rendered with an array of StaticTiledMapTile.
+
+<img src='./readme/001 as-debug-animtile.png' width='600px'><img>
+
+Here is the frameTiles' value:
+```
+((AnimatedTiledMapTile) tile).frameTiles = {StaticTiledMapTile[6]@2464}
+ 0 = {StaticTiledMapTile@2493}
+  id = 168
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2496}
+  offsetX = 0.0
+  offsetY = 0.0
+ 1 = {StaticTiledMapTile@2494}
+  id = 169
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2497}
+  offsetX = 0.0
+  offsetY = 0.0
+ 2 = {StaticTiledMapTile@2495}
+  id = 152
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2498}
+  offsetX = 0.0
+  offsetY = 0.0
+ 3 = {StaticTiledMapTile@2495}
+  id = 152
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2498}
+  offsetX = 0.0
+  offsetY = 0.0
+ 4 = {StaticTiledMapTile@2495}
+  id = 152
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2498}
+  offsetX = 0.0
+  offsetY = 0.0
+ 5 = {StaticTiledMapTile@2495}
+  id = 152
+  blendMode = {TiledMapTile$BlendMode@1458} "ALPHA"
+  properties = null
+  objects = null
+  textureRegion = {TextureRegion@2498}
+  offsetX = 0.0
+  offsetY = 0.0
+```
