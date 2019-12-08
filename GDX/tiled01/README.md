@@ -11,6 +11,8 @@
 
 Resource from [Create a Canvas Tileset Background](http://blog.sklambert.com/create-a-canvas-tileset-background/)
 
+<img src='./readme/003 map-loaded.png' width='600px'></img>
+
 # TMX
 
 map w32h32.tmx
@@ -87,15 +89,15 @@ To load tiled map, see core/Tiled01.java
 
 <img src='./readme/003 map-loaded.png' width='600px'><img>
 
-## How is map data managed
+## How does map data managed
+
+Tiled map are managed by class from package com.badlogic.gdx.maps.tiled.
 
 To access map layer:
 ```
     MapObjects objs = tiledMap.getLayers().get("static bodies").getObjects();
-
     TiledMapTileSets tilesets = tiledMap.getTileSets();
 ````
-
 Map cell can be accessed with row / column index. These line print a char map at
 system console;
 ```
@@ -242,3 +244,14 @@ where stopHeight = textureHeight - tileHeight.
 
 For t01.tsx, the loaded tileset.tiles is a size of 256 (16x16) IntMap, each element
 is a com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile object.
+
+- How do animated tiles been rendered
+
+In tsx tileset file, tile animation are defined as child of a tile.
+
+<img src='./readme/001 tiled-anim-tileid.png' width='600px'></img>
+
+Tile at row 15, col 27 is 236, which is animated in Tiled editor.
+
+According to TMX 1.3.1, each tile can have exactly one animation associated with it. In the future, there could be support for multiple named animations on a tile.](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#animation).
+
