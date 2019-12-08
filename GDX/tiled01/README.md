@@ -11,8 +11,6 @@
 
 Resource from [Create a Canvas Tileset Background](http://blog.sklambert.com/create-a-canvas-tileset-background/)
 
-<img src='./readme/003 map-loaded.png' width='600px'></img>
-
 # TMX
 
 map w32h32.tmx
@@ -253,5 +251,43 @@ In tsx tileset file, tile animation are defined as child of a tile.
 
 Tile at row 15, col 27 is 236, which is animated in Tiled editor.
 
-According to TMX 1.3.1, each tile can have exactly one animation associated with it. In the future, there could be support for multiple named animations on a tile.](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#animation).
+According to [TMX 1.3.1](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#animation),
+each tile can have exactly one animation associated with it. In the future,
+there could be support for multiple named animations on a tile.
 
+Animation is defined in tileset.tsx.
+```
+<tile id="236">
+ <animation>
+  <frame tileid="167" duration="100"/>
+  <frame tileid="168" duration="100"/>
+  <frame tileid="151" duration="2200"/>
+  <frame tileid="151" duration="100"/>
+  <frame tileid="151" duration="100"/>
+  <frame tileid="151" duration="100"/>
+ </animation>
+</tile>
+```
+
+It's been load by TmxMapLoader.loadTileset(), as instances of AnimatedTiledMapTile.
+```
+    if (animationElement != null) {
+
+        Array<StaticTiledMapTile> staticTiles = new Array<StaticTiledMapTile>();
+        IntArray intervals = new IntArray();
+        for (Element frameElement: animationElement.getChildrenByName("frame")) {
+            staticTiles.add((StaticTiledMapTile) tileset.getTile(firstgid + frameElement.getIntAttribute("tileid")));
+            intervals.add(frameElement.getIntAttribute("duration"));
+        }
+
+        AnimatedTiledMapTile animatedTile = new AnimatedTiledMapTile(intervals, staticTiles);
+        animatedTile.setId(tile.getId());
+        animatedTiles.add(animatedTile);
+        tile = animatedTile;
+    }
+```
+
+The AnimatedTiledMapTile class override getTextureRegion() method, which is called by
+OrthoCachedTiledMapRenderer.renderTileLayer(). In getTextureRegion(), the currrent
+frame index is changed according to time a flag, lastTiledMapRenderTime, which is
+updated each time by application rendering call to OrthoCachedTiledMapRenderer.render().
