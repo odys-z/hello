@@ -1,8 +1,7 @@
 # Import Project
 
-Android Studio -> Open
-
-path = tiled01/build.gradle
+    Android Studio -> Open
+    path = tiled01/build.gradle
 
 # Resource
 
@@ -86,7 +85,7 @@ To load tiled map, see core/Tiled01.java
     }
 ```
 
-<img src='./003 map-loaded.png' width='600px'><img>
+<img src='./readme/003 map-loaded.png' width='600px'><img>
 
 ## How is map data managed
 
