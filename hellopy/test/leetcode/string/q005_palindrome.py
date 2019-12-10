@@ -37,18 +37,65 @@ class Solution:
         maxL, mxl, mxr = 0, 0, 0
         c, r = 0, 0
         for i in range(slen):
-            c = i
+            # c = i
             p[i] = min(p[2 * c - i], r - i)
             l, r = i - p[i] - 1, i + p[i] + 1
             while (0 <= l and r < slen and s[l] == s[r]):
                 cnt += 1
                 p[i] += 1
                 l, r = l - 1, r + 1
+            if (i + p[i] > r):
+                c = i
+                r = i + p[i]
             if maxL < p[i]:
                 maxL, mxl, mxr = p[i], l + 1 if l > 0 else 0, r - 1 if r < slen else slen
         # return re.sub('#', '', s[mxl : mxr])
         print(slen, cnt)
         return t[mxl // 2 : mxr // 2]
+
+'''
+Runtime: 6060 ms, faster than 14.36% of Python3 online submissions for Longest Palindromic Substring.
+Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Longest Palindromic Substring.
+'''
+class Solution2:
+    def longestPalindrome(self, raws: str) -> str:
+        polin = polindromeString(raws)
+        # s = '#' + '#'.join(t) + '#'
+        slen = polin.len()
+
+        # cnt = 0
+        p = [0 for _ in range(slen)]
+        maxL, mxl, mxr = 0, 0, 0
+        c, r = 0, 0
+        for i in range(slen):
+            c = i
+            p[i] = min(p[2 * c - i], r - i)
+            l, r = i - p[i] - 1, i + p[i] + 1
+            while (0 <= l and r < slen and polin.at(l) == polin.at(r)):
+                # cnt += 1
+                p[i] += 1
+                l, r = l - 1, r + 1
+            if maxL < p[i]:
+                maxL, mxl, mxr = p[i], l + 1 if l > 0 else 0, r - 1 if r < slen else slen
+        # print(slen, cnt)
+        return polin.sub(mxl // 2, mxr // 2)
+
+class polindromeString:
+    def __init__(self, rawstr):
+        self.raws = rawstr
+    
+    def len(self):
+        return len(self.raws) * 2 + 1
+    
+    def sub(self, l, r):
+        return self.raws[l : r]
+    
+    def at(self, ix):
+        if ix % 2 == 0:
+            return '#'
+        else:
+            return self.raws[ix // 2]
+    
 
 '''
 Runtime: 52 ms, faster than 99.77% of Python3 online submissions for Longest Palindromic Substring.
