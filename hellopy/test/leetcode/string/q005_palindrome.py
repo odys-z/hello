@@ -25,36 +25,38 @@ And [Hacker Rank, Manacher's Algorithm](https://www.hackerrank.com/topics/manach
 '''
 
 '''
-Runtime: 2124 ms, faster than 45.57% of Python3 online submissions for Longest Palindromic Substring.
-Memory Usage: 12.9 MB, less than 100.00% of Python3 online submissions for Longest Palindromic Substring.
+Runtime: 100 ms, faster than 94.58% of Python3 online submissions for Longest Palindromic Substring.
+Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Longest Palindromic Substring.
 '''
 class Solution:
     def longestPalindrome(self, t: str) -> str:
         cnt = 0
         s = '#' + '#'.join(t) + '#'
-        p = [0 for _ in s]
+        p = [0] * len(s)
         slen = len(s)
-        maxL, mxl, mxr = 0, 0, 0
-        c, r = 0, 0
+        # maxL, mxl, mxr = 0, 0, 0
+        maxL, mxl = 0, 0
+        c, R = 0, 0
         for i in range(slen):
-            # c = i
-            p[i] = min(p[2 * c - i], r - i)
-            l, r = i - p[i] - 1, i + p[i] + 1
-            while (0 <= l and r < slen and s[l] == s[r]):
+            mirror = 2 * c - i
+            p[i] = min(p[mirror] if mirror >= 0 else 0, R - i - 1)
+            li, ri = i - p[i] - 1, i + p[i] + 1
+            while (0 <= li and ri < slen and s[li] == s[ri]):
                 cnt += 1
                 p[i] += 1
-                l, r = l - 1, r + 1
-            if (i + p[i] > r):
+                li, ri = li - 1, ri + 1
+            if (i + p[i] >= R - 1):
                 c = i
-                r = i + p[i]
+                R = i + p[i] + 1
             if maxL < p[i]:
-                maxL, mxl, mxr = p[i], l + 1 if l > 0 else 0, r - 1 if r < slen else slen
-        # return re.sub('#', '', s[mxl : mxr])
+                maxL, mxl = p[i], li + 1 if li > 0 else 0
         print(slen, cnt)
+        mxr = maxL * 2 + 1 + mxl
+        mxr = slen if mxr > slen else mxr
         return t[mxl // 2 : mxr // 2]
 
 '''
-Runtime: 6060 ms, faster than 14.36% of Python3 online submissions for Longest Palindromic Substring.
+Runtime: 136 ms, faster than 92.98% of Python3 online submissions for Longest Palindromic Substring.
 Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Longest Palindromic Substring.
 '''
 class Solution2:
@@ -63,21 +65,29 @@ class Solution2:
         # s = '#' + '#'.join(t) + '#'
         slen = polin.len()
 
-        # cnt = 0
-        p = [0 for _ in range(slen)]
-        maxL, mxl, mxr = 0, 0, 0
-        c, r = 0, 0
+        cnt = 0
+        p = [0] * slen
+
+        maxL, mxl = 0, 0
+        c, R = 0, 0
         for i in range(slen):
-            c = i
-            p[i] = min(p[2 * c - i], r - i)
+            mirror = 2 * c - i
+            if mirror < 0: mirror = 0
+            p[i] = min(p[mirror], R - i)
             l, r = i - p[i] - 1, i + p[i] + 1
             while (0 <= l and r < slen and polin.at(l) == polin.at(r)):
-                # cnt += 1
+                cnt += 1
                 p[i] += 1
                 l, r = l - 1, r + 1
+            if (i + p[i] >= R):
+                c = i
+                R = i + p[i]
             if maxL < p[i]:
-                maxL, mxl, mxr = p[i], l + 1 if l > 0 else 0, r - 1 if r < slen else slen
-        # print(slen, cnt)
+                maxL, mxl = p[i], l + 1 if l > 0 else 0 #, r - 1 if r < slen else slen
+        print(slen, cnt)
+        mxr = maxL * 2 + 1 + mxl
+        if mxr > slen:
+            mxr = slen
         return polin.sub(mxl // 2, mxr // 2)
 
 class polindromeString:
@@ -134,9 +144,39 @@ class SolutionRef:
                 ans = cand if len(cand) > len(ans) and isPalindrome(cand) else ans
         return ans
 
+class SolutionM:
+    def longestPalindrome(self, s: str) -> str:
+        st = '$#' + '#'.join(s) + '#%'
+        
+        cnt = 0
+
+        P = [0]*len(st)
+        C,R = 0, 0
+        for i in range(1, len(st)-1):
+            mirr = 2*C-i
+            
+            # update already expanded palindrome
+            if i < R:
+                P[i] = min(R-i, P[mirr])
+            
+            while st[i+(1+P[i])] == st[i-(1+P[i])]:
+                cnt += 1
+                P[i] += 1
+            
+            if i+P[i] > R:
+                C = i
+                R = i + P[i]
+        
+        length = max(P)
+        index = P.index(length)
+        string = st[index-length:index+length]
+        
+        print(len(st), cnt)
+        return string.replace('#','')
+
 class Test(unittest.TestCase):
     def testName(self):
-        s = Solution()
+        s = Solution2()
         self.assertEqual('a', s.longestPalindrome('a'))
         self.assertEqual('a', s.longestPalindrome('ab'))
         self.assertEqual('bb', s.longestPalindrome('bb'))
@@ -145,7 +185,9 @@ class Test(unittest.TestCase):
         self.assertEqual('', s.longestPalindrome(''))
         self.assertEqual('aba', s.longestPalindrome('aba'))
         self.assertEqual('bab', s.longestPalindrome('babad'))
+        self.assertEqual('babab', s.longestPalindrome('bababd'))
         self.assertEqual('bab', s.longestPalindrome('babad'))
+        self.assertEqual('adada', s.longestPalindrome('babadada'))
         self.assertEqual("cccccc fdfdfebbbbbbbbbbefdfdf cccccc",
                          s.longestPalindrome('babadbbcdfavvedf feescsefcv   svsvscxseretv dfhbdsvfdgbhyn  bbrdherrvgerg  svsgr54yurrtjk6fgfbfhtgsgtcccccc fdfdfebbbbbbbbbbefdfdf ccccccdededde'))
 
