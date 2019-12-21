@@ -35,12 +35,25 @@ class Solution0():
             for jx in range(ix):
                 s = nums[ix] + nums[jx]
                 if s in sum2:
-                    sum2[s].append()
-                else: sum2[s] = nums[jx], nums[ix]
+                    sum2[s].add((nums[jx], nums[ix], jx, ix))
+                else: sum2[s] = set([(nums[jx], nums[ix], jx, ix)])
         
-        for n3 in nums():
+        ans = []
+        anset = set()
+        for i3, n3 in enumerate(nums):
             if -n3 in sum2:
-                
+                # merge sums
+                for n1, n2, i1, i2 in sum2[-n3]:
+                    if n3 != n1 and n3 != n2:
+                        n1, n2, n3_ = sorted([n1, n2, n3])
+                        if (n1, n2, n3_) not in anset and i3 != i1 and i3 != i2: 
+                            ans.append([n1, n2, n3_])
+                            anset.add((n1, n2, n3_))
+                    elif (n3 == 0 and # n2 == 0 and n1 == 0 and
+                          (0, 0, 0) not in anset and i3 != i1 and i3 != i2):
+                        ans.append([n1, n2, n3])
+                        anset.add((n1, n2, n3))
+        return ans
 
 class Solution():
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -49,10 +62,18 @@ class Solution():
 class Test(unittest.TestCase):
 
     def testName(self):
-        s = Solution()
-        self.assertEq([[-1, 0, 1], [-1, -1, 2]], s.threeSum([-1, 0, 1, 2, -1, -4]))
+        s = Solution0()
+        self.assertEqual([], s.threeSum([0, 0]))
+        self.assertEqual([[0, 0, 0]], s.threeSum([0, 0, -0]))
+        self.assertEqual([[-1, 0, 1]], s.threeSum([0, 1, -1]))
+        self.assertEqual([[-1, 0, 1]], s.threeSum([-1, 0, 1, 0]))
+        self.assertEqual([], s.threeSum([0, -1, -1, -3, -3, -4, -1]))
+        self.assertEqual([[-1, -1, 2]], s.threeSum([2, -1, -1]))
+        self.assertEqual([], s.threeSum([-2, 4]))
+        self.assertEqual([], s.threeSum([-2, 4, 4]))
+        self.assertEqual([], s.threeSum([-2, 2, 4, 4]))
+        self.assertEqual([[-3,-1,4],[-2,1,1],[-2, -2, 4]], s.threeSum([ -1, 1, 1, -3, -2, 4, -2,-3,-4]))
+        self.assertEqual([[-2, -1, 3], [-2, 0, 2], [-1, 0, 1]], s.threeSum([0, -1, 1, -2, 2, 3, 3, 3, 3, 3, 3, 4,4,4]))
+        self.assertEqual([[-1, 0, 1], [-1, -1, 2]], s.threeSum([-1, 0, 1, 2, -1, -4]))
 
-
-    def assertEq(self, a: List[List[int]], b: List[List[int]]) -> None:
-        pass
 
