@@ -4,13 +4,13 @@ Created on 22 Dec 2019
 @author: ody
 '''
 import unittest
-from test.Utils.Assrt import Eq, AssrtError
+from test.Utils.Assrt import Eq, AssrtError, IntxdArr
 
 
 class Test(unittest.TestCase):
 
 
-    def testName(self):
+    def testArrEq(self):
         eq = Eq()
         try: 
             eq.int2dArr([[]], [[1]])
@@ -72,6 +72,13 @@ class Test(unittest.TestCase):
         eq.int2dArr([[1, 2]], [[2, 1]])
         eq.int2dArr([[1, 2], [2, 1]], [[2, 1], [1, 2]])
         eq.int2dArr([[1, 2], [2, 1], [1, 3, 4]], [[2, 1], [1, 2], [3, 1, 4]])
+
+    def testPasrsArr(self): 
+        eq = Eq()
+        
+        parse2d = IntxdArr(2)
+        a2d = parse2d.parseInt("[[1,2],[3]]")
+        eq.int2dArr([[1,2], [3]], a2d)
 
 
 if __name__ == "__main__":

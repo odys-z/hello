@@ -88,26 +88,39 @@ class Eq(object):
                 if not xpect:
                     xpect = ln
                 else:
-                    self.int2dArr(parseInt(xpect), parseInt(ln), ignoreElementOrder)
+                    xd = IntxdArr()
+                    a = xd.parseInt(xpect)
+                    b = xd.parseInt(ln)
+                    self.int2dArr(a, b, ignoreElementOrder)
                     xpect = None
-                    
-def parseInt(intStr: str, dimension = 2) -> List[List[int]]:
-    lst = list()
-    dim = 0
-    l = len(intStr)
-    ix = 0
-    while ix < l:
-        if intStr[ix] == '[':
-            dim += 1
-            ix += 1
-            start = ix 
-            if dim == dimension:
-                while ix < l and intStr[ix] != ']':
-                    ix += 1
-                inums = re.split(r'(\"| *\'),( *|\"|\')', intStr[start, ix])
-        elif intStr[ix] == ']':
-            dim -= 0
-            if dim < 0:
-                raise AssrtError("Parse error: unmatched ']' arroud {}".format(ix))
 
-    return lst
+class IntxdArr(object):               
+    def __init__(self, dimension):
+        self.dim = dimension
+        self.dstack = []
+                    
+    def parseInt(self, intStr: str) -> List[List[int]]:
+        dim = 0
+        l = len(intStr)
+        ix = 0
+        while ix < l:
+            if intStr[ix] == '[':
+                dim += 1
+                start = ix + 1 
+                self.dstack.append(list())
+                if dim == self.dim:
+                    while ix < l and intStr[ix] != ']':
+                        ix += 1
+                    inums = list(map(int, re.split(r'[\"\']? *, *[\"\']?', intStr[start : ix])))
+            elif intStr[ix] == ']':
+                dim -= 0
+                if dim < 0:
+                    raise AssrtError("Parse error: unmatched ']' arroud {}".format(ix))
+                self.dstack.pop()
+                self.dstack[-1].append(inums)
+            elif intStr[ix] == ' ' or intStr[ix] == ',':
+                pass
+
+            ix += 1
+
+        return self.dstack[0]
