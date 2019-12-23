@@ -8,7 +8,7 @@ from typing import List
 from collections import defaultdict
 import re
 
-class AssrtError(AssertionError):
+class AssertErr(AssertionError):
     def __init__(self, p):
         super().__init__(p)
 
@@ -25,7 +25,7 @@ class Eq(object):
     def int2dArr(self, a : List[List[int]], b : List[List[int]], ignoreElementOrder = True):
         ''' Assert 2 arrays are equal, in any order '''
         if len(a) != len(b):
-            raise AssrtError("len(a) != len(b)")
+            raise AssertErr("len(a) != len(b)")
 
         pool1 = defaultdict(list)
         for arr1 in a:
@@ -41,13 +41,9 @@ class Eq(object):
             if s2 in pool1:
                 arr1s = pool1[s2]
                 if self.findRemove(arr1s, arr2, ignoreElementOrder):
-                    # arr1s.remove(arr2)
-                    # b.remove(arr2)
                     deletings.append(arr2)
             else:
-#                 raise self.a.failureException('Sencond array has element not found in first\n%s\n^\n%s'
-#                                         % (arr2, a))
-                raise AssrtError('Sencond array has element not found in first\n%s\n^\n%s'
+                raise AssertErr('Sencond array has element not found in first\n%s\n^\n%s'
                                         % (arr2, a))
         for d in deletings:
             b.remove(d);
@@ -61,11 +57,8 @@ class Eq(object):
             l2 = l2 + len(v2)
         
         if l1 != 0 or l2 != 0:
-#             raise self.a.failureException('Some element not matched; %s\n %s'
-#                                         % (pool1.values, b))
-            raise AssrtError('Some element not matched:\n%s\n %s'
+            raise AssertErr('Some element not matched:\n%s\n %s'
                                         % (list(pool1.values()), b))
-        
         
     def findRemove(self, sortedArrs, a, ignoreOrder = True) -> bool:
         a_ = a
@@ -79,48 +72,71 @@ class Eq(object):
         
         return False
 
-    def int2dArrFile(self, fpath, ignoreElementOrder):
+    def int2dArrFile(self, fpath, dim = 2, ignoreElementOrder = True):
         with open(fpath, 'r') as f:
             xpect = None;
-            for ln in f.readline():
+            ln = '#'
+            while ln:
                 if ln[0] in '#\n':
+                    ln = f.readline()
                     continue
+
                 if not xpect:
                     xpect = ln
                 else:
-                    xd = IntxdArr()
+                    xd = XdArrParser(dim)
                     a = xd.parseInt(xpect)
                     b = xd.parseInt(ln)
                     self.int2dArr(a, b, ignoreElementOrder)
                     xpect = None
 
-class IntxdArr(object):               
+                ln = f.readline()
+
+
+class XdArrParser(object):
     def __init__(self, dimension):
         self.dim = dimension
-        self.dstack = []
-                    
-    def parseInt(self, intStr: str) -> List[List[int]]:
-        dim = 0
-        l = len(intStr)
-        ix = 0
+        
+    def parseInt(self, istr: str) -> List[List[int]]:
+        arr, __ = self.xdInt(istr, 0, 0)
+        return arr[0]
+
+    def xdInt(self, istr: str, dim: int, start: int) -> (List[List[int]], int):
+        ix = start
+        l = len(istr)
+        lst = None
         while ix < l:
-            if intStr[ix] == '[':
-                dim += 1
-                start = ix + 1 
-                self.dstack.append(list())
-                if dim == self.dim:
-                    while ix < l and intStr[ix] != ']':
-                        ix += 1
-                    inums = list(map(int, re.split(r'[\"\']? *, *[\"\']?', intStr[start : ix])))
-            elif intStr[ix] == ']':
-                dim -= 0
-                if dim < 0:
-                    raise AssrtError("Parse error: unmatched ']' arroud {}".format(ix))
-                self.dstack.pop()
-                self.dstack[-1].append(inums)
-            elif intStr[ix] == ' ' or intStr[ix] == ',':
-                pass
+            if dim < self.dim and istr[ix] == '[':
+                # parse first child
+                lst = list()
+                inums, ix = self.xdInt(istr, dim + 1, ix + 1)
+                lst.append(inums)
+                start = ix + 1
+
+            elif dim < self.dim and istr[ix] == ',':
+                # parse siblings
+                if not lst:
+                    raise AssertErr("parse error at {}".format(ix))
+                while istr[ix] != '[':
+                    ix += 1
+                inums, ix = self.xdInt(istr, dim + 1, ix + 1)
+                lst.append(inums)
+                start = ix + 1
+
+            elif dim == self.dim:
+                # parse a 1-d array
+                while istr[ix] != ']':
+                    ix += 1
+                if start < ix:
+                    inums = list(map(int, re.split(r'[\"\']? *, *[\"\']?', istr[start : ix])))
+                    return inums, ix
+                elif start == ix:
+                    return [], ix
 
             ix += 1
 
-        return self.dstack[0]
+        return lst, ix
+
+        
+        
+    
