@@ -25,7 +25,7 @@ class Eq(object):
     def int2dArr(self, a : List[List[int]], b : List[List[int]], ignoreElementOrder = True):
         ''' Assert 2 arrays are equal, in any order '''
         if len(a) != len(b):
-            raise AssertErr("len(a) != len(b)")
+            raise AssertErr("len(a) != len(b):\n{}\n{}".format(a, b))
 
         pool1 = defaultdict(list)
         for arr1 in a:

@@ -122,6 +122,7 @@ class TestFile(unittest.TestCase):
 
         eq.int2dArrFile('data/case03.txt', 2)
 
+
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
