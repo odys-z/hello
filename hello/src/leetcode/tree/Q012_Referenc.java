@@ -1,6 +1,6 @@
-package leetcode.tree.q012_int2roman;
+package leetcode.tree;
 
-public class SolutionRef extends Solution {
+public class Q012_Referenc extends Q012_int2roman {
 
 	@Override
     public String intToRoman(int num) {

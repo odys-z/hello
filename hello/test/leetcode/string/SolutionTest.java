@@ -1,4 +1,4 @@
-package leetcode.string.q008_atoi;
+package leetcode.string;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,7 @@ class SolutionTest {
 
 	@Test
 	void testMyAtoi() {
-        Solution s = new Solution();
+        Q008_atoi s = new Q008_atoi();
         assertEquals(0, s.myAtoi(" "));
         assertEquals(0, s.myAtoi(" -"));
         assertEquals(0, s.myAtoi(" +"));

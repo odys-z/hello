@@ -1,4 +1,4 @@
-package leetcode.string.q008_atoi;
+package leetcode.string;
 
 /**
  * 8. String to Integer (atoi)
@@ -9,7 +9,7 @@ package leetcode.string.q008_atoi;
  * @author odys-z@github.com
  *
  */
-public class Solution {
+public class Q008_atoi {
     public int myAtoi(String str) {
     	if (str == null)
     		return 0;

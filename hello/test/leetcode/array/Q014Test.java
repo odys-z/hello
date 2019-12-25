@@ -1,14 +1,14 @@
-package leetcode.array.q006_zigzag;
+package leetcode.array;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class SolutionTest {
+class Q014Test {
 
 	@Test
 	void testConvert() {
-		Solution s = new Solution();
+		Q006_zigzag s = new Q006_zigzag();
 		assertEquals("12", s.convert("12", 4));
 		assertEquals("1", s.convert("1", 1));
 		assertEquals("", s.convert("", 1));

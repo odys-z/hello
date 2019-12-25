@@ -1,4 +1,4 @@
-package leetcode.tree.q012_int2roman;
+package leetcode.tree;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -55,13 +55,11 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 class TestQ012 {
 
-	private Solution s;
+	private Q012_int2roman_Ranktable s;
 
 	@BeforeEach
 	void setUp() throws Exception {
-//		s = new Solution();
-//		s = new SolutionRef();
-		s = new SolutionRanktable();
+		s = new Q012_int2roman_Ranktable();
 	}
 
 	@Test

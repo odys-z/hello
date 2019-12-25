@@ -1,4 +1,4 @@
-package leetcode.array.q006_zigzag;
+package leetcode.array;
 
 /**
  * 6. ZigZag Conversion
@@ -31,7 +31,7 @@ P     I
  *
  * @author odys-z@github.com
  */
-public class Solution {
+public class Q006_zigzag {
 
     /**<pre>
 		v = 0	v = 1 			v = 2			v = 3

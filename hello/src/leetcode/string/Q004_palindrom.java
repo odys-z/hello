@@ -1,4 +1,4 @@
-package leetcode.string.q004_palindrome;
+package leetcode.string;
 
 /**
  * 5. Longest Palindromic Substring
@@ -10,7 +10,7 @@ package leetcode.string.q004_palindrome;
  * @author odys-z@github.com
  *
  */
-public class Solution {
+public class Q004_palindrom {
 	class PolinStr {
 		private String raw;
 		private int rawLen;

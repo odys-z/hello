@@ -1,4 +1,4 @@
-package leetcode.tree.q012_int2roman;
+package leetcode.tree;
 
 /**
  * 12. Integer to Roman
@@ -8,7 +8,7 @@ package leetcode.tree.q012_int2roman;
  * @author odys-z@github.com
  *
  */
-public class SolutionRanktable extends Solution {
+public class Q012_int2roman_Ranktable extends Q012_int2roman {
 	static String[][] rroms = new String[][] {
 		new String[] {"M", "MM", "MMM"},
         new String[] {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"},

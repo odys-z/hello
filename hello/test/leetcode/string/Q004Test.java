@@ -1,4 +1,4 @@
-package leetcode.string.q004_palindrome;
+package leetcode.string;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,14 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class SolutionTest {
-	private Solution s;
+class Q004Test {
+	private Q004_palindrom s;
 
 	@BeforeEach
 	void setUp() throws Exception {
 //		s = new Solution();
 //		s = new SolutionRef();
-		s = new Solution();
+		s = new Q004_palindrom();
 	}
 
 
