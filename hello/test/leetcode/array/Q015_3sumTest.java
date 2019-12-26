@@ -54,6 +54,12 @@ class Q015_3sumTest {
 		Q015_3sum s = new Q015_3sum();
 		List<List<Integer>> lst = null;
 
+		lst = s.threeSum3(new int[] {0, -1, 1, -2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4});
+		assertEquals(3, lst.size());
+		assertEquals(Arrays.asList(-1, 0, 1), lst.get(0));
+		assertEquals(Arrays.asList(-2, -1, 3), lst.get(2));
+		assertEquals(Arrays.asList(-2, 0, 2), lst.get(1));
+
 		lst = s.threeSum3(new int[] {0, 0, 0});
 		assertEquals(1, lst.size());
 		assertEquals(Arrays.asList(0, 0, 0), lst.get(0));
@@ -62,6 +68,9 @@ class Q015_3sumTest {
 		assertEquals(2, lst.size());
 		assertEquals(Arrays.asList(-1, -1, 2), lst.get(1));
 		assertEquals(Arrays.asList(-1, 0, 1), lst.get(0));
+
+		lst = s.threeSum3(new int[] {4, 0, 2, 3, -1});
+		assertEquals(0, lst.size());
 
 		lst = s.threeSum3(new int[] {-10, -1, 0, 2, 2, 3, 3, 4, 5, 6, 7, 8, 9});
 		assertEquals(3, lst.size());

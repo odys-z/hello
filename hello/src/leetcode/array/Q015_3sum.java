@@ -185,6 +185,14 @@ public class Q015_3sum {
 			int minp = (-nv) >>> 1;
 			while (basej < posSize && poses[basej] < minp)
 				basej++;
+			/* basej is not searched every time
+			if (minp != 0 && map[minp - minValue] > 0)
+				basej = Arrays.binarySearch(poses, 0, posSize, minp);
+			else
+				while (basej < posSize && poses[basej] < minp)
+					basej++;
+			*/
+			
 			for (int j = basej; j < posSize; j++) {
 				int pv = poses[j];
 				int cv = 0 - nv - pv;
