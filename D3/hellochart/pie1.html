@@ -26,11 +26,11 @@
 
         var svg = d3.select("svg"),
             width = svg.attr("width"),
-            height = svg.attr("height"),
+            height = svg.attr("height") - 100,
             radius = Math.min(width, height) / 2;
 
         var g = svg.append("g")
-                   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+                   .attr("transform", `translate( ${width / 2}, ${height / 2 + 50} )`);
 
         var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
 
@@ -39,17 +39,22 @@
             });
 
         var path = d3.arc()
-                     .outerRadius(radius - 10)
-                     .innerRadius(0);
+                     .outerRadius(radius)
+                     .innerRadius(radius / 4);
 
         var label = d3.arc()
                       .outerRadius(radius)
-                      .innerRadius(radius - 80);
+                      .innerRadius(radius - 40);
+
+        var percent = d3.arc()
+                      .outerRadius(radius + 20)
+                      .innerRadius(radius);
 
         d3.csv("browseruse.csv", function(error, data) {
             if (error) {
                 throw error;
             }
+            console.log(data);
             var arc = g.selectAll(".arc")
                        .data(pie(data))
                        .enter().append("g")
@@ -65,14 +70,20 @@
                .attr("transform", function(d) {
                         return "translate(" + label.centroid(d) + ")";
                 })
-               .text(function(d) { return d.data.browser; });
-            });
+               .text(function(d) { return d.data.percent > 3 ? d.data.browser : ''; });
 
-            svg.append("g")
-               .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
-               .append("text")
-               .text("Browser use statistics - Jan 2017")
-               .attr("class", "title")
+            arc.append("text")
+               .attr("transform", function(d) {
+                        return "translate(" + percent.centroid(d) + ")";
+                })
+               .text(function(d) { return d.data.percent > 3 ? `${d.data.percent} %` : ''; });
+        });
+
+        svg.append("g")
+           .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
+           .append("text")
+           .text("Browser use statistics - Hello D3")
+           .attr("class", "title")
     </script>
 </body>
 </html>
