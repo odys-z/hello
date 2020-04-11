@@ -22,6 +22,7 @@
     <p>Reference: <a href='https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js'>
         Create Pie Chart using D3</a><br></p>
     <!-- <svg width="500" height="400"></svg> -->
+    <canvas id='gl'></canvas>
     <script>
 
         var width = 500,
@@ -77,6 +78,10 @@
                         return "translate(" + percent.centroid(d) + ")";
                 })
                .text(function(d) { return d.data.percent > 3 ? `${d.data.percent} %` : ''; });
+
+
+            var gl = document.getElementById('gl').getContext('webgl');
+            console.log(gl);
         });
 
         svg.append("g")
