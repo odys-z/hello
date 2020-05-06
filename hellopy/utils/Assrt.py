@@ -21,6 +21,24 @@ class Eq(object):
         ''' '''
         pass
 
+    def strArr(self, a : List[str], b : List[str]):
+        ''' assert a == b
+            a will been modified after assertion
+        '''
+        if a is None and b is not None or a is not None and b is None:
+            raise AssertErr('a != b')
+        if a is None and b is None:
+            return True
+        if len(a) != len(b):
+            raise AssertErr('a != b')
+        try:
+            for s in b:
+                a.remove(s)
+            if len(a) == 0:
+                return True
+        except:
+            raise AssertErr('a != b')
+            
         
     def int2dArr(self, a : List[List[int]], b : List[List[int]], ignoreElementOrder = True):
         ''' Assert 2 arrays are equal, in any order '''
