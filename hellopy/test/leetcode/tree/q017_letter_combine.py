@@ -14,32 +14,96 @@ import unittest
 
 from utils import Assrt
 
+dials = {'2': ['a', 'b', 'c'],
+         '3': ['d', 'e', 'f'],
+         '4': ['g', 'h', 'i'],
+         '5': ['j', 'k', 'l'],
+         '6': ['m', 'n', 'o'],
+         '7': ['p', 'q', 'r', 's'],
+         '8': ['t', 'u', 'v'],
+         '9': ['w', 'x', 'y', 'z']
+         }
+
 '''
 Runtime: 32 ms, faster than 41.02% of Python3 online submissions for Letter Combinations of a Phone Number.
 Memory Usage: 14 MB, less than 5.88% of Python3 online submissions for Letter Combinations of a Phone Number.
 '''
-class Solution:
-    dials = {'2': ['a', 'b', 'c'],
-             '3': ['d', 'e', 'f'],
-             '4': ['g', 'h', 'i'],
-             '5': ['j', 'k', 'l'],
-             '6': ['m', 'n', 'o'],
-             '7': ['p', 'q', 'r', 's'],
-             '8': ['t', 'u', 'v'],
-             '9': ['w', 'x', 'y', 'z']
-             }
+class Solution2:
     def letterCombinations(self, digits: str) -> List[str]:
         if (digits is None or len(digits) == 0):
             return []
-        res = Solution.dials[digits[len(digits) - 1]]
+        res = dials[digits[len(digits) - 1]]
         for cx in reversed(digits[0 : -1]):
             res2 = list()
-            for a in Solution.dials[cx]:
+            for a in dials[cx]:
                 for ix in range(len(res)):
                     res2.append(a + res[ix])
             res = res2
         return res
 
+'''
+Runtime: 28 ms, faster than 72.72% of Python3 online submissions for Letter Combinations of a Phone Number.
+Memory Usage: 14.1 MB, less than 5.88% of Python3 online submissions for Letter Combinations of a Phone Number.
+'''
+class Solution1:
+    def letterCombinations(self, digits: str) -> List[str]:
+        if (digits is None or len(digits) == 0):
+            return []
+        res = dials[digits[0]]
+        for cx in digits[1:]:
+            res2 = list()
+            for a in dials[cx]:
+                for ix in range(len(res)):
+                    res2.append(res[ix] + a)
+            res = res2
+        return res
+
+class Solution3:
+    def letterCombinations(self, digits):
+        ans = []
+        def helper(cadena, prof, string):
+            prof += 1
+            if prof == tam:
+                for digit in dic[string[0]]:
+                    ans.append(cadena+digit)
+            else:
+                for d in dic[string[0]]:
+                    helper(cadena+d, prof, string[1:])
+                        
+        if digits:
+            dic = { '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+                    '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+            tam = len(digits)
+            if tam > 1:
+                for d in dic[digits[0]]:
+                    helper(d, 1, digits[1:] )
+            else:
+                for i in dic[digits[0]]:
+                    ans.append(i)
+        return ans
+        
+'''
+Statistic report says 16ms, but submission report:
+
+Runtime: 32 ms, faster than 41.01% of Python3 online submissions for Letter Combinations of a Phone Number.
+Memory Usage: 13.9 MB, less than 5.88% of Python3 online submissions for Letter Combinations of a Phone Number.
+'''
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        dicts = {'1':'','2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz','10':''}
+        res = [""]
+        if digits is None or len(digits) == 0:
+            return []
+        for i in digits:
+            x = dicts[i]
+            temp = []
+            for j in x:
+                for k in res:
+                    temp.append(k+j)
+            res = temp
+        return(res)
+        
+        
 eq = Assrt.Eq()
 class Test(unittest.TestCase):
 

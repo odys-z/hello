@@ -20,7 +20,7 @@ class Eq(object):
     def __init__(self, params = {}):  # @UnusedVariable
         ''' '''
         pass
-
+    
     def strArr(self, a : List[str], b : List[str]):
         ''' assert a == b
             a will been modified after assertion
