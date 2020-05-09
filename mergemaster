@@ -2,6 +2,11 @@
 # https://stackoverflow.com/questions/15232000/git-ignore-files-during-merge
 # .gitattributes: docs/jsdoc merge=ours
 
-git config --global merge.ours.driver true
-git merge master
+# git config --global merge.ours.driver true
+# git merge master
+
+# https://stackoverflow.com/questions/14369378/how-to-make-git-ignore-a-directory-while-merging
+git merge --no-commit --no-ff master
+git reset -- docs/jsdoc
+
 
