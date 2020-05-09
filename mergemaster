@@ -1,0 +1,7 @@
+# https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#_merge_strategies
+# https://stackoverflow.com/questions/15232000/git-ignore-files-during-merge
+# .gitattributes: docs/jsdoc merge=ours
+
+git config --global merge.ours.driver true
+git merge master
+
