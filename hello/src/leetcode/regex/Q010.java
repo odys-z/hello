@@ -107,6 +107,8 @@ public class Q010 {
 	private String p;
 	private Boolean[][] ij;
 	/**DP
+	 * Runtime: 1 ms, faster than 100.00% of Java online submissions for Regular Expression Matching.
+	 * Memory Usage: 39.3 MB, less than 43.43% of Java online submissions for Regular Expression Matching.
 	 * @param s
 	 * @param p
 	 * @return
@@ -133,11 +135,9 @@ public class Q010 {
 				// m0
 				boolean m0 = slen > 0 && (p0 == s.charAt(i) || p0 == '.');
 				
-				if (i+1 < plen && p.charAt(i+1) == '*')
+				if (j+1 < plen && p.charAt(j+1) == '*')
 					ij[i][j] = matchDp(i, j+2)
 								|| m0 && matchDp(i+1, j);
-//				else ij[i][j] = m0 && (i+1 < slen ? matchDp(i+1, j+1) :
-//													matchDp(i, j+1));
 				else ij[i][j] = m0 && matchDp(i+1, j+1);
 			}
 		}
