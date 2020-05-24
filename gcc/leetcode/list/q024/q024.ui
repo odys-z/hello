@@ -14,13 +14,13 @@
    <string>24. Swap Nodes in Pairs</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="plainLeft">
+   <widget class="QPlainTextEdit" name="plainRev">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>231</width>
-      <height>131</height>
+      <x>10</x>
+      <y>360</y>
+      <width>301</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="cursor" stdset="0">
@@ -31,9 +31,9 @@
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>40</y>
-      <width>231</width>
-      <height>131</height>
+      <y>10</y>
+      <width>301</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="cursor" stdset="0">
@@ -41,6 +41,26 @@
     </property>
     <property name="readOnly">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainUp">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>9</y>
+      <width>291</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>10</y>
+      <width>104</width>
+      <height>541</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -53,9 +73,107 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actNew"/>
+    <addaction name="actOpen"/>
+    <addaction name="actClose"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>&amp;Test</string>
+    </property>
+    <addaction name="actRun"/>
+    <addaction name="actCases"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menuTest"/>
+   <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actNew"/>
+   <addaction name="actOpen"/>
+   <addaction name="actClose"/>
+  </widget>
+  <action name="actNew">
+   <property name="icon">
+    <iconset resource="ico.qrc">
+     <normaloff>:/actions/imgs/favicon.ico</normaloff>:/actions/imgs/favicon.ico</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>new session</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="icon">
+    <iconset resource="ico.qrc">
+     <normaloff>:/actions/imgs/arrow_up.png</normaloff>:/actions/imgs/arrow_up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="icon">
+    <iconset resource="ico.qrc">
+     <normaloff>:/actions/imgs/arrow_down.png</normaloff>:/actions/imgs/arrow_down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actRun">
+   <property name="text">
+    <string>&amp;Run</string>
+   </property>
+  </action>
+  <action name="actCases">
+   <property name="text">
+    <string>&amp;Cases</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="ico.qrc"/>
+ </resources>
  <connections/>
 </ui>

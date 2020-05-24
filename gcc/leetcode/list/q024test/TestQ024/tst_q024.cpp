@@ -16,6 +16,6 @@ void q024::test_case1()
     QFAIL("... ###### ------------");
 }
 
-QTEST_APPLESS_MAIN(q024)
+//QTEST_APPLESS_MAIN(q024)
 
 // #include "tst_q024.moc"
