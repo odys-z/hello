@@ -23,6 +23,6 @@ bool Singlist::eq (int alen, int a[], ListNode* b) {
     if (ax < alen || b != NULL)
         return false;
     if (ax >= alen && b == NULL)
-        return false;
-    return true;
+        return true;
+    return false;
 }
