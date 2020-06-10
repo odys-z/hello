@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "singlist.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Q024; }
 QT_END_NAMESPACE

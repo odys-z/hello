@@ -3,15 +3,15 @@
 #include "tst_q024.h"
 
 
-q024::~q024()
+Q024test::~Q024test()
 {  }
 
-q024::q024()
+Q024test::Q024test()
 {
-    this->q24 = new q024();
+    this->s = new Solution();
 }
 
-void q024::test_case1()
+void Q024test::test_case()
 {
     QFAIL("... ###### ------------");
 }
