@@ -14,12 +14,22 @@ If this file named as 'pyproj.py', you won't import Proj from pyproj.
 from pyproj import Proj, transform
 
 def main():
+    print('http://geojson.io}')
+
     epsg = Epsg('epsg:3857', 'epsg:4326')
     x, y = epsg.convert(-11705274.6374, 4826473.6922)
     print(x, y)
 
     x, y = epsg.inverse(x, y)
     print(x, y)
+
+    print('\n成金青立交桥')
+    x, y = epsg.convert(11598279.62, 3598920.63)
+    print('"coordinates": [ {1}, {0} ]'.format(x, y))
+
+    print('\n螺狮坝立交桥桥')
+    x, y = epsg.convert(11599843.29, 3590647.533)
+    print('"coordinates": [ {1}, {0} ]'.format(x, y))
 
 class Epsg(object):
     '''
