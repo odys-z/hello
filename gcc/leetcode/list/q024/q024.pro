@@ -17,22 +17,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    q024.cpp \
-    tst_q024.cpp
+    q024.cpp
 
 HEADERS += \
     q024.h
-
-FORMS += \
-    q024.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+DISTFILES += \
+    default.json
+
 RESOURCES += \
     ico.qrc
 
-DISTFILES += \
-    default.json
+FORMS += \
+    q024.ui
