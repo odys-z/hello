@@ -17,11 +17,33 @@ def main():
     print('http://geojson.io}')
 
     epsg = Epsg('epsg:3857', 'epsg:4326')
+    x, y = epsg.convert(0, 0) # 0, 0
+    print('3857: x, y [0, 0], -> 4326: {1}, {0}'.format(x, y))
+
+    x, y = epsg.inverse(0, 1) # 111319.49, 0
+    print('4326: x, y [0, 1], -> 3857: {0}, {1}'.format(x, y))
+
+    x, y = epsg.inverse(1, 0) # 0, 111325.14
+    print('4326: x, y [1, 0], -> 3857: {0}, {1}'.format(x, y))
+
+    x, y = epsg.inverse(0, 180) # 20037508.24, 0
+    print('4326: x, y [0, 180], -> 3857: {0}, {1}'.format(x, y))
+
+    x, y = epsg.inverse(0, -180)
+    print('4326: x, y [0, -180], -> 3857: {0}, {1}'.format(x, y))
+
+    x, y = epsg.inverse(0, 360)
+    print('4326: x, y [0, 360], -> 3857: {0}, {1}'.format(x, y))
+
+    x, y = epsg.inverse(0, 90)
+    print('4326: x, y [0, 90], -> 3857: {0}, {1}'.format(x, y))
+
+    print('\n3857: x -11705274.637, y 4826473.6922 ->')
     x, y = epsg.convert(-11705274.6374, 4826473.6922)
-    print(x, y)
+    print('4326: {1}, {0}'.format(x, y))
 
     x, y = epsg.inverse(x, y)
-    print(x, y)
+    print('3857: {0}, {1}'.format(x, y))
 
     print('\n成金青立交桥')
     x, y = epsg.convert(11598279.62, 3598920.63)
