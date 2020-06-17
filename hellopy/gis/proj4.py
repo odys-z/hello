@@ -12,8 +12,9 @@ If this file named as 'pyproj.py', you won't import Proj from pyproj.
 '''
 # from pyproj import Proj, transform
 from pyproj import Proj, transform
+import sys
 
-def main():
+def test0():
     print('http://geojson.io}')
 
     epsg = Epsg('epsg:3857', 'epsg:4326')
@@ -66,16 +67,36 @@ def main():
         x, y = epsg.convert(p[0], p[1])
         print('[ {1}, {0} ],'.format(x, y))
 
+def north4thRing():
+    epsg = Epsg('epsg:3857', 'epsg:4326')
+    for xy in [ [11578238.61,3604584.74], [11578499.09,3604564.42], [11579118.56,3604502.63],
+                [11579607.44,3604468.45], [11579607.44,3600000], [11579000,3600000] ]:
+        x, y = epsg.convert(xy[0], xy[1])
+        print('[ {1}, {0} ],'.format(x, y))
+
+def c4326_3857(argv):
+    epsg = Epsg( 'epsg:4326', 'epsg:3857' )
+    y, x = float(argv[2]), float(argv[3])
+    # 104.01623725891113, 30.58287876835149
+    x, y = epsg.convert(x, y)
+    print('{0}, {1}'.format(x, y))
+
+def c3857_4326(argv):
+    epsg = Epsg( 'epsg:3857', 'epsg:4326' )
+    x, y = float(argv[2]), float(argv[3])
+    # 104.01623725891113, 30.58287876835149
+    y, x = epsg.convert(x, y)
+    print('{0}, {1}'.format(x, y))
 
 class Epsg(object):
     '''
-        usage: 
+        usage:
         ------
             epsg = Epsg('epsg:3857', 'epsg:4326')
             x, y = epsg.convert(-11705274.6374, 4826473.6922)
             x, y: 39.72785727727917 -105.15027111593008
     '''
-       
+
     def __init__(self, fromESPG, toESPG):
         # inProj = Proj('epsg:3857')
         # outProj = Proj('epsg:4326')
@@ -90,5 +111,21 @@ class Epsg(object):
     def inverse(self, x, y):
         x2, y2 = transform(self.epsg1, self.epsg0, x, y)
         return x2, y2
+
+options = {0 : test0,        # default
+           1 : north4thRing, # 四环路北段
+		   2 : c4326_3857,
+           3 : c3857_4326,
+}
+
+def main():
+	if len(sys.argv) > 1:
+		i = int(sys.argv[1])
+		if i in options:
+			options[i](sys.argv)
+		else:
+			print(str(options))
+	else:
+		test0()
 
 main()
