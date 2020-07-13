@@ -135,17 +135,21 @@ options = {0 : test0,        # default
            1 : north4thRing, # 四环路北段
            2 : c4326_3857,
            3 : c3857_4326,
-           4: ring4Circle,   # ring4 light path
+           4 : ring4Circle,   # ring4 light path
 }
 
 def main():
-	if len(sys.argv) > 1:
-		i = int(sys.argv[1])
-		if i in options:
-			options[i](sys.argv)
-		else:
-			print(str(options))
-	else:
-		test0()
+    if len(sys.argv) > 1:
+        i = int(sys.argv[1])
+        if i in options:
+            options[i](sys.argv)
+        else:
+            print(str(options))
+    else:
+        for x in options:
+            print(x, options[x].__name__)
+        print('example:')
+        print('python3 proj4.py 2 104.063615662968 30.6517995646074')
+        print('python3 proj4.py 3 11584308.705708526, 3587610.77404827764')
 
 main()
