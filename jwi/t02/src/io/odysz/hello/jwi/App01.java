@@ -16,7 +16,8 @@ public class App01 {
 
 	public static void main(String[] args) throws IOException {
 		// construct the URL to the Wordnet dictionary directory
-		String wnhome = System.getenv( "WNHOME" ) ;
+		// String wnhome = System.getenv( "WNHOME" ) ;
+		String wnhome = args[0];
 		String path = wnhome + File.separator + "dict-3.1";
 		URL url = new URL ( "file", null, path ) ;
 		// construct the dictionary object and open it
@@ -31,6 +32,10 @@ public class App01 {
 		System.out.println ( "Id = " + wordID ) ;
 		System.out.println ( "Lemma = " + word.getLemma() ) ;
 		System.out.println ( "Gloss = " + word.getSynset().getGloss () ) ;
+		
+		for (IWord w : word.getSynset().getWords()) {
+			System.out.println(w.getLemma());
+		}
 	}
 
 	IDictionary findeSynset(String word) {
