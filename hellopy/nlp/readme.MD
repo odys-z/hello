@@ -34,7 +34,8 @@ see https://stackoverflow.com/questions/2112715/how-do-i-fix-pydev-undefined-var
 
 # related resource
 
-https://wordnet.princeton.edu/related-projects
+[Princetion Wordnet](https://wordnet.princeton.edu/related-projects)
 
-http://projects.csail.mit.edu/jwi/
+[MIT JWI](http://projects.csail.mit.edu/jwi/)
 
+[Python Lib: WordFreq](https://pypi.org/project/wordfreq/#description)
