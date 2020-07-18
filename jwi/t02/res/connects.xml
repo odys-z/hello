@@ -3,17 +3,19 @@
   <t id="drvmnger" pk="id" columns="id,type,isdef,src,usr,pswd,dbg,smtcs">
   	<!-- drvmnger table is used to configure basic db connection, for pooled datasource, see bdcp -->
   	<!-- smtcs: semantics configuration used only for the connection.
-  		(And a global semantics configuration?) -->
+  		(And a global semantics configuration?)
+  		Note: path is start from where the current location when starting the process.
+  		-->
   	<c>
   		<id>wn-sqlite</id>
   		<type>sqlite</type>
-  		<isdef></isdef>
+  		<isdef>true</isdef>
   		<src>w1068.e-4.db</src>
   		<usr>test</usr>
   		<pswd>test</pswd>
   		<!-- enable sql printing -->
   		<dbg>true</dbg>
-  		<smtcs>wn-sqlite.xml</smtcs>
+  		<smtcs>res/wn-sqlite.xml</smtcs>
   	</c>
   </t>
 
