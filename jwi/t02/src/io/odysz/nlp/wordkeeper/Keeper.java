@@ -36,7 +36,7 @@ public class Keeper {
 			IUser robot = new TestRobot();
 			ArrayList<String> sqls = new ArrayList<String>(1);
 			sctx.delete(tabl)
-				.where("!=", "word", "'hhhhhh'") // fake condition, actually we want delete all
+				.where("!=", "word", "'hhhhhh'") // fake condition, actually we want to delete all
 				.commit(dbcontx, sqls);
 			Connects.commit(robot, sqls);
 			
