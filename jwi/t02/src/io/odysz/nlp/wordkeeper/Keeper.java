@@ -28,6 +28,19 @@ public class Keeper {
 	 * @param conn
 	 * @throws Exception 
 	 */
+	public static void initSqlite(String xmlDir) throws Exception {
+		Connects.init(xmlDir);
+		DATranscxt sctx = new DATranscxt(Connects.defltConn());
+		IUser jrobot = new TestRobot();
+		SemanticObject s = sctx.select(wordtbl, "w")
+				.col("word")
+				.col("freq")
+				.where_("=", "w.word", "the")
+				.rs(sctx.instancontxt(sctx.basiconnId(), jrobot));
+			
+			AnResultset rs = (AnResultset) s.rs(0);
+			rs.printSomeData(false, 1, "word", "freq");
+	}
 	
 	public static void installFrequency(String wordpath, String tabl, String conn) throws Exception {
 		if (wordpath != null && tabl != null) {
@@ -56,18 +69,5 @@ public class Keeper {
 			reader.close();
 		}
 	}
-	
-	public static void initSqlite(String xmlDir) throws Exception {
-		Connects.init(xmlDir);
-		DATranscxt sctx = new DATranscxt(Connects.defltConn());
-		IUser jrobot = new TestRobot();
-		SemanticObject s = sctx.select(wordtbl, "w")
-				.col("word")
-				.col("freq")
-				.where_("=", "w.word", "the")
-				.rs(sctx.instancontxt(sctx.basiconnId(), jrobot));
-			
-			AnResultset rs = (AnResultset) s.rs(0);
-			rs.printSomeData(false, 1, "word", "freq");
-	}
+
 }
