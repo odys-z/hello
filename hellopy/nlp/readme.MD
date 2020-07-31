@@ -9,10 +9,12 @@ https://www.nltk.org/howto/wordnet.html
 
 # install data
 
+```
 >>> import nltk
 >>> nltk.download('wordnet')
 [nltk_data] Error loading wordnet: <urlopen error [Errno 111]
 [nltk_data]     Connection refused>
+```
 
 download word.zip:
 
