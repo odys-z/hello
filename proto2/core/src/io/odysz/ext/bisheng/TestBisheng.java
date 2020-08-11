@@ -19,10 +19,12 @@ import io.odysz.ext.CamRoller;
  * Created by ody on 5/17/17.
  */
 public class TestBisheng implements ApplicationListener {
+    private static final int GlyphTex0 = 0;
 
     /**Distance Field Font shader. */
     private static class BishengShader extends ShaderProgram {
-        public BishengShader () {
+
+		public BishengShader () {
 			super(Gdx.files.internal("fonts/distancefield.vert"),
                   Gdx.files.internal("fonts/distancefield.frag"));
 			if (!isCompiled()) {
@@ -35,7 +37,7 @@ public class TestBisheng implements ApplicationListener {
 			float delta = 0.5f * MathUtils.clamp(weight, 0, 1);
 			setUniformf("u_lower", 0.5f - delta);
 			setUniformf("u_upper", 0.5f + delta);
-            setUniformi("u_texture", 0);
+            setUniformi("u_texture", GlyphTex0);
 		}
 	}
 
@@ -48,7 +50,7 @@ public class TestBisheng implements ApplicationListener {
 	private BishengShader sdfShader;
 
 	private Renderable renderable;
-	private Vector3 center = new Vector3(0, 0, 0);
+	private Vector3 center = new Vector3(2, 45, 0);
 
     /**Create camera, model, attatch bisheng shader;
      * Bind a string of glyph to the model.
@@ -63,7 +65,7 @@ public class TestBisheng implements ApplicationListener {
 		camera.position.set(0, 0, 1500);
 		camera.lookAt(0, 0, 0);
 		camera.near = 0.1f;
-		camera.far = -40000f;
+		camera.far = 40000f;
 
 		inputProcessor = new CamRoller(camera);
 		Gdx.input.setInputProcessor(inputProcessor);
@@ -71,7 +73,7 @@ public class TestBisheng implements ApplicationListener {
         spriteBatch = new SpriteBatch();
 //		distanceFieldTexture = new Texture(Gdx.files.internal("fonts/verdana39distancefield.png"), true);
 		glib = new GlyphLib(Gdx.files.internal("fonts/verdana39distancefield.fnt"), false);
-		Model typoModel = glib.bindFrame("C", Color.RED, 0);
+		Model typoModel = glib.bindFrame("C-X", Color.RED, GlyphTex0);
         typoModel.calculateTransforms();
 
         renderable = new Renderable();
@@ -85,6 +87,7 @@ public class TestBisheng implements ApplicationListener {
             System.out.println(sdfShader.getLog());
 
         renderable.worldTransform.translate(center);
+        sdfShader.bind();
         sdfShader.setUniformMatrix("modelWorld", renderable.worldTransform);
 
         Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
@@ -111,7 +114,8 @@ public class TestBisheng implements ApplicationListener {
 
         spriteBatch.enableBlending();
         spriteBatch.begin();
-        sdfShader.bind();
+//        sdfShader.bind();
+//        sdfShader.setUniformMatrix("modelWorld", renderable.worldTransform);
 
         //spriteBatch.draw(texBase, 0, 0);
         //spriteBatch.flush();

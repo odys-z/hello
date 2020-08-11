@@ -11,7 +11,6 @@ varying vec2 v_texCoord;
 
 void main() {
 	gl_Position = u_projTrans * modelWorld * a_position;
-	//gl_Position = u_projTrans * a_position;
 	v_texCoord = a_texCoord0;
 	v_color = a_color;
 }

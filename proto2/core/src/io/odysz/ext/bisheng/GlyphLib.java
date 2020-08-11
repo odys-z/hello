@@ -38,7 +38,7 @@ public class GlyphLib implements Disposable {
 
    @Override
     public void dispose() {
-       System.out.println("TODO dispose...");
+       System.out.println("dispose...");
    }
 
 	public GlyphLib (FileHandle fontFile, boolean flip) {
@@ -60,14 +60,13 @@ public class GlyphLib implements Disposable {
 		char ch = str.charAt(0);
 		Glyph glyph = data.getGlyph(ch);
 
-		int x = glyph.xoffset;
-		int y = glyph.yoffset;
-		x = 10; y = 10; // debug
+		int x = glyph.xoffset; // C: -2
+		int y = glyph.yoffset; // C: -45
 
 		float width = glyph.width, height = glyph.height;
 		final float u = glyph.u, u2 = glyph.u2, v = glyph.v, v2 = glyph.v2;
         // FIXME calculate width of the string
-		final float x2 = x + width, y2 = y + height;
+		final float x2 = x + width * str.length(), y2 = y + height;
 
 		if (vis == null) {
 			vis = new VertexInfo[4];
@@ -185,9 +184,15 @@ public class GlyphLib implements Disposable {
                 for (int p = 0; p < pageCount; p++) {
                     // page id=0 file="verdana39distancefield.png"
                     line = reader.readLine();
-                    if (line == null) throw new GdxRuntimeException("Missing font page image.");
+                    if (line == null) {
+                    	reader.close();
+                    	throw new GdxRuntimeException("Missing font page image.");
+                    }
                     String[] pageLine = line.split(" ", 4);
-                    if (!pageLine[2].startsWith("file=")) throw new GdxRuntimeException("Missing: page/file");
+                    if (!pageLine[2].startsWith("file=")) {
+                    	reader.close();
+                    	throw new GdxRuntimeException("Missing: page/file");
+                    }
 
                     // Expect ID to mean "index".
                     if (pageLine[1].startsWith("id=")) {
@@ -197,6 +202,7 @@ public class GlyphLib implements Disposable {
                                 throw new GdxRuntimeException("Page IDs must be starting at 0, increasing and continues: "
                                         + pageLine[1].substring(3));
                         } catch (NumberFormatException ex) {
+                        	reader.close();
                             throw new GdxRuntimeException("Invalid page id: " + pageLine[1].substring(3), ex);
                         }
                     }
