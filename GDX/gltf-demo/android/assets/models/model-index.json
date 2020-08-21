@@ -1,152 +1,103 @@
 [
-  {
-  	"name": "Morphing",
-    "variants": {
-      "glTF": "morphing.gltf"
-    }
+  { "name": "Morphing",
+    "variants": { "glTF": "morphing.gltf" }
   },
-  {
-    "name": "BoomBox",
+  { "name": "BoomBox-Loc",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": { "glTF-Binary": "BoomBox.gltf" }
+  },
+  { "name": "Avocado-Loc",
+    "screenshot": "screenshot/screenshot.jpg",
+    "variants": { "glTF-Binary": "Avocado.glb" }
+  },
+  { "name": "BoomBox",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/BoomBox/",
-    "variants": {
-      "glTF-Binary": "BoomBox.glb"
-    }
+    "variants": { "glTF-Binary": "BoomBox.gltf" }
   },
-  {
-    "name": "2CylinderEngine",
+  { "name": "2CylinderEngine",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/2CylinderEngine/",
-    "variants": {
-      "glTF-Binary": "2CylinderEngine.glb"
-    }
+    "variants": { "glTF-Binary": "2CylinderEngine.glb" }
   },
-  {
-    "name": "AntiqueCamera",
+  { "name": "AntiqueCamera",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/AntiqueCamera/",
-    "variants": {
-      "glTF-Binary": "AntiqueCamera.glb"
-    }
+    "variants": { "glTF-Binary": "AntiqueCamera.glb" }
   },
-  {
-    "name": "Avocado",
+  { "name": "Avocado",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Avocado/",
-    "variants": {
-      "glTF-Binary": "Avocado.glb"
-    }
+    "variants": { "glTF-Binary": "Avocado.glb" }
   },
-  {
-    "name": "BarramundiFish",
+  { "name": "BarramundiFish",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/BarramundiFish/",
-    "variants": {
-      "glTF-Binary": "BarramundiFish.glb"
-    }
+    "variants": { "glTF-Binary": "BarramundiFish.glb" }
   },
-  {
-    "name": "BrainStem",
+  { "name": "BrainStem",
     "screenshot": "screenshot/screenshot.gif",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/BrainStem/",
-    "variants": {
-      "glTF-Binary": "BrainStem.glb"
-    }
+    "variants": { "glTF-Binary": "BrainStem.glb" }
   },
-  {
-    "name": "Buggy",
+  { "name": "Buggy",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Buggy/",
-    "variants": {
-      "glTF-Binary": "Buggy.glb"
-    }
+    "variants": { "glTF-Binary": "Buggy.glb" }
   },
-  {
-    "name": "CesiumMan",
+  { "name": "CesiumMan",
     "screenshot": "screenshot/screenshot.gif",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/CesiumMan/",
-    "variants": {
-      "glTF-Binary": "CesiumMan.glb"
-    }
+    "variants": { "glTF-Binary": "CesiumMan.glb" }
   },
-  {
-    "name": "CesiumMilkTruck",
+  { "name": "CesiumMilkTruck",
     "screenshot": "screenshot/screenshot.gif",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/CesiumMilkTruck/",
-    "variants": {
-      "glTF-Binary": "CesiumMilkTruck.glb"
-    }
+    "variants": { "glTF-Binary": "CesiumMilkTruck.glb" }
   },
-  {
-    "name": "Corset",
+  { "name": "Corset",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Corset/",
-    "variants": {
-      "glTF-Binary": "Corset.glb"
-    }
+    "variants": { "glTF-Binary": "Corset.glb" }
   },
-  {
-    "name": "DamagedHelmet",
+  { "name": "DamagedHelmet",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/DamagedHelmet/",
-    "variants": {
-      "glTF-Binary": "DamagedHelmet.glb"
-    }
+    "variants": { "glTF-Binary": "DamagedHelmet.glb" }
   },
-  {
-    "name": "Duck",
+  { "name": "Duck",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/",
-    "variants": {
-      "glTF-Binary": "Duck.glb"
-    }
+    "variants": { "glTF-Binary": "Duck.glb" }
   },
-  {
-    "name": "GearboxAssy",
+  { "name": "GearboxAssy",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/GearboxAssy/",
-    "variants": {
-      "glTF-Binary": "GearboxAssy.glb"
-    }
+    "variants": { "glTF-Binary": "GearboxAssy.glb" }
   },
-  {
-    "name": "Lantern",
+  { "name": "Lantern",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Lantern/",
-    "variants": {
-      "glTF-Binary": "Lantern.glb"
-    }
+    "variants": { "glTF-Binary": "Lantern.glb" }
   },
-  {
-    "name": "Monster",
+  { "name": "Monster",
     "screenshot": "screenshot/screenshot.gif",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Monster/",
-    "variants": {
-      "glTF-Binary": "Monster.glb"
-    }
+    "variants": { "glTF-Binary": "Monster.glb" }
   },
-  {
-    "name": "ReciprocatingSaw",
+  { "name": "ReciprocatingSaw",
     "screenshot": "screenshot/screenshot.png",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/ReciprocatingSaw/",
-    "variants": {
-      "glTF-Binary": "ReciprocatingSaw.glb"
-    }
+    "variants": { "glTF-Binary": "ReciprocatingSaw.glb" }
   },
-  {
-    "name": "VC",
+  { "name": "VC",
     "screenshot": "screenshot/screenshot.gif",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/VC/",
-    "variants": {
-      "glTF-Binary": "VC.glb"
-    }
+    "variants": { "glTF-Binary": "VC.glb" }
   },
-  {
-    "name": "WaterBottle",
+  { "name": "WaterBottle",
     "screenshot": "screenshot/screenshot.jpg",
     "url": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/WaterBottle/",
-    "variants": {
-      "glTF-Binary": "WaterBottle.glb"
-    }
+    "variants": { "glTF-Binary": "WaterBottle.glb" }
   }
 ]

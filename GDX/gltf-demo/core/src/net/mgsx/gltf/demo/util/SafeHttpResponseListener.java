@@ -1,6 +1,7 @@
 package net.mgsx.gltf.demo.util;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net.HttpResponse;
@@ -12,7 +13,12 @@ abstract public class SafeHttpResponseListener implements HttpResponseListener
 	@Override
 	public void handleHttpResponse(HttpResponse httpResponse) {
 		try {
-			final byte [] bytes = StreamUtils.copyStreamToByteArray(httpResponse.getResultAsStream());
+			InputStream inpt = httpResponse.getResultAsStream();
+			if (inpt == null)
+				throw new IOException(String.format(httpResponse.getHeaders().toString()));
+
+			final byte [] bytes = StreamUtils.copyStreamToByteArray(inpt);
+
 			Gdx.app.postRunnable(new Runnable() {
 				@Override
 				public void run() {

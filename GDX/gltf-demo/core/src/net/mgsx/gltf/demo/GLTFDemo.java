@@ -82,8 +82,7 @@ import net.mgsx.gltf.scene3d.utils.IBLBuilder;
 import net.mgsx.gltf.scene3d.utils.LightUtils;
 import net.mgsx.gltf.scene3d.utils.LightUtils.LightsInfo;
 
-public class GLTFDemo extends ApplicationAdapter
-{
+public class GLTFDemo extends ApplicationAdapter {
 	// change this to test asset manager or direct loading
 	private static boolean USE_ASSET_MANAGER = true;
 	
@@ -334,9 +333,7 @@ public class GLTFDemo extends ApplicationAdapter
 		invalidateShaders();
 	}
 
-	
-	private void loadModelIndex() 
-	{
+	private void loadModelIndex() {
 		rootFolder = Gdx.files.internal(samplesPath);	
 		
 		String indexFilename = Gdx.app.getType() == ApplicationType.WebGL || Gdx.app.getType() == ApplicationType.Android ? "model-index-web.json" : "model-index.json";
@@ -362,8 +359,7 @@ public class GLTFDemo extends ApplicationAdapter
 		}
 	}
 
-	private void createUI()
-	{
+	private void createUI() {
 		stage = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stage);
 		skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
