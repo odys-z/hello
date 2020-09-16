@@ -19,7 +19,7 @@ Purge first:
 run bin/cmake-gui or use CLI:
 
 ~~~
-	bin/cmake --version
+    bin/cmake --version
 ~~~
 
 ### 2. install GLFW from source
@@ -75,4 +75,4 @@ Go test folder and make test:
 
 [Make sure Makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop).
 
-If everything ok, the window will show a ratating trangle.
+If everything ok, the window will show a rotating trangle.
