@@ -1,10 +1,10 @@
-# About
+## About
 
 This sub project is used for GLFW & OpenGl practicing.
 
-# Quick Start (Ubuntu)
+## Quick Start (Ubuntu)
 
-1. Install CMake
+### 1. Install CMake
 
 Reference [Install CMake on Ubuntu](https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line)
 
@@ -21,6 +21,8 @@ run bin/cmake-gui or use CLI:
 ~~~
 	bin/cmake --version
 ~~~
+
+### 2. install GLFW from source
 
 According to [CMake doc: Compiling GLFW](https://www.glfw.org/docs/latest/compile.html),
 install xorg-dev:
@@ -54,7 +56,8 @@ Installation output:
 	-- Up-to-date: /usr/local/include/GLFW/glfw3.h
 	-- Up-to-date: /usr/local/lib/cmake/glfw3/glfw3Config.cmake
 	-- Up-to-date: /usr/local/lib/cmake/glfw3/glfw3ConfigVersion.cmake
-	-- Old export file "/usr/local/lib/cmake/glfw3/glfw3Targets.cmake" will be replaced.  Removing files [/usr/local/lib/cmake/glfw3/glfw3Targets-noconfig.cmake].
+	-- Old export file "/usr/local/lib/cmake/glfw3/glfw3Targets.cmake" will be replaced.
+	Removing files [/usr/local/lib/cmake/glfw3/glfw3Targets-noconfig.cmake].
 	-- Installing: /usr/local/lib/cmake/glfw3/glfw3Targets.cmake
 	-- Installing: /usr/local/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
 	-- Installing: /usr/local/lib/pkgconfig/glfw3.pc
@@ -70,6 +73,6 @@ Go test folder and make test:
     make test
 ~~~
 
-[Make sure makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop).
+[Make sure Makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop).
 
 If everything ok, the window will show a ratating trangle.
