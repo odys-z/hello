@@ -1,35 +1,50 @@
+# About
 
-https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line
+This sub project is used for GLFW & OpenGl practicing.
 
-sudo apt remove --purge --auto-remove cmake
+# Quick Start (Ubuntu)
+
+1. Install CMake
+
+Reference [Install CMake on Ubuntu](https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line)
+
+Purge first:
+
+~~~
+    sudo apt remove --purge --auto-remove cmake
+~~~
 
 [download cmake-\*-Linux-x86_64.tar.gz](https://cmake.org/download/)
 
-run bin/cmake-gui or
+run bin/cmake-gui or use CLI:
 
 ~~~
 	bin/cmake --version
 ~~~
 
-According to [Compiling GLFW](https://www.glfw.org/docs/latest/compile.html),
-install xorg-dev.
+According to [CMake doc: Compiling GLFW](https://www.glfw.org/docs/latest/compile.html),
+install xorg-dev:
 
 ~~~
     sudo apt-get install xorg-dev
 ~~~
 
+Then configure CMake:
+
 ~~~
     bin/ccmake .
 ~~~
 
-and turn on BUILD_SHARED_LIBS
+and turn on BUILD_SHARED_LIBS.
+
+And install GLFW:
 
 ~~~
 	make # try again after ccmake . skipped first time
 	sudo make install
 ~~~
 
-Installing output:
+Installation output:
 
 ~~~
 	Install the project...
@@ -48,6 +63,13 @@ Installing output:
 	-- Installing: /usr/local/lib/libglfw.so
 ~~~
 
-Go test and make test.
+Go test folder and make test:
 
-[Make sure makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop)
+~~~
+    cd test
+    make test
+~~~
+
+[Make sure makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop).
+
+If everything ok, the window will show a ratating trangle.
