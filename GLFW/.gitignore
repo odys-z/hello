@@ -1,0 +1,6 @@
+*.zip
+*.gz
+*.o
+*-bin
+glfw-3*
+cmake-3*
