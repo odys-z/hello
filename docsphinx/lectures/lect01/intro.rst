@@ -203,12 +203,47 @@ A set is a collection which is unordered and unindexed. In Python, sets are writ
     acsl.update(["C#", "Javascript", "R"])
 ..
 
+And More
+________
+
+More things you may want to know:
+
+Lambda, RegEx, Class, Module, Math, Pip ...
+
+Resource: `ptyon.org <https://www.python.org/>`_,
+especially the `Beginner's Guide <https://wiki.python.org/moin/BeginnersGuide/NonProgrammers>`_
+
 Exercise
 --------
 
 Time for fun...
 
-Task 1: Guess the number
+Task 1: Fibonacci Number
+________________________
+
+Have user input a number n, then print the n-th Fibonacci number.
+
+Tip 1:
+
+Pick the user input::
+
+    # Return is the user input
+    input("Message goes here")
+
+Tip 2:
+
+For loop::
+
+    for x in range(1, n)
+        print(x)
+
+While loop::
+
+    while true
+       if x >= n:
+           break
+
+Task 2: Guess the number
 ________________________
 
 The program generates a random number from 1 to 10, or 1 to 100 any range that
@@ -278,6 +313,47 @@ difference between the two numbers.
         start_game()
 ..
 
+Task 3: Tic Tac Toe
+___________________
 
-Task 2: Read your mind
-______________________
+.. image:: ../img/01-tic-tac-toe.png
+
+.. image:: ../img/01-tic-tac-toe-cli.png
+
+Homework: Read your mind
+------------------------
+
+Prerequisite
+____________
+
+You need a better IDE - PyDev
+
+1. Download Eclipse
+
+.. image:: ../img/01-download-eclipse.png
+
+2. Install PyDev Plugin.
+
+Install via Eclipse Marketplace::
+
+    Help -> Eclipse Marketplace...
+
+Search for *PyDev*.
+
+.. image:: ../img/01-eclipse-plugin.png
+
+About the game
+______________
+
+Find out what's the game:
+
+`example: a javascript implementation <https://www.cnblogs.com/sgs123/p/10829944.html>`_
+
+.. note:: It's essential to understand math behind the game.
+    To be a good programmer, you almost always thinks in math.
+..
+
+Goal
+____
+
+Print it out in the tic-tac-toe style. Show what's your program can guess.

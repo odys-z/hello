@@ -72,3 +72,8 @@ Intermediate, and Senior Divisions are as follows:
 `Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
 
 `What Does This Program Do? <http://www.categories.acsl.org/wiki/index.php?title=What_Does_This_Program_Do%3F>`_
+
+Sample Questions
+----------------
+
+`Sample Problems, American Computer Science League <https://www.acsl.org/acsl/samples.htm> `_

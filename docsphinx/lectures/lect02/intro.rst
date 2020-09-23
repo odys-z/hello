@@ -1,4 +1,17 @@
-Lec 02: Data Structure
-======================
+Lec 02: Things you already know
+===============================
 
-.. attention:: This lecture may be re-scheduled according to mandatory curriculum.
+Boolean Algebra
+---------------
+
+ex 1.
+
+Computer Number Systems
+-----------------------
+
+ex 2.
+
+Digital Electronics
+-------------------
+
+ex 3.

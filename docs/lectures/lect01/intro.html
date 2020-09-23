@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lectures" href="../index.html"/>
-        <link rel="next" title="Lec 02: Data Structure" href="../lect02/intro.html"/>
+        <link rel="next" title="Lec 02: Things you already know" href="../lect02/intro.html"/>
         <link rel="prev" title="Lec 0: About ACSL" href="../lect00/intro.html"/> 
 
   
@@ -99,16 +99,30 @@
 <li class="toctree-l4"><a class="reference internal" href="#tuple">Tuple</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#map-python-dict">Map (Python Dict)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set">Set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#and-more">And More</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#exercise">Exercise</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#task-1-guess-the-number">Task 1: Guess the number</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#task-2-read-your-mind">Task 2: Read your mind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-1-fibonacci-number">Task 1: Fibonacci Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-2-guess-the-number">Task 2: Guess the number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-3-tic-tac-toe">Task 3: Tic Tac Toe</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#homework-read-your-mind">Homework: Read your mind</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#about-the-game">About the game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#goal">Goal</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../lect02/intro.html">Lec 02: Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect02/intro.html">Lec 02: Things you already know</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03/intro.html">Lec 03: Assembly + Lisp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect04/intro.html">Lec 04: Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect05/intro.html">Lec 05: Matrix &amp; Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect06/intro.html">Lec 06: Recursive Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect07/intro.html">Lec 07: (Bit) String &amp; RegEx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect08/intro.html">Lec 08: What Does This Program Do?</a></li>
 </ul>
 </li>
 </ul>
@@ -318,12 +332,41 @@ written with round brackets. (Vector)</p>
 <h3>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
 <p>A set is a collection which is unordered and unindexed. In Python, sets are written with curly brackets.</p>
 </div>
+<div class="section" id="and-more">
+<h3>And More<a class="headerlink" href="#and-more" title="Permalink to this headline">¶</a></h3>
+<p>More things you may want to know:</p>
+<p>Lambda, RegEx, Class, Module, Math, Pip …</p>
+<p>Resource: <a class="reference external" href="https://www.python.org/">ptyon.org</a>,
+especially the <a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Beginner’s Guide</a></p>
+</div>
 </div>
 <div class="section" id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
 <p>Time for fun…</p>
-<div class="section" id="task-1-guess-the-number">
-<h3>Task 1: Guess the number<a class="headerlink" href="#task-1-guess-the-number" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="task-1-fibonacci-number">
+<h3>Task 1: Fibonacci Number<a class="headerlink" href="#task-1-fibonacci-number" title="Permalink to this headline">¶</a></h3>
+<p>Have user input a number n, then print the n-th Fibonacci number.</p>
+<p>Tip 1:</p>
+<p>Pick the user input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return is the user input</span>
+<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Message goes here&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tip 2:</p>
+<p>For loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span>
+   <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+       <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="task-2-guess-the-number">
+<h3>Task 2: Guess the number<a class="headerlink" href="#task-2-guess-the-number" title="Permalink to this headline">¶</a></h3>
 <p>The program generates a random number from 1 to 10, or 1 to 100 any range that
 is specified and the user must guess the number after a hint from the computer.
 Every time a user’s guess is wrong they are prompted with more hints to make it
@@ -389,8 +432,44 @@ come from.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="task-2-read-your-mind">
-<h3>Task 2: Read your mind<a class="headerlink" href="#task-2-read-your-mind" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="task-3-tic-tac-toe">
+<h3>Task 3: Tic Tac Toe<a class="headerlink" href="#task-3-tic-tac-toe" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/01-tic-tac-toe.png" src="../../_images/01-tic-tac-toe.png" />
+<img alt="../../_images/01-tic-tac-toe-cli.png" src="../../_images/01-tic-tac-toe-cli.png" />
+</div>
+</div>
+<div class="section" id="homework-read-your-mind">
+<h2>Homework: Read your mind<a class="headerlink" href="#homework-read-your-mind" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisite">
+<h3>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h3>
+<p>You need a better IDE - PyDev</p>
+<ol class="arabic simple">
+<li>Download Eclipse</li>
+</ol>
+<img alt="../../_images/01-download-eclipse.png" src="../../_images/01-download-eclipse.png" />
+<ol class="arabic simple" start="2">
+<li>Install PyDev Plugin.</li>
+</ol>
+<p>Install via Eclipse Marketplace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="o">-&gt;</span> <span class="n">Eclipse</span> <span class="n">Marketplace</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Search for <em>PyDev</em>.</p>
+<img alt="../../_images/01-eclipse-plugin.png" src="../../_images/01-eclipse-plugin.png" />
+</div>
+<div class="section" id="about-the-game">
+<h3>About the game<a class="headerlink" href="#about-the-game" title="Permalink to this headline">¶</a></h3>
+<p>Find out what’s the game:</p>
+<p><a class="reference external" href="https://www.cnblogs.com/sgs123/p/10829944.html">example: a javascript implementation</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s essential to understand math behind the game.
+To be a good programmer, you almost always thinks in math.</p>
+</div>
+</div>
+<div class="section" id="goal">
+<h3>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<p>Print it out in the tic-tac-toe style. Show what’s your program can guess.</p>
 </div>
 </div>
 </div>
@@ -402,7 +481,7 @@ come from.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lect02/intro.html" class="btn btn-neutral float-right" title="Lec 02: Data Structure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../lect02/intro.html" class="btn btn-neutral float-right" title="Lec 02: Things you already know" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../lect00/intro.html" class="btn btn-neutral" title="Lec 0: About ACSL" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
