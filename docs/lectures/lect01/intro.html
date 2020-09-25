@@ -460,14 +460,43 @@ come from.</p>
 </div>
 <div class="section" id="factorial">
 <h3>1. Factorial<a class="headerlink" href="#factorial" title="Permalink to this headline">¶</a></h3>
-<p>Implement a program that takes user’s input, an integer and output the factorial
-result.</p>
 <p>In mathematics, the factorial of a positive integer n, denoted by n!, is the
 product of all positive integers less than or equal to n:</p>
 <p><span class="math notranslate nohighlight">\({n!=n\cdot (n-1)\cdot (n-2)\cdot (n-3)\cdot \cdots \cdot 3\cdot 2\cdot 1\,.}\)</span></p>
 <p>For example,</p>
 <p><span class="math notranslate nohighlight">\({5!=5\cdot 4\cdot 3\cdot 2\cdot 1=120\,.}\)</span></p>
 <p>The value of 0! is 1, according to the convention for an empty product.</p>
+<div class="section" id="goal">
+<h4>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h4>
+<p>Implement a program that takes user’s input, an integer and output the factorial
+result.</p>
+</div>
+<div class="section" id="key-point">
+<h4>Key Point<a class="headerlink" href="#key-point" title="Permalink to this headline">¶</a></h4>
+<p>This is probably your first touching of recursive function.</p>
+<p>A recursive function is a function calling itself:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># recursive calling let me take care of n-1.</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">foo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># then handle the n-th value, the only business we need caring of.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above function, named foo, calling itself. In the calling stack, you, the coder
+only caring about current n-th value, this way significantly reduced the complexity
+a programmer should take care of. Compare it with the following function’s result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Before starting your homework, run &amp; debug this two functions first.</p>
+<p>Time to make your hands dirty!</p>
+</div>
 </div>
 <div class="section" id="read-your-mind">
 <h3>2. Read Your Mind<a class="headerlink" href="#read-your-mind" title="Permalink to this headline">¶</a></h3>
@@ -480,11 +509,11 @@ product of all positive integers less than or equal to n:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">It’s essential to understand math behind the game.
-To be a good programmer, you almost always thinks in math.</p>
+To be a good programmer, you almost always thinking in math.</p>
 </div>
 </div>
-<div class="section" id="goal">
-<h4>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>Goal<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Print it out in the tic-tac-toe style. Show what’s your program can guess.</li>
 <li>A short answer about the math principle.</li>

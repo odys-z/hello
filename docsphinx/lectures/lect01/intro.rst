@@ -345,9 +345,6 @@ Search for *PyDev*.
 1. Factorial
 ____________
 
-Implement a program that takes user's input, an integer and output the factorial
-result.
-
 In mathematics, the factorial of a positive integer n, denoted by n!, is the
 product of all positive integers less than or equal to n:
 
@@ -359,6 +356,46 @@ For example,
 
 The value of 0! is 1, according to the convention for an empty product.
 
+Goal
+++++
+
+Implement a program that takes user's input, an integer and output the factorial
+result.
+
+Key Point
++++++++++
+
+This is probably your first touching of recursive function.
+
+A recursive function is a function calling itself:
+
+.. code-block:: python
+
+    def foo(n):
+        # recursive calling let me take care of n-1.
+        if n > 0:
+            foo(n - 1)
+
+        # then handle the n-th value, the only business we need caring of.
+        print(n)
+..
+
+The above function, named foo, calling itself. In the calling stack, you, the coder
+only caring about current n-th value, this way significantly reduced the complexity
+a programmer should take care of. Compare it with the following function's result:
+
+.. code-block:: python
+
+    def bar(n):
+        print(n)
+
+        if n > 0:
+            bar(n - 1)
+..
+
+Before starting your homework, run & debug this two functions first.
+
+Time to make your hands dirty!
 
 2. Read Your Mind
 _________________
@@ -375,7 +412,7 @@ Find out what's the game:
 Before reading through the source, you are recommended try a playable version.
 
 .. note:: It's essential to understand math behind the game.
-    To be a good programmer, you almost always thinks in math.
+    To be a good programmer, you almost always thinking in math.
 ..
 
 Goal

@@ -8,7 +8,7 @@ Welcome to ACSL Lecture!
 
   .. note:: This document is not recommended used as a tutorial.
 
-  .. attention:: Lecture 2 - 8 is upcoming ...
+  .. attention:: Lecture 2 - 8 is upcoming and will been re-arranged ...
 ..
 
 Contents:
