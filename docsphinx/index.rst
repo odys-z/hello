@@ -4,6 +4,8 @@
 Welcome to ACSL Lecture!
 ========================
 
+Last update: |today|
+
 .. only:: not i18n
 
   .. note:: This document is not recommended used as a tutorial.
