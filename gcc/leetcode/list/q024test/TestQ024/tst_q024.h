@@ -1,20 +1,19 @@
 #include <QtTest>
 
-#include "q024.h"
+#include "solution.h"
 
 // add necessary includes here
 
-class q024 : public QObject
+class Q024test : public QObject
 {
     Q_OBJECT
 
-    Q024 q24;
+    Solution* s;
 
 public:
-    q024();
-    ~q024();
+    Q024test();
+    ~Q024test();
 
-private slots:
-    void test_case1();
+    void test_case();
 
 };

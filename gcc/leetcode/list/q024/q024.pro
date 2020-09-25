@@ -17,16 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    q024.cpp
+    q024.cpp \
+    solution.cpp \
+    tst_q024.cpp
 
 HEADERS += \
-    mainwindow.h \
-    q024.h
-
-FORMS += \
-    mainwindow.ui \
-    q024.ui
+    q024.h \
+    solution.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -34,8 +31,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    default.json \
-    q024.includes
+    default.json
 
 RESOURCES += \
     ico.qrc
+
+DISTFILES += \
+    default.json
+
+INCLUDEPATH += ../../util/Singlist

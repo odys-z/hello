@@ -1,2 +1,8 @@
 *coursera*
 docs/jsdoc
+*.pem
+
+RemoteSystemsTempFiles
+.recommenders
+GDX
+
