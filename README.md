@@ -1,7 +1,10 @@
-# hello
-helloworld project for test
+## About hello
 
-## Troubleshootings
+Helloworld project for test
+
+### Troubleshootings
+
+How to deal with unstable github connection when clone a repository.
 
 ```
     unzip <repo>.zip
