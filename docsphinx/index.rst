@@ -6,9 +6,9 @@ Welcome to ACSL Lecture!
 
 .. only:: not i18n
 
-  .. note:: ..
+  .. note:: This document is not recommended used as a tutorial.
 
-  .. attention:: ..
+  .. attention:: Lecture 2 - 8 is upcoming ...
 ..
 
 Contents:
@@ -16,7 +16,15 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   lectures/index
+   lectures/lect00/index
+   lectures/lect01/index
+   lectures/lect02/intro
+   lectures/lect03/intro
+   lectures/lect04/intro
+   lectures/lect05/intro
+   lectures/lect06/intro
+   lectures/lect07/intro
+   lectures/lect08/intro
 
 Indices and tables
 ==================

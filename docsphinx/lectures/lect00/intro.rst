@@ -1,5 +1,5 @@
-Lec 0: About ACSL
-=================
+Programming Contest
+===================
 
 ACSL.ORG
 --------
@@ -76,4 +76,4 @@ Intermediate, and Senior Divisions are as follows:
 Sample Questions
 ----------------
 
-`Sample Problems, American Computer Science League <https://www.acsl.org/acsl/samples.htm> `_
+`Sample Problems, American Computer Science League <https://www.acsl.org/acsl/samples.html>`_
