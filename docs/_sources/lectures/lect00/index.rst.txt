@@ -7,5 +7,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   agenda
    intro
+   agenda

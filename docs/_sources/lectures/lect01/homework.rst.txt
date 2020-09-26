@@ -20,8 +20,13 @@ Search for *PyDev*.
 
 .. image:: ../img/01-eclipse-plugin.png
 
-1. Factorial
-------------
+Reading
+-------
+
+`ACSL Wiki: Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
+
+Ex 1. Factorial
+---------------
 
 Implement a program that takes user's input, an integer and output the factorial
 result.
@@ -38,8 +43,8 @@ For example,
 The value of 0! is 1, according to the convention for an empty product.
 
 
-2. Read Your Mind
------------------
+Ex 2. Read Your Mind
+--------------------
 
 Implement a game of *read your mind*, played like Tic-tac-toe.
 

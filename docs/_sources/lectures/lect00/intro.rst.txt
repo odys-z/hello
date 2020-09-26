@@ -1,45 +1,17 @@
-Programming Contest
-===================
-
 ACSL.ORG
 --------
 
 `acsl.org <https://acsl.org>`_
 
+According to their page:
+
+"American Computer Science League (ACSL) organizes computer science and programming
+contests for K-12 students.
+
+The 2020-2021 school year will be our **43rd** year of continuous operation. Last
+year, about 500 teams in the United States, Canada, Europe, and Asia participated."
+
 `ASDAN: ACSL China <http://www.seedasdan.org/acsl/>`_
-
-The online programming test::
-
-    ADMINISTERING THE TESTS:
-    The programming problem and the short answer questions are all administered
-    online.  Students can be at any location.  The tests are graded by the platforms
-    and the results sent to ACSL.  There is no requirement for advisors to grade
-    tests or to report scores.  ACSL will still send a copy of the tests by email
-    to all advisors.   The tests should not be shared with students prior to the
-    students taking the tests online.
-
-    TAKING THE TESTS:
-    Students taking the short answer tests in all divisions must log on to the
-    testing platform.  Prior to taking the actual test, students should do the
-    practice problems and submit their answers so that they are familiar with the
-    platform.  Students must provide basic information including an email address
-    that exactly matches the email address the advisor provided on the Leaderboard.
-
-    If the 2 email addresses do not match, the student score will not be recorded.
-
-    The time limit for all divisions is 30-minutes except for the Classroom Division
-    that has a 50-minute time limit. Answers must be submitted within those time
-    limits.
-
-    Students taking the programming part of the test must log on to the coding
-    platform using the platform generated ID name that they received when they
-    registered and did the practice problems.
-
-    Students can be at any location.  The time limit for the programming problem
-    is 3-hours.  The time starts at login and runs continuously until the 3-hour
-    mark is reached. The code must be submitted prior to the 3-hour time limit.
-
-Here is `a brief intro (Chinese) <./ACSL-Lecture-Roadmap-2020.pptx>`_
 
 Knowledge Base
 --------------
@@ -76,4 +48,6 @@ Intermediate, and Senior Divisions are as follows:
 Sample Questions
 ----------------
 
-`Sample Problems, American Computer Science League <https://www.acsl.org/acsl/samples.html>`_
+See each division of `ACSL Topics <https://www.acsl.org/get-started/contest-topics>`_
+
+Sample Problem: `Intermediate Division - Number Transformation <http://www.datafiles.acsl.org/samples/contest1/C_1_INT_Transform.pdf>`_.
