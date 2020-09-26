@@ -28,7 +28,7 @@ A C++ Reference (Faster than 96%)
 
 .. note:: This lecture using Python3 as programming language. But if you are
     interested in C++, you can use tools like gcc, Qt Creator or Visual Studio etc.
-    There is a `Qt project template <https://github.com/odys-z/hello/gcc/leetcode/acsl/q1295>`_
+    There is a `Qt project template <https://github.com/odys-z/hello/tree/master/gcc/leetcode/acsl/q1295>`_
     can be used for quickly start LeetCode exercise.
 ..
 
