@@ -1,5 +1,5 @@
-Lec 3: Contest #1
-==================
+Contest #1
+==========
 
 Computer Number Systems
 

@@ -1,7 +1,7 @@
 Boolean Algebra
 ===============
 
-`ACSL Topic: Boolean Algebra <>`_
+`ACSL Topic: Boolean Algebra <http://www.categories.acsl.org/wiki/index.php?title=Boolean_Algebra>`_
 
 TODO ...
 
@@ -10,23 +10,28 @@ Computer Number Systems
 
 `ACSL Topic: Computer Number Systems <http://www.categories.acsl.org/wiki/index.php?title=Computer_Number_Systems>`_
 
-Key points::
+Key points
+__________
 
-Convention
+- Convention
 
-12345=1×104+2×103+3×102+4×101+5×100=10000+2000+300+40+5=12345
+:math:`12345=1×{10^4}+2×{10^3}+3×{10^2}+4×{10^1}+5×{10^0}=10000+2000+300+40+5=12345`
 
-1758=1×82+7×81+5×80=1×64+7×8+5×1=64+56+5=12510
+:math:`{175_8}=1×{8^2}+7×{8^1}+5×{8^0}=1×64+7×8+5×1=64+56+5={125_{10}}`
 
-Color (HTML CSS)
+- Color (HTML CSS)
 
-In addition, some special value::
+- Special Value
+
+::
 
     255, -1, -128, 127
     65536, 32767, -32768
     black, white, red, green, blue
 
-Problem: Convert IP v4 address to Int32.
+Exercise::
+
+    Convert IP v4 address to Int32.
 
 Example 1. See handout Q1 - 5, 2018-19 Senior::
 

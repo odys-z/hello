@@ -1,4 +1,6 @@
-Lec 03: Assembly + Lisp
-=======================
+Contest #1
+==========
 
-Temporary
+Computer Number Systems
+
+Recursive Functions
