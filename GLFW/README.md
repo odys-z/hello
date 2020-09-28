@@ -75,4 +75,12 @@ Go test folder and make test:
 
 [Make sure Makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop).
 
+[Make sure makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop)
+
+To export lib path in Ubuntu:
+
+~~~
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+~~~
+
 If everything ok, the window will show a rotating trangle.

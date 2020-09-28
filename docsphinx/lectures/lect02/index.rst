@@ -10,5 +10,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   intro
+   bool-algebra
+   num-sys
+   digit-electro
    homework
