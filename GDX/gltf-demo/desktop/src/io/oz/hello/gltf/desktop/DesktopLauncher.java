@@ -8,7 +8,7 @@ import net.mgsx.gltf.demo.GLTFDemo;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		// new LwjglApplication(new Scene1(), config);
+//		new LwjglApplication(new Scene1(), config);
 		new LwjglApplication(new GLTFDemo(), config);
 	}
 }
