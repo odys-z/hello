@@ -51,3 +51,9 @@ Installing output:
 Go test and make test.
 
 [Make sure makefile use tabs not 4 space](https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop)
+
+To export lib path in Ubuntu:
+
+~~~
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+~~~
