@@ -48,3 +48,6 @@ both B and C must be "0". This makes no matter what A is, it's impossible to tur
 on the other input to "1", then get AND gate out put = "1".
 
 .. image:: ../img/lec02-sample-3.png
+
+Exercise
+--------

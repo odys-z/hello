@@ -3,8 +3,8 @@ Computer Number Systems
 
 `ACSL Topic: Computer Number Systems <http://www.categories.acsl.org/wiki/index.php?title=Computer_Number_Systems>`_
 
-Key points
-__________
+Topic Summery
+-------------
 
 - Convention
 
@@ -22,7 +22,10 @@ __________
     65536, 32767, -32768
     black, white, red, green, blue
 
-Exercise::
+Exercise
+--------
+
+::
 
     Convert IP v4 address to Int32.
 
