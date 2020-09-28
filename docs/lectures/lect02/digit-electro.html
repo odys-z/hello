@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 2: Things you already know" href="index.html"/>
         <link rel="next" title="Homework" href="homework.html"/>
@@ -86,7 +89,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 2: Things you already know</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bool-algebra.html">Boolean Algebra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="num-sys.html">Computer Number Systems</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Digital Electronics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Digital Electronics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#topic-summery">Topic Summery</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="homework.html">Homework</a></li>
 </ul>
 </li>
@@ -132,7 +138,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/lectures/lect02/digit-electro.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/lectures/lect02/digit-electro.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -144,7 +150,51 @@
             
   <div class="section" id="digital-electronics">
 <h1>Digital Electronics<a class="headerlink" href="#digital-electronics" title="Permalink to this headline">¶</a></h1>
-<p>TODO ...</p>
+<div class="section" id="topic-summery">
+<h2>Topic Summery<a class="headerlink" href="#topic-summery" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Digital_Electronics">ACSL Wiki: Digital Electronics</a></p>
+<ul class="simple">
+<li>logic gates</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BUFFER</span>  <span class="n">NOT</span>  <span class="n">AND</span>  <span class="n">NAND</span>  <span class="n">OR</span>  <span class="n">NOR</span>  <span class="n">XOR</span>  <span class="n">XNOR</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Logrism</li>
+</ul>
+<p>Prerequisite: Java JDK</p>
+<ol class="arabic">
+<li><p class="first">download <em>Logrism</em> at <a class="reference external" href="https://sourceforge.net/projects/circuit/">sourceforge</a></p>
+</li>
+<li><p class="first">run (suppose java program in your PATH, and in the downloaded folder):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">logisim</span><span class="o">-</span><span class="n">generic</span><span class="o">-</span><span class="mf">2.7</span><span class="o">.</span><span class="mf">1.</span><span class="n">jar</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>where <em>logrism-generic-2.7.1.jar</em> is the downloaded file.</p>
+<ol class="arabic simple" start="3">
+<li>create a circuit, try the logic.</li>
+</ol>
+<p>Follow the help topic for beginner to create and check the logic.</p>
+<p>Here is <a class="reference download internal" download="" href="../../_downloads/e71ee3ff9b2a1c35f2db28d42f7de486/lec02-sample.circ"><code class="xref download docutils literal notranslate"><span class="pre">a</span> <span class="pre">simple</span> <span class="pre">circuit</span></code></a> created for the
+following circuit.</p>
+<img alt="../../_images/02-logrism-screen.png" src="../../_images/02-logrism-screen.png" />
+<ul class="simple">
+<li>Find True Tuple</li>
+</ul>
+<p>Follow the <a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Digital_Electronics">Digital Electronics Sample 2</a>,
+fill the truth table.</p>
+<ul class="simple">
+<li>Simplify Boolean Expression</li>
+</ul>
+<p>With help of <em>Logrism</em> circuit, you can have a deeper understand of digital circuit.</p>
+<p>The following circuit using <a class="reference download internal" download="" href="../../_downloads/6e42e41539ee801376200830f351661e/lec02-sample-3.circ"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">circ</span> <span class="pre">file</span></code></a>.
+To have output = 1, the <strong>B xor C</strong> internal results should be “1”, which means
+both B and C must be “0”. This makes no matter what A is, it’s impossible to turn
+on the other input to “1”, then get AND gate out put = “1”.</p>
+<img alt="../../_images/lec02-sample-3.png" src="../../_images/lec02-sample-3.png" />
+</div>
 </div>
 
 
@@ -197,7 +247,8 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

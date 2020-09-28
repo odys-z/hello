@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Topics of Contest #1" href="index.html"/>
         <link rel="next" title="Lec 04: Data Structure" href="../lect04/intro.html"/>
@@ -86,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Topics of Contest #1</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Contest #1</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Homework</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Homework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-sample-programming-problem">Task 1 Sample Programming Problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-2-number-string-replacement">Task 2. Number / String Replacement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-3-replace-chars">Task 3. Replace Chars</a></li>
@@ -136,7 +139,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/lectures/lect03/homework.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/lectures/lect03/homework.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,40 +157,40 @@
 <p>Intermediate - Number Transform</p>
 <p>PROBLEM:</p>
 <p>Given a positive integer (call it N) and a position in that integer (call it P)
-transform N.  To transform N, find the <span class="math">\(P^{th}\)</span> digit of N from the right.
-Replace each of the digits to the left of the <span class="math">\(P^{th}\)</span> digit by the sum of
-that digit and the <span class="math">\(P^{th}\)</span> digit.  If the sum is greater than 9, use just
+transform N.  To transform N, find the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit of N from the right.
+Replace each of the digits to the left of the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit by the sum of
+that digit and the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit.  If the sum is greater than 9, use just
 the units digits (see the second example below).  Replace each of the digits to
-the right of the <span class="math">\(P^{th}\)</span> digit by the absolute value of the difference
-between it and the <span class="math">\(P^{th}\)</span> digit. Do not change the <span class="math">\(P^{th}\)</span> digit.</p>
+the right of the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit by the absolute value of the difference
+between it and the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit. Do not change the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit.</p>
 <p>Example 1:</p>
 <p>N=102439, P=3.</p>
-<p>Answer is: <span class="math">\((1+4)(0+4)(2+4)4(|3-4|)(|9-4|) =&gt; 546415\)</span></p>
+<p>Answer is: <span class="math notranslate nohighlight">\((1+4)(0+4)(2+4)4(|3-4|)(|9-4|) =&gt; 546415\)</span></p>
 <p>Example 2:</p>
 <p>N=4329, P=1.</p>
-<p>Answer is: <span class="math">\((4+9)(3+9)(2+9)9 =&gt; (13)(12)(11)9 =&gt; 3219\)</span></p>
+<p>Answer is: <span class="math notranslate nohighlight">\((4+9)(3+9)(2+9)9 =&gt; (13)(12)(11)9 =&gt; 3219\)</span></p>
 <p>INPUT:</p>
 <p>There will be 5 sets of data. Each set contains two positive integers: N and P.
-N will be less than <span class="math">\(10^{15}\)</span>, and P will be valid. No input will cause an
+N will be less than <span class="math notranslate nohighlight">\(10^{15}\)</span>, and P will be valid. No input will cause an
 output to have a leading digit of 0.</p>
 <p>OUTPUT:</p>
 <p>The transformed value of each input set. The printed number may not have any
 spaces between the digits.</p>
 <p>SAMPLE INPUT:</p>
 <p>(<a class="reference external" href="http://www.datafiles.acsl.org/2020/contest1/int-sample-input.txt">http://www.datafiles.acsl.org/2020/contest1/int-sample-input.txt</a>)</p>
-<div class="highlight-python"><div class="highlight"><pre>296351 5
-762184 3
-45873216 7
-19750418 6
-386257914 5
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">296351</span> <span class="mi">5</span>
+<span class="mi">762184</span> <span class="mi">3</span>
+<span class="mi">45873216</span> <span class="mi">7</span>
+<span class="mi">19750418</span> <span class="mi">6</span>
+<span class="mi">386257914</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p>SAMPLE OUTPUT:</p>
-<div class="highlight-python"><div class="highlight"><pre>1. 193648
-2. 873173
-3. 95322341
-4. 86727361
-5. 831752441
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="mi">193648</span>
+<span class="mf">2.</span> <span class="mi">873173</span>
+<span class="mf">3.</span> <span class="mi">95322341</span>
+<span class="mf">4.</span> <span class="mi">86727361</span>
+<span class="mf">5.</span> <span class="mi">831752441</span>
 </pre></div>
 </div>
 </div>
@@ -195,7 +198,7 @@ spaces between the digits.</p>
 <h2>Task 2. Number / String Replacement<a class="headerlink" href="#task-2-number-string-replacement" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/">LeetCode 1295. Find Numbers with Even Number of Digits,</a></p>
 <p>A C++ Reference (Faster than 96%)</p>
-<div class="highlight-c++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">findNumbers</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -226,7 +229,7 @@ which can be used for quickly start LeetCode exercise.</p>
 </div>
 <div class="section" id="task-3-replace-chars">
 <h2>Task 3. Replace Chars<a class="headerlink" href="#task-3-replace-chars" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/">LeetCode 1576. Replace All ?&#8217;s to Avoid Consecutive Repeating Characters</a></p>
+<p><a class="reference external" href="https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/">LeetCode 1576. Replace All ?’s to Avoid Consecutive Repeating Characters</a></p>
 </div>
 <div class="section" id="task-4-replace-string">
 <h2>Task 4. Replace String*<a class="headerlink" href="#task-4-replace-string" title="Permalink to this headline">¶</a></h2>
@@ -284,7 +287,8 @@ which can be used for quickly start LeetCode exercise.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
