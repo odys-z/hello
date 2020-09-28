@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lec 2: Things you already know &mdash; ACSL lecture 1.0 documentation</title>
+  <title>Computer Number Systems &mdash; ACSL lecture 1.0 documentation</title>
   
 
   
@@ -33,8 +33,9 @@
 
   
     <link rel="top" title="ACSL lecture 1.0 documentation" href="../../index.html"/>
-        <link rel="next" title="Boolean Algebra" href="bool-algebra.html"/>
-        <link rel="prev" title="Homework (2 tasks)" href="../lect01/homework.html"/> 
+        <link rel="up" title="Lec 2: Things you already know" href="index.html"/>
+        <link rel="next" title="Digital Electronics" href="digit-electro.html"/>
+        <link rel="prev" title="Boolean Algebra" href="bool-algebra.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -82,9 +83,12 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../lect00/index.html">Lec 0: About ACSL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect01/index.html">Lec 1: Python Quick Start</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Lec 2: Things you already know</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 2: Things you already know</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bool-algebra.html">Boolean Algebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="num-sys.html">Computer Number Systems</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Computer Number Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-points">Key points</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="homework.html">Homework</a></li>
 </ul>
@@ -125,11 +129,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Lec 2: Things you already know</li>
+          <li><a href="index.html">Lec 2: Things you already know</a> &raquo;</li>
+      
+    <li>Computer Number Systems</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/lectures/lect02/index.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/lectures/lect02/num-sys.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -139,27 +145,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lec-2-things-you-already-know">
-<h1>Lec 2: Things you already know<a class="headerlink" href="#lec-2-things-you-already-know" title="Permalink to this headline">¶</a></h1>
-<p>In this class, you will continue to familiarize with your programming language to
-solve problems in topics you already known. After this week&#8217;s exercise you should
-be comfortable with the python language or any other language you choose.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="bool-algebra.html">Boolean Algebra</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bool-algebra.html#topic-summery">Topic Summery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bool-algebra.html#quiz">Quiz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bool-algebra.html#exercise">Exercise</a></li>
+  <div class="section" id="computer-number-systems">
+<h1>Computer Number Systems<a class="headerlink" href="#computer-number-systems" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Computer_Number_Systems">ACSL Topic: Computer Number Systems</a></p>
+<div class="section" id="key-points">
+<h2>Key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Convention</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="num-sys.html">Computer Number Systems</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="num-sys.html#key-points">Key points</a></li>
+<p><span class="math">\(12345=1×{10^4}+2×{10^3}+3×{10^2}+4×{10^1}+5×{10^0}=10000+2000+300+40+5=12345\)</span></p>
+<p><span class="math">\({175_8}=1×{8^2}+7×{8^1}+5×{8^0}=1×64+7×8+5×1=64+56+5={125_{10}}\)</span></p>
+<ul class="simple">
+<li>Color (HTML CSS)</li>
+<li>Special Value</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="homework.html">Homework</a></li>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">255</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">127</span>
+<span class="mi">65536</span><span class="p">,</span> <span class="mi">32767</span><span class="p">,</span> <span class="o">-</span><span class="mi">32768</span>
+<span class="n">black</span><span class="p">,</span> <span class="n">white</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span>
+</pre></div>
+</div>
+<p>Exercise:</p>
+<div class="highlight-python"><div class="highlight"><pre>Convert IP v4 address to Int32.
+</pre></div>
+</div>
+<p>Example 1. See handout Q1 - 5, 2018-19 Senior:</p>
+<div class="highlight-python"><div class="highlight"><pre>q1: Convert octal to Mayan representation.
+    ...
+</pre></div>
+</div>
+<p>Example 2.</p>
+<p><a class="reference external" href="http://www.datafiles.acsl.org/samples/contest1/C_1_JR_Transform.pdf">Junior Division - Number Transformation, ACSL Sample</a></p>
+<p>Example 3:</p>
+<ul class="simple">
+<li>Find the correct <span class="math">\(P^{th}\)</span> number.</li>
 </ul>
+<p>See handout.</p>
 </div>
 </div>
 
@@ -170,10 +190,10 @@ be comfortable with the python language or any other language you choose.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bool-algebra.html" class="btn btn-neutral float-right" title="Boolean Algebra" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="digit-electro.html" class="btn btn-neutral float-right" title="Digital Electronics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../lect01/homework.html" class="btn btn-neutral" title="Homework (2 tasks)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bool-algebra.html" class="btn btn-neutral" title="Boolean Algebra" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
