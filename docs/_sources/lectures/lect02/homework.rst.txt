@@ -53,7 +53,63 @@ Text. (Creative Commons Attribution 3.0 License, Copyright 2009)
 3. Tertulien Ndjountche, Sequential and Arithmetic Logic Circuits, Digital
 Electronics 2, by John Wiley & Sons, Inc. 2016
 
-Task 2 Prefix Expression *
+Task 2. Debunk CPU Myth
+-----------------------
+
+After finished this project, you can get a basic idea about the principal of the
+CPU's. And would provide a good understand when starting Assembly Language learning.
+(There are much more in a CPU)
+
+..
+    http://computerscience.jbpub.com/ecoa/2e/Null03.pdf
+
+Reference: `Essentials of Computer Organization and Architecture, Second Edition, Chapter 3 Boolean Algebra and Digital Logic, Section 3.5.2 Examples of Typical Combinational Circuits <http://computerscience.jbpub.com/ecoa/2e/>`_
+
+Step through the reference examples using *Logisim* to build the logic units:
+
+- Half Adder (One bit ignoring carry)
+
+.. image:: ../img/02-hafl-adder.png
+
+- Full Adder (Two bit dealing with carry in & carry out)
+
+.. image:: ../img/02-full-adder.png
+
+- 2 Bits Decoder + Output Selector (The function control)
+
+This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://www.tutorialspoint.com/digital_circuits/digital_circuits_multiplexers.htm>`_.
+
+.. image:: ../img/02-decoder.png
+
+- 2 Bits ALU
+
+.. image:: ../img/02-2bit-alu.png
+
+The finished ALU can be one like in the above. With the control command been set,
+finish the following truth table.
+
+- Arithmetic Add
+
+.. math::
+
+    \begin{array}{cc|cc}
+	A  & B  & A+B & carry\\
+	\hline
+	00 & 00 & 00 & 0\\
+	00 & 01 &    &  \\
+	00 & 10 &    &  \\
+	00 & 11 &    &  \\
+	11 & 00 &    &  \\
+	11 & 01 &    &  \\
+	11 & 10 &    &  \\
+	11 & 11 &    &  \\
+	\hline
+	\end{array}
+..
+
+If you are interested, you can finish all 4 calculation's truth tables.
+
+Task 3 Prefix Expression *
 --------------------------
 
 .. attention:: Try this after the lecture of recursive functions.

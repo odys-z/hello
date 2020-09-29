@@ -92,7 +92,8 @@
 <li class="toctree-l2"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Homework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-exercise">Task 1 Exercise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-2-prefix-expression">Task 2 Prefix Expression *</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-debunk-cpu-myth">Task 2. Debunk CPU Myth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-prefix-expression">Task 3 Prefix Expression *</a></li>
 </ul>
 </li>
 </ul>
@@ -185,8 +186,53 @@ Text. (Creative Commons Attribution 3.0 License, Copyright 2009)</p>
 <p>3. Tertulien Ndjountche, Sequential and Arithmetic Logic Circuits, Digital
 Electronics 2, by John Wiley &amp; Sons, Inc. 2016</p>
 </div>
-<div class="section" id="task-2-prefix-expression">
-<h2>Task 2 Prefix Expression *<a class="headerlink" href="#task-2-prefix-expression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-2-debunk-cpu-myth">
+<h2>Task 2. Debunk CPU Myth<a class="headerlink" href="#task-2-debunk-cpu-myth" title="Permalink to this headline">¶</a></h2>
+<p>After finished this project, you can get a basic idea about the principal of the
+CPU’s. And would provide a good understand when starting Assembly Language learning.
+(There are much more in a CPU)</p>
+<p>Reference: <a class="reference external" href="http://computerscience.jbpub.com/ecoa/2e/">Essentials of Computer Organization and Architecture, Second Edition, Chapter 3 Boolean Algebra and Digital Logic, Section 3.5.2 Examples of Typical Combinational Circuits</a></p>
+<p>Step through the reference examples using <em>Logisim</em> to build the logic units:</p>
+<ul class="simple">
+<li>Half Adder (One bit ignoring carry)</li>
+</ul>
+<img alt="../../_images/02-hafl-adder.png" src="../../_images/02-hafl-adder.png" />
+<ul class="simple">
+<li>Full Adder (Two bit dealing with carry in &amp; carry out)</li>
+</ul>
+<img alt="../../_images/02-full-adder.png" src="../../_images/02-full-adder.png" />
+<ul class="simple">
+<li>2 Bits Decoder + Output Selector (The function control)</li>
+</ul>
+<p>This is comparable to a Multiplexer. See <a class="reference external" href="https://www.tutorialspoint.com/digital_circuits/digital_circuits_multiplexers.htm">Toturialspoint, Multiplexer</a>.</p>
+<img alt="../../_images/02-decoder.png" src="../../_images/02-decoder.png" />
+<ul class="simple">
+<li>2 Bits ALU</li>
+</ul>
+<img alt="../../_images/02-2bit-alu.png" src="../../_images/02-2bit-alu.png" />
+<p>The finished ALU can be one like in the above. With the control command been set,
+finish the following truth table.</p>
+<ul class="simple">
+<li>Arithmetic Add</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cc|cc}
+    A  &amp; B  &amp; A+B &amp; carry\\
+    \hline
+    00 &amp; 00 &amp; 00 &amp; 0\\
+    00 &amp; 01 &amp;    &amp;  \\
+    00 &amp; 10 &amp;    &amp;  \\
+    00 &amp; 11 &amp;    &amp;  \\
+    11 &amp; 00 &amp;    &amp;  \\
+    11 &amp; 01 &amp;    &amp;  \\
+    11 &amp; 10 &amp;    &amp;  \\
+    11 &amp; 11 &amp;    &amp;  \\
+    \hline
+    \end{array}\end{split}\]</div>
+<p>If you are interested, you can finish all 4 calculation’s truth tables.</p>
+</div>
+<div class="section" id="task-3-prefix-expression">
+<h2>Task 3 Prefix Expression *<a class="headerlink" href="#task-3-prefix-expression" title="Permalink to this headline">¶</a></h2>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
 <p class="last">Try this after the lecture of recursive functions.</p>
