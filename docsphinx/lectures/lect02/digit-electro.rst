@@ -12,17 +12,17 @@ Topic Summery
 
     BUFFER  NOT  AND  NAND  OR  NOR  XOR  XNOR
 
-- Logrism
+- Logisim
 
 Prerequisite: Java JDK
 
-1. download *Logrism* at `sourceforge <https://sourceforge.net/projects/circuit/>`_
+1. download *Logisim* at `sourceforge <https://sourceforge.net/projects/circuit/>`_
 
 2. run (suppose java program in your PATH, and in the downloaded folder)::
 
     java -jar logisim-generic-2.7.1.jar
 
-where *logrism-generic-2.7.1.jar* is the downloaded file.
+where *logisim-generic-2.7.1.jar* is the downloaded file.
 
 3. create a circuit, try the logic.
 
@@ -40,7 +40,7 @@ fill the truth table.
 
 - Simplify Boolean Expression
 
-With help of *Logrism* circuit, you can have a deeper understand of digital circuit.
+With help of *Logisim* circuit, you can have a deeper understand of digital circuit.
 
 The following circuit using :download:`this circ file <../res/lec02-sample-3.circ>`.
 To have output = 1, the **B xor C** internal results should be "1", which means
