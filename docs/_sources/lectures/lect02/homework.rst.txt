@@ -63,7 +63,9 @@ CPU's. And would provide a good understand when starting Assembly Language learn
 ..
     http://computerscience.jbpub.com/ecoa/2e/Null03.pdf
 
-Reference: `Essentials of Computer Organization and Architecture, Second Edition, Chapter 3 Boolean Algebra and Digital Logic, Section 3.5.2 Examples of Typical Combinational Circuits <http://computerscience.jbpub.com/ecoa/2e/>`_
+Reference:
+
+`Essentials of Computer Organization and Architecture, Second Edition, Chapter 3 Boolean Algebra and Digital Logic, Section 3.5.2 Examples of Typical Combinational Circuits <http://computerscience.jbpub.com/ecoa/2e/>`_
 
 Step through the reference examples using *Logisim* to build the logic units:
 
@@ -114,7 +116,7 @@ Task 3 Prefix Expression *
 
 .. attention:: Try this after the lecture of recursive functions.
 
-Let's rewrite the logic in the following notations:
+Let's rewrite the logic with the following operator:
 
 .. math::
 
@@ -122,10 +124,11 @@ Let's rewrite the logic in the following notations:
    \hline
    logic & operator\\
    \hline
-   NOT & !
-   AND & &
-   OR  & |
-   XOR & ^
+   NOT & ! \\
+   AND & \&  \\
+   OR  & | \\
+   XOR & \hat \\
+   \end{array}
 ..
 
 Write the first four expression in step 4, task1 in prefix form. E.g (A OR B) AND
