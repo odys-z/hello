@@ -90,7 +90,11 @@
 <li class="toctree-l2"><a class="reference internal" href="bool-algebra.html">Boolean Algebra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="num-sys.html">Computer Number Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Homework</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Homework</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-exercise">Task 1 Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-prefix-expression">Task 2 Prefix Expression *</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest #1</a></li>
@@ -147,6 +151,64 @@
             
   <div class="section" id="homework">
 <h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-exercise">
+<h2>Task 1 Exercise<a class="headerlink" href="#task-1-exercise" title="Permalink to this headline">¶</a></h2>
+<p>1. If a logic function has three inputs, how many rows must the truth table have
+to contain all possible states? Justify your answer.</p>
+<ol class="arabic" start="2">
+<li><p class="first">For the following functions, construct a truth table and draw a circuit diagram.</p>
+<blockquote>
+<div><p>(a). <span class="math notranslate nohighlight">\(y(A,B) = \overline{AB}+\overline{B}\)</span></p>
+<p>(b). <span class="math notranslate nohighlight">\(y(A,B,C) = \overline{AC} + BC\)</span></p>
+<p>(c). <span class="math notranslate nohighlight">\(y(A,B,C) = (A ⨁ B)\overline{C}\)</span></p>
+<p>(d). <span class="math notranslate nohighlight">\(y(A,B,C) = \overline{\overline{A+B}\space\overline{B+C}}\)</span></p>
+<p>(e). <span class="math notranslate nohighlight">\(y(A,B,C,D) = \overline{A}B\overline{C} + (A ⨁ B)C + \overline{A}\overline{B}C\overline{D} + ABC\)</span></p>
+</div></blockquote>
+</li>
+</ol>
+<p>3. Design a 4-input NAND gate using two 2-input NAND gates and one 2-input NOR
+gate. Hint: Use DeMorgan’s law.</p>
+<ol class="arabic simple" start="4">
+<li>Simplify</li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\overline{ABC}+ \overline{AB}C+ \overline{A}B\overline{C}+ A\overline{BC}+ A\overline{B}C\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{\overline{X\overline{Y} + XYZ} + X (Y + X\overline{Y}) }\)</span></p>
+<p><span class="math notranslate nohighlight">\((A + B)(\overline{A} + C)(B + C)\)</span></p>
+<p><span class="math notranslate nohighlight">\(XY + \overline{XZ} + X \overline{Y} Z (XY + Z)\)</span></p>
+<p>Answer: <span class="math notranslate nohighlight">\((\overline{A}+\overline{B}+\overline{C}), \quad0, \quad AC+B\overline{A}, \quad1\)</span></p>
+<p>Reference</p>
+<p>1. James Feher, Introduction to Digital Logic with Laboratory Exercises, Global
+Text. (Creative Commons Attribution 3.0 License, Copyright 2009)</p>
+<ol class="arabic simple" start="2">
+<li>DIGITALS ELECTRONICS, TYPICAL QUESTIONS &amp; ANSWERS, <a class="reference external" href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxzb3VtZW5jYXxneDozOTY2ZjY5ODNmMzhlZjhl">Google Docs</a>.</li>
+</ol>
+<p>3. Tertulien Ndjountche, Sequential and Arithmetic Logic Circuits, Digital
+Electronics 2, by John Wiley &amp; Sons, Inc. 2016</p>
+</div>
+<div class="section" id="task-2-prefix-expression">
+<h2>Task 2 Prefix Expression *<a class="headerlink" href="#task-2-prefix-expression" title="Permalink to this headline">¶</a></h2>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Try this after the lecture of recursive functions.</p>
+</div>
+<p>Let’s rewrite the logic in the following notations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{c|c}
+\hline
+logic &amp; operator\\
+\hline
+NOT &amp; !
+AND &amp; &amp;
+OR  &amp; |
+XOR &amp; ^\end{split}\]</div>
+<p>Write the first four expression in step 4, task1 in prefix form. E.g (A OR B) AND
+X’s prefix form is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span> <span class="o">|</span> <span class="n">A</span> <span class="n">B</span> <span class="n">X</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Then implement a program to evaluate all answer of question 4 in task 1.</p>
+<p>Hint: the important data structure for the program is Stack.</p>
+</div>
 </div>
 
 

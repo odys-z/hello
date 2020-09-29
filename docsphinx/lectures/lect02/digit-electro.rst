@@ -45,7 +45,7 @@ With help of *Logrism* circuit, you can have a deeper understand of digital circ
 The following circuit using :download:`this circ file <../res/lec02-sample-3.circ>`.
 To have output = 1, the **B xor C** internal results should be "1", which means
 both B and C must be "0". This makes no matter what A is, it's impossible to turn
-on the other input to "1", then get AND gate out put = "1".
+on the other input to "1", then get AND gate output = "1".
 
 .. image:: ../img/lec02-sample-3.png
 
