@@ -8,7 +8,9 @@ Last update: |today|
 
 .. only:: not i18n
 
-  .. note:: This document is not recommended used as a tutorial.
+  .. note::
+    1. This document is a lecture note, not recommended used as a tutorial.
+    2. Firefox or Chrome are recommended browsers. As this document is keep updating, you better *deep refresh* pages (Ctr + F5) at each time visiting here.
 ..
 
 .. raw:: html
