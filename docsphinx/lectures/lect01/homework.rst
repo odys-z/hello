@@ -59,7 +59,7 @@ Find out what's the game:
     http://www.inforise.com.cn/acsl-prog = hello/acsl
 
 Before reading through the source, you are recommended try
-`a playable version <http://www.inforise.com.cn/acsl-prog/lec01/read-your-mind.html>`_.
+`a playable version <http://www.inforise.com.cn/acsl-prog/lect01/read-your-mind/game.html>`_.
 
 .. note:: It's essential to understand math behind the game.
     To be a good programmer, you almost always thinks in math.
