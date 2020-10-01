@@ -90,7 +90,7 @@ This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://w
 The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.
 
-Function Selector:
+The (t0, t1) and the selector part formed the function command (select usage):
 
 .. math::
 

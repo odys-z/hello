@@ -90,7 +90,7 @@ This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://w
 The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.
 
-Function Selector:
+The (t0, t1) and the selector part formed the function command (select usage):
 
 .. math::
 
@@ -151,6 +151,6 @@ X's prefix form is::
 
     & | A B X.
 
-Then implement a program to evaluate all answer of question 4 in task 1.
+Then implement a program to evaluate all answers of question 4 in task 1.
 
 Hint: the important data structure for the program is Stack.
