@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body > div {
+    width: 1024px;
+}
+
 .wraper {
     width: 932px;
     margin: 10px auto;

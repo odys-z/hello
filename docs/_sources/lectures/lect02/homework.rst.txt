@@ -90,23 +90,38 @@ This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://w
 The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.
 
+Function Selector:
+
+.. math::
+
+    \begin{array}{c|c}
+    t1,t0& Function \\
+    \hline
+    0 0  & A \space and \space  B \\
+    0 1  & \overline{A} \\
+    1 0  & A \space or \space B \\
+    1 1  & A \space and \space B \\
+    \hline
+    \end{array}
+..
+
 - Arithmetic Add
 
 .. math::
 
     \begin{array}{cc|cc}
-	A  & B  & A+B & carry\\
-	\hline
-	00 & 00 & 00 & 0\\
-	00 & 01 &    &  \\
-	00 & 10 &    &  \\
-	00 & 11 &    &  \\
-	11 & 00 &    &  \\
-	11 & 01 &    &  \\
-	11 & 10 &    &  \\
-	11 & 11 &    &  \\
-	\hline
-	\end{array}
+    A  & B  & A+B & carry\\
+    \hline
+    00 & 00 & 00 & 0\\
+    00 & 01 &    &  \\
+    00 & 10 &    &  \\
+    00 & 11 &    &  \\
+    11 & 00 &    &  \\
+    11 & 01 &    &  \\
+    11 & 10 &    &  \\
+    11 & 11 &    &  \\
+    \hline
+    \end{array}
 ..
 
 If you are interested, you can finish all 4 calculation's truth tables.

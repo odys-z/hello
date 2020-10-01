@@ -213,23 +213,34 @@ CPU’s. And would provide a good understand when starting Assembly Language lea
 <img alt="../../_images/02-2bit-alu.png" src="../../_images/02-2bit-alu.png" />
 <p>The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.</p>
+<p>Function Selector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{c|c}
+t1,t0&amp; Function \\
+\hline
+0 0  &amp; A \space and \space  B \\
+0 1  &amp; \overline{A} \\
+1 0  &amp; A \space or \space B \\
+1 1  &amp; A \space and \space B \\
+\hline
+\end{array}\end{split}\]</div>
 <ul class="simple">
 <li>Arithmetic Add</li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{cc|cc}
-    A  &amp; B  &amp; A+B &amp; carry\\
-    \hline
-    00 &amp; 00 &amp; 00 &amp; 0\\
-    00 &amp; 01 &amp;    &amp;  \\
-    00 &amp; 10 &amp;    &amp;  \\
-    00 &amp; 11 &amp;    &amp;  \\
-    11 &amp; 00 &amp;    &amp;  \\
-    11 &amp; 01 &amp;    &amp;  \\
-    11 &amp; 10 &amp;    &amp;  \\
-    11 &amp; 11 &amp;    &amp;  \\
-    \hline
-    \end{array}\end{split}\]</div>
+A  &amp; B  &amp; A+B &amp; carry\\
+\hline
+00 &amp; 00 &amp; 00 &amp; 0\\
+00 &amp; 01 &amp;    &amp;  \\
+00 &amp; 10 &amp;    &amp;  \\
+00 &amp; 11 &amp;    &amp;  \\
+11 &amp; 00 &amp;    &amp;  \\
+11 &amp; 01 &amp;    &amp;  \\
+11 &amp; 10 &amp;    &amp;  \\
+11 &amp; 11 &amp;    &amp;  \\
+\hline
+\end{array}\end{split}\]</div>
 <p>If you are interested, you can finish all 4 calculation’s truth tables.</p>
 </div>
 <div class="section" id="task-3-prefix-expression">
