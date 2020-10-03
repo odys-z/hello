@@ -109,7 +109,8 @@ You access the list items by referring to the index number:
 
 Negative Indexing
 
-Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item etc.
+Negative indexing means beginning from the end, -1 refers to the last item,
+-2 refers to the second last item etc.
 
 .. code-block:: python
 
@@ -120,9 +121,11 @@ Negative indexing means beginning from the end, -1 refers to the last item, -2 r
 
 Range of Indexes
 
-You can specify a range of indexes by specifying where to start and where to end the range.
+You can specify a range of indexes by specifying where to start and where to end
+the range.
 
-When specifying a range, the return value will be a new list with the specified items.
+When specifying a range, the return value will be a new list with the specified
+items.
 
 .. code-block:: python
 
@@ -191,7 +194,8 @@ A collection which is unordered, changeable and indexed
 Set
 ___
 
-A set is a collection which is unordered and unindexed. In Python, sets are written with curly brackets.
+A set is a collection which is unordered and un-indexed. In Python, sets are
+written with curly brackets.
 
 .. code-block: python
 
@@ -246,14 +250,12 @@ While loop::
 Task 2: Guess the number
 ________________________
 
-The program generates a random number from 1 to 10, or 1 to 100 any range that
-is specified and the user must guess the number after a hint from the computer.
-Every time a user’s guess is wrong they are prompted with more hints to make it
-easier for them to guess the number but at the cost of reducing the score. The
-clue any math clue like multiples, divisible, greater or smaller, or a combination
-of all.
+This program generates a random number from 1 to 10, or any range that is specified
+and the user must guess the number after a hint from the computer. Every time a
+user’s guess is wrong they are prompted with more hints to make it easier for
+them to guess the number but at the cost of reducing the score.
 
-The program also requires functions to check if an actual number is entered by
+The program use *input( )* functions to check if an actual number is entered by
 the user or not, to compare the input number with the actual number, to find the
 difference between the two numbers.
 
@@ -266,6 +268,7 @@ difference between the two numbers.
     """ Number Guessing Game
     ----------------------------------------
     """
+
     import random
     attempts_list = []
     def show_score():
@@ -273,14 +276,13 @@ difference between the two numbers.
             print("There is currently no high score, it's yours for the taking!")
         else:
             print("The current high score is {} attempts".format(min(attempts_list)))
+
     def start_game():
         random_number = int(random.randint(1, 10))
-        print("Hello traveler! Welcome to the game of guesses!")
-        player_name = input("What is your name? ")
-        wanna_play = input("Hi, {}, would you like to play the guessing game? (Enter Yes/No) ".format(player_name))
-        # Where the show_score function USED to be
+        wanna_play = "yes"
         attempts = 0
         show_score()
+
         while wanna_play.lower() == "yes":
             try:
                 guess = input("Pick a number between 1 and 10 ")
@@ -309,6 +311,7 @@ difference between the two numbers.
                 print("({})".format(err))
         else:
             print("That's cool, have a good one!")
+
     if __name__ == '__main__':
         start_game()
 ..
@@ -316,108 +319,17 @@ difference between the two numbers.
 Task 3: Tic Tac Toe
 ___________________
 
+This is a simple game:
+
 .. image:: ../img/01-tic-tac-toe.png
+
+The python version played like this:
 
 .. image:: ../img/01-tic-tac-toe-cli.png
 
-Homework: Read your mind
-------------------------
+Reference
+=========
 
-Prerequisite
-____________
+`Task reference implementation <https://github.com/odys-z/hello/tree/master/acsl/lect01>`_.
 
-You need a better IDE - PyDev
-
-1. Download Eclipse
-
-.. image:: ../img/01-download-eclipse.png
-
-2. Install PyDev Plugin.
-
-Install via Eclipse Marketplace::
-
-    Help -> Eclipse Marketplace...
-
-Search for *PyDev*.
-
-.. image:: ../img/01-eclipse-plugin.png
-
-1. Factorial
-____________
-
-In mathematics, the factorial of a positive integer n, denoted by n!, is the
-product of all positive integers less than or equal to n:
-
-:math:`{n!=n\cdot (n-1)\cdot (n-2)\cdot (n-3)\cdot \cdots \cdot 3\cdot 2\cdot 1\,.}`
-
-For example,
-
-:math:`{5!=5\cdot 4\cdot 3\cdot 2\cdot 1=120\,.}`
-
-The value of 0! is 1, according to the convention for an empty product.
-
-Goal
-++++
-
-Implement a program that takes user's input, an integer and output the factorial
-result.
-
-Key Point
-+++++++++
-
-This is probably your first touching of recursive function.
-
-A recursive function is a function calling itself:
-
-.. code-block:: python
-
-    def foo(n):
-        # recursive calling let me take care of n-1.
-        if n > 0:
-            foo(n - 1)
-
-        # then handle the n-th value, the only business we need caring of.
-        print(n)
-..
-
-The above function, named foo, calling itself. In the calling stack, you, the coder
-only caring about current n-th value, this way significantly reduced the complexity
-a programmer should take care of. Compare it with the following function's result:
-
-.. code-block:: python
-
-    def bar(n):
-        print(n)
-
-        if n > 0:
-            bar(n - 1)
-..
-
-Before starting your homework, run & debug this two functions first.
-
-Time to make your hands dirty!
-
-2. Read Your Mind
-_________________
-
-Implement a game of *read your mind*, played like Tic-tac-toe.
-
-About the game
-++++++++++++++
-
-Find out what's the game:
-
-`example: a javascript implementation <https://www.cnblogs.com/sgs123/p/10829944.html>`_
-
-Before reading through the source, you are recommended try a playable version.
-
-.. note:: It's essential to understand math behind the game.
-    To be a good programmer, you almost always thinking in math.
-..
-
-Goal
-++++
-
-- Print it out in the tic-tac-toe style. Show what's your program can guess.
-
-- A short answer about the math principle.
+`Cool, Fun & Easy Python Projects for Beginners (with Code) <https://hackr.io/blog/python-projects>`_

@@ -10,7 +10,7 @@ Last update: |today|
 
   .. note::
     1. This document is a lecture note, not recommended used as a tutorial.
-    2. Firefox or Chrome are recommended browsers. As this document is keep updating, you better *deep refresh* pages (Ctr + F5) at each time visiting here.
+    2. Firefox or Chrome are recommended browsers. As this document is keep updating, you may need *deep refresh* pages (Ctr + F5) at each time visiting here.
 ..
 
 .. raw:: html
@@ -24,7 +24,7 @@ Last update: |today|
 
 Syllabus:
 
-.. attention:: Lecture 2 - 8 is upcoming and will been re-arranged ...
+.. attention:: Lecture 3 - 8 is upcoming and will been re-arranged ...
 ..
 
 .. toctree::
@@ -47,7 +47,5 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-Reference
-=========
-
-[1] `MathJax basic tutorial and quick reference, Mathematics, <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>`_
+..
+    `MathJax basic tutorial and quick reference, Mathematics, <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>`_

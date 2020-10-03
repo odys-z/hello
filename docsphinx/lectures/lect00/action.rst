@@ -20,11 +20,15 @@ supposed to be finished in class time. The heavy tasks are homeworks you should
 finished independently. The goal of this is having you reach the programming
 skill level necessary for completing the real contests. So you need action.
 
-Why English
------------
+And there is one more tip for out team members: team cooperation is discussing,
+helping each other, not copying from each other. Knowing != capable of doing.
 
-This lecture also showed you how you can find more reading & learning resource
+Why English?
+------------
+
+This lecture also showing you how you can find more reading & learning resources
 in a modern information society. If you'd like to go further, you can always find
 what you need - ask Internet, search in good direction (or commonly agreed
-convention). The reference list is a good start point for anyone eager to learn
-more.
+convention). The reference list in each section is a good start point for anyone
+eager to learn more. Learning makes us standing on the shoulders of giants, and
+CS giants speaking English.
