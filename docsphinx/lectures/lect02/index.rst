@@ -13,4 +13,5 @@ Contents:
    bool-algebra
    num-sys
    digit-electro
+   ref
    homework

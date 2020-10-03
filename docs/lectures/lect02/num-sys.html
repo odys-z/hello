@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Computer Number Systems &mdash; ACSL lecture 1.0 documentation</title>
+  <title>Computer Number Systems &mdash; ACSL Lecture 1.0 documentation</title>
   
 
   
@@ -32,10 +32,7 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ACSL lecture 1.0 documentation" href="../../index.html"/>
+    <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 2: Things you already know" href="index.html"/>
         <link rel="next" title="Digital Electronics" href="digit-electro.html"/>
         <link rel="prev" title="Boolean Algebra" href="bool-algebra.html"/> 
@@ -56,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> ACSL lecture
+            <a href="../../index.html" class="icon icon-home"> ACSL Lecture
           
 
           
@@ -88,12 +85,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect01/index.html">Lec 1: Python Quick Start</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 2: Things you already know</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bool-algebra.html">Boolean Algebra</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Computer Number Systems</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Computer Number Systems</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#topic-summery">Topic Summery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#exercise">Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="homework.html">Homework</a></li>
 </ul>
 </li>
@@ -116,7 +114,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">ACSL lecture</a>
+        <a href="../../index.html">ACSL Lecture</a>
       </nav>
 
 
@@ -139,7 +137,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/lectures/lect02/num-sys.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/lectures/lect02/num-sys.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -153,17 +151,17 @@
 <h1>Computer Number Systems<a class="headerlink" href="#computer-number-systems" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Computer_Number_Systems">ACSL Topic: Computer Number Systems</a></p>
 <div class="section" id="topic-summery">
-<h2>Topic Summery<a class="headerlink" href="#topic-summery" title="Permalink to this headline">¶</a></h2>
+<span id="l2-comp-num-sys"></span><h2>Topic Summery<a class="headerlink" href="#topic-summery" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Convention</li>
 </ul>
-<p><span class="math notranslate nohighlight">\(12345=1×{10^4}+2×{10^3}+3×{10^2}+4×{10^1}+5×{10^0}=10000+2000+300+40+5=12345\)</span></p>
-<p><span class="math notranslate nohighlight">\({175_8}=1×{8^2}+7×{8^1}+5×{8^0}=1×64+7×8+5×1=64+56+5={125_{10}}\)</span></p>
+<p><span class="math">\(12345=1×{10^4}+2×{10^3}+3×{10^2}+4×{10^1}+5×{10^0}=10000+2000+300+40+5=12345\)</span></p>
+<p><span class="math">\({175_8}=1×{8^2}+7×{8^1}+5×{8^0}=1×64+7×8+5×1=64+56+5={125_{10}}\)</span></p>
 <ul class="simple">
 <li>Color (HTML CSS)</li>
 <li>Special Value</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">255</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">127</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">255</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">127</span>
 <span class="mi">65536</span><span class="p">,</span> <span class="mi">32767</span><span class="p">,</span> <span class="o">-</span><span class="mi">32768</span>
 <span class="n">black</span><span class="p">,</span> <span class="n">white</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span>
 </pre></div>
@@ -171,19 +169,19 @@
 </div>
 <div class="section" id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">IP</span> <span class="n">v4</span> <span class="n">address</span> <span class="n">to</span> <span class="n">Int32</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Convert IP v4 address to Int32.
 </pre></div>
 </div>
 <p>Example 1. See handout Q1 - 5, 2018-19 Senior:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q1</span><span class="p">:</span> <span class="n">Convert</span> <span class="n">octal</span> <span class="n">to</span> <span class="n">Mayan</span> <span class="n">representation</span><span class="o">.</span>
-    <span class="o">...</span>
+<div class="highlight-python"><div class="highlight"><pre>q1: Convert octal to Mayan representation.
+    ...
 </pre></div>
 </div>
 <p>Example 2.</p>
 <p><a class="reference external" href="http://www.datafiles.acsl.org/samples/contest1/C_1_JR_Transform.pdf">Junior Division - Number Transformation, ACSL Sample</a></p>
 <p>Example 3:</p>
 <ul class="simple">
-<li>Find the correct <span class="math notranslate nohighlight">\(P^{th}\)</span> number.</li>
+<li>Find the correct <span class="math">\(P^{th}\)</span> number.</li>
 </ul>
 <p>See handout.</p>
 </div>
@@ -239,8 +237,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

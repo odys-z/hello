@@ -14,7 +14,7 @@ Topic Summery
 
 Idempotent Law:
 
-/ˌʌɪdɛmˈpəʊt(ə)nt,ʌɪˈdɛmpət(ə)nt/
+/ˌʌɪdɛmˈpəʊt(ə)nt, ʌɪˈdɛmpət(ə)nt/
 
 Operation applied multiple times without changing the result beyond the initial
 application.

@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'ACSL lecture'
+project = u'ACSL Lecture'
 copyright = u'2020, Odys Zhou'
 author = u'Odys Zhou'
 
