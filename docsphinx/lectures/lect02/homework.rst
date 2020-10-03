@@ -90,41 +90,46 @@ This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://w
 The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.
 
-The (t0, t1) and the selector part formed the function command (select usage):
-
-.. math::
-
-    \begin{array}{c|c}
-    t1,t0& Function \\
-    \hline
-    0 0  & A \space and \space  B \\
-    0 1  & \overline{A} \\
-    1 0  & A \space or \space B \\
-    1 1  & A \space and \space B \\
-    \hline
-    \end{array}
-..
+The (t0, t1) and the selector part formed the function control circuit (selecting
+usage).
 
 - Arithmetic Add
+
+Set t0, t1 = 0, 0 and verify the following results.
 
 .. math::
 
     \begin{array}{cc|cc}
     A  & B  & A+B & carry\\
     \hline
-    00 & 00 & 00 & 0\\
-    00 & 01 &    &  \\
-    00 & 10 &    &  \\
-    00 & 11 &    &  \\
-    11 & 00 &    &  \\
-    11 & 01 &    &  \\
-    11 & 10 &    &  \\
-    11 & 11 &    &  \\
+    00 & 00 & 00 & 0 \\
+    00 & 01 & 01 & 0 \\
+    00 & 10 & 10 & 0 \\
+    00 & 11 & 11 & 0 \\
+    11 & 00 & 11 & 0 \\
+    11 & 01 & 00 & 1 \\
+    11 & 10 & 01 & 1 \\
+    11 & 11 & 10 & 1 \\
     \hline
     \end{array}
 ..
 
-If you are interested, you can finish all 4 calculation's truth tables.
+This shows the 00 comand will have the 2-bit ALU add 2 binary number. If you are
+interested, you can try all 4 selected function and complete the function
+selection table.
+
+.. math::
+
+    \begin{array}{c|c}
+    t1,t0& Function \\
+    \hline
+    0 0  & A \space + \space  B \\
+    0 1  &  \\
+    1 0  &  \\
+    1 1  &  \\
+    \hline
+    \end{array}
+..
 
 Task 3 Prefix Expression *
 --------------------------
