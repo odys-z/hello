@@ -63,15 +63,27 @@ CPU's. And would provide a good understand when starting Assembly Language learn
 ..
     http://computerscience.jbpub.com/ecoa/2e/Null03.pdf
 
-Reference:
-
-`Essentials of Computer Organization and Architecture, Second Edition, Chapter 3 Boolean Algebra and Digital Logic, Section 3.5.2 Examples of Typical Combinational Circuits <http://computerscience.jbpub.com/ecoa/2e/>`_
-
 Step through the reference examples using *Logisim* to build the logic units:
 
 - Half Adder (One bit ignoring carry)
 
-.. image:: ../img/02-hafl-adder.png
+..
+    image:: ../img/02-hafl-adder.png
+
+.. math::
+
+    \begin{array}{|cc|cc|}
+    \hline
+    Inuts & & Outputs & \\
+    \hline
+    x & y & Sum & Carray \\
+    \hline
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 1 & 0 \\
+    1 & 0 & 1 & 0 \\
+    1 & 1 & 1 & 1 \\
+    \hline
+    \end{array}
 
 - Full Adder (Two bit dealing with carry in & carry out)
 
@@ -86,6 +98,8 @@ This is comparable to a Multiplexer. See `Toturialspoint, Multiplexer <https://w
 - 2 Bits ALU
 
 .. image:: ../img/02-2bit-alu.png
+
+:download:`Logisim ALU Circuit <../res/lec02-alu.circ>`
 
 The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.
@@ -130,6 +144,11 @@ selection table.
     \hline
     \end{array}
 ..
+
+- A step further
+
+If you are interested in this topic, you can read through [4], Chapter 3. See
+:ref:`reference section <l2-ref>`.
 
 Task 3 Prefix Expression *
 --------------------------

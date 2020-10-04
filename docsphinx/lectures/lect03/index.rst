@@ -13,4 +13,4 @@ Contents:
    number-sys
    recursive
    homework
-   refs
+   ref

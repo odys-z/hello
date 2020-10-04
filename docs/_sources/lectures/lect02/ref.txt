@@ -1,8 +1,0 @@
-Reference
-=========
-
-[1] `Computer Number Systems, ACSL Categories <http://www.categories.acsl.org/wiki/index.php?title=Computer_Number_Systems>`_
-
-[2] `Digital Electronics, ACSL Categories <http://www.categories.acsl.org/wiki/index.php?title=Digital_Electronics>`_
-
-[3] `Boolean Algebra <http://www.categories.acsl.org/wiki/index.php?title=Boolean_Algebra>`_

@@ -4,7 +4,7 @@ Computer Number Systems
 Topic Summery
 -------------
 
-See :ref:`l2-comp-num-sys:`.
+See :ref:`l2-comp-num-sys`.
 
 Let's have our skill progress into a new level.
 
