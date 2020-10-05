@@ -3,7 +3,7 @@ Boolean Algebra
 
 `ACSL Topic: Boolean Algebra <http://www.categories.acsl.org/wiki/index.php?title=Boolean_Algebra>`_
 
-Topic Summery
+Topic Summary
 -------------
 
 - Procedence::

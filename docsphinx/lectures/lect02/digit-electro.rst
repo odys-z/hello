@@ -1,7 +1,7 @@
 Digital Electronics
 ===================
 
-Topic Summery
+Topic Summary
 -------------
 
 `ACSL Wiki: Digital Electronics <http://www.categories.acsl.org/wiki/index.php?title=Digital_Electronics>`_

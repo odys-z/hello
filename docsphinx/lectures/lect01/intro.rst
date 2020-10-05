@@ -247,6 +247,9 @@ While loop::
        if x >= n:
            break
 
+..
+    Beginner may still feel confused about the source code, here is a more :ref:`detailed explanation <fibonacci-details>`_.
+
 Task 2: Guess the number
 ________________________
 

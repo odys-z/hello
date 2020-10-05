@@ -5,7 +5,7 @@ Computer Number Systems
 
 .. _l2-comp-num-sys:
 
-Topic Summery
+Topic Summary
 -------------
 
 - Convention

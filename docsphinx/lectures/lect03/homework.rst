@@ -1,8 +1,39 @@
 Homework
 ========
 
+Prequisite: Unit Test
+---------------------
+
+TDD stands for an important software engineering practice, Test Driven Development.
+We need setup Python unit test helper to test our program.
+
+Using unit test in Python is very simple: import, run your program & assert the
+results. Here is the `tester of a LeetCode solution <https://github.com/odys-z/hello/blob/master/acsl/lect02/leetcode.py/test.py>`_.
+
+.. code-block:: python
+
+    import unittest
+    from q1404 import Solution
+
+    class Test(unittest.TestCase):
+    def q1404(self):
+        s = Solution()
+        self.assertEqual(0, s.numSteps('1'))
+        self.assertTrue(5 == s.numSteps('1111'))
+
+    t = Test()
+    t.q1404()
+..
+
+The *assert...* functions take what's it expected for assertion. If your program
+results are not the same as expected, the test function, here the function q1404(),
+will throw an exception - program stopped with error.
+
+You should always use the method to test your program. It's efficient and convenient
+once you get familiar with it.
+
 Task 1 Sample Programming Problem
-_________________________________
+---------------------------------
 
 2019-20 Contest #1
 
@@ -60,7 +91,7 @@ SAMPLE OUTPUT::
     5. 831752441
 
 Task 2. Number / String Replacement
-___________________________________
+-----------------------------------
 
 `LeetCode 1295. Find Numbers with Even Number of Digits, <https://leetcode.com/problems/find-numbers-with-even-number-of-digits/>`_
 
@@ -98,11 +129,11 @@ Task 2 Round 2 (Advanced)
 * They have solution *
 
 Task 3. Replace Chars
-___________________________
+---------------------
 
 `LeetCode 1576. Replace All ?'s to Avoid Consecutive Repeating Characters <https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/>`_
 
 Task 4. Replace String*
-_______________________
+-----------------------
 
 `LeetCode 833. Find And Replace in String <https://leetcode.com/problems/find-and-replace-in-string/>`_
