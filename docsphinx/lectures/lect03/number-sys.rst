@@ -111,9 +111,10 @@ test cases
 
 .. math::
 
-    \begin{array}{c|c}
+    \begin{array}{l|c}
     \hline
     Input & Output \\
+    \hline
     1101  & 6 \\
     10    & 1 \\
     1111  & 5 \\
