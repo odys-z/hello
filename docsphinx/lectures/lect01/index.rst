@@ -11,5 +11,6 @@ Contents:
    :maxdepth: 2
 
    intro
+   debug
    homework
    ref

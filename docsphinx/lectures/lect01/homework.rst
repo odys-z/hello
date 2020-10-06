@@ -20,6 +20,16 @@ Search for *PyDev*.
 
 .. image:: ../img/01-eclipse-plugin.png
 
+3. Debug with PyDev
+
+- create a new PyDev Project
+
+- create a PyDev Module, add source file fibonacci.py
+
+- run & debug
+
+If there are problem, see :ref:`Tutorial: run & debug fibonacci.py<dubg-fibonacci>`.
+
 Reading
 -------
 
