@@ -20,8 +20,7 @@ supposed to be finished in class time. The heavy tasks are homeworks you should
 finished independently. The goal of this is having you reach the programming
 skill level necessary for completing the real contests. So you need action.
 
-And there is one more tip for out team members: team cooperation is discussing,
-helping each other, not copying from each other. Knowing != capable of doing.
+Knowing != capable of doing.
 
 Why English?
 ------------

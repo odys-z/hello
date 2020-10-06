@@ -247,8 +247,17 @@ While loop::
        if x >= n:
            break
 
-..
-    Beginner may still feel confused about the source code, here is a more :ref:`detailed explanation <fibonacci-details>`_.
+For Beginner:
+
+According to some questions from beginners, if this is the first time of your
+reading a program, it may still feel confused about the source code. There are
+some knowledge you should know first.
+
+- Array Access
+
+- Function and Variable Scope
+
+- range() and loop control
 
 Task 2: Guess the number
 ________________________
