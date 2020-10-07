@@ -2,7 +2,7 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 LIBS = -lglfw -lGLU -lGL -lX11 -lXxf86vm -lXrandr -lpthread -lXi
-DEPENDENCIES = main.o #error.o sWindow.o
+DEPENDENCIES = main.o
 
 test: $(DEPENDENCIES)
 	$(CXX) $(CXXFLAGS) -o test-bin $(DEPENDENCIES) $(LIBS)
