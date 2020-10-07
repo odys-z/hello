@@ -154,7 +154,63 @@
 <p>A definition that defines an object in terms of itself is said to be recursive [4].</p>
 <p>This summarized all of the topic.</p>
 <p>At the first sight this a hard to be understand. But recursive exists in natural
-world everywhere. A function represent a result, remember this is enough.</p>
+world everywhere.</p>
+<a class="reference internal image-reference" href="../../_images/03-Peano_Sierpinski_carpet_4.svg"><img alt="../../_images/03-Peano_Sierpinski_carpet_4.svg" src="../../_images/03-Peano_Sierpinski_carpet_4.svg" width="300px" /></a>
+<p><a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=79215970">Image By Hyacinth - Own work, Public Domain</a></p>
+<a class="reference internal image-reference" href="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg"><img alt="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" src="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" style="width: 320px;" /></a>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/File:Flickr_-_cyclonebill_-_Romanesco.jpg">Creative Commons Attribution-Share Alike 2.0 Generic license</a></p>
+<p>This image, originally posted to Flickr, was reviewed on 23 December 2009 by the administrator or reviewer Multichill, who confirmed that it was available on Flickr under the stated license on that date.</p>
+<p>To understand recursive function, jus keep in mind:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">function</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>remember this is enough.</p>
+<p>E.g. if <span class="math notranslate nohighlight">\(f(1) = 1\)</span>, then we have <span class="math notranslate nohighlight">\(2 ⋅ f(1) = 2\)</span>. We can define this as</p>
+<div class="math notranslate nohighlight">
+\[g(2) = 2 ⋅ f(1)\]</div>
+<p>It’s the same as</p>
+<div class="math notranslate nohighlight">
+\[f(2) = 2 ⋅ f(1).\]</div>
+<p>Here f() is a recursive function. We can push it a little bit further:</p>
+<div class="math notranslate nohighlight">
+\[f(n) = n ⋅ f(n - 1).\]</div>
+<p>We’ve now defined factorial in recursive style. And this is easy to be implemented
+in program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># n &gt;= 0</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The following is how f(5) been evaluated.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cl}
+\hline
+    f(n) &amp; = n ⋅ f(n - 1) \\
+    \hline
+5! &amp; = 5 ⋅ (4!) \\
+   &amp; = 5 ⋅ 4 ⋅ (3!) \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ (2!) \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!) \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!) \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ 1 \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 \\
+   &amp; = 5 ⋅ 4 ⋅ 6 \\
+   &amp; = 5 ⋅ 24 \\
+   &amp; = 120 \\
+    \end{array}\end{split}\]</div>
+<p>One last thing to be noted is recursive function doesn’t necessarily accept only
+one argument. This is also a recursive function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(a, b) =
+\begin{cases}
+f(\frac{a}{2}, \frac{b}{3}),  &amp; \text{if $a$ is even and $b$ &gt; 0} \\
+a + f(a - b, b - 2), &amp; \text{if $a$ is odd and $b$ &gt; 0} \\
+a + 3, &amp; \text{if $$} b \leqslant 0
+\end{cases}\end{split}\]</div>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
