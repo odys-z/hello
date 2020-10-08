@@ -20,6 +20,10 @@ Search for *PyDev*.
 
 .. image:: ../img/01-eclipse-plugin.png
 
+Tip: install PyDev with offline package.
+
+Follow <a href='https://stackoverflow.com/a/11620013'>this</a>.
+
 3. Debug with PyDev
 
 - create a new PyDev Project
@@ -30,13 +34,21 @@ Search for *PyDev*.
 
 If there are problem, see :ref:`Tutorial: run & debug fibonacci.py<dubg-fibonacci>`.
 
-Reading
--------
+Task: fix the above problem
+---------------------------
+
+Try a very large number N and figure out why and how to fix the problem.
+
+Reading Task
+------------
 
 `ACSL Wiki: Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
 
-Ex 1. Factorial
----------------
+Programming Task
+----------------
+
+1. Factorial
+____________
 
 Implement a program that takes user's input, an integer and output the factorial
 result.
@@ -53,13 +65,13 @@ For example,
 The value of 0! is 1, according to the convention for an empty product.
 
 
-Ex 2. Read Your Mind
---------------------
+2. Read Your Mind
+_________________
 
 Implement a game of *read your mind*, played like Tic-tac-toe.
 
 About the game
-______________
+++++++++++++++
 
 Find out what's the game:
 
@@ -76,7 +88,7 @@ Before reading through the source, you are recommended try
 ..
 
 Goal
-____
+++++
 
 - Print it out in the tic-tac-toe style. Show what's your program can guess.
 
