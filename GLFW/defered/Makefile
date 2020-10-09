@@ -2,7 +2,7 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 LIBS = -lglfw -lGLU -lGL -lX11 -lXxf86vm -lXrandr -lpthread -lXi
-INC=-I../glad/include -I../glwf-3
+INC=-I../glad/include -I../glwf-3 -I.. -I../stb
 DEPENDENCIES = main.o
 
 test: $(DEPENDENCIES)
