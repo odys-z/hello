@@ -60,7 +60,7 @@ And a little bit faster:
 .. code-block:: python
 
     s = "String"
-    s[:3] + 'o' + s[4:]    # s = 'Strong'
+    s = s[:3] + 'o' + s[4:] # s = 'Strong'
 ..
 
 Example 3:
