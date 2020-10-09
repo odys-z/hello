@@ -181,6 +181,18 @@
 <p>Example 2.</p>
 <p><a class="reference external" href="http://www.datafiles.acsl.org/samples/contest1/C_1_JR_Transform.pdf">Junior Division - Number Transformation, ACSL Sample</a></p>
 <p>Reference Answer <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect02/examples/jr2019_contest1.py">at github</a>.</p>
+<p>For Your Information:</p>
+<p>An other string operation to replace some characters is typically like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;String&quot;</span><span class="p">)</span> <span class="c1"># char = [&#39;S&#39;, &#39;t&#39;, &#39;r&#39;, &#39;i&#39;, &#39;n&#39;, &#39;g&#39;]</span>
+<span class="n">chars</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>     <span class="c1"># s = &#39;Strong&#39;</span>
+</pre></div>
+</div>
+<p>And a little bit faster:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span>
+<span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;o&#39;</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>    <span class="c1"># s = &#39;Strong&#39;</span>
+</pre></div>
+</div>
 <p>Example 3:</p>
 <ul class="simple">
 <li>Find the correct <span class="math notranslate nohighlight">\(P^{th}\)</span> number.</li>

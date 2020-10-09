@@ -44,6 +44,25 @@ Example 2.
 
 Reference Answer `at github <https://github.com/odys-z/hello/blob/master/acsl/lect02/examples/jr2019_contest1.py>`_.
 
+For Your Information:
+
+An other string operation to replace some characters is typically like:
+
+.. code-block:: python
+
+    chars = list("String") # char = ['S', 't', 'r', 'i', 'n', 'g']
+    chars[3] = 'o'
+    s = ''.join(chars)     # s = 'Strong'
+..
+
+And a little bit faster:
+
+.. code-block:: python
+
+    s = "String"
+    s[:3] + 'o' + s[4:]    # s = 'Strong'
+..
+
 Example 3:
 
 - Find the correct :math:`P^{th}` number.
