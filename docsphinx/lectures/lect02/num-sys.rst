@@ -31,7 +31,9 @@ Exercise
 
     Convert IP v4 address to Int32.
 
-Example 1. See handout Q1 - 5, 2018-19 Senior::
+Example 1. See handout *lec01-short-question.pdf*.
+
+::
 
     q1: Convert octal to Mayan representation.
 	...
