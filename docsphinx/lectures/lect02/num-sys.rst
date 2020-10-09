@@ -42,6 +42,8 @@ Example 2.
 
 `Junior Division - Number Transformation, ACSL Sample <http://www.datafiles.acsl.org/samples/contest1/C_1_JR_Transform.pdf>`_
 
+Reference Answer `at github <https://github.com/odys-z/hello/blob/master/acsl/lect02/examples/jr2019_contest1.py>`_.
+
 Example 3:
 
 - Find the correct :math:`P^{th}` number.
