@@ -8,7 +8,7 @@ TDD stands for an important software engineering practice, Test Driven Developme
 We need setup Python unit test helper to test our program.
 
 Using unit test in Python is very simple: import, run your program & assert the
-results. Here is the `tester of a LeetCode solution <https://github.com/odys-z/hello/blob/master/acsl/lect02/leetcode.py/test.py>`_.
+results. Here is the `tester of a LeetCode solution <https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py>`_.
 
 .. code-block:: python
 

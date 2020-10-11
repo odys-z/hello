@@ -150,6 +150,11 @@ selection table.
 If you are interested in this topic, you can read through [4], Chapter 3. See
 :ref:`reference section <l2-ref>`.
 
+Task 3 Convert to Base 64
+-------------------------
+
+`reference answer <https://github.com/odys-z/hello/tree/master/acsl/lect03/ex02>`_
+
 Task 3 Prefix Expression *
 --------------------------
 

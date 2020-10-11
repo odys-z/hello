@@ -31,14 +31,57 @@ Exercise
 
     Convert IP v4 address to Int32.
 
-Example 1. See handout *lec01-short-question.pdf*.
+Example 1. Short Questions
+__________________________
+
+See handout *lec01-short-question.pdf*.
 
 ::
 
     q1: Convert octal to Mayan representation.
 	...
 
-Example 2.
+Example 2. Jr. Programing
+_________________________
+
+.. _tutorial-unittest:
+
+Prerequisite: Unit Test
++++++++++++++++++++++++
+
+Eclipse & PyDev come with a build in facility of unit test, module "unittest".
+
+Unittest typically can be used in test case like:
+
+.. code-block:: python
+
+    import unittest
+
+    class Test(unittest.TestCase):
+        def testEx1(self):
+            self.assertEqual('7145010', s.numTrans('7145032 2 8'))
+            self.assertEqual('1540400', s.numTrans('1540670 3 54'))
+
+    t = Test()
+    t.ex1()
+    print('Test finished successfully!')
+..
+
+Now it's time to create a test case. Copy and modify the above snippet into test.py,
+save next to conv_64.py, and run with::
+
+    python3 test.py
+
+Or in eclipse,
+
+::
+
+    right click test.py
+    -> Debug as
+    -> Python Run
+
+Contest Problem
++++++++++++++++
 
 `Junior Division - Number Transformation, ACSL Sample <http://www.datafiles.acsl.org/samples/contest1/C_1_JR_Transform.pdf>`_
 
@@ -63,8 +106,11 @@ And a little bit faster:
     s = s[:3] + 'o' + s[4:] # s = 'Strong'
 ..
 
-Example 3:
+Example 3. Digital String
+_________________________
 
 - Find the correct :math:`P^{th}` number.
+
+TODO ...
 
 See handout.

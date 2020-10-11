@@ -35,7 +35,7 @@ the formated string into 3 integer, each range from 0 ~ 255.
             return (0, 0, 0)
 ..
 
-See `source and tester <https://github.com/odys-z/hello/blob/master/acsl/lect02/ex01/>`_
+See `source and tester <https://github.com/odys-z/hello/blob/master/acsl/lect03/ex01/>`_
 
 2. Convert Decimal to Radix 64
 ______________________________
@@ -169,7 +169,7 @@ value represented by a long string can not converted to **int** type. For the
 question 1404 of which input s can as long as 500 digits, the above way can not
 simply ported to Java or C++, etc.
 
-There are `2 C++ solution for reference <https://github.com/odys-z/hello/blob/master/acsl/lect02/leetcode.qt/q1404.h>`_.
+There are `2 C++ solution for reference <https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.qt/q1404.h>`_.
 One modified the question, which can only working correctly with input value less
 than :math:`2^{31}-1`. The other use another way to handle the carry out.
 
