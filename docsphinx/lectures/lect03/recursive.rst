@@ -31,31 +31,32 @@ This is essential in a mobile phone:
 
 To understand recursive function, just keep in mind::
 
-    A function represent a result.
+    A function represents a result.
 
 Remember this is enough.
 
-E.g. if :math:`f(1) = 1`, then we have :math:`2 ⋅ f(1) = 2`. We can define this as
+E.g. if :math:`f(n)` is a number, then :math:`f(n-1)` also a number. We can define
+more functions like
 
 .. math::
 
-    g(2) = 2 ⋅ f(1)
+    \begin{array}{cl}
+    g(m) & = m ⋅ f(m - 1),\\
+    h(s) & = s ⋅ g(s-1),\\
+    ...
+    \end{array}
 ..
 
-It's the same as
+If you try to implement these functions, you will quickly find that the functions
+are exactly the same except the function names. Function :math:`h` calling
+:math:`g` is the same as :math:`h` calling itself. So let's merge those into one.
 
 .. math::
 
-    f(2) = 2 ⋅ f(1).
+    f(n) = n ⋅ f(n-1), \quad\text{if $n > 0$},
 ..
 
-Here :math:`f()` called itself, that's a recursive function. We can push it a
-little bit further:
-
-.. math::
-
-    f(n) = n ⋅ f(n - 1).
-..
+Here :math:`f()` called itself, that's a recursive function.
 
 We've now defined factorial in recursive style. And this is easy to be implemented
 in program.

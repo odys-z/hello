@@ -161,20 +161,24 @@ recursive exists in natural world everywhere.</p>
 <a class="reference internal image-reference" href="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg"><img alt="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" src="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" style="width: 320px;" /></a>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/File:Flickr_-_cyclonebill_-_Romanesco.jpg">Creative Commons Attribution-Share Alike 2.0 Generic license</a></p>
 <p>To understand recursive function, just keep in mind:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">function</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">result</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">function</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">result</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Remember this is enough.</p>
-<p>E.g. if <span class="math notranslate nohighlight">\(f(1) = 1\)</span>, then we have <span class="math notranslate nohighlight">\(2 ⋅ f(1) = 2\)</span>. We can define this as</p>
+<p>E.g. if <span class="math notranslate nohighlight">\(f(n)\)</span> is a number, then <span class="math notranslate nohighlight">\(f(n-1)\)</span> also a number. We can define
+more functions like</p>
 <div class="math notranslate nohighlight">
-\[g(2) = 2 ⋅ f(1)\]</div>
-<p>It’s the same as</p>
+\[\begin{split}\begin{array}{cl}
+g(m) &amp; = m ⋅ f(m - 1),\\
+h(s) &amp; = s ⋅ g(s-1),\\
+...
+\end{array}\end{split}\]</div>
+<p>If you try to implement these functions, you will quickly find that the functions
+are exactly the same except the function names. Function <span class="math notranslate nohighlight">\(h\)</span> calling
+<span class="math notranslate nohighlight">\(g\)</span> is the same as <span class="math notranslate nohighlight">\(h\)</span> calling itself. So let’s merge those into one.</p>
 <div class="math notranslate nohighlight">
-\[f(2) = 2 ⋅ f(1).\]</div>
-<p>Here <span class="math notranslate nohighlight">\(f()\)</span> called itself, that’s a recursive function. We can push it a
-little bit further:</p>
-<div class="math notranslate nohighlight">
-\[f(n) = n ⋅ f(n - 1).\]</div>
+\[f(n) = n ⋅ f(n-1), \quad\text{if $n &gt; 0$},\]</div>
+<p>Here <span class="math notranslate nohighlight">\(f()\)</span> called itself, that’s a recursive function.</p>
 <p>We’ve now defined factorial in recursive style. And this is easy to be implemented
 in program.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># n &gt;= 0</span>
