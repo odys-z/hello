@@ -184,7 +184,7 @@ Then implement a program to evaluate all answers of question 4 in task 1.
 
 Hint: the important data structure for the program is Stack.
 
-Task 4 Reading
---------------
+Task 4 Reading*
+---------------
 
 `ACSL Wiki: Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_

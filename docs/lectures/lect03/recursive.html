@@ -185,17 +185,17 @@ in program.</p>
         <span class="k">return</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>The following is how f(5) been evaluated.</p>
+<p>The following is how <span class="math notranslate nohighlight">\(f(5)\)</span> been evaluated.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{cl}
 \hline
     f(n) &amp; = n ⋅ f(n - 1) \\
     \hline
-5! &amp; = 5 ⋅ (4!)_? \\
-   &amp; = 5 ⋅ 4 ⋅ (3!)_? \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ (2!)_? \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!)_? \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!)_? \\
+5! &amp; = 5 ⋅ f(4)_? \\
+   &amp; = 5 ⋅ 4 ⋅ f(3)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ f(1)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ f(0)_? \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ 1 \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 \\

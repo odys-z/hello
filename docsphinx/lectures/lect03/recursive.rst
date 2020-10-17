@@ -70,7 +70,7 @@ in program.
             return 1
 ..
 
-The following is how f(5) been evaluated.
+The following is how :math:`f(5)` been evaluated.
 
 .. math::
 
@@ -78,11 +78,11 @@ The following is how f(5) been evaluated.
     \hline
 	f(n) & = n ⋅ f(n - 1) \\
 	\hline
-    5! & = 5 ⋅ (4!)_? \\
-       & = 5 ⋅ 4 ⋅ (3!)_? \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ (2!)_? \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!)_? \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!)_? \\
+    5! & = 5 ⋅ f(4)_? \\
+       & = 5 ⋅ 4 ⋅ f(3)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ f(1)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ f(0)_? \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ 1 \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 \\
