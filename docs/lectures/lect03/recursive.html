@@ -159,19 +159,25 @@ world everywhere.</p>
 <p><a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=79215970">Image By Hyacinth - Own work, Public Domain</a></p>
 <a class="reference internal image-reference" href="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg"><img alt="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" src="../../_images/03-Flickr_-_cyclonebill_-_Romanesco.jpg" style="width: 320px;" /></a>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/File:Flickr_-_cyclonebill_-_Romanesco.jpg">Creative Commons Attribution-Share Alike 2.0 Generic license</a></p>
-<p>This image, originally posted to Flickr, was reviewed on 23 December 2009 by the administrator or reviewer Multichill, who confirmed that it was available on Flickr under the stated license on that date.</p>
-<p>To understand recursive function, jus keep in mind:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">function</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">result</span>
+<dl class="docutils">
+<dt>::</dt>
+<dd>This image, originally posted to Flickr, was reviewed on 23 December 2009 by
+the administrator or reviewer Multichill, who confirmed that it was available
+on Flickr under the stated license on that date.</dd>
+</dl>
+<p>To understand recursive function, just keep in mind:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">function</span> <span class="n">represent</span> <span class="n">a</span> <span class="n">result</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>remember this is enough.</p>
+<p>Remember this is enough.</p>
 <p>E.g. if <span class="math notranslate nohighlight">\(f(1) = 1\)</span>, then we have <span class="math notranslate nohighlight">\(2 ⋅ f(1) = 2\)</span>. We can define this as</p>
 <div class="math notranslate nohighlight">
 \[g(2) = 2 ⋅ f(1)\]</div>
 <p>It’s the same as</p>
 <div class="math notranslate nohighlight">
 \[f(2) = 2 ⋅ f(1).\]</div>
-<p>Here f() is a recursive function. We can push it a little bit further:</p>
+<p>Here <span class="math notranslate nohighlight">\(f()\)</span> called itself, that’s a recursive function. We can push it a
+little bit further:</p>
 <div class="math notranslate nohighlight">
 \[f(n) = n ⋅ f(n - 1).\]</div>
 <p>We’ve now defined factorial in recursive style. And this is easy to be implemented
@@ -190,11 +196,11 @@ in program.</p>
 \hline
     f(n) &amp; = n ⋅ f(n - 1) \\
     \hline
-5! &amp; = 5 ⋅ (4!) \\
-   &amp; = 5 ⋅ 4 ⋅ (3!) \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ (2!) \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!) \\
-   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!) \\
+5! &amp; = 5 ⋅ (4!)_? \\
+   &amp; = 5 ⋅ 4 ⋅ (3!)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ (2!)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!)_? \\
+   &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!)_? \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ 1 \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 \\
    &amp; = 5 ⋅ 4 ⋅ 3 ⋅ 2 \\
@@ -202,14 +208,15 @@ in program.</p>
    &amp; = 5 ⋅ 24 \\
    &amp; = 120 \\
     \end{array}\end{split}\]</div>
+<p>The self function call MUST eventually reach the last call.</p>
 <p>One last thing to be noted is recursive function doesn’t necessarily accept only
-one argument. This is also a recursive function:</p>
+one argument. Here is also a recursive function:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f(a, b) =
 \begin{cases}
 f(\frac{a}{2}, \frac{b}{3}),  &amp; \text{if $a$ is even and $b$ &gt; 0} \\
 a + f(a - b, b - 2), &amp; \text{if $a$ is odd and $b$ &gt; 0} \\
-a + 3, &amp; \text{if $$} b \leqslant 0
+3, &amp; \text{if $$} a, b \leqslant 0
 \end{cases}\end{split}\]</div>
 </div>
 <div class="section" id="examples">

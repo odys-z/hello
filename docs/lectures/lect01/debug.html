@@ -188,7 +188,8 @@ into your new fibonacci.py file.</p>
 </div>
 <div class="section" id="add-a-break-point">
 <h3>4. add a break point<a class="headerlink" href="#add-a-break-point" title="Permalink to this headline">¶</a></h3>
-<p>Set a break point by click at the source file line number.</p>
+<p>Set a break point by click at the source file line number. (by double click a the
+left of line number or in menu, Run, Debug)</p>
 <a class="reference internal image-reference" href="../../_images/01-break-point.png"><img alt="../../_images/01-break-point.png" src="../../_images/01-break-point.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="debug">
@@ -200,6 +201,17 @@ into your new fibonacci.py file.</p>
 <p>With break point stop the program, you can check what’s going on at the point,
 such as the variables are values like expected.</p>
 <a class="reference internal image-reference" href="../../_images/01-debug-ui.png"><img alt="../../_images/01-debug-ui.png" src="../../_images/01-debug-ui.png" style="width: 600px;" /></a>
+<p>Tip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="n">your</span> <span class="n">project</span> <span class="ow">and</span> <span class="n">source</span> <span class="n">file</span> <span class="n">name</span> <span class="k">with</span> <span class="n">a</span> <span class="n">starting</span> <span class="n">letter</span><span class="o">.</span> <span class="n">Otherwise</span>
+<span class="n">the</span> <span class="n">breakpoint</span> <span class="n">doesn</span><span class="s1">&#39;t stop the process (Windows 10, Eclipse 4.17.0, PyDev</span>
+<span class="mf">8.0</span><span class="o">.</span><span class="mf">0.20209061309</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Like any other programming language, follow the common conventions e.g. start a
+variable with letter or underscore, “_”. We’ve encountered a weired situation
+that someone’s debug precess doesn’t stop at where the line with a breakpoint.
+After rename her project name, which is actually “1”, and the python source file
+name, which is “12.py”, everything works as expected.</p>
 </div>
 </div>
 <div class="section" id="trouble-shootings">

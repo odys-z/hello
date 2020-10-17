@@ -249,8 +249,8 @@ While loop::
 
 For Beginner:
 
-According to some questions from beginners, if this is the first time of your
-reading a program, it may still feel confused about the source code. There are
+According to some questions from beginners, if this is the first time of one
+reading a program, who may still feel confused about the source code. There are
 some knowledge you should know first.
 
 - Array Access
@@ -258,6 +258,24 @@ some knowledge you should know first.
 - Function and Variable Scope
 
 - range() and loop control
+
+But you should be faithful once you go through again following the author.
+
+The second time when we reach here, you can answer the question about the computing
+complexity.
+
+Tip: Python time should be useful here.
+
+.. code-block:: python
+
+    import time
+
+    time.time()
+..
+
+Here's an additional example that shows how to use python time:
+
+`Python | Which is faster to initialize lists?, GeeksforGeeks <https://www.geeksforgeeks.org/python-which-is-faster-to-initialize-lists/>`_
 
 Task 2: Guess the number
 ________________________

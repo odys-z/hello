@@ -21,14 +21,17 @@ world everywhere.
 
 `Creative Commons Attribution-Share Alike 2.0 Generic license <https://en.wikipedia.org/wiki/File:Flickr_-_cyclonebill_-_Romanesco.jpg>`_
 
-This image, originally posted to Flickr, was reviewed on 23 December 2009 by the administrator or reviewer Multichill, who confirmed that it was available on Flickr under the stated license on that date.
+::
+    This image, originally posted to Flickr, was reviewed on 23 December 2009 by
+    the administrator or reviewer Multichill, who confirmed that it was available
+    on Flickr under the stated license on that date.
 
 
-To understand recursive function, jus keep in mind::
+To understand recursive function, just keep in mind::
 
-    A function represent a result
+    A function represent a result.
 
-remember this is enough.
+Remember this is enough.
 
 E.g. if :math:`f(1) = 1`, then we have :math:`2 ⋅ f(1) = 2`. We can define this as
 
@@ -44,7 +47,8 @@ It's the same as
     f(2) = 2 ⋅ f(1).
 ..
 
-Here f() is a recursive function. We can push it a little bit further:
+Here :math:`f()` called itself, that's a recursive function. We can push it a
+little bit further:
 
 .. math::
 
@@ -72,11 +76,11 @@ The following is how f(5) been evaluated.
     \hline
 	f(n) & = n ⋅ f(n - 1) \\
 	\hline
-    5! & = 5 ⋅ (4!) \\
-       & = 5 ⋅ 4 ⋅ (3!) \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ (2!) \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!) \\
-       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!) \\
+    5! & = 5 ⋅ (4!)_? \\
+       & = 5 ⋅ 4 ⋅ (3!)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ (2!)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ (1!)_? \\
+       & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ (0!)_? \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ 1 \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ 2 \\
@@ -86,8 +90,10 @@ The following is how f(5) been evaluated.
 	\end{array}
 ..
 
+The self function call MUST eventually reach the last call.
+
 One last thing to be noted is recursive function doesn't necessarily accept only
-one argument. This is also a recursive function:
+one argument. Here is also a recursive function:
 
 .. math::
 
@@ -95,7 +101,7 @@ one argument. This is also a recursive function:
     \begin{cases}
     f(\frac{a}{2}, \frac{b}{3}),  & \text{if $a$ is even and $b$ > 0} \\
     a + f(a - b, b - 2), & \text{if $a$ is odd and $b$ > 0} \\
-    a + 3, & \text{if $$} b \leqslant 0
+    3, & \text{if $$} a, b \leqslant 0
     \end{cases}
 ..
 
