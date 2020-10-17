@@ -39,11 +39,6 @@ Task: fix the above problem
 
 Try a very large number N and figure out why and how to fix the problem.
 
-Reading Task
-------------
-
-`ACSL Wiki: Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
-
 Programming Task
 ----------------
 

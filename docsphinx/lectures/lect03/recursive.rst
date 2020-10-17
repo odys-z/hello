@@ -8,8 +8,10 @@ A definition that defines an object in terms of itself is said to be recursive [
 
 This summarized all of the topic.
 
-At the first sight this a hard to be understand. But recursive exists in natural
-world everywhere.
+At the first sight the "self-calling function" is hard to be understood. But
+recursive exists in natural world everywhere.
+
+This is essential in a mobile phone:
 
 .. image:: ../img/03-Peano_Sierpinski_carpet_4.svg
     :width: 300px
@@ -21,7 +23,7 @@ world everywhere.
 
 `Creative Commons Attribution-Share Alike 2.0 Generic license <https://en.wikipedia.org/wiki/File:Flickr_-_cyclonebill_-_Romanesco.jpg>`_
 
-::
+..
     This image, originally posted to Flickr, was reviewed on 23 December 2009 by
     the administrator or reviewer Multichill, who confirmed that it was available
     on Flickr under the stated license on that date.
