@@ -21,10 +21,9 @@ def main():
 
     for x in range(2, n): # 2, 3, ... 4 (if n = 5)
         # x = 2, x = 3, x = 4
-        # put a(x) = a(x-1) + a(x-2) 
+        # put a(x) = a(x-1) + a(x-2)
         addTo(x, a)
 
     print(a[n-1])
 
 main()
-

@@ -43,7 +43,8 @@ into your new fibonacci.py file.
 4. add a break point
 ____________________
 
-Set a break point by click at the source file line number.
+Set a break point by click at the source file line number. (by double click a the
+left of line number or in menu, Run, Debug)
 
 .. image:: ../img/01-break-point.png
 	:width: 600px
@@ -60,6 +61,18 @@ such as the variables are values like expected.
 
 .. image:: ../img/01-debug-ui.png
 	:width: 600px
+
+Tip::
+
+    Name your project and source file name with a starting letter. Otherwise
+    the breakpoint doesn't stop the process (Windows 10, Eclipse 4.17.0, PyDev
+    8.0.0.20209061309).
+
+Like any other programming language, follow the common conventions e.g. start a
+variable with letter or underscore, "_". We've encountered a weired situation
+that someone's debug precess doesn't stop at where the line with a breakpoint.
+After rename her project name, which is actually "1", and the python source file
+name, which is "12.py", everything works as expected.
 
 Trouble Shootings
 -----------------

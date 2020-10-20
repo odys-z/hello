@@ -22,7 +22,7 @@ Search for *PyDev*.
 
 Tip: install PyDev with offline package.
 
-Follow <a href='https://stackoverflow.com/a/11620013'>this</a>.
+Follow `this <https://stackoverflow.com/a/11620013>`_.
 
 3. Debug with PyDev
 
@@ -38,11 +38,6 @@ Task: fix the above problem
 ---------------------------
 
 Try a very large number N and figure out why and how to fix the problem.
-
-Reading Task
-------------
-
-`ACSL Wiki: Recursive Functions <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
 
 Programming Task
 ----------------

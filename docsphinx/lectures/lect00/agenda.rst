@@ -1,6 +1,13 @@
 The Contest
 ===========
 
+Contest Platform
+----------------
+
+`HackerRank Platform <https://www.hackerrank.com/resources/#guides>`_ is where
+the ACSL contests are administered online. See
+`Administering Contests, ACSL <https://www.acsl.org/get-started>`_.
+
 Topics & Agenda
 ---------------
 
