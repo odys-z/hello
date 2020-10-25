@@ -21,12 +21,14 @@ def main():
     # [1, 1, 0, 0, 0]
 
     startime = time.time()
-    for x in range(2, n): # 2, 3, ... 4 (if n = 5)
-        # x = 2, x = 3, x = 4
+    for x in range(2, n): # x = 2, 3, ... 4 (if n = 5)
         # put a(x) = a(x-1) + a(x-2)
+
+        # a[x] = a[x-1] + a[x-2]
         addTo(x, a)
 
     endtime = time.time()
     print(endtime - startime)
+    print(a)
 
 main()
