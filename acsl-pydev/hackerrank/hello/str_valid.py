@@ -12,7 +12,7 @@ test case:
 '''
 
 # WRONG ANSWER
-# correct reference: www-res/str_valid.py
+# correct reference: <res>/hackerrank/str_valid.py
 if __name__ == '__main__':
     s = input()
     yan = s.isalnum()
