@@ -133,7 +133,7 @@ class SolutionACSL1:
             carry = s // 10
             sum2[ix] = str(v)
             '''
-            carry, sum2[ix] = sum3(carry, num1, ix1)
+            carry, sum2[ix] = sum3(carry, num1, ix1, '0', 0)
             ix, ix1 = ix - 1, ix1 - 1
 
         print(carry, sum2)
@@ -144,4 +144,5 @@ class SolutionACSL1:
             return ''.join(sum2[1:])
 
 def sum3(carry, n1, ix1, n2, ix2):
-    pass
+    s = int(n1[ix1]) + int(n2[ix2]) + carry
+    return s // 10, str(s % 10)

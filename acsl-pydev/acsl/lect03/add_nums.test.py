@@ -4,7 +4,7 @@ from add_nums import SolutionLeetCode1, SolutionLeetCode2, SolutionACSL1
 
 class Test(unittest.TestCase):
     def q415(self):
-        s = SolutionLeetCode2() 
+        s = SolutionACSL1() 
         self.assertEqual('0', s.addStrings('0', '0'))
         self.assertEqual('1', s.addStrings('1', '0'))
         self.assertEqual('3', s.addStrings('1', '2'))
@@ -20,5 +20,8 @@ class Test(unittest.TestCase):
         self.assertEqual('1010', s.addStrings('906', '104'))
         self.assertEqual('1234567903332', s.addStrings('12345', '1234567890987'))
         self.assertEqual('99099110110', s.addStrings('99099099099', '11011'))
+
+        print('test ok')
+        
 t = Test()
 t.q415()
