@@ -111,4 +111,62 @@ one argument. Here is also a recursive function:
 Examples
 --------
 
-TODO handout
+1 Recursive Sequences, SAT Math Level 2
+
+.. math::
+
+    \begin{array}{rl}
+    a_1 & = 0,\\
+    a_2 & = 1,\\
+	a_n & = a_{n-1} + 2⋅a_{n-2}
+	\end{array}
+..
+
+What is the value of :math:`a_7`?
+
+::
+
+    (A) 15       (B) 18       (C) 23        (D) 24       (E) 21
+
+2 Samples from `ACSL Topics <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
+
+(A)
+
+.. math::
+
+    g(x) =
+    \begin{cases}
+    g(x-3) + 1 & \text{if $x$ > 0} \\
+    3x, & \text{otherwise}
+    \end{cases}
+..
+
+What is the value of :math:`g(11)`?
+
+(B)
+
+.. math::
+
+    h(x) =
+    \begin{cases}
+    h(x-7) + 1 & \text{when $5 < x$} \\
+    x & \text{when $0 \le x \le 5$} \\
+    h(x+3) & \text{when $x < 0$}
+    \end{cases}
+..
+
+
+What is the value of :math:`h(13)`?
+
+(C)
+
+.. math::
+
+    f(x,y) =
+    \begin{cases}
+    f(x-1, y-1) + 1 & \text{if $x > y$} \\
+    x+y, & \text{otherwise}
+    \end{cases}
+..
+
+What is the value of :math:`f(12,6)`?
