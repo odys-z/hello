@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lec 3: Topics of Contest #1 &mdash; ACSL Lecture 1.0 documentation</title>
+  <title>What Does This Program Do? &mdash; ACSL Lecture 1.0 documentation</title>
   
 
   
@@ -36,8 +36,9 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
-        <link rel="next" title="Computer Number Systems" href="number-sys.html"/>
-        <link rel="prev" title="Homework" href="../lect02/homework.html"/> 
+        <link rel="up" title="Lec 3: Topics of Contest #1" href="index.html"/>
+        <link rel="next" title="Homework" href="homework.html"/>
+        <link rel="prev" title="Recursive Functions" href="recursive.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -86,10 +87,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect00/index.html">Lec 0: About ACSL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect01/index.html">Lec 1: Python Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lec 3: Topics of Contest #1</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Topics of Contest #1</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="number-sys.html">Computer Number Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive.html">Recursive Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="what-prog-do.html">What Does This Program Do?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What Does This Program Do?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#go-through-problem-3">Go Through Problem 3</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="homework.html">Homework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
 </ul>
@@ -129,7 +133,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Lec 3: Topics of Contest #1</li>
+          <li><a href="index.html">Lec 3: Topics of Contest #1</a> &raquo;</li>
+      
+    <li>What Does This Program Do?</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -141,40 +147,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lec-3-topics-of-contest-1">
-<h1>Lec 3: Topics of Contest #1<a class="headerlink" href="#lec-3-topics-of-contest-1" title="Permalink to this headline">¶</a></h1>
-<p>In this class, you will have a try on some problems from ACSL 2018-2019 Contest #1.
-After this weeks exercise, the intermediate programming problem shouldn’t look
-so scary.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="number-sys.html">Computer Number Systems</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="number-sys.html#topic-summary">Topic Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="number-sys.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="recursive.html">Recursive Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="recursive.html#topic-summary">Topic Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recursive.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="what-prog-do.html">What Does This Program Do?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="what-prog-do.html#go-through-problem-3">Go Through Problem 3</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="homework.html">Homework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#prequisite-unit-test">Prequisite: Unit Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#task-0-warm-up">Task 0 warm up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#string-validator-hanckerrank">1. String Validator &#64; HanckerRank</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#task-1-sample-programming-problem">Task 1 Sample Programming Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#task-2-number-string-replacement">Task 2. Number / String Replacement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#task-3-replace-chars">Task 3. Replace Chars</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework.html#task-4-replace-string">Task 4. Replace String*</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ref.html">Reference</a></li>
-</ul>
+  <div class="section" id="what-does-this-program-do">
+<h1>What Does This Program Do?<a class="headerlink" href="#what-does-this-program-do" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=What_Does_This_Program_Do%3F">ACSL Topics: What Does This Program Do?</a></p>
+<div class="section" id="go-through-problem-3">
+<h2>Go Through Problem 3<a class="headerlink" href="#go-through-problem-3" title="Permalink to this headline">¶</a></h2>
+<p>Pseudo Code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="n">H</span><span class="p">,</span> <span class="n">R</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">H</span><span class="o">&gt;</span><span class="mi">48</span> <span class="n">then</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="p">(</span><span class="n">H</span> <span class="o">-</span> <span class="mi">48</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="mi">48</span>
+<span class="n">end</span> <span class="k">if</span>
+<span class="k">if</span> <span class="n">H</span><span class="o">&gt;</span><span class="mi">40</span> <span class="n">then</span>
+   <span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="p">(</span><span class="n">H</span> <span class="o">-</span> <span class="mi">40</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span>
+   <span class="n">H</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">end</span> <span class="k">if</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="n">H</span> <span class="o">*</span> <span class="n">R</span>
+<span class="n">output</span> <span class="n">B</span>
+</pre></div>
+</div>
+<p>The variables in loops:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lllll}
+J, Aj &amp; &amp;  N / N' &amp; \\
+\hline
+J = 0, Aj = 12 \\
+    &amp; B0 = 17 &amp; 0 / 1 &amp; C = 17 \\
+    &amp; B1 = 34 &amp; 1     &amp; \\
+    &amp;             &amp; 1 / 2 &amp; C = 17, 12 \\
+\hline
+J = 1, Aj = 42 \\
+    &amp; B0 = 17 &amp; 2 &amp; C = 17, 12, 17 \\
+    &amp; B1 = 34 &amp; 3 &amp; C = 17, 12, 17, 34 \\
+    &amp; B2 = 81 &amp; &amp; \\
+    &amp;         &amp; 4 / 5 &amp; C = 17, 12, 17, 34, 42 \\
+\hline
+J = 2, Aj = 52 \\
+    &amp; B0 = 17 &amp; 5 &amp; C = 17, 12, 17, 34, 42, 17 \\
+    &amp; B1 = 34 &amp; 6 &amp; C = 17, 12, 17, 34, 42, 17, 34 \\
+    &amp; B2 = 81 &amp; &amp; \\
+    &amp;         &amp; 7 / 8 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52 \\
+\hline
+J = 3, Aj = 57 \\
+    &amp; B0 = 17 &amp; 9  &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17 \\
+    &amp; B1 = 34 &amp; 10 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34 \\
+    &amp; B2 = 81 \\
+    &amp;         &amp; 11 / 12     &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57 \\
+\hline
+J = 4, Aj = 77 \\
+    &amp; B0 = 17 &amp; 13 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17 \\
+    &amp; B1 = 34 &amp; 14 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34 \\
+    &amp; B2 = 81 \\
+    &amp;         &amp; 14 / 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81 \\
+\hline
+J = 5, Aj = -100 \\
+    &amp;         &amp; 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81, 81 \\
+\end{array}\end{split}\]</div>
 </div>
 </div>
 
@@ -185,10 +214,10 @@ so scary.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="number-sys.html" class="btn btn-neutral float-right" title="Computer Number Systems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../lect02/homework.html" class="btn btn-neutral" title="Homework" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="recursive.html" class="btn btn-neutral" title="Recursive Functions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
