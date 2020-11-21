@@ -77,8 +77,8 @@ The following is how :math:`f(5)` been evaluated.
 
     \begin{array}{cl}
     \hline
-	f(n) & = n ⋅ f(n - 1) \\
-	\hline
+    f(n) & = n ⋅ f(n - 1) \\
+    \hline
     5! & = 5 ⋅ f(4)_? \\
        & = 5 ⋅ 4 ⋅ f(3)_? \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
@@ -90,7 +90,7 @@ The following is how :math:`f(5)` been evaluated.
        & = 5 ⋅ 4 ⋅ 6 \\
        & = 5 ⋅ 24 \\
        & = 120 \\
-	\end{array}
+    \end{array}
 ..
 
 The self function call MUST eventually reach the last call.
@@ -164,7 +164,7 @@ What is the value of :math:`h(13)`?
 
     f(x,y) =
     \begin{cases}
-    f(x-1, y-1) + 1 & \text{if $x > y$} \\
+    f(x-y, y-1) + 2 & \text{if $x > y$} \\
     x+y, & \text{otherwise}
     \end{cases}
 ..
