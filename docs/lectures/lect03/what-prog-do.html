@@ -167,41 +167,47 @@
 <span class="n">output</span> <span class="n">B</span>
 </pre></div>
 </div>
+<p>Input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>    <span class="mi">5</span>
+<span class="n">A</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">B</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>The variables in loops:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{lllll}
-J, Aj &amp; &amp;  N / N' &amp; \\
+J, A_J &amp; &amp;  N / N' &amp; \\
 \hline
-J = 0, Aj = 12 \\
-    &amp; B0 = 17 &amp; 0 / 1 &amp; C = 17 \\
-    &amp; B1 = 34 &amp; 1     &amp; \\
+J = 0, A_J = 12 \\
+    &amp; B_0 = 17 &amp; 0 / 1 &amp; C = 17 \\
+    &amp; B_1 = 34 &amp; 1     &amp; \\
     &amp;             &amp; 1 / 2 &amp; C = 17, 12 \\
 \hline
-J = 1, Aj = 42 \\
-    &amp; B0 = 17 &amp; 2 &amp; C = 17, 12, 17 \\
-    &amp; B1 = 34 &amp; 3 &amp; C = 17, 12, 17, 34 \\
-    &amp; B2 = 81 &amp; &amp; \\
+J = 1, A_J = 42 \\
+    &amp; B_0 = 17 &amp; 2 &amp; C = 17, 12, 17 \\
+    &amp; B_1 = 34 &amp; 3 &amp; C = 17, 12, 17, 34 \\
+    &amp; B_2 = 81 &amp; &amp; \\
     &amp;         &amp; 4 / 5 &amp; C = 17, 12, 17, 34, 42 \\
 \hline
-J = 2, Aj = 52 \\
-    &amp; B0 = 17 &amp; 5 &amp; C = 17, 12, 17, 34, 42, 17 \\
-    &amp; B1 = 34 &amp; 6 &amp; C = 17, 12, 17, 34, 42, 17, 34 \\
-    &amp; B2 = 81 &amp; &amp; \\
+J = 2, A_J = 52 \\
+    &amp; B_0 = 17 &amp; 5 &amp; C = 17, 12, 17, 34, 42, 17 \\
+    &amp; B_1 = 34 &amp; 6 &amp; C = 17, 12, 17, 34, 42, 17, 34 \\
+    &amp; B_2 = 81 &amp; &amp; \\
     &amp;         &amp; 7 / 8 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52 \\
 \hline
-J = 3, Aj = 57 \\
-    &amp; B0 = 17 &amp; 9  &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17 \\
-    &amp; B1 = 34 &amp; 10 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34 \\
-    &amp; B2 = 81 \\
+J = 3, A_J = 57 \\
+    &amp; B_0 = 17 &amp; 9  &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17 \\
+    &amp; B_1 = 34 &amp; 10 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34 \\
+    &amp; B_2 = 81 \\
     &amp;         &amp; 11 / 12     &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57 \\
 \hline
-J = 4, Aj = 77 \\
-    &amp; B0 = 17 &amp; 13 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17 \\
-    &amp; B1 = 34 &amp; 14 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34 \\
-    &amp; B2 = 81 \\
+J = 4, A_J = 77 \\
+    &amp; B_0 = 17 &amp; 13 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17 \\
+    &amp; B_1 = 34 &amp; 14 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34 \\
+    &amp; B_2 = 81 \\
     &amp;         &amp; 14 / 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81 \\
 \hline
-J = 5, Aj = -100 \\
+J = 5, A_J = -100 \\
     &amp;         &amp; 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81, 81 \\
 \end{array}\end{split}\]</div>
 </div>
