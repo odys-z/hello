@@ -7,8 +7,26 @@ Prequisite: Unit Test
 TDD stands for an important software engineering practice, Test Driven Development.
 We need setup Python unit test helper to test our program.
 
-Using unit test in Python is very simple: import, run your program & assert the
-results. Here is the `tester of a LeetCode solution <https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py>`_.
+The solution's `sample.py <https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/sample.py>`_
+provided a source file template for simulating the local tests in `HackerRank`
+the style (without class).
+
+.. code-block:: python
+
+    from unittest import TestCase
+
+    def your_func():
+        # here is your program
+        return 'Hi!'
+
+    t = TestCase()
+    t.assertEqual('Hi!', your_func())
+    print('OK!')
+..
+
+Using unit test in Python with test *class* is also simple: import, run & assert
+the results. Here is the
+`tester of a LeetCode solution <https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py>`_.
 
 .. code-block:: python
 
@@ -35,7 +53,7 @@ once you get familiar with it.
 Task 0 warm up
 --------------
 
-1. String Validator @ HanckerRank
+1. String Validator @ HackerRank
 ---------------------------------
 
 See `the problem <https://www.hackerrank.com/challenges/string-validators/problem>`_.

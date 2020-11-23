@@ -91,7 +91,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Homework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prequisite-unit-test">Prequisite: Unit Test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-0-warm-up">Task 0 warm up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#string-validator-hanckerrank">1. String Validator &#64; HanckerRank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-validator-hackerrank">1. String Validator &#64; HackerRank</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-sample-programming-problem">Task 1 Sample Programming Problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-2-number-string-replacement">Task 2. Number / String Replacement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-3-replace-chars">Task 3. Replace Chars</a></li>
@@ -156,8 +156,23 @@
 <h2>Prequisite: Unit Test<a class="headerlink" href="#prequisite-unit-test" title="Permalink to this headline">¶</a></h2>
 <p>TDD stands for an important software engineering practice, Test Driven Development.
 We need setup Python unit test helper to test our program.</p>
-<p>Using unit test in Python is very simple: import, run your program &amp; assert the
-results. Here is the <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py">tester of a LeetCode solution</a>.</p>
+<p>The solution&#8217;s <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/sample.py">sample.py</a>
+provided a source file template for simulating the local tests in <cite>HackerRank</cite>
+the style (without class).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+<span class="k">def</span> <span class="nf">your_func</span><span class="p">():</span>
+    <span class="c1"># here is your program</span>
+    <span class="k">return</span> <span class="s1">&#39;Hi!&#39;</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">TestCase</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">,</span> <span class="n">your_func</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;OK!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using unit test in Python with test <em>class</em> is also simple: import, run &amp; assert
+the results. Here is the
+<a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py">tester of a LeetCode solution</a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">from</span> <span class="nn">q1404</span> <span class="kn">import</span> <span class="n">Solution</span>
 
@@ -180,8 +195,8 @@ once you get familiar with it.</p>
 <div class="section" id="task-0-warm-up">
 <h2>Task 0 warm up<a class="headerlink" href="#task-0-warm-up" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="string-validator-hanckerrank">
-<h2>1. String Validator &#64; HanckerRank<a class="headerlink" href="#string-validator-hanckerrank" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="string-validator-hackerrank">
+<h2>1. String Validator &#64; HackerRank<a class="headerlink" href="#string-validator-hackerrank" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://www.hackerrank.com/challenges/string-validators/problem">the problem</a>.</p>
 <p>Some <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/hackerrank/hello/str_valid.py">hint</a></p>
 <p>Test case:</p>
