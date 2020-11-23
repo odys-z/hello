@@ -28,12 +28,12 @@ Annihilator: :math:`x + 1 = 1 \quad x ⋅ 0 = 0`
 
 Complement Law: :math:`x+\bar{x}=1 \quad x⋅\bar{x}=0`
 
-Absorptive Law:
+Absorptive Law (easily forgotten):
 
 .. math::
 
-    x+xy=x
-    x+\bar{x}y=x+y  \quad - easily \space forgotten
+    x+xy=x \quad \space\\
+    x+\bar{x}y=x+y
 ..
 
 Distributive Law & DeMorgan's Law

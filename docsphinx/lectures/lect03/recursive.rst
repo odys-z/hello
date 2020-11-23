@@ -77,8 +77,8 @@ The following is how :math:`f(5)` been evaluated.
 
     \begin{array}{cl}
     \hline
-	f(n) & = n ⋅ f(n - 1) \\
-	\hline
+    f(n) & = n ⋅ f(n - 1) \\
+    \hline
     5! & = 5 ⋅ f(4)_? \\
        & = 5 ⋅ 4 ⋅ f(3)_? \\
        & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
@@ -90,7 +90,7 @@ The following is how :math:`f(5)` been evaluated.
        & = 5 ⋅ 4 ⋅ 6 \\
        & = 5 ⋅ 24 \\
        & = 120 \\
-	\end{array}
+    \end{array}
 ..
 
 The self function call MUST eventually reach the last call.
@@ -111,4 +111,62 @@ one argument. Here is also a recursive function:
 Examples
 --------
 
-TODO handout
+1 Recursive Sequences, SAT Math Level 2
+
+.. math::
+
+    \begin{array}{rl}
+    a_1 & = 0,\\
+    a_2 & = 1,\\
+	a_n & = a_{n-1} + 2⋅a_{n-2}
+	\end{array}
+..
+
+What is the value of :math:`a_7`?
+
+::
+
+    (A) 15       (B) 18       (C) 23        (D) 24       (E) 21
+
+2 Samples from `ACSL Topics <http://www.categories.acsl.org/wiki/index.php?title=Recursive_Functions>`_
+
+(A)
+
+.. math::
+
+    g(x) =
+    \begin{cases}
+    g(x-3) + 1 & \text{if $x$ > 0} \\
+    3x, & \text{otherwise}
+    \end{cases}
+..
+
+What is the value of :math:`g(11)`?
+
+(B)
+
+.. math::
+
+    h(x) =
+    \begin{cases}
+    h(x-7) + 1 & \text{when $5 < x$} \\
+    x & \text{when $0 \le x \le 5$} \\
+    h(x+3) & \text{when $x < 0$}
+    \end{cases}
+..
+
+
+What is the value of :math:`h(13)`?
+
+(C)
+
+.. math::
+
+    f(x,y) =
+    \begin{cases}
+    f(x-y, y-1) + 2 & \text{if $x > y$} \\
+    x+y, & \text{otherwise}
+    \end{cases}
+..
+
+What is the value of :math:`f(12,6)`?

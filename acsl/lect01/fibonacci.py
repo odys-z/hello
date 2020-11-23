@@ -1,3 +1,4 @@
+import time
 
 def addTo(m, fb):
     fb[m] = fb[m - 1] + fb[m - 2]
@@ -19,11 +20,15 @@ def main():
     a[1] = 1
     # [1, 1, 0, 0, 0]
 
-    for x in range(2, n): # 2, 3, ... 4 (if n = 5)
-        # x = 2, x = 3, x = 4
+    startime = time.time()
+    for x in range(2, n): # x = 2, 3, ... 4 (if n = 5)
         # put a(x) = a(x-1) + a(x-2)
+
+        # a[x] = a[x-1] + a[x-2]
         addTo(x, a)
 
-    print(a[n-1])
+    endtime = time.time()
+    print(endtime - startime)
+    print(a)
 
 main()

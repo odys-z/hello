@@ -12,5 +12,6 @@ Contents:
 
    number-sys
    recursive
+   what-prog-do
    homework
    ref

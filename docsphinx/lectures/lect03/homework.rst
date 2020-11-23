@@ -32,6 +32,20 @@ will throw an exception - program stopped with error.
 You should always use the method to test your program. It's efficient and convenient
 once you get familiar with it.
 
+Task 0 warm up
+--------------
+
+1. String Validator @ HanckerRank
+---------------------------------
+
+See `the problem <https://www.hackerrank.com/challenges/string-validators/problem>`_.
+
+Some `hint <https://github.com/odys-z/hello/blob/master/acsl-pydev/hackerrank/hello/str_valid.py>`_
+
+Test case::
+
+    #$%@^&*k sv h 4oi3hu /dh ui s 0hem9m4c02mw4xo;,wh fwhlxfxu83v 08 n8OIM 03J J3L;JM3M3C3'J N0N9 OHOLNHNLKNLKNKNKK330
+
 Task 1 Sample Programming Problem
 ---------------------------------
 
