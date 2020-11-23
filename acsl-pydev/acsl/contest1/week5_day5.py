@@ -1,6 +1,6 @@
 '''
     Junior C#1, stigid
-    PROBLEM: Given a number less than 10 50 , answer various questions about the number.
+    PROBLEM: Given a number less than 10 ** 50 , answer various questions about the number.
 '''
 from unittest import TestCase
 

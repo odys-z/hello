@@ -3,7 +3,7 @@ What Does This Program Do?
 
 `ACSL Topics: What Does This Program Do? <http://www.categories.acsl.org/wiki/index.php?title=What_Does_This_Program_Do%3F>`_
 
-Go Through Problem 3
+Go Through Problem 2
 --------------------
 
 Pseudo Code::
@@ -20,6 +20,25 @@ Pseudo Code::
     end if
     B = B + H * R
     output B
+
+Go Through Problem 2
+--------------------
+
+Pseudo Code::
+
+    A(0) = 12: A(1) = 41: A(2) = 52
+    A(3) = 57: A(4) = 77: A(5) = -100
+    B(0) = 17: B(1) = 34: B(20 = 81
+    J = 0: K = 0: N = 0
+    while A(J) > 0
+      while B(K) <= A(J)
+        C(N) = B(K)
+        N = N + 1
+        k = k + 1
+      end while
+      C(N) = A(J): N = N + 1: J = J + 1
+    end while
+    C(N) = B(K)
 
 Input::
 
