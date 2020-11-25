@@ -18,10 +18,6 @@
 
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>dist</WatchedResource>
-    <WatchedResource>js</WatchedResource>
-    <WatchedResource>jsdoc</WatchedResource>
-    <WatchedResource>json</WatchedResource>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
