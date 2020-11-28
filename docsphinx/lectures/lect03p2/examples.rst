@@ -26,5 +26,5 @@ An integer n is a power of two, if there exists an integer x such that
                 n >>= 1
 ..
 
-See `here <>`_
-for other answers.
+See `here <https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/lect03p2/lc_q231.py>`_
+for more solutions.
