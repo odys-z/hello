@@ -54,17 +54,17 @@ They are::
 To find the correct digits in base 64, we need a table to map value less than 64
 into the digit::
 
-    0, 1, 2, ... 9, 11, 12, ..., 36, 37, ..., 62, 63, 63
-    0, 1, 2, ... 9,  A,  B, ...   Z,  a, ...,  z,  +,  -
+    0, 1, 2, ... 9, 10, 11, ..., 35, 36, ..., 61, 62, 63
+    0, 1, 2, ... 9,  A,  B, ...   Z,  a, ...,  z,  +,  /
 
 With this table, the conversion is straight forward:
 
 .. code-block:: python
 
-    def conv_64(n: str): -> str
+    def conv_64(n: str) -> str:
         v64 = ''
         v10 = int(n)             # See comment below
-        if v10 = 0:
+        if v10 == 0:
             return '0'
 
         while v10 > 0:
@@ -78,6 +78,16 @@ With this table, the conversion is straight forward:
 In this function, we use python int() function to brutally convert the whole
 string into one large integer, and divide it by 64 each time. This is time
 consuming and using a lot of memory.
+
+For reference answer, see `here <https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/lect03/dec_r64.py>`_.
+
+For python implementation, see `python source at github <https://github.com/python/cpython/blob/7668a8bc93c2bd573716d1bea0f52ea520502b28/Modules/binascii.c>`_
+
+.. code-block:: c
+
+    static const unsigned char table_b2a_base64[] =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+..
 
 - A step further
 

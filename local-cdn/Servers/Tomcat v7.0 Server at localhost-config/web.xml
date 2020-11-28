@@ -527,6 +527,7 @@
     </filter>
 -->
 
+<!-- 
 <filter>
 	<filter-name>CorsFilter</filter-name>
 	<filter-class>xv.CorsFilter1</filter-class>
@@ -535,6 +536,7 @@
 	<filter-name>CorsFilter</filter-name>
 	<url-pattern>/*</url-pattern>
 </filter-mapping>
+ -->
   <!-- ==================== Built In Filter Mappings ====================== -->
 
   <!-- The mapping for the HTTP header security Filter -->

@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect04/intro.html">Lec 04: Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect05/intro.html">Lec 05: Matrix &amp; Graph</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect06/intro.html">Lec 06: Recursive Functions</a></li>
@@ -195,15 +196,15 @@ There is also an extra char, &#39;=&#39; which we don&#39;t use.
 </div>
 <p>To find the correct digits in base 64, we need a table to map value less than 64
 into the digit:</p>
-<div class="highlight-python"><div class="highlight"><pre>0, 1, 2, ... 9, 11, 12, ..., 36, 37, ..., 62, 63, 63
-0, 1, 2, ... 9,  A,  B, ...   Z,  a, ...,  z,  +,  -
+<div class="highlight-python"><div class="highlight"><pre>0, 1, 2, ... 9, 10, 11, ..., 35, 36, ..., 61, 62, 63
+0, 1, 2, ... 9,  A,  B, ...   Z,  a, ...,  z,  +,  /
 </pre></div>
 </div>
 <p>With this table, the conversion is straight forward:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">conv_64</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">conv_64</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">v64</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">v10</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>             <span class="c1"># See comment below</span>
-    <span class="k">if</span> <span class="n">v10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
 
     <span class="k">while</span> <span class="n">v10</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -217,6 +218,12 @@ into the digit:</p>
 <p>In this function, we use python int() function to brutally convert the whole
 string into one large integer, and divide it by 64 each time. This is time
 consuming and using a lot of memory.</p>
+<p>For reference answer, see <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/lect03/dec_r64.py">here</a>.</p>
+<p>For python implementation, see <a class="reference external" href="https://github.com/python/cpython/blob/7668a8bc93c2bd573716d1bea0f52ea520502b28/Modules/binascii.c">python source at github</a></p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">static</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">table_b2a_base64</span><span class="p">[]</span> <span class="o">=</span>
+<span class="s">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>A step further</li>
 </ul>
