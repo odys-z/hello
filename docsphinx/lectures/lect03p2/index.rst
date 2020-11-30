@@ -9,5 +9,7 @@ Contents:
    :maxdepth: 2
 
    examples
+   wdtpd
+   summery
    homework
    ref

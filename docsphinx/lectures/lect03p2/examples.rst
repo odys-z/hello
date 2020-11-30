@@ -7,9 +7,11 @@ Given an integer n, return true if it is a power of two. Otherwise, return false
 An integer n is a power of two, if there exists an integer x such that
 :math:`n == 2^x`.
 
-.. 36 ms, faster than 20.31%, Memory Usage: 14 MB, less than 95.80%
+::
 
-.. code-block: python
+    36 ms, faster than 20.31%, Memory Usage: 14 MB, less than 95.80%
+
+.. code-block:: python
 
     def isPowerOfTwo(self, n: int) -> bool:
         if n <= 0:

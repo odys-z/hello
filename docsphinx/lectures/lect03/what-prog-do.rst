@@ -21,6 +21,9 @@ Pseudo Code::
     B = B + H * R
     output B
 
+.. note: The ACSL topic about the pseudo code defined "/" is real division, and "3/2" = 1.5
+..
+
 Go Through Problem 2
 --------------------
 
