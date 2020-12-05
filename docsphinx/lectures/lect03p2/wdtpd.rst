@@ -49,6 +49,3 @@ output::
     4: 10 8 20 25 2
     5: 10 8 20 5 2
     x: -18.0
-
-The given solution shouldn't correct as e can not be 0.
-
