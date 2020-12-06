@@ -1,4 +1,4 @@
-Whad does the Program Do
+What does the Program Do
 ========================
 
 Example 1:

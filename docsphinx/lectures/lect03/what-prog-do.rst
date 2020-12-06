@@ -24,7 +24,7 @@ Pseudo Code::
 .. note: The ACSL topic about the pseudo code defined "/" is real division, and "3/2" = 1.5
 ..
 
-Go Through Problem 2
+Go Through Problem 3
 --------------------
 
 Pseudo Code::
@@ -88,4 +88,32 @@ The variables in loops:
     J = 5, A_J = -100 \\
         &         & 15 & C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81, 81 \\
     \end{array}
+..
+
+Q6, Intermediate Division
+-------------------------
+
+Psedo Code: see * handout: Programming Problem: Agram, 2017, Intermediate *
+
+Python3 Validation:
+
+.. code-block:: python
+
+    def q6():
+        a = [0] * 100
+        for i in range( 2, 26 ):
+            a[i] = i
+        print(0, a)
+
+        for k in range( 2, 26 ):
+            if a[k] != 0:
+                for j in range( 2*k, 26, k ):
+                    a[j] = 0
+                print(k, a)
+
+        s = 0
+        for i in range(26):
+            if a[i] > 0:
+                s += 1
+        print(s)
 ..
