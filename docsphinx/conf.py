@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'ACSL lecture'
+project = u'ACSL Lecture'
 copyright = u'2020, Odys Zhou'
 author = u'Odys Zhou'
 
@@ -51,6 +51,10 @@ templates_path = ['_templates']
 #
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
+
+# https://stackoverflow.com/questions/48296169/removing-the-view-source-link-when-using-read-the-docs-sphinx-with-readthedocs
+html_show_sourcelink = False
+html_copy_source = False
 
 # The master toctree document.
 master_doc = 'index'

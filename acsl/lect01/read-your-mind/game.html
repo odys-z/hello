@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Welcome to ACSL Lecture! &mdash; Read Your Mind</title>
+    <link rel="shortcut icon" href="../../../www-res/css/favicon.ico"/>
+    <link rel="stylesheet" href="./game.css" type="text/css" />
+</head>
+<body>
+    <div>
+    <div class="wraper">
+        <div class="left">
+            <div class="board">
+                <img class="img" src="./img/magic.png" alt="">
+                <img class="tuan" src="./img/values/0.svg" alt="">
+            </div>
+            <p>Pick a number between 10 ~ 99, minus the tenths number and units
+                number, e.g if you pick 71, then its 71 -7 - 1 = 63.</p>
+            <br />
+            <p>Find the icon close to the number in the right panel. Click the
+                magic spell image, you will find we can read your mind.</p>
+        </div>
+        <div class="right"></div>
+    </div>
+    <p>Icons made by <a href="https://www.flaticon.com/authors/roundicons-freebies"
+        title="Roundicons Freebies">Roundicons Freebies</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+    </div>
+    <script>
+      (function() {
+        var right = document.getElementsByClassName('right')[0];
+        var img = document.getElementsByClassName('img')[0];
+        var tuan = document.getElementsByClassName('tuan')[0];
+        var board = document.getElementsByClassName('board')[0];
+        var curent;
+        var maxImgIndex = 15;
+
+        function play() {
+            var rand;
+            curent = getRandom(0, maxImgIndex);
+            for (var i = 0; i < 100; i++) {
+                if (i % 9 === 0) {
+                    rand = curent;
+                } else {
+                    rand = getRandom(0, maxImgIndex);
+                }
+                right.innerHTML += `<div class="item">
+                    <span>${i}</span>
+                    <img src="./img/values/${rand}.svg" alt="">
+                </div>`;
+            }
+        }
+        play();
+
+        function getRandom(min, max) {
+            max++;
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        board.addEventListener('click', function() {
+            this.style.transform = "rotate(720deg)";
+        })
+        board.addEventListener('transitionend', function() {
+            img.style.opacity = '0';
+            tuan.src = `./img/values/${curent}.svg`;
+            tuan.style.opacity = '1';
+        })
+      })()
+    </script>
+</body>
+</html>

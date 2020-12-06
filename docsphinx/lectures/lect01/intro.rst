@@ -1,5 +1,5 @@
-Lec 01: Python Quick Start
-==========================
+Python Quick Start
+==================
 
 Run Python program
 ------------------
@@ -109,7 +109,8 @@ You access the list items by referring to the index number:
 
 Negative Indexing
 
-Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item etc.
+Negative indexing means beginning from the end, -1 refers to the last item,
+-2 refers to the second last item etc.
 
 .. code-block:: python
 
@@ -120,9 +121,11 @@ Negative indexing means beginning from the end, -1 refers to the last item, -2 r
 
 Range of Indexes
 
-You can specify a range of indexes by specifying where to start and where to end the range.
+You can specify a range of indexes by specifying where to start and where to end
+the range.
 
-When specifying a range, the return value will be a new list with the specified items.
+When specifying a range, the return value will be a new list with the specified
+items.
 
 .. code-block:: python
 
@@ -191,7 +194,8 @@ A collection which is unordered, changeable and indexed
 Set
 ___
 
-A set is a collection which is unordered and unindexed. In Python, sets are written with curly brackets.
+A set is a collection which is unordered and un-indexed. In Python, sets are
+written with curly brackets.
 
 .. code-block: python
 
@@ -243,17 +247,45 @@ While loop::
        if x >= n:
            break
 
+For Beginner:
+
+According to some questions from beginners, if this is the first time of one
+reading a program, who may still feel confused about the source code. There are
+some knowledge you should know first.
+
+- Array Access
+
+- Function and Variable Scope
+
+- range() and loop control
+
+But you should be faithful once you go through again following the author.
+
+The second time when we reach here, you can answer the question about the computing
+complexity.
+
+Tip: Python time should be useful here.
+
+.. code-block:: python
+
+    import time
+
+    time.time()
+..
+
+Here's an additional example that shows how to use python time:
+
+`Python | Which is faster to initialize lists?, GeeksforGeeks <https://www.geeksforgeeks.org/python-which-is-faster-to-initialize-lists/>`_
+
 Task 2: Guess the number
 ________________________
 
-The program generates a random number from 1 to 10, or 1 to 100 any range that
-is specified and the user must guess the number after a hint from the computer.
-Every time a user’s guess is wrong they are prompted with more hints to make it
-easier for them to guess the number but at the cost of reducing the score. The
-clue any math clue like multiples, divisible, greater or smaller, or a combination
-of all.
+This program generates a random number from 1 to 10, or any range that is specified
+and the user must guess the number after a hint from the computer. Every time a
+user’s guess is wrong they are prompted with more hints to make it easier for
+them to guess the number but at the cost of reducing the score.
 
-The program also requires functions to check if an actual number is entered by
+The program use *input( )* functions to check if an actual number is entered by
 the user or not, to compare the input number with the actual number, to find the
 difference between the two numbers.
 
@@ -266,6 +298,7 @@ difference between the two numbers.
     """ Number Guessing Game
     ----------------------------------------
     """
+
     import random
     attempts_list = []
     def show_score():
@@ -273,14 +306,13 @@ difference between the two numbers.
             print("There is currently no high score, it's yours for the taking!")
         else:
             print("The current high score is {} attempts".format(min(attempts_list)))
+
     def start_game():
         random_number = int(random.randint(1, 10))
-        print("Hello traveler! Welcome to the game of guesses!")
-        player_name = input("What is your name? ")
-        wanna_play = input("Hi, {}, would you like to play the guessing game? (Enter Yes/No) ".format(player_name))
-        # Where the show_score function USED to be
+        wanna_play = "yes"
         attempts = 0
         show_score()
+
         while wanna_play.lower() == "yes":
             try:
                 guess = input("Pick a number between 1 and 10 ")
@@ -309,6 +341,7 @@ difference between the two numbers.
                 print("({})".format(err))
         else:
             print("That's cool, have a good one!")
+
     if __name__ == '__main__':
         start_game()
 ..
@@ -316,44 +349,17 @@ difference between the two numbers.
 Task 3: Tic Tac Toe
 ___________________
 
+This is a simple game:
+
 .. image:: ../img/01-tic-tac-toe.png
+
+The python version played like this:
 
 .. image:: ../img/01-tic-tac-toe-cli.png
 
-Homework: Read your mind
-------------------------
+Reference
+=========
 
-Prerequisite
-____________
+`Task reference implementation <https://github.com/odys-z/hello/tree/master/acsl/lect01>`_.
 
-You need a better IDE - PyDev
-
-1. Download Eclipse
-
-.. image:: ../img/01-download-eclipse.png
-
-2. Install PyDev Plugin.
-
-Install via Eclipse Marketplace::
-
-    Help -> Eclipse Marketplace...
-
-Search for *PyDev*.
-
-.. image:: ../img/01-eclipse-plugin.png
-
-About the game
-______________
-
-Find out what's the game:
-
-`example: a javascript implementation <https://www.cnblogs.com/sgs123/p/10829944.html>`_
-
-.. note:: It's essential to understand math behind the game.
-    To be a good programmer, you almost always thinks in math.
-..
-
-Goal
-____
-
-Print it out in the tic-tac-toe style. Show what's your program can guess.
+`Cool, Fun & Easy Python Projects for Beginners (with Code) <https://hackr.io/blog/python-projects>`_
