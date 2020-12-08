@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Topics of Contest #1" href="index.html"/>
         <link rel="next" title="Homework" href="homework.html"/>
@@ -90,7 +87,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Topics of Contest #1</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="number-sys.html">Computer Number Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive.html">Recursive Functions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">What Does This Program Do?</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">What Does This Program Do?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#go-through-problem-2">Go Through Problem 2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#go-through-problem-3">Go Through Problem 3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#q6-intermediate-division">Q6, Intermediate Division</a></li>
@@ -156,104 +153,102 @@
 <div class="section" id="go-through-problem-2">
 <h2>Go Through Problem 2<a class="headerlink" href="#go-through-problem-2" title="Permalink to this headline">¶</a></h2>
 <p>Pseudo Code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="n">H</span><span class="p">,</span> <span class="n">R</span>
-<span class="n">B</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">if</span> <span class="n">H</span><span class="o">&gt;</span><span class="mi">48</span> <span class="n">then</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="p">(</span><span class="n">H</span> <span class="o">-</span> <span class="mi">48</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span>
-    <span class="n">H</span> <span class="o">=</span> <span class="mi">48</span>
-<span class="n">end</span> <span class="k">if</span>
-<span class="k">if</span> <span class="n">H</span><span class="o">&gt;</span><span class="mi">40</span> <span class="n">then</span>
-   <span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="p">(</span><span class="n">H</span> <span class="o">-</span> <span class="mi">40</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span>
-   <span class="n">H</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="n">end</span> <span class="k">if</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="n">H</span> <span class="o">*</span> <span class="n">R</span>
-<span class="n">output</span> <span class="n">B</span>
+<div class="highlight-python"><div class="highlight"><pre>input H, R
+B = 0
+if H&gt;48 then
+    B = B + (H - 48) * 2 * R
+    H = 48
+end if
+if H&gt;40 then
+   B = B + (H - 40) * (3/2) * R
+   H = 40
+end if
+B = B + H * R
+output B
 </pre></div>
 </div>
 </div>
 <div class="section" id="go-through-problem-3">
 <h2>Go Through Problem 3<a class="headerlink" href="#go-through-problem-3" title="Permalink to this headline">¶</a></h2>
 <p>Pseudo Code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="mi">12</span><span class="p">:</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">41</span><span class="p">:</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">52</span>
-<span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">57</span><span class="p">:</span> <span class="n">A</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mi">77</span><span class="p">:</span> <span class="n">A</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="n">B</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="mi">17</span><span class="p">:</span> <span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">34</span><span class="p">:</span> <span class="n">B</span><span class="p">(</span><span class="mi">20</span> <span class="o">=</span> <span class="mi">81</span>
-<span class="n">J</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span> <span class="n">K</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-  <span class="k">while</span> <span class="n">B</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-    <span class="n">C</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
-  <span class="n">end</span> <span class="k">while</span>
-  <span class="n">C</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">J</span><span class="p">):</span> <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span> <span class="n">J</span> <span class="o">=</span> <span class="n">J</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="n">end</span> <span class="k">while</span>
-<span class="n">C</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>A(0) = 12: A(1) = 41: A(2) = 52
+A(3) = 57: A(4) = 77: A(5) = -100
+B(0) = 17: B(1) = 34: B(20 = 81
+J = 0: K = 0: N = 0
+while A(J) &gt; 0
+  while B(K) &lt;= A(J)
+    C(N) = B(K)
+    N = N + 1
+    k = k + 1
+  end while
+  C(N) = A(J): N = N + 1: J = J + 1
+end while
+C(N) = B(K)
 </pre></div>
 </div>
 <p>Input:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>    <span class="mi">5</span>
-<span class="n">A</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
-<span class="n">B</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre>   0   1   2   3   4    5
+A [12, 41, 52, 57, 77, -100]
+B [17, 34, 81]
 </pre></div>
 </div>
 <p>The variables in loops:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lllll}
-J, A_J &amp; &amp;  N / N' &amp; \\
-\hline
-J = 0, A_J = 12 \\
-    &amp; B_0 = 17 &amp; 0 / 1 &amp; C = 17 \\
-    &amp; B_1 = 34 &amp; 1     &amp; \\
-    &amp;             &amp; 1 / 2 &amp; C = 17, 12 \\
-\hline
-J = 1, A_J = 42 \\
-    &amp; B_0 = 17 &amp; 2 &amp; C = 17, 12, 17 \\
-    &amp; B_1 = 34 &amp; 3 &amp; C = 17, 12, 17, 34 \\
-    &amp; B_2 = 81 &amp; &amp; \\
-    &amp;         &amp; 4 / 5 &amp; C = 17, 12, 17, 34, 42 \\
-\hline
-J = 2, A_J = 52 \\
-    &amp; B_0 = 17 &amp; 5 &amp; C = 17, 12, 17, 34, 42, 17 \\
-    &amp; B_1 = 34 &amp; 6 &amp; C = 17, 12, 17, 34, 42, 17, 34 \\
-    &amp; B_2 = 81 &amp; &amp; \\
-    &amp;         &amp; 7 / 8 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52 \\
-\hline
-J = 3, A_J = 57 \\
-    &amp; B_0 = 17 &amp; 9  &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17 \\
-    &amp; B_1 = 34 &amp; 10 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34 \\
-    &amp; B_2 = 81 \\
-    &amp;         &amp; 11 / 12     &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57 \\
-\hline
-J = 4, A_J = 77 \\
-    &amp; B_0 = 17 &amp; 13 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17 \\
-    &amp; B_1 = 34 &amp; 14 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34 \\
-    &amp; B_2 = 81 \\
-    &amp;         &amp; 14 / 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81 \\
-\hline
-J = 5, A_J = -100 \\
-    &amp;         &amp; 15 &amp; C = 17, 12, 17, 34, 42, 17, 34, 52, 17, 34, 57, 17, 34, 81, 81 \\
-\end{array}\end{split}\]</div>
+<div class="highlight-python"><div class="highlight"><pre>J K N Aj Bk Cn
+0 0 0 12 17 0
+0 0 0 12 17 12
+1 0 1 41 17 17
+1 1 2 41 34 34
+1 2 3 41 81 41
+2 2 4 52 81 52
+3 2 5 57 81 57
+4 2 6 77 81 77
+C4: 52
+</pre></div>
+</div>
+<p>Python3 Validation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">wdtpd_problem3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+    <span class="n">J</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;J K N Aj Bk Cn&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
+    <span class="k">while</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">]:</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">]</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">K</span> <span class="o">=</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">J</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
+        <span class="n">N</span><span class="p">,</span> <span class="n">J</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">J</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">C</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">K</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p><a class="reference download internal" href="../../_downloads/wdtpd-p3.py" download=""><code class="xref download docutils literal"><span class="pre">python3</span> <span class="pre">source</span> <span class="pre">file</span></code></a></p>
 </div>
 <div class="section" id="q6-intermediate-division">
 <h2>Q6, Intermediate Division<a class="headerlink" href="#q6-intermediate-division" title="Permalink to this headline">¶</a></h2>
 <p>Psedo Code: see * handout: Programming Problem: Agram, 2017, Intermediate *</p>
 <p>Python3 Validation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">q6</span><span class="p">():</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">q6</span><span class="p">():</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">26</span> <span class="p">):</span>
         <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">26</span> <span class="p">):</span>
         <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="n">k</span> <span class="p">):</span>
                 <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -309,8 +304,7 @@ J = 5, A_J = -100 \\
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
