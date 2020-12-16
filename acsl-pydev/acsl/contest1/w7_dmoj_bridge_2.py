@@ -38,7 +38,7 @@ def bridge2009(records):
         if bid + 6 <= win:
             # win
             teams[bider] = 100 # vulnerable
-            scr[bider * 2] += underScore(bid, win)
+            scr[bider * 2] += underScore(bid, rec[3])
             scr[bider * 2 + 1] += overScore(win - bid - 6, rec[3])
             winner = bider
         else: # lose
@@ -52,12 +52,16 @@ def bridge2009(records):
 
     return scors
 
-s = sys.stdin.read().split()
+# s = sys.stdin.read().split()
 # s = '1 2 8 C 1 1 9 H 2 4 10 H 2 2 11 T 2 3 6 S'.split()
+s = '1 2 8 H 2 3 10 S 1 1 8 T 2 5 8 C 1 5 12 D'.split()
+
 dat = list()
 for x in range(0, len(s), 4):
     dat.append( s[x : x+4] )
 asw = bridge2009(dat)
 
 for i in range(len(asw)):
-    print('{}. {}'.format(i, asw[i]))
+#     print( '{}\n{}\n{}\n{}'.format(*asw[i]) )
+#     print( '1. {} {} {} {}'.format(*asw[i]) )
+    print( *asw[i] )
