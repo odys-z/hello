@@ -7,7 +7,6 @@
     https://github.com/DMOJ/online-judge/blob/master/README.md
 '''
 from unittest import TestCase
-from numpy import record
 
 def underScore(triks, suit):
     if suit == 'T':
