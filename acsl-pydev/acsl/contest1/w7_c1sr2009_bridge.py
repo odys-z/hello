@@ -35,6 +35,7 @@ def bridge2009(records):
 
         if restart:
             scr[0], scr[2] = 0, 0
+            teams[0], teams[1] = 50, 50
         restart = False
             
         winner = None
@@ -43,17 +44,20 @@ def bridge2009(records):
 
         if rec[1] + 6 <= rec[2]:
             # win
-            teams[bider] = 100 # vulnerable
+            # teams[bider] = 100 # vulnerable
             scr[bider * 2] += underScore(rec[1], rec[3])
             scr[bider * 2 + 1] += overScore(rec[2] - rec[1] - 6, rec[3])
             winner = bider
         else: # lose
-            penalty = teams[ operx ]
-            scr[operx * 2 + 1] += penalty * rec[1]
+            penalty = teams[ bider ]
+            scr[operx * 2 + 1] += penalty * (rec[1] + 6 - rec[2])
             winner = operx
+        
+        teams[winner] = 100 # vulnerable
         
         if scr[winner * 2] >= 100:
             restart = True
+            
         scors[i] = scr.copy()
 
     return scors
@@ -65,4 +69,12 @@ t.assertEqual( [70, 60, 0, 0], r[1] )
 t.assertEqual( [70, 60, 120, 0], r[2] )
 t.assertEqual( [0, 60, 70, 90], r[3] )
 t.assertEqual( [0, 360, 70, 90], r[4] )
+
+r = bridge2009( [[1, 2, 8, 'H'], [2, 3, 10, 'S'], [1, 1, 8, 'T'], [2, 5, 8, 'C'], [1, 5, 12, 'D']] )
+
+t.assertEqual( [60, 0, 0, 0,], r[0] )
+t.assertEqual( [60, 0, 90, 30], r[1] )
+t.assertEqual( [100, 30, 90, 30], r[2] )
+t.assertEqual( [0, 180, 0, 30], r[3] )
+t.assertEqual( [100, 200, 0, 30], r[4] )
 print('OK!')
