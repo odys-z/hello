@@ -1,14 +1,14 @@
 '''
     s = 2, delta = 3, rows = 5
-    
+
     2
     5    10
     13   16    21
     24   27    32    35
     40   43    46    51    54
-    
+
     s = 221, d = 2, r = 4
-    
+
     221
     223   225
     227   231   233
@@ -28,13 +28,13 @@ Triangle Printout
 =================
 
 .. math::
-    
+
     s = {s:}, d = {d:}, r = {r:}
 
-    \\begin\{array\}\{{colsAlign:}\}
+    \\begin{{array}}{{{colsAlign:}}}
 {rows}
     \\hline
-    \\end\{array\}
+    \\end{{array}}
 ..
 '''
 
@@ -46,14 +46,32 @@ def row(cells: list) -> str:
         if r != '':
             r += ' & '
         r += str(c)
+    r += ' \\\\'
     return r
-        
-def rmDigits(n):
-    '''
-        the number minus digits
-    '''
 
-s = 2, d = 3, r = 5
-f = open("inter.rst", "w")
-f.write(mathArr.format(s, d, r, colsAlign, rows)
+def rmDigits(s, d, r):
+    '''
+        the numeral triangles
+
+    .. math::
+    
+        \begin{array}{cl}
+        \hline
+        f(n) & = n ⋅ f(n - 1) \\
+        \hline
+        5! & = 5 ⋅ f(4)_? \\
+           & = 5 ⋅ 4 ⋅ f(3)_? \\
+           & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
+           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ f(1)_? \\
+           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ f(0)_? \\
+        \end{array}
+    ..
+    '''
+    return '1 & 2 \\'
+
+s, d, r = 2, 3, 5
+f = open("inter_.rst", "w")
+colsAlign = 'cc'
+rows = rmDigits(s, d, r)
+f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
 f.close()
