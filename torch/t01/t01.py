@@ -1,4 +1,6 @@
-
+'''
+	https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html
+'''
 from __future__ import print_function
 import torch
 
