@@ -23,6 +23,8 @@
     r    s0,     s0 + d, s0 + 2d, ...         s + (r(r-1)/2) d
 '''
 
+from print_triangle import printOctalRows
+
 mathArr = '''
 Triangle Printout
 =================
@@ -32,6 +34,7 @@ Triangle Printout
     s = {s:}, d = {d:}, r = {r:}
 
     \\begin{{array}}{{{colsAlign:}}}
+    \\hline
 {rows}
     \\hline
     \\end{{array}}
@@ -54,24 +57,24 @@ def rmDigits(s, d, r):
         the numeral triangles
 
     .. math::
-    
+
         \begin{array}{cl}
-        \hline
         f(n) & = n ⋅ f(n - 1) \\
         \hline
         5! & = 5 ⋅ f(4)_? \\
-           & = 5 ⋅ 4 ⋅ f(3)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ f(1)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ f(0)_? \\
         \end{array}
     ..
     '''
-    return '1 & 2 \\'
+    return '    1 & 2 \\'
 
-s, d, r = 2, 3, 5
-f = open("inter_.rst", "w")
-colsAlign = 'cc'
-rows = rmDigits(s, d, r)
-f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
-f.close()
+
+if __name__ == '__main__':
+    s, d, r = 2, 3, 5
+    f = open("inter_.rst", "w")
+    colsAlign = 'c' * (r + 1)
+    # rows = rmDigits(s, d, r)
+    rows = printOctalRows('{:3d} ({:2d}, {:2d})', s, d, r)
+    f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
+    f.close()
+
+    print('OK!')
