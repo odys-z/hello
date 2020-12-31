@@ -25,9 +25,12 @@
 
 from print_triangle import printOctalRows
 
+title = '''
+Octal Triangles
+===============
+'''
+
 mathArr = '''
-Triangle Printout
-=================
 
 .. math::
 
@@ -35,10 +38,10 @@ Triangle Printout
 
     \\begin{{array}}{{{colsAlign:}}}
     \\hline
-{rows}
-    \\hline
+{rows}    \\hline
     \\end{{array}}
 ..
+
 '''
 
 mathRow = '{row} \\\\'
@@ -67,14 +70,23 @@ def rmDigits(s, d, r):
     '''
     return '    1 & 2 \\'
 
+def printExample(f, s , d, r):
+    s, d, r = int(s, 8), int(d, 8), int(r)
+    colsAlign = 'c' * (r + 1)
+    rows = printOctalRows('{:3o} ({:2o}, {:2d})', s, d, r)
+    f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
+    return f
 
 if __name__ == '__main__':
-    s, d, r = 2, 3, 5
+
     f = open("inter_.rst", "w")
-    colsAlign = 'c' * (r + 1)
-    # rows = rmDigits(s, d, r)
-    rows = printOctalRows('{:3d} ({:2d}, {:2d})', s, d, r)
-    f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
+    f.write(title)
+    printExample(f, '2', '3', '5')
+    printExample(f, '221', '2', '4')
+    printExample(f, '1', '4', '20')
+    printExample(f, '10', '10', '10')
+    printExample(f, '3245', '5', '11')
+
     f.close()
 
     print('OK!')

@@ -1,5 +1,6 @@
 
-from c1_2021.inter import sum8
+import os, sys; sys.path.insert(0, '..')
+from inter import sum8
 
 def printOctalRows(cellTempl, s, d, r):
 	'''
@@ -18,7 +19,7 @@ def printOctalRows(cellTempl, s, d, r):
 	n = s - d
 	for rx in range(r + 1):
 		if rx > 0:
-			sbuf += '    r={:2d} \\\\'.format(rx)
+			sbuf += '    r={:2d}'.format(rx)
 
 		for _ in range(rx):
 			n += d

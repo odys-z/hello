@@ -8,6 +8,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   inter
+   inter_
    senior
    ref

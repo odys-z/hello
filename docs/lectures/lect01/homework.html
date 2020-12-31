@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 1: Python Quick Start" href="index.html"/>
         <link rel="next" title="Reference" href="ref.html"/>
@@ -86,7 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Python Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#reference">Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debug.html">Run &amp; Debug with PyDev</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Homework (2 tasks)</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Homework (2 tasks)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-fix-the-above-problem">Task: fix the above problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#programming-task">Programming Task</a><ul>
@@ -102,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest #1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect04/intro.html">Lec 04: Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect05/intro.html">Lec 05: Matrix &amp; Graph</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect06/intro.html">Lec 06: Recursive Functions</a></li>
@@ -164,7 +168,7 @@
 <li>Install PyDev Plugin.</li>
 </ol>
 <p>Install via Eclipse Marketplace:</p>
-<div class="highlight-python"><div class="highlight"><pre>Help -&gt; Eclipse Marketplace...
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="o">-&gt;</span> <span class="n">Eclipse</span> <span class="n">Marketplace</span><span class="o">...</span>
 </pre></div>
 </div>
 <p>Search for <em>PyDev</em>.</p>
@@ -179,7 +183,7 @@
 <li>create a PyDev Module, add source file fibonacci.py</li>
 <li>run &amp; debug</li>
 </ul>
-<p>If there are problem, see <a class="reference internal" href="debug.html#dubg-fibonacci"><span>Tutorial: run &amp; debug fibonacci.py</span></a>.</p>
+<p>If there are problem, see <a class="reference internal" href="debug.html#dubg-fibonacci"><span class="std std-ref">Tutorial: run &amp; debug fibonacci.py</span></a>.</p>
 </div>
 <div class="section" id="task-fix-the-above-problem">
 <h2>Task: fix the above problem<a class="headerlink" href="#task-fix-the-above-problem" title="Permalink to this headline">¶</a></h2>
@@ -189,13 +193,13 @@
 <h2>Programming Task<a class="headerlink" href="#programming-task" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="factorial">
 <h3>1. Factorial<a class="headerlink" href="#factorial" title="Permalink to this headline">¶</a></h3>
-<p>Implement a program that takes user&#8217;s input, an integer and output the factorial
+<p>Implement a program that takes user’s input, an integer and output the factorial
 result.</p>
 <p>In mathematics, the factorial of a positive integer n, denoted by n!, is the
 product of all positive integers less than or equal to n:</p>
-<p><span class="math">\({n!=n\cdot (n-1)\cdot (n-2)\cdot (n-3)\cdot \cdots \cdot 3\cdot 2\cdot 1\,.}\)</span></p>
+<p><span class="math notranslate nohighlight">\({n!=n\cdot (n-1)\cdot (n-2)\cdot (n-3)\cdot \cdots \cdot 3\cdot 2\cdot 1\,.}\)</span></p>
 <p>For example,</p>
-<p><span class="math">\({5!=5\cdot 4\cdot 3\cdot 2\cdot 1=120\,.}\)</span></p>
+<p><span class="math notranslate nohighlight">\({5!=5\cdot 4\cdot 3\cdot 2\cdot 1=120\,.}\)</span></p>
 <p>The value of 0! is 1, according to the convention for an empty product.</p>
 </div>
 <div class="section" id="read-your-mind">
@@ -203,20 +207,20 @@ product of all positive integers less than or equal to n:</p>
 <p>Implement a game of <em>read your mind</em>, played like Tic-tac-toe.</p>
 <div class="section" id="about-the-game">
 <h4>About the game<a class="headerlink" href="#about-the-game" title="Permalink to this headline">¶</a></h4>
-<p>Find out what&#8217;s the game:</p>
+<p>Find out what’s the game:</p>
 <p><a class="reference external" href="https://www.cnblogs.com/sgs123/p/10829944.html">example: a javascript implementation</a></p>
 <p>Before reading through the source, you are recommended try
 <a class="reference external" href="http://www.inforise.com.cn/acsl-prog/lect01/read-your-mind/game.html">a playable version</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It&#8217;s essential to understand math behind the game.
+<p class="last">It’s essential to understand math behind the game.
 To be a good programmer, you almost always thinks in math.</p>
 </div>
 </div>
 <div class="section" id="goal">
 <h4>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Print it out in the tic-tac-toe style. Show what&#8217;s your program can guess.</li>
+<li>Print it out in the tic-tac-toe style. Show what’s your program can guess.</li>
 <li>A short answer about the math principle.</li>
 </ul>
 </div>
@@ -274,7 +278,8 @@ To be a good programmer, you almost always thinks in math.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
