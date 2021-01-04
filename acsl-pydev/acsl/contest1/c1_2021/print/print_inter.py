@@ -23,19 +23,25 @@
     r    s0,     s0 + d, s0 + 2d, ...         s + (r(r-1)/2) d
 '''
 
+from print_triangle import printOctalRows
+
+title = '''
+Octal Triangles
+===============
+'''
+
 mathArr = '''
-Triangle Printout
-=================
 
 .. math::
 
     s = {s:}, d = {d:}, r = {r:}
 
     \\begin{{array}}{{{colsAlign:}}}
-{rows}
     \\hline
+{rows}    \\hline
     \\end{{array}}
 ..
+
 '''
 
 mathRow = '{row} \\\\'
@@ -54,24 +60,33 @@ def rmDigits(s, d, r):
         the numeral triangles
 
     .. math::
-    
+
         \begin{array}{cl}
-        \hline
         f(n) & = n ⋅ f(n - 1) \\
         \hline
         5! & = 5 ⋅ f(4)_? \\
-           & = 5 ⋅ 4 ⋅ f(3)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ f(2)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ f(1)_? \\
-           & = 5 ⋅ 4 ⋅ 3 ⋅ 2 ⋅ 1 ⋅ f(0)_? \\
         \end{array}
     ..
     '''
-    return '1 & 2 \\'
+    return '    1 & 2 \\'
 
-s, d, r = 2, 3, 5
-f = open("inter_.rst", "w")
-colsAlign = 'cc'
-rows = rmDigits(s, d, r)
-f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
-f.close()
+def printExample(f, s , d, r):
+    s, d, r = int(s, 8), int(d, 8), int(r)
+    colsAlign = 'c' * (r + 1)
+    rows = printOctalRows('{:3o} ({:2o}, {:2d})', s, d, r)
+    f.write(mathArr.format(s=s, d=d, r=d, colsAlign=colsAlign, rows=rows))
+    return f
+
+if __name__ == '__main__':
+
+    f = open("inter_.rst", "w")
+    f.write(title)
+    printExample(f, '2', '3', '5')
+    printExample(f, '221', '2', '4')
+    printExample(f, '1', '4', '20')
+    printExample(f, '10', '10', '10')
+    printExample(f, '3245', '5', '11')
+
+    f.close()
+
+    print('OK!')
