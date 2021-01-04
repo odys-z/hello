@@ -8,8 +8,8 @@
 
 '''
     lspci | grap VGA
-	# or
-	sudo lshw -C video
+    # or
+    sudo lshw -C video
 '''
 
 [Ubuntu 16.04 LTS installing torchvision also installed torch](https://github.com/pytorch/vision)
@@ -17,14 +17,20 @@
 '''
     pip3 install torchvision
 
-	pip3 list
-	Package           Version
-	----------------- -------
-	numpy             1.19.4
-	Pillow            8.0.1
-	pip               20.2.3
-	setuptools        49.2.1
-	torch             1.7.1
-	torchvision       0.8.2
-	typing-extensions 3.7.4.3
+    pip3 list
+    Package           Version
+    ----------------- -------
+    numpy             1.19.4
+    Pillow            8.0.1
+    pip               20.2.3
+    setuptools        49.2.1
+    torch             1.7.1
+    torchvision       0.8.2
+    typing-extensions 3.7.4.3
+'''
+
+matplotlib
+
+'''
+    pip3 install matplotlib
 '''
