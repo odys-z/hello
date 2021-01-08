@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The problem &mdash; ACSL Lecture 1.0 documentation</title>
+  <title>2020/2021 Senior &mdash; ACSL Lecture 1.0 documentation</title>
   
 
   
@@ -91,8 +91,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 3</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="inter_.html">Octal Triangles</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The problem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#lemma">Lemma</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2020/2021 Senior</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-problem">The problem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lemma">Lemma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contest-1-senior-division">2021 Contest 1, Senior Division</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#amc10-a-2018-problem-19">AMC10 A, 2018, Problem 19</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
@@ -135,7 +140,7 @@
       
           <li><a href="index.html">Lec 3: Contest #1, Part 3</a> &raquo;</li>
       
-    <li>The problem</li>
+    <li>2020/2021 Senior</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -147,17 +152,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="the-problem">
-<h1>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="senior">
+<h1>2020/2021 Senior<a class="headerlink" href="#senior" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-problem">
+<h2>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="lemma">
-<h2>Lemma<a class="headerlink" href="#lemma" title="Permalink to this headline">¶</a></h2>
-<p>Lemma: In radix R, digit root of number N, <span class="math notranslate nohighlight">\(D_R(N) = N mod (R-1)\)</span>.</p>
-<p>Proof:
-For a 2-digits R radix number n, <span class="math notranslate nohighlight">\(n = R\cdot a + b\)</span>, where <span class="math notranslate nohighlight">\(a, b \in {0, 1, ..., R-1}\)</span>.</p>
+<h3>Lemma<a class="headerlink" href="#lemma" title="Permalink to this headline">¶</a></h3>
+<p>Lemma:</p>
+<p>In radix R, digit root of number N, <span class="math notranslate nohighlight">\(D_R(N) = N mod (R-1)\)</span>.</p>
+<p>Where a digit root is the digits sum of N. If the sum is has more than 1 digit, repeat sum the digits until only 1 digit.</p>
+<p>Proof:</p>
+<p>For a 2-digits R radix number n, <span class="math notranslate nohighlight">\(n = R\cdot a + b\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(a, b \in {0, 1, ..., R-1}\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[n mod (R-1) = (R \cdot a + b) mode (R-1)\]</div>
+\[n = R \cdot a + b (\pmod R-1)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\equiv\)</span> is modular remain equial.</p>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[n = R \cdot a + b \equiv ((10a (\pmod R-1) + b (\pmod R-1)) (\pmod R-1)
+but b (\pmod R-1) = b
+and
+10 \cdot a (\pmod R-1) = 10 (\pmod R-1) \cdot a (\pmod R-1) = 1 \cdot a (\pmod R-1) = a
+and thus
+n (\pmod R-1) = (a+b) (\pmod R-1)\]</div>
 <p>Reference</p>
 <p><a class="reference external" href="http://applet-magic.com/remainder0.htm">The DigitSum of a Number and Its Remainder for Division by Nine, San José State University</a></p>
+</div>
+<div class="section" id="contest-1-senior-division">
+<h3>2021 Contest 1, Senior Division<a class="headerlink" href="#contest-1-senior-division" title="Permalink to this headline">¶</a></h3>
+<p>1</p>
+</div>
+<div class="section" id="amc10-a-2018-problem-19">
+<h3>AMC10 A, 2018, Problem 19<a class="headerlink" href="#amc10-a-2018-problem-19" title="Permalink to this headline">¶</a></h3>
+<p>What if we only care about units digit?</p>
+<ul class="simple">
+<li>Problem</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A number m is randomly selected from the set {11,13,15,17,19\}, and a number n is randomly selected from {1999, 2000, 2001, ..., 2018}. What is the probability that :math:`m \sup {n}` has a units digit of 1?
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[$\textbf{(A) }   \frac{1}{5}   \qquad        \textbf{(B) }   \frac{1}{4}   \qquad    \textbf{(C) }   \frac{3}{10}   \qquad   \textbf{(D) } \frac{7}{20} \qquad  \textbf{(E) }   \frac{2}{5}$\]</div>
+<ul class="simple">
+<li>Hint</li>
+</ul>
+<p>No matter what’s the product is, only the units digit’s product matter. So only the least digit is 1 can be the correct answer.</p>
+</div>
 </div>
 </div>
 
