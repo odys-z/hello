@@ -212,8 +212,9 @@ sum the digits until only 1 digit.</p>
 <p>Proof:</p>
 <p>For a 2-digits R radix number n, <span class="math notranslate nohighlight">\(n = R\cdot a + b\)</span>,</p>
 <p>where <span class="math notranslate nohighlight">\(a, b \in {0, 1, ..., R-1}\)</span>.</p>
+<p>E.g. for hexadecimal digit root,</p>
 <div class="math notranslate nohighlight">
-\[n = R \cdot a + b \pmod{R-1}\]</div>
+\[n \equiv 16 \cdot a + b \pmod{15} \quad \text{if remainder is not 0, otherwise 15}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp; Since \\
@@ -224,6 +225,8 @@ sum the digits until only 1 digit.</p>
 &amp; and \space thus \\
 &amp; n \pmod{R-1} = (a+b) \pmod{R-1} \\
 \end{align}\end{split}\]</div>
+<p>It’s obvious if a k-1 digit number <span class="math notranslate nohighlight">\(n\)</span> hold the property, the k digit number
+<span class="math notranslate nohighlight">\(R \cdot a + n\)</span> also hold the property.</p>
 <p>Reference</p>
 <p><a class="reference external" href="http://applet-magic.com/remainder0.htm">The DigitSum of a Number and Its Remainder for Division by Nine, San José State University</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sol2</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

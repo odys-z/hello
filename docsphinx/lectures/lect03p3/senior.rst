@@ -68,9 +68,11 @@ For a 2-digits R radix number n, :math:`n = R\cdot a + b`,
 
 where :math:`a, b \in {0, 1, ..., R-1}`.
 
+E.g. for hexadecimal digit root,
+
 .. math::
 
-    n = R \cdot a + b \pmod{R-1}
+    n \equiv 16 \cdot a + b \pmod{15} \quad \text{if remainder is not 0, otherwise 15}
 ..
 
 
@@ -85,6 +87,9 @@ where :math:`a, b \in {0, 1, ..., R-1}`.
     & n \pmod{R-1} = (a+b) \pmod{R-1} \\
     \end{align}
 ..
+
+It's obvious if a k-1 digit number :math:`n` hold the property, the k digit number
+:math:`R \cdot a + n` also hold the property.
 
 Reference
 
