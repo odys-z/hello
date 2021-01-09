@@ -182,6 +182,37 @@
 </pre></div>
 </div>
 <p>See next section for more triangles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum8</span><span class="p">(</span><span class="n">n10</span><span class="p">):</span>
+    <span class="n">reslt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n10</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">reslt</span> <span class="o">+=</span> <span class="n">n10</span> <span class="o">%</span> <span class="mi">8</span>
+        <span class="n">n10</span> <span class="o">//=</span> <span class="mi">8</span>
+    <span class="c1"># print(reslt)</span>
+    <span class="k">return</span> <span class="n">reslt</span>
+
+<span class="k">def</span> <span class="nf">inter</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    0    s                                    s        + 0  (r = 1)</span>
+<span class="sd">    1    s + d,  s + 2d                       s + d    + 1  (r = 2)</span>
+<span class="sd">    2    s + 3d, s + 4d, s + 5d               s + 3d   + 2  (r = 3)</span>
+<span class="sd">    3    s + 6d, s + 7d, s + 8d, s + 9d       s + 6d   + 3  (r = 4)</span>
+
+<span class="sd">    r    s0,     s0 + d, s0 + 2d, ...         s + (r(r-1)/2) d</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">sr0</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="n">sum8</span><span class="p">(</span><span class="n">sr0</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">d</span><span class="p">);</span>
+        <span class="c1"># print(&#39;{:o}&#39;.format(sr0 + i * d))</span>
+
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+</div>
 <p>Solution soruce: <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/c1_2021/inter.py">inder.py</a>.</p>
 </div>
 </div>

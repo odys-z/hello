@@ -173,6 +173,30 @@
 <div class="section" id="solution-1">
 <h2>Solution 1<a class="headerlink" href="#solution-1" title="Permalink to this headline">¶</a></h2>
 <p>Sum all digits at the last row.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumHex</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">//=</span> <span class="mi">16</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="k">def</span> <span class="nf">sol1</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="n">sr0</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span>
+    <span class="n">shex</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+        <span class="n">shex</span> <span class="o">+=</span> <span class="n">sumHex</span><span class="p">(</span><span class="n">sr0</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+
+
+    <span class="k">while</span> <span class="n">shex</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="n">shex</span> <span class="o">=</span> <span class="n">sumHex</span><span class="p">(</span><span class="n">shex</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{:X}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shex</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>See source of <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/c1_2021/senior.py">solution 1</a>.</p>
 </div>
 <div class="section" id="solution-2">
@@ -199,9 +223,21 @@ sum the digits until only 1 digit.</p>
 &amp; 10 \cdot a \pmod{R-1} \equiv 10 \pmod{R-1} \cdot a \pmod{R-1} = 1 \cdot a \pmod{R-1} = a \\
 &amp; and \space thus \\
 &amp; n \pmod{R-1} = (a+b) \pmod{R-1} \\
-    \end{align}\end{split}\]</div>
+\end{align}\end{split}\]</div>
 <p>Reference</p>
 <p><a class="reference external" href="http://applet-magic.com/remainder0.htm">The DigitSum of a Number and Its Remainder for Division by Nine, San José State University</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sol2</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="n">sr0</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span>
+    <span class="n">sr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">sr0</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span>
+
+    <span class="n">sr</span> <span class="o">=</span> <span class="n">sr</span> <span class="o">%</span> <span class="mi">15</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{:X}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">15</span> <span class="k">if</span> <span class="n">sr</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">sr</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="amc10-a-2018-problem-19">
 <h3>AMC10 A, 2018, Problem 19<a class="headerlink" href="#amc10-a-2018-problem-19" title="Permalink to this headline">¶</a></h3>

@@ -21,6 +21,32 @@ Solution 1
 
 Sum all digits at the last row.
 
+.. code-block:: python
+
+    def sumHex(n):
+        s = 0
+        while n > 0:
+            s += n % 16;
+            n //= 16
+        return s
+
+    def sol1(s:str, d:str, r:str) -> str:
+        s = int(s, 16)
+        d = int(d, 16)
+        r = int(r, 10)
+
+        sr0 = s + r * (r - 1) // 2 * d
+        shex = 0
+        for i in range(r):
+            shex += sumHex(sr0 + i * d)
+
+
+        while shex >= 16:
+            shex = sumHex(shex)
+
+        return '{:X}'.format(shex)
+..
+
 See source of `solution 1 <https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/c1_2021/senior.py>`_.
 
 Solution 2
@@ -49,7 +75,7 @@ where :math:`a, b \in {0, 1, ..., R-1}`.
 
 
 .. math::
-	\begin{align}
+    \begin{align}
     & Since \\
     & n = R \cdot a + b \equiv ( 10 \cdot a \pmod{R-1} + b \pmod{R-1} ) \pmod {R-1} \\
     & but \space b \pmod {R-1} = b \\
@@ -57,12 +83,26 @@ where :math:`a, b \in {0, 1, ..., R-1}`.
     & 10 \cdot a \pmod{R-1} \equiv 10 \pmod{R-1} \cdot a \pmod{R-1} = 1 \cdot a \pmod{R-1} = a \\
     & and \space thus \\
     & n \pmod{R-1} = (a+b) \pmod{R-1} \\
-	\end{align}
+    \end{align}
 ..
 
 Reference
 
 `The DigitSum of a Number and Its Remainder for Division by Nine, San José State University <http://applet-magic.com/remainder0.htm>`_
+
+.. code-block:: python
+
+    def sol2(s: str, d: str, r: str) -> str:
+        s = int(s, 16)
+        d = int(d, 16)
+        r = int(r, 10)
+
+        sr0 = s + r * (r - 1) // 2 * d
+        sr = r * sr0 + r * (r - 1) // 2 * d
+
+        sr = sr % 15
+        return '{:X}'.format(15 if sr == 0 else sr)
+..
 
 AMC10 A, 2018, Problem 19
 _________________________
