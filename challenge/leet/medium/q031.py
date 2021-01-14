@@ -85,7 +85,8 @@ class Solution:
 
         nums[k], nums[j] = nums[j], nums[k]
         if k < -1:
-            nums[k+1:] = sorted(nums[k+1:])
+            # nums[k+1:] = sorted(nums[k+1:]) # runtime 36ms
+            nums[k+1:] = nums[-1:k:-1]        # runtime 44ms
             
         # print(nums)
 
