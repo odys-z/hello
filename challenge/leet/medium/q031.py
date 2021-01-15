@@ -11,18 +11,22 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        keys = dict.fromkeys([])
+        keys = dict()
+
         def key(n: List[int], l, r):
+            '''
+            get permutation's order with exchanged l, r.
+            '''
             s = 0
             for dx in range(len(n)):
                 x = l if dx == r else r if dx == l else dx
-                s = s << 1 + n[x] #  (2^x) ^ n[x]
+                s = (s << 1) + n[x] #  (2^x) ^ n[x]
             return s 
         
         k0 = key(nums, 0, 0) # exchange nothing
-        kmin = float('Inf')
+        kmin = float('inf')
         
-        kleast = float('Inf') 
+        kleast = float('inf') 
 
         for rx in range(len(nums) - 1, -1, -1):
             for lx in range(rx-1, -1, -1):
