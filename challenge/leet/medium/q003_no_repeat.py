@@ -35,9 +35,7 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         dct = dict();
         que = deque([]);
-#         maxlen, maxIx = 0, -1
-        p = -1
-        maxlen = 0
+        p, maxlen = -1, 0
         for ix, c in enumerate(s):
             if c in dct:
                 p = -1
@@ -50,19 +48,29 @@ class Solution:
             dct.update({c: ix})
             que.append((ix, c));
             
-#             if maxlen < len(que):
-#                 maxlen, maxIx = len(que), que[0][0]
             maxlen = max(maxlen, ix - p)
         
-        # return s[maxIx : maxIx + maxlen]
-        # print(s[maxIx : maxIx + maxlen])
         return maxlen
         
+class Solution2:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        maxlen = 0
+        m = []
+        for c in s:
+            t = -1
+            try: t = m.index(c)
+            except: pass
+            if t >= 0:
+                m = m[t+1:] + [c]
+            else:
+                m.append(c)
+                maxlen = max(maxlen, len(m))
+        return maxlen
+
 class Test(unittest.TestCase):
 
-
-    def testName(self):
-        s = Solution()
+    def testQ3(self):
+        s = Solution2()
         self.assertEqual(0, s.lengthOfLongestSubstring(''))
         self.assertEqual(1, s.lengthOfLongestSubstring('1'))
         self.assertEqual(1, s.lengthOfLongestSubstring('00'))
@@ -87,7 +95,8 @@ class Test(unittest.TestCase):
         self.assertEqual(12, s.lengthOfLongestSubstring("tmmzuxts123456"))
         self.assertEqual(3, s.lengthOfLongestSubstring("x110111011110x"))
         self.assertEqual(3, s.lengthOfLongestSubstring("1101110x011110"))
+        print('OK!')
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
-    unittest.main()
+    t = Test()
+    t.testQ3()
