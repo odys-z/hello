@@ -8,8 +8,9 @@ return the minimum number of conference rooms required.
 '''
 from unittest import TestCase
 from typing import List
+from _heapq import heapify, heappop, heappush
 
-class Solution:
+class Solution2:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort()
         dicnt = {} # start, (overlapping count = 1, end)
@@ -43,6 +44,37 @@ class Solution:
             else:
                 dicnt.update({si: (1, ei)})
         print(dicnt)
+        return maxcnt
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        # As there is no overlapping, and handled in sorted starting,
+        # only the last one is possible been overlapped by an new arranging interval
+        arranges = []
+        heapify(intervals)
+
+        si, ei = heappop(intervals)
+        arranges.append((si, 1, ei))
+        maxcnt = 1
+        while len(intervals) > 0:
+            si, ei = heappop(intervals)
+            
+            # for s0 in arranges:
+            s0, cnt, e0 = arranges[-1]
+            if s0 <= si < e0:
+                if s0 < si:
+                    arranges.append((s0, cnt, si))
+                if e0 <= ei:
+                    arranges.append((si, cnt+1, e0)), 
+                    heappush(intervals, [e0, ei])
+                elif ei < e0:
+                    arranges.append((si, cnt+1, ei)), 
+                    for _ in range(cnt): # maybe used multiple times
+                        heappush(intervals, [ei, e0])
+                if maxcnt < cnt + 1:
+                    maxcnt = cnt + 1;
+            else:
+                arranges.append((si, 1, ei))
         return maxcnt
 
 
