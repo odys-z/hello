@@ -50,6 +50,9 @@ class Solution2:
         return maxcnt
 
 class Solution:
+    '''
+        Faster than 15%
+    '''
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         # As there is no overlapping, and handled in sorted starting,
         # only the last one is possible been overlapped by an new arranging interval
