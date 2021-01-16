@@ -46,7 +46,7 @@ class Solution2:
         print(dicnt)
         return maxcnt
 
-class Solution:
+class Solution3:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         # As there is no overlapping, and handled in sorted starting,
         # only the last one is possible been overlapped by an new arranging interval
@@ -75,6 +75,16 @@ class Solution:
                     maxcnt = cnt + 1;
             else:
                 arranges.append((si, 1, ei))
+        return maxcnt
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+        si, ei = heappop(intervals)
+        maxcnt = 0
+        while len(intervals) > 0:
+            si, ei = heappop(intervals)
+            
         return maxcnt
 
 
