@@ -78,9 +78,9 @@ class Solution3:
                 arranges.append((si, 1, ei))
         return maxcnt
 
-class Solution:
+class Solution1:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        intervals.sort()
+        intervals.sort(key = lambda intv : intv[0])
         q = []
         heapify(q)
         maxcnt, cnt = 0, 0
@@ -91,6 +91,23 @@ class Solution:
                 cnt -= 1
                 nextei = heappop(q)
             heappush(q, nextei)
+            cnt += 1
+            if maxcnt < cnt:
+                maxcnt = cnt
+        return maxcnt
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda intv : intv[0])
+        q = []
+        heapify(q)
+        maxcnt, cnt = 0, 0
+        while len(intervals) > 0:
+            si, ei = intervals.pop(0)
+            heappush(q, ei)
+            while q[0] < si:
+                cnt -= 1
+                heappop(q)
             cnt += 1
             if maxcnt < cnt:
                 maxcnt = cnt
