@@ -8,7 +8,8 @@ return the minimum number of conference rooms required.
 '''
 from unittest import TestCase
 from typing import List
-from _heapq import heapify, heappop, heappush
+from heapq import heapify, heappop, heappush
+from _heapq import heappushpop
 
 class Solution2:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
@@ -37,7 +38,7 @@ class Solution2:
                         elif ei < e0:
                             dicnt.update({si: (cnt+1, ei)}), 
                             # dicnt.update({ei: (1, e0)}) 
-                            for c in range(cnt): # maybe used multiple times
+                            for _ in range(cnt): # maybe used multiple times
                                 intervals.insert(0, [ei, e0])
                             intervals.sort()
                         if maxcnt < cnt + 1:
@@ -49,7 +50,7 @@ class Solution2:
         # print(dicnt)
         return maxcnt
 
-class Solution:
+class Solution3:
     '''
         Faster than 15%
     '''
@@ -83,10 +84,32 @@ class Solution:
                 arranges.append((si, 1, ei))
         return maxcnt
 
+class Solution:
+    '''
+    faster than 56%
+    '''
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+        q = []
+        heapify(q)
+        maxcnt, cnt = 0, 0
+        while len(intervals) > 0:
+            si, ei = intervals.pop(0)
+            nextei = heappushpop(q, ei)
+            while nextei <= si:
+                cnt -= 1
+                nextei = heappop(q)
+            heappush(q, nextei)
+            cnt += 1
+            if maxcnt < cnt:
+                maxcnt = cnt
+        return maxcnt
+
 
 if __name__ == "__main__":
     t = TestCase()
     s = Solution()
+    t.assertEqual(1, s.minMeetingRooms([[13,15],[1,13]]))
     t.assertEqual(2, s.minMeetingRooms([[0,30],[5,10],[15,20]]))
     t.assertEqual(1, s.minMeetingRooms([[7,10],[2,4]]))
     t.assertEqual(3, s.minMeetingRooms([[0,30],[5,10],[15,20],  [7,10],[2,4]]))
