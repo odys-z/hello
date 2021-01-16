@@ -11,6 +11,9 @@ from typing import List
 
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        '''
+        Faster than 5.20%
+        '''
         intervals.sort()
         dicnt = {} # start, (overlapping count = 1, end)
         si, ei = intervals.pop(0)
@@ -42,7 +45,7 @@ class Solution:
                         break # interval updated (break into parts)
             else:
                 dicnt.update({si: (1, ei)})
-        print(dicnt)
+        # print(dicnt)
         return maxcnt
 
 
