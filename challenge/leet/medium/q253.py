@@ -23,7 +23,8 @@ class Solution:
                 if k <= si:
                     cnt, e0 = dicnt.get(k, (0, None))
                     if si < e0:
-                        dicnt.update({k: (cnt, si)})
+                        if k < si:
+                            dicnt.update({k: (cnt, si)})
                         if e0 <= ei:
                             dicnt.update({si: (cnt+1, e0)}), 
                             # dicnt.update({e0: (1, ei)}) 
@@ -31,13 +32,17 @@ class Solution:
                             intervals.sort()
                         elif ei < e0:
                             dicnt.update({si: (cnt+1, ei)}), 
-                            dicnt.update({ei: (1, e0)}) 
+                            # dicnt.update({ei: (1, e0)}) 
+                            for c in range(cnt): # maybe used multiple times
+                                intervals.insert(0, [ei, e0])
+                            intervals.sort()
                         if maxcnt < cnt + 1:
                             maxcnt = cnt + 1;
                         
                         break # interval updated (break into parts)
             else:
                 dicnt.update({si: (1, ei)})
+        print(dicnt)
         return maxcnt
 
 
@@ -49,6 +54,11 @@ if __name__ == "__main__":
     t.assertEqual(3, s.minMeetingRooms([[0,30],[5,10],[15,20],  [7,10],[2,4]]))
     t.assertEqual(4, s.minMeetingRooms([[0,30],[5,10],[15,20],  [7,10],[2,4], [12, 14], [3, 15]]))
     t.assertEqual(2, s.minMeetingRooms([[1,5],[8,9],[8,9]]))
+    # {65: (2, 165), 19: (1, 65), 797: (1, 807), 165: (3, 221), 424: (3, 507), 314: (2, 351), 507: (2, 797), 221: (1, 314), 351: (3, 424)}
+    t.assertEqual(4, s.minMeetingRooms([[65,424],[351,507],[314,807],[19,797],[165,221]]))
+    t.assertEqual(6, s.minMeetingRooms([[65,424],[351,507],[314,807],[387,722],[19,797],[259,722],[165,221]]))
     t.assertEqual(7, s.minMeetingRooms([[65,424],[351,507],[314,807],[387,722],[19,797],[259,722],[165,221],[136,897]]))
+    
+    
     
     print('OK!')
