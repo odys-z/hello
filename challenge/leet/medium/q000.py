@@ -1,10 +1,9 @@
 from unittest import TestCase
+from typing import List
 
-class Solution(TestCase):
-
-    def permutation(self): 
-        print("test {}".format('000'))
-
+class Solution:
+    def copyQuestionHere(self, points: List[List[int]]) -> int:
+        
 
 if __name__ == "__main__":
     t = TestCase()

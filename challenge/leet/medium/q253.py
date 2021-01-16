@@ -96,7 +96,7 @@ class Solution1:
                 maxcnt = cnt
         return maxcnt
 
-class Solution:
+class Solution4:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort(key = lambda intv : intv[0])
         q = []
@@ -105,7 +105,7 @@ class Solution:
         while len(intervals) > 0:
             si, ei = intervals.pop(0)
             heappush(q, ei)
-            while q[0] < si:
+            while q[0] <= si:
                 cnt -= 1
                 heappop(q)
             cnt += 1
@@ -113,15 +113,52 @@ class Solution:
                 maxcnt = cnt
         return maxcnt
 
+class Solution:
+    '''
+        We allocate meeting rooms greedily, but return it reluctantly,
+        unless been driven out - always maximum in use.
+    '''
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda intv : intv[0])
+        lazys = [intervals[0][1]]
+        
+        for si, ei in intervals[1:]:
+            if si >= lazys[0]:
+                heappop(lazys)
+            heappush(lazys, ei)
+        
+        return len(lazys)
+
+class SolutionError:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda intv : -intv[1])
+        
+        s0, e0 = intervals[0]
+        s9 = s0 # latest start
+        cnt, mxct = 1, 1
+
+        for s, e in intervals[1:]:
+            if s0 < e <= e0:
+                cnt += 1
+                mxct = max(mxct, cnt)
+            if s0 < s and s9 < s :
+                cnt -= 1
+            s9 = max(s0, s)
+            e0 = e # e0 is earliest - sorted like this 
+        return mxct
+            
 
 if __name__ == "__main__":
     t = TestCase()
     s = Solution()
+    t.assertEqual(1, s.minMeetingRooms([[13,15],[1,13]]))
     t.assertEqual(2, s.minMeetingRooms([[0,30],[5,10],[15,20]]))
     t.assertEqual(1, s.minMeetingRooms([[7,10],[2,4]]))
+    t.assertEqual(3, s.minMeetingRooms([[0,30],[5,10],[15,20],[7,10]]))
     t.assertEqual(3, s.minMeetingRooms([[0,30],[5,10],[15,20],  [7,10],[2,4]]))
     t.assertEqual(4, s.minMeetingRooms([[0,30],[5,10],[15,20],  [7,10],[2,4], [12, 14], [3, 15]]))
     t.assertEqual(2, s.minMeetingRooms([[1,5],[8,9],[8,9]]))
+    t.assertEqual(4, s.minMeetingRooms([[2,7],[6,8],[5,10],[1,9],[3,4]]))
     # {65: (2, 165), 19: (1, 65), 797: (1, 807), 165: (3, 221), 424: (3, 507), 314: (2, 351), 507: (2, 797), 221: (1, 314), 351: (3, 424)}
     t.assertEqual(4, s.minMeetingRooms([[65,424],[351,507],[314,807],[19,797],[165,221]]))
     t.assertEqual(6, s.minMeetingRooms([[65,424],[351,507],[314,807],[387,722],[19,797],[259,722],[165,221]]))
