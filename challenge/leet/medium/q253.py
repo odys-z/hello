@@ -8,7 +8,8 @@ return the minimum number of conference rooms required.
 '''
 from unittest import TestCase
 from typing import List
-from _heapq import heapify, heappop, heappush
+from heapq import heapify, heappop, heappush
+from _heapq import heappushpop
 
 class Solution2:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
@@ -80,11 +81,19 @@ class Solution3:
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort()
-        si, ei = heappop(intervals)
-        maxcnt = 0
+        q = []
+        heapify(q)
+        maxcnt, cnt = 0, 0
         while len(intervals) > 0:
-            si, ei = heappop(intervals)
-            
+            si, ei = intervals.pop(0)
+            nextei = heappushpop(q, ei)
+            while nextei < si:
+                cnt -= 1
+                nextei = heappop(q)
+            heappush(q, nextei)
+            cnt += 1
+            if maxcnt < cnt:
+                maxcnt = cnt
         return maxcnt
 
 

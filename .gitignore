@@ -2,6 +2,7 @@
 docs/jsdoc
 *.pem
 
+.metadata
 RemoteSystemsTempFiles
 .recommenders
 GDX
