@@ -84,12 +84,12 @@ class Solution3:
                 arranges.append((si, 1, ei))
         return maxcnt
 
-class Solution:
+class Solution1:
     '''
     faster than 56%
     '''
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        intervals.sort()
+        intervals.sort(key = lambda intv : intv[0])
         q = []
         heapify(q)
         maxcnt, cnt = 0, 0
@@ -105,6 +105,33 @@ class Solution:
                 maxcnt = cnt
         return maxcnt
 
+class Solution4:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda intv : intv[0])
+        q = []
+        heapify(q)
+        maxcnt, cnt = 0, 0
+        while len(intervals) > 0:
+            si, ei = intervals.pop(0)
+            heappush(q, ei)
+            while q[0] <= si:
+                cnt -= 1
+                heappop(q)
+            cnt += 1
+            if maxcnt < cnt:
+                maxcnt = cnt
+        return maxcnt
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals = sorted(intervals, key=lambda i: i[0])
+        lazys = [intervals[0][1]]
+
+        for s, e in intervals[1:]:
+            if s >= lazys[0]: # earlest ended can be used
+                heappop(lazys)
+            heappush(lazys, e) # ask one lazily for return
+        return len(lazys)
 
 if __name__ == "__main__":
     t = TestCase()
