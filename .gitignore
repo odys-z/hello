@@ -5,5 +5,6 @@ docs/jsdoc
 .metadata
 RemoteSystemsTempFiles
 .recommenders
+__pycache__
 GDX
 www-res
