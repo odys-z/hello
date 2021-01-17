@@ -28,6 +28,10 @@ class SolutionTimeout:
         return mxx
         
 class Solution:
+    '''
+    The trick here is that keeping accumulate the product, value 0 where do the work.
+    Dont' forget the number n itself is max/min after been cleared by zero.
+    '''
     def maxProduct(self, nums: List[int]) -> int:
         
         curr_max = curr_min = all_max = nums[0]
