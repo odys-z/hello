@@ -6,70 +6,68 @@ Reverse a linked list from position m to n. Do it in one-pass.
 Note: 1 ≤ m ≤ n ≤ length of list.
 
 Example:
+
 Input: 1->2->3->4->5->NULL, m = 2, n = 4
 Output: 1->4->3->2->5->NULL
 
-Created on Jan 19, 2021
+Created on 19 Jan 2021
 
-@author: ody
+@author: Odys Zhou
 '''
 from unittest import TestCase
+from medium.q092_helper import assert6, assert5, assert4
 
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, nxt=None):
         self.val = val
-        self.next = next
+        self.next = nxt
 
 class Solution:
+    '''
+    63.80%
+
+    1 ->  2  ->  3  ->  4 ->  5
+
+    1   m                n   5
+    h1  r0      follow  h0  cut
+    1 x 2   <-  3   <-  4  x 5
+    1   2   <-  3   <-  4    5
+    \---+---------------^    ^
+        |--------------------|
+    '''
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
-        p, h, h0 = 1, head, ListNode(-float('inf'))
-        h0.next, r = head, h0
+        if not head or not head.next or m >= n: # so won't changed
+            return head
 
-        while p < m and h:
-            p += 1
-            h, r = h.next, h
-        
-        if not h: return h0.next
+        head = ListNode(None, head)
 
-        prev, cutoff = None, None
-        # h = ListNode(h.val)
-        while p < n and h:
+        r0, h1 = head.next, head
+        p = 1
+
+        while p < m and r0:
             p += 1
-            cutoff = h.next 
-            prev, h, h.next = h, h.next, prev
-        
-        if not h and prev:
-            # back step in case n > len
-            h = prev
-        
-        if cutoff:
-            r.next.next = cutoff
-            
-        if h:
-            r.next, r.next.next = h, h.next
-        
-        return h0.next
-            
- 
+            r0, h1 = r0.next, r0
+
+        if not r0:
+            return head.next
+
+        h0, follow, cut = r0, h1, r0.next
+
+        while p < n and h0:
+            p += 1
+            follow, h0 = h0, cut
+            cut = h0.next if h0 else None
+            h0.next = follow
+
+        h1.next, r0.next = h0, cut
+
+        return head.next
+
+
 if __name__ == '__main__':
-    t = TestCase()
     s = Solution()
-    r = ListNode(5)
-    h = ListNode(4, r)
-    h = ListNode(3, h)
-    h = ListNode(2, h)
-    h = ListNode(1, h)
-    
-    h = s.reverseBetween(h, 2, 4)
-    t.assertEqual(1, h.val)
-    h = h.next
-    t.assertEqual(4, h.val)
-    h = h.next
-    t.assertEqual(3, h.val)
-    h = h.next
-    t.assertEqual(2, h.val)
-    h = h.next
-    t.assertEqual(5, h.val)
-    
+    assert4(s)
+    assert6(s)
+    assert5(s)
     print('OK!')
