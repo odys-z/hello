@@ -7,6 +7,9 @@ from unittest import TestCase
 from typing import List
 
 class Solution:
+    '''
+    From someone's discussion.
+    '''
     def maxProfit(self, prices: List[int]) -> int:
         if len(prices) <= 1:
             return 0
@@ -25,9 +28,14 @@ class Solution:
             max_profit = max(max_profit, left_profits[i] + rprofit)
         return max_profit
 
+class Solution1:
+    def maxProfit(self, prices: List[int]) -> int:
+        pass
+
 if __name__ == '__main__':
     t = TestCase()
     s = Solution()
+    t.assertEqual(8, s.maxProfit([3,4,5,0,0,3,1,6]))
     t.assertEqual(6, s.maxProfit([3,3,5,0,0,3,1,4]))
     t.assertEqual(4, s.maxProfit([1,2,3,4,5]))
     t.assertEqual(0, s.maxProfit([7,6,4,3,1]))

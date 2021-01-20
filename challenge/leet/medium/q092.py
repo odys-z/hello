@@ -15,7 +15,7 @@ Created on 19 Jan 2021
 @author: Odys Zhou
 '''
 from unittest import TestCase
-from medium.q092_helper import assert6, assert5
+from medium.q092_helper import assert6, assert5, assert4
 
 # Definition for singly-linked list.
 class ListNode:
@@ -39,7 +39,7 @@ class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         if not head or not head.next or m >= n: # so won't changed
             return head
-        
+
         head = ListNode(None, head)
 
         r0, h1 = head.next, head
@@ -48,12 +48,12 @@ class Solution:
         while p < m and r0:
             p += 1
             r0, h1 = r0.next, r0
-        
+
         if not r0:
             return head.next
 
         h0, follow, cut = r0, h1, r0.next
-        
+
         while p < n and h0:
             p += 1
             follow, h0 = h0, cut
@@ -64,24 +64,7 @@ class Solution:
 
         return head.next
 
-def assert4(s):
-    t = TestCase()
 
-    h = ListNode(4)
-    h = ListNode(3, h)
-    h = ListNode(2, h)
-    h = ListNode(1, h)
-    h = s.reverseBetween(h, 1, 4)
-
-    t.assertEqual(4, h.val)
-    h = h.next
-    t.assertEqual(3, h.val)
-    h = h.next
-    t.assertEqual(2, h.val)
-    h = h.next
-    t.assertEqual(1, h.val)
-
-        
 if __name__ == '__main__':
     s = Solution()
     assert4(s)
