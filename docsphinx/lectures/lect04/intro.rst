@@ -58,3 +58,27 @@ ___________
 
 Trees
 -----
+
+Some different terms::
+
+    root  leaf / external node   internal node
+
+Python example:
+
+.. code-bloc:: python3
+
+    class TreeNode():
+        def __init__(self, v, lchild = None, rchild = None):
+            self.val = v
+          	self.l = lchild
+            self.r = rchild
+
+    l = TreeNode(1)
+    r = TreeNode(2)
+    n = TreeNode(0, l, r)
+..
+
+::
+
+      0
+    1   2
