@@ -1,0 +1,180 @@
+Data Structure
+==============
+
+`Data Structures, ACSL Topic <http://www.categories.acsl.org/wiki/index.php?title=Data_Structures>`_
+
+Stacks and Queues
+-----------------
+
+LIFO::
+
+    PUSH('A')
+    PUSH('B')
+    x = POP()
+    y = POP()
+    PRINT x y
+
+output::
+
+    B A
+
+FIFO::
+
+    PUSH('A')
+    PUSH('B')
+    x = POP()
+    y = POP()
+    PRINT x y
+
+output::
+
+    A B
+
+Stack in Python3
+-----------------
+
+Using List
+__________
+
+.. code-block:: python3
+
+    stack = []
+    stack.append('A')
+    stack.append('B')
+    print(stack)
+	stack.pop()
+	print(stack)
+..
+
+Using Queue
+___________
+
+.. code-block:: python3
+
+    stack.append('A')
+    stack.append('B')
+    print(stack)
+	stack.pop(0)
+	print(stack)
+..
+
+Trees
+-----
+
+Some different terms::
+
+    root  leaf / external node   internal node
+
+Python example:
+
+.. code-block:: python3
+
+    class TreeNode():
+        def __init__(self, v, lchild = None, rchild = None):
+            self.val = v
+          	self.l = lchild
+            self.r = rchild
+
+    l = TreeNode(1)
+    r = TreeNode(2)
+    n = TreeNode(0, l, r)
+..
+
+::
+
+      0
+    1   2
+
+Inernal Path Length
+___________________
+
+::
+
+             P
+          O    R
+         G    R
+        A M
+
+    2 * 1 + 2 * 2 + 2 * 3 = 12
+
+Binary search
+_____________
+
+pseudo code::
+
+    p = root
+    found = FALSE
+    while (p ≠ NIL) and (not found)
+      if (x < p’s key)
+        p = p’s left child
+      else if (x > p’s key)
+        p = p’s right child
+      else
+        found = TRUE
+      end if
+    end while
+
+Python program:
+
+.. code-block:: python3
+
+    p = root          # root = TreeNode(v)
+    found = False
+    while p and not found:
+        if x < p.val:
+            p = p.l
+        elif: x > p.val:
+            p = p.r
+        else:
+            found = TRUE
+
+Delete Node
+___________
+
+pseudo code::
+
+    p = node to delete
+    f = father of p
+    if (p has no children)
+      delete p
+    else if (p has one child)
+      make p’s child become f’s child
+      delete p
+    else if (p has two children)
+      l = p’s left child (it might also have children)
+      r = p’s right child (it might also have children)
+      make l become f’s child instead of p
+      stick r onto the l tree
+      delete p
+    end if
+
+        f             f
+      p             l
+    l   r         r
+
+Exercise: implement function *deleteNode()*, delete node 'p'.
+
+.. code-block:: python3
+
+    from unittest import TestCase
+
+    def deleteNode(v: str, root: TreeNode):
+        # ...
+        pass
+
+    l = TreeNode('l')
+    r = TreeNode('r')
+    p = TreeNode('p', l, r)
+    f = TreeNode('f', p)
+
+    deletNode('p', r)
+
+    t = TestCase()
+    t.assertEqual('f', f.val)
+    t.assertEqual('l', f.l.val)
+    t.assertEqual('r', f.l.l.val)
+    print('OK!')
+..
+
+Priority Queues
+---------------
