@@ -36,7 +36,7 @@ Syllabus:
    lectures/lect03/index
    lectures/lect03p2/index
    lectures/lect03p3/index
-   lectures/lect04/intro
+   lectures/lect04/index
    lectures/lect05/intro
    lectures/lect06/intro
    lectures/lect07/intro
