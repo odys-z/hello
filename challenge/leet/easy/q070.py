@@ -26,7 +26,7 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         if n > 2:
             ai, an_2, an_1 = 0, 2, 1
-            for i in range(n-3, -1, -1):
+            for _ in range(n-3, -1, -1):
                 ai = an_1 + an_2
                 an_2, an_1 = ai, an_2
                 # print(ai, an_2, an_1)
