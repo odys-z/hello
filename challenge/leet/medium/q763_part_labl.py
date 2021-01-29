@@ -16,8 +16,6 @@ Created on 16 Nov 2019
 '''
 import unittest
 
-
-
 class Solution(object):
     def partitionLabels(self, S):
         last = {c: i for i, c in enumerate(S)}
