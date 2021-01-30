@@ -26,18 +26,15 @@ from math import sin, pi
 fig, ax = plt.subplots()  # Create a figure containing a single axes.
 fig.canvas.set_window_title("plt.style.use('ggplot')")
 
-s1 = np.linspace(0, 5*pi, 120)
-s2 = [0] * len(s1)
+s1 = np.linspace(-3*pi, 3*pi, 200)
 s3 = [0] * len(s1)
-for i in range(len(s2)):
-    s2[i] = sin(s1[i])
+for i in range(len(s1)):
     s3[i] = sin(s1[i] * pi * 0.1)
-
 
 plt.style.use('ggplot')
 
 ax.plot(s1, np.sinc(s1), label='np.sinc')
-ax.plot(s1, s2, 'r-.', linewidth=.5, label='sin')
+ax.plot(s1, np.sin(s1), 'r-.', linewidth=.5, label='sin')
 ax.plot(s1, s3, label='sin * 10', linewidth=.25)
 
 plt.ylabel('y-Y')
