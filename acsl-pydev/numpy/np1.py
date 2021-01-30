@@ -1,7 +1,7 @@
 '''
     https://www.kdnuggets.com/2019/08/numpy-neural-networks-computational-graphs.html
 
-    neoro
+    neuron
     z = w1⋅x1 + w2⋅x2 + b,
     σ(z) = 1 / (1 + e^-z)
 
@@ -12,11 +12,16 @@
     ∂L / ∂b = 1
 
 	Ci = 1/2m Σ (yi - ŷi)^2,  where i is i-th training example, Y = [y1, y2, ...]
-    C(Y, Ŷ) = 1/2m Σ (Y - Ŷ)^(*2)
+    C(Y, Ŷ) = 1/2m Σ (Y - Ŷ)⋅^2
             = 1/2m [(y1 - ŷ1)^2, (y2 - ŷ2)^2, ...]
     ∂C/∂Ŷ = [∂C/ŷ1, ∂C/ŷ2, ...]
           = - 1/m [y1 - ŷ1, y2 - ŷ2, ...]
           = - 1/m (Y - Ŷ)
 '''
 
-import numpy
+import numpy as np
+from util.utilities import *
+from Layers.LinearLayer import LinearLayer
+from Layers.ActivationLayer import SigmoidLayer
+# to show all the generated plots inline in the notebook
+# %matplotlib inline
