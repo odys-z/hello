@@ -32,5 +32,34 @@
 matplotlib
 
 '''
+    # optional
+    # py -m pip install Pillow ?
+    pip3 install Pillow
+    
     pip3 install matplotlib
 '''
+
+# tip
+
+Check and set pip in windows:
+
+'''
+    pip --version
+'''
+
+set path to python39/pip:
+
+'''
+    C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python39\\Scripts
+'''
+
+https://stackoverflow.com/a/65045676
+
+## ReadTimeoutError: HTTPSConnectionPool ?
+
+'''
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+    pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
+'''
+
+Try many times.
