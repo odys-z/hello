@@ -2,3 +2,4 @@ data
 *.png
 *.param
 __pycache__
+mnist

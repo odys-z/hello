@@ -62,7 +62,11 @@ https://stackoverflow.com/a/65045676
     pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
 '''
 
-Try many times.
+Try many times, or
+
+'''
+    --default-timeout=100
+'''
 
 ## Find CUDA version
 

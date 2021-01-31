@@ -7,7 +7,7 @@ import math
 import matplotlib.pyplot as plt
 
 # Create random input and output data
-epochs = 80
+epochs = 1200
 x = np.linspace(-math.pi, math.pi, epochs)
 y = np.sin(x)
 
@@ -20,6 +20,7 @@ d = np.random.randn()
 learning_rate = 1e-6
 loss = [0] * epochs
 y_hat = [0] * epochs
+w = [0] * epochs
 
 for t in range(epochs):
     # Forward pass: compute predicted y
@@ -28,8 +29,7 @@ for t in range(epochs):
 
     # Compute and print loss
     loss[t] = np.square(y_hat[t] - y).sum()
-    if t % 100 == 99:
-        print(t, loss[t], y_hat[t])
+    # if t % 100 == 99: print(t, loss[t], y_hat[t])
 
     # Backprop to compute gradients of a, b, c, d with respect to loss
     # ∂L / ∂Ŷ
@@ -50,12 +50,16 @@ for t in range(epochs):
     d -= learning_rate * grad_d
 
 print(f'Result: y = {a} + {b} x + {c} x^2 + {d} x^3')
+# print(len(y_hat[0]), y_hat[0])   -> epochs [...]
 
+# FIXME As epochs is not the same as samples, we introduced  a bug in here.
 fig, al = plt.subplots()
 fig.canvas.set_window_title("Ŷ = a + b⋅x + c⋅x^2 + d⋅x^3")
 ay = al.twinx()
-ay.plot(x, y_hat, 'r', label='Ŷ')
-ay.plot(x, y, lw=0.4, label='')
-al.plot(x, loss, 'b-.', lw=0.4, label='Loss')
+ay.plot(x, y, 'r-.', lw=0.4, label='sin(x)')
+ay.plot(x, a + b*x + c*x**2 + d*x**3, 'r--', label='Ŷ = W[-1]⋅x')
+al.plot(x, loss, 'b--', lw=0.4, label='Loss')
 
+plt.title('W[-1] = [%f, %f, %f, %f]' % (a, b, c, d))
+plt.legend()
 plt.show()
