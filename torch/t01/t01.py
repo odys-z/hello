@@ -8,9 +8,6 @@ x = torch.empty(5, 3)
 print(x)
 
 if torch.cuda.is_available():
-	'''
-	    No NVIDIA driver :(
-	'''
     device = torch.device("cuda")          # a CUDA device object
     y = torch.ones_like(x, device=device)  # directly create a tensor on GPU
     x = x.to(device)                       # or just use strings ``.to("cuda")``

@@ -176,5 +176,31 @@ Exercise: implement function *deleteNode()*, delete node 'p'.
     print('OK!')
 ..
 
+Recursive Travel
+________________
+
+Although ACSL topics doesn't include recusive function, the recursive tree travelling
+algorithm is a basic knowledge and skill of data structure.
+
+Let's have a look at an example:
+
+.. code-block:: python3
+
+    l = TreeNode(1, TreeNode(3), TreeNode(4))
+    r = TreeNode(2, TreeNode(5), TreeNode(6))
+    n = TreeNode(0, l, r)
+
+    reslt = []
+    def firsttravel(root: TreeNode, reslt) -> List:
+        reslt.append(root.val)
+        firsttravel(root.l)
+        firsttravel(root.r)
+
+    # [0, 1, 2, 3, 4, 5]
+    print(reslt)
+..
+
+:download:`first visiting tree travelling example <https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py>`
+
 Priority Queues
 ---------------
