@@ -2,7 +2,9 @@
 docs/jsdoc
 *.pem
 
+.metadata
 RemoteSystemsTempFiles
 .recommenders
+__pycache__
 GDX
 www-res

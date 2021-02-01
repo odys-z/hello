@@ -157,6 +157,14 @@ class SolutionRank():
         return romans
 
 
+class SolutionStolen():
+    def intToRoman(self, num: int) -> str:
+        k = ["", "M", "MM", "MMM"]
+        _100 = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+        _10 = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+        _1 = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+        
+        return k[num // 1000 ] + _100[ num%1000 // 100 ] + _10[num%100//10] + _1[num%10]
 
 class Test(unittest.TestCase):
 
@@ -164,7 +172,8 @@ class Test(unittest.TestCase):
         # s = SolutionBs()
         # s = Solution28ms()
 #         s = SolutionWeightable()
-        s = SolutionRank()
+#         s = SolutionRank()
+        s = SolutionStolen()
         self.assertEqual("I", s.intToRoman(1));
         self.assertEqual("III", s.intToRoman(3));
         self.assertEqual("IV", s.intToRoman(4));
@@ -197,5 +206,6 @@ class Test(unittest.TestCase):
         self.assertEqual("MCMXCIV", s.intToRoman(1994));
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
-    unittest.main()
+    t = Test()
+    t.test012()
+    print("OK!")

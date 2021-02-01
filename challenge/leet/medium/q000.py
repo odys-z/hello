@@ -1,23 +1,14 @@
-'''
-Created on 12 Jan 2021
+from unittest import TestCase
+from typing import List
 
-@author: Odys Zhou
-'''
-import unittest
-
-
-class Test0(unittest.TestCase):
-    def __init__(self, name):
-        self.name = name
-        pass
-
-    def t000(self): 
-        print("test {}".format(self.name))
-
+class Solution:
+    def copyQuestionHere(self, points: List[List[int]]) -> int:
+        
 
 if __name__ == "__main__":
-    
-    t = Test0("000")
-    t.t000()
+    t = TestCase()
+    s = Solution()
+    t.assertEqual(['test results'],
+                  s.permutation())
     
     print('OK!')
