@@ -54,12 +54,19 @@ class Solution:
                 else:
                     prev = stack.pop()
                     stack2 = stack.copy()
+                    stack3 = stack.copy()
+                    stack4 = stack.copy()
                     stack.append(prev + ')' + tmp)
                     generate(stack, l, r)
 
                     stack2.append(prev + tmp + ')')
                     generate(stack2, l, r)
 
+                    stack3.append(tmp + prev + ')')
+                    generate(stack3, l, r)
+
+                    stack4.append(tmp + ')' + prev)
+                    generate(stack4, l, r)
         generate(stack, l, r)
         return list(res.keys())
 
