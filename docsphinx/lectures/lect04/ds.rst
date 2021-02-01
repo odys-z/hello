@@ -200,7 +200,7 @@ Let's have a look at an example:
     print(reslt)
 ..
 
-:download:`first visiting tree travelling example <>`
+:download:`first visiting tree travelling example <https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py>`
 
 Priority Queues
 ---------------
