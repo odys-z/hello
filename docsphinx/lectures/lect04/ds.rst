@@ -196,11 +196,17 @@ Let's have a look at an example:
         firsttravel(root.l)
         firsttravel(root.r)
 
-    # [0, 1, 2, 3, 4, 5]
+    # [0, 1, 2, 3, 4, 5, 6]
     print(reslt)
 ..
 
-:download:`first visiting tree travelling example <https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py>`
+Source file: `first visiting tree travelling example <https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py>`_
+
+Exercise: implement a last visiting algorithm. With the tree above, print
+
+::
+
+    [6, 5, 4, 3, 2, 1, 0]
 
 Priority Queues
 ---------------

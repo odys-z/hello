@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 04: Topics of Contest 2" href="index.html"/>
         <link rel="next" title="Prefix/Infix/Postfix" href="fix.html"/>
@@ -91,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 04: Topics of Contest 2</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Structure</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Data Structure</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#stacks-and-queues">Stacks and Queues</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stack-in-python3">Stack in Python3</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#using-list">Using List</a></li>
@@ -102,6 +99,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#inernal-path-length">Inernal Path Length</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#binary-search">Binary search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#delete-node">Delete Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recursive-travel">Recursive Travel</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#priority-queues">Priority Queues</a></li>
@@ -164,27 +162,27 @@
 <div class="section" id="stacks-and-queues">
 <h2>Stacks and Queues<a class="headerlink" href="#stacks-and-queues" title="Permalink to this headline">¶</a></h2>
 <p>LIFO:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
-<span class="n">PRINT</span> <span class="n">x</span> <span class="n">y</span>
+<div class="highlight-python"><div class="highlight"><pre>PUSH(&#39;A&#39;)
+PUSH(&#39;B&#39;)
+x = POP()
+y = POP()
+PRINT x y
 </pre></div>
 </div>
 <p>output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="n">A</span>
+<div class="highlight-python"><div class="highlight"><pre>B A
 </pre></div>
 </div>
 <p>FIFO:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
-<span class="n">PRINT</span> <span class="n">x</span> <span class="n">y</span>
+<div class="highlight-python"><div class="highlight"><pre>PUSH(&#39;A&#39;)
+PUSH(&#39;B&#39;)
+x = POP()
+y = POP()
+PRINT x y
 </pre></div>
 </div>
 <p>output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span>
+<div class="highlight-python"><div class="highlight"><pre>A B
 </pre></div>
 </div>
 </div>
@@ -192,7 +190,7 @@
 <h2>Stack in Python3<a class="headerlink" href="#stack-in-python3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-list">
 <h3>Using List<a class="headerlink" href="#using-list" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
@@ -203,7 +201,7 @@
 </div>
 <div class="section" id="using-queue">
 <h3>Using Queue<a class="headerlink" href="#using-queue" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
     <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -215,12 +213,12 @@
 <div class="section" id="trees">
 <h2>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h2>
 <p>Some different terms:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span>  <span class="n">leaf</span> <span class="o">/</span> <span class="n">external</span> <span class="n">node</span>   <span class="n">internal</span> <span class="n">node</span>
+<div class="highlight-python"><div class="highlight"><pre>root  leaf / external node   internal node
 </pre></div>
 </div>
 <p>Python example:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">lchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="highlight-python3"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">lchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">v</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">lchild</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">rchild</span>
@@ -230,25 +228,25 @@
 <span class="n">n</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">0</span>
-<span class="mi">1</span>   <span class="mi">2</span>
+<div class="highlight-python"><div class="highlight"><pre>  0
+1   2
 </pre></div>
 </div>
 <div class="section" id="inernal-path-length">
 <h3>Inernal Path Length<a class="headerlink" href="#inernal-path-length" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">P</span>
-      <span class="n">O</span>    <span class="n">R</span>
-     <span class="n">G</span>    <span class="n">R</span>
-    <span class="n">A</span> <span class="n">M</span>
+<div class="highlight-python"><div class="highlight"><pre>         P
+      O    R
+     G    R
+    A M
 
-<span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">12</span>
+2 * 1 + 2 * 2 + 2 * 3 = 12
 </pre></div>
 </div>
 </div>
 <div class="section" id="binary-search">
 <h3>Binary search<a class="headerlink" href="#binary-search" title="Permalink to this headline">¶</a></h3>
 <p>pseudo code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>p = root
+<div class="highlight-python"><div class="highlight"><pre>p = root
 found = FALSE
 while (p ≠ NIL) and (not found)
   if (x &lt; p’s key)
@@ -262,7 +260,7 @@ end while
 </pre></div>
 </div>
 <p>Python program:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">root</span>          <span class="c1"># root = TreeNode(v)</span>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">root</span>          <span class="c1"># root = TreeNode(v)</span>
 <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">while</span> <span class="n">p</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">p</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
@@ -277,7 +275,7 @@ end while
 <div class="section" id="delete-node">
 <h3>Delete Node<a class="headerlink" href="#delete-node" title="Permalink to this headline">¶</a></h3>
 <p>pseudo code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>p = node to delete
+<div class="highlight-python"><div class="highlight"><pre>p = node to delete
 f = father of p
 if (p has no children)
   delete p
@@ -297,8 +295,8 @@ end if
 l   r         r
 </pre></div>
 </div>
-<p>Exercise: implement function <em>deleteNode()</em>, delete node ‘p’.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<p>Exercise: implement function <em>deleteNode()</em>, delete node &#8216;p&#8217;.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">unittest</span> <span class="k">import</span> <span class="n">TestCase</span>
 
 <span class="k">def</span> <span class="nf">deleteNode</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="c1"># ...</span>
@@ -318,6 +316,27 @@ l   r         r
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OK!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="recursive-travel">
+<h3>Recursive Travel<a class="headerlink" href="#recursive-travel" title="Permalink to this headline">¶</a></h3>
+<p>Although ACSL topics doesn&#8217;t include recusive function, the recursive tree travelling
+algorithm is a basic knowledge and skill of data structure.</p>
+<p>Let&#8217;s have a look at an example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="n">reslt</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">firsttravel</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">reslt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="n">reslt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">firsttravel</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">firsttravel</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">r</span><span class="p">)</span>
+
+<span class="c1"># [0, 1, 2, 3, 4, 5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reslt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Source file: <a class="reference external" href="https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py">first visiting tree travelling example</a></p>
 </div>
 </div>
 <div class="section" id="priority-queues">
@@ -375,8 +394,7 @@ l   r         r
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
