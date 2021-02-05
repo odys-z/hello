@@ -3,3 +3,5 @@ data
 *.param
 __pycache__
 mnist
+.project
+.pydevproject

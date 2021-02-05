@@ -54,8 +54,8 @@ ___________
     stack.append('A')
     stack.append('B')
     print(stack)
-	stack.pop(0)
-	print(stack)
+    stack.pop(0)
+    print(stack)
 ..
 
 Trees
