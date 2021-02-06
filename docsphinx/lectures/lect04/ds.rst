@@ -18,6 +18,19 @@ output::
 
     B A
 
+Sample Problem::
+
+    A star indicates a pop operation and a letter indicates push the letter.
+    What would be the next item to be popped?
+
+    Z A * N * S * O M * * Y O R * * G * X A * D E S * * *
+
+Answer: X
+
+The operations can be quickly simplified as::
+
+    Z Y X
+
 FIFO::
 
     PUSH('A')
@@ -42,8 +55,8 @@ __________
     stack.append('A')
     stack.append('B')
     print(stack)
-	stack.pop()
-	print(stack)
+    stack.pop()
+    print(stack)
 ..
 
 Using Queue
@@ -58,12 +71,73 @@ ___________
     print(stack)
 ..
 
+List
+----
+
+ACSL::
+
+    Although ACSL does not cover linked lists per se, they are a great preliminary
+    study for binary search trees.
+
+Example Problem: `reverse list <https://leetcode.com/problems/reverse-linked-list/>`_
+
+.. code-block:: python3
+
+    # Definition for singly-linked list.
+    class ListNode:
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.next = next
+
+    class Solution:
+        def reverseList(self, head: ListNode) -> ListNode:
+            if head and head.next:
+                h2 = ListNode(head.val)
+                head = head.next
+                while head is not None:
+                    h2, h2.next, head = head, h2, head.next
+                return h2
+            return head
+
+    t = TestCase()
+    s = Solution()
+    r = ListNode(1)
+    h = ListNode(2, r)
+    h = ListNode(3, h)
+    h = s.reverseList(h)
+    t.assertEqual(1, h.val)
+    r = h.next
+    t.assertEqual(2, r.val)
+    r = r.next
+    t.assertEqual(3, r.val)
+..
+
+Solution: :download:`List Sample Problem <../../../challenge/leet/easy/q206.py>`
+
 Trees
 -----
 
 Some different terms::
 
     root  leaf / external node   internal node
+
+    Our ACSL convention places duplicate keys into the tree as if they were less
+    than their equal key. (In some textbooks and software libraries, duplicate
+    keys may be considered larger than their equal key.)
+
+    Our ACSL convention is that an external node is the name given to a place
+    where a new node could be attached to the tree. (In some textbooks, an external
+    node is synonymous with a leaf node.)
+
+    This tree has 9 external nodes and 31 external path length.
+
+              A
+          A          M
+        o  o      E       R
+                C   I   N   o
+               o o o o o o
+
+        2   2  4 4 4 4 4 4  3
 
 Python example:
 
@@ -72,7 +146,7 @@ Python example:
     class TreeNode():
         def __init__(self, v, lchild = None, rchild = None):
             self.val = v
-          	self.l = lchild
+              self.l = lchild
             self.r = rchild
 
     l = TreeNode(1)
@@ -210,3 +284,72 @@ Exercise: implement a last visiting algorithm. With the tree above, print
 
 Priority Queues
 ---------------
+
+A priority queue is quite similar to a binary search tree, but one can only delete
+the smallest item and retrieve the smallest item only. These insert and delete
+operations can be done in a guaranteed time proportional to the log (base 2) of
+the number of items; the retrieve-the-smallest can be done in constant time.
+
+The queue is usually called as heap, or min heap. In python/python3, it's
+`heapq <https://docs.python.org/3/library/heapq.html>`_.
+
+
+A heap can implemented with an array. The parent-children relation is fixed with
+indexes::
+
+    parent  = (child - 1) // 2
+    l-child = parent * 2 + 1
+    r-child = parent * 2 + 2
+
+    0 1 2   0 1 2 3 4 5 6
+      0          0
+     1 2      1     2
+             3 4   5 6
+
+Here is what Python 3.9 documents define a heap::
+
+    arrays for which heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k,
+    counting elements from zero
+
+Adding an element::
+
+    0 1 2 3 4 ?
+
+         0
+      1     2
+     3 4   ?
+
+Then competing up.
+
+Deleting an element (heap can only delete the first/top)::
+
+    0 1 2 3 4 5                                       1 3 2 5 4
+        ( )               (5)             1              1
+      1     2           1     2       (5)    2        5     2
+     3 4   5           3 4            3 4            3 4
+
+Actually pop the top, move last, then competing downward.
+
+Exercise: implement a min-heap.
+
+.. code-block:: python3
+
+    class MinHeap():
+        '''
+        Implement a min-heap
+        '''
+        def peek():
+            return self.h[0]
+
+        def pop():
+            t = self.h.pop(0)
+            # Your task: implement moving then competing downward
+            return t
+
+        def push(v):
+            self.h.append(v)
+            # Your task: implement competing upward
+            pass
+..
+
+Solution: :download:`MinHeap (local) <../../../acsl-pydev/acsl/lect04/minheap.py>`
