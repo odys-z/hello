@@ -9,3 +9,4 @@ Contents:
    ds
    fix
    program
+   exercise
