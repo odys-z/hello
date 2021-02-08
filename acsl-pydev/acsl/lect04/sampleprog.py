@@ -48,7 +48,7 @@ def commStr_bug(s: str) -> str:
 		if c in c1 and c in c2 and c in c3:
 			res += c
 
-	return 'NONE' if len(res) == 0 else res
+	return 'NONE' if len(res) == 0 else ''.join(sorted(res))
 
 if __name__ == '__main__':
     t = TestCase()
