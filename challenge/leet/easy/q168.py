@@ -41,10 +41,15 @@ class Solution:
 
     ZZZ + 1 = 26^3+26^2+26 + 1 = AAA@ + A
 
+    26       2*26       2*26+1  3*26        3*26+1  25*26+1  25*26+25  26^2
+    A@ -> Z  B@ -> AZ   BA      C@ -> BZ    CA      YA       YY        A@@  -> YZ (Y@ + Z)
+                              = BY + 1                               = YY + 1
+
     26^3+2*26^2++0
     A A @ @ -> AZ@
-                                                    26^3+2*26^2+26+0
-                                                    A    B      A@ @ -> AAA@A@ -> AAZZ
+
+    26^3+2*26^2+26+0
+    A    B      A@ @ -> AAA@A@ -> AAZZ
 
     0 1 2 3 4 5 6 7 8 9 10                            25
     @ A B C D E F G H I J K L M N O P Q R S T U V W X Y 
@@ -56,6 +61,7 @@ class Solution:
         d = 'ABCDEFGHIJKLMNOPQRSTUVWXY@'
         s = []
         while n > 0:
+            # s 
             n = n // 27
             r = n % 27
         
