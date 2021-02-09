@@ -12,7 +12,7 @@ For example:
     ...
     26 -> Z
     27 -> AA
-    28 -> AB 
+    28 -> AB
     ...
 Example 1:
 
@@ -47,20 +47,35 @@ class Solution:
                                                     A    B      A@ @ -> AAA@A@ -> AAZZ
 
     0 1 2 3 4 5 6 7 8 9 10                            25
-    @ A B C D E F G H I J K L M N O P Q R S T U V W X Y 
+    @ A B C D E F G H I J K L M N O P Q R S T U V W X Y
     Z
 
     26 = A@ (Z)
     '''
     def convertToTitle(self, n: int) -> str:
-        d = 'ABCDEFGHIJKLMNOPQRSTUVWXY@'
-        s = []
+        d = 'ZABCDEFGHIJKLMNOPQRSTUVWXY'
+        s = ''
         while n > 0:
-            n = n // 27
-            r = n % 27
-        
+            r = n % 26
+            n = n // 26
+            if r == 0: n -= 1
+            s = d[r] + s
+        return s
+
 if __name__ == '__main__':
     t = TestCase()
     s = Solution()
-    t.assertEqual('0', s.convertToTitle('0', '0'))
+    t.assertEqual('A', s.convertToTitle(1))
+    t.assertEqual('B', s.convertToTitle(2))
+    t.assertEqual('Y', s.convertToTitle(25))
+    t.assertEqual('Z', s.convertToTitle(26))
+    t.assertEqual('AA', s.convertToTitle(27))
+    t.assertEqual('AY', s.convertToTitle(51))
+    t.assertEqual('AZ', s.convertToTitle(52))
+    t.assertEqual('BA', s.convertToTitle(53))
+    t.assertEqual('BZ', s.convertToTitle(53 + 25))
+    t.assertEqual('ZZ', s.convertToTitle(26**2 + 26))
+    t.assertEqual('ZZZ', s.convertToTitle(26**3 + 26**2 + 26))
+    t.assertEqual('AAZZ', s.convertToTitle(26**3 + 2 * 26**2 + 26))
     
+    print('OK!')
