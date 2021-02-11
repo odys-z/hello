@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Contest #1, Part 3" href="index.html"/>
         <link rel="next" title="Reference" href="ref.html"/>
@@ -89,7 +92,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 3</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="inter.html">2020/2021 Intermediate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inter_.html">Octal Triangles</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">2020/2021 Senior</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2020/2021 Senior</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-problem">The problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#solution-1">Solution 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#solution-2">Solution 2</a><ul>
@@ -103,7 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lect04/index.html">Lec 04: Topics of Contest 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lect05/intro.html">Lec 05: Matrix &amp; Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lect05/index.html">Lec 04: Topics of Contest 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect06/intro.html">Lec 06: Recursive Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect07/intro.html">Lec 07: (Bit) String &amp; RegEx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect08/intro.html">Lec 08: What Does This Program Do?</a></li>
@@ -155,22 +158,22 @@
 <h1>2020/2021 Senior<a class="headerlink" href="#senior" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="the-problem">
 <h2>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>Construct a Numeral Hex Triangle according to the following rules. You will be given three positive integers:
-s, a starting number;
-d, a delta (the amount by which to increase each number in the triangle);
-and r the number of rows.
-The numbers s and d will be in hexadecimal.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Construct</span> <span class="n">a</span> <span class="n">Numeral</span> <span class="n">Hex</span> <span class="n">Triangle</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">rules</span><span class="o">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">be</span> <span class="n">given</span> <span class="n">three</span> <span class="n">positive</span> <span class="n">integers</span><span class="p">:</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">a</span> <span class="n">starting</span> <span class="n">number</span><span class="p">;</span>
+<span class="n">d</span><span class="p">,</span> <span class="n">a</span> <span class="n">delta</span> <span class="p">(</span><span class="n">the</span> <span class="n">amount</span> <span class="n">by</span> <span class="n">which</span> <span class="n">to</span> <span class="n">increase</span> <span class="n">each</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span><span class="p">);</span>
+<span class="ow">and</span> <span class="n">r</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">rows</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">numbers</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">d</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">hexadecimal</span><span class="o">.</span>
 
-1. The first row contains the number s.
-2. Each of the next rows has one more number than the previous row.
-3. Each number in the triangle is d more than the previous number in the triangle.
+<span class="mf">1.</span> <span class="n">The</span> <span class="n">first</span> <span class="n">row</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">number</span> <span class="n">s</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Each</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">rows</span> <span class="n">has</span> <span class="n">one</span> <span class="n">more</span> <span class="n">number</span> <span class="n">than</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">row</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Each</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span> <span class="ow">is</span> <span class="n">d</span> <span class="n">more</span> <span class="n">than</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="solution-1">
 <h2>Solution 1<a class="headerlink" href="#solution-1" title="Permalink to this headline">¶</a></h2>
 <p>Sum all digits at the last row.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sumHex</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumHex</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">16</span><span class="p">;</span>
@@ -191,7 +194,7 @@ The numbers s and d will be in hexadecimal.
     <span class="k">while</span> <span class="n">shex</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
         <span class="n">shex</span> <span class="o">=</span> <span class="n">sumHex</span><span class="p">(</span><span class="n">shex</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="s1">&#39;{:X}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shex</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{:X}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shex</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See source of <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/c1_2021/senior.py">solution 1</a>.</p>
@@ -201,18 +204,18 @@ The numbers s and d will be in hexadecimal.
 <div class="section" id="lemma">
 <h3>Lemma<a class="headerlink" href="#lemma" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>In radix R, digit root of number N, <span class="math">\(D_R(N) \equiv N \pmod {R-1}\)</span>,</p>
-<p>where <span class="math">\(\equiv\)</span> is modular equivalence.</p>
+<div><p>In radix R, digit root of number N, <span class="math notranslate nohighlight">\(D_R(N) \equiv N \pmod {R-1}\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(\equiv\)</span> is modular equivalence.</p>
 </div></blockquote>
 <p>A digit root is the digits sum of N. If the sum has more than 1 digit, repeat
 sum the digits until only 1 digit.</p>
 <p>Proof:</p>
-<p>For a 2-digits R radix number n, <span class="math">\(n = R\cdot a + b\)</span>,</p>
-<p>where <span class="math">\(a, b \in {0, 1, ..., R-1}\)</span>.</p>
+<p>For a 2-digits R radix number n, <span class="math notranslate nohighlight">\(n = R\cdot a + b\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(a, b \in {0, 1, ..., R-1}\)</span>.</p>
 <p>E.g. for hexadecimal digit root,</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[n \equiv 16 \cdot a + b \pmod{15} \quad \text{if remainder is not 0, otherwise 15}\]</div>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp; Since \\
 &amp; n = R \cdot a + b \equiv ( 10 \cdot a \pmod{R-1} + b \pmod{R-1} ) \pmod {R-1} \\
@@ -222,11 +225,11 @@ sum the digits until only 1 digit.</p>
 &amp; and \space thus \\
 &amp; n \pmod{R-1} = (a+b) \pmod{R-1} \\
 \end{align}\end{split}\]</div>
-<p>It&#8217;s obvious if a k-1 digit number <span class="math">\(n\)</span> hold the property, the k digit number
-<span class="math">\(R \cdot a + n\)</span> also hold the property.</p>
+<p>It’s obvious if a k-1 digit number <span class="math notranslate nohighlight">\(n\)</span> hold the property, the k digit number
+<span class="math notranslate nohighlight">\(R \cdot a + n\)</span> also hold the property.</p>
 <p>Reference</p>
 <p><a class="reference external" href="http://applet-magic.com/remainder0.htm">The DigitSum of a Number and Its Remainder for Division by Nine, San José State University</a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sol2</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sol2</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
     <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -235,7 +238,7 @@ sum the digits until only 1 digit.</p>
     <span class="n">sr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">sr0</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d</span>
 
     <span class="n">sr</span> <span class="o">=</span> <span class="n">sr</span> <span class="o">%</span> <span class="mi">15</span>
-    <span class="k">return</span> <span class="s1">&#39;{:X}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">15</span> <span class="k">if</span> <span class="n">sr</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">sr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{:X}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">15</span> <span class="k">if</span> <span class="n">sr</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -245,23 +248,23 @@ sum the digits until only 1 digit.</p>
 <ul>
 <li><p class="first">Problem</p>
 <blockquote>
-<div><p>A number m is randomly selected from the set <span class="math">\(\{11,13,15,17,19\}\)</span>, and
-a number n is randomly selected from <span class="math">\(\{1999, 2000, 2001, ..., 2018\}\)</span>.
-What is the probability that <span class="math">\(m ^ n\)</span> has a units digit of 1?</p>
+<div><p>A number m is randomly selected from the set <span class="math notranslate nohighlight">\(\{11,13,15,17,19\}\)</span>, and
+a number n is randomly selected from <span class="math notranslate nohighlight">\(\{1999, 2000, 2001, ..., 2018\}\)</span>.
+What is the probability that <span class="math notranslate nohighlight">\(m ^ n\)</span> has a units digit of 1?</p>
 </div></blockquote>
 </li>
 </ul>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[\textbf{(A) } \frac{1}{5} \qquad \textbf{(B) } \frac{1}{4}
 \qquad \textbf{(C) } \frac{3}{10} \qquad  \textbf{(D) } \frac{7}{20} \qquad
 \textbf{(E) } \frac{2}{5}\]</div>
 <ul class="simple">
 <li>Hint</li>
 </ul>
-<p>No matter what&#8217;s the product is, only the units digit&#8217;s product matter. So only
+<p>No matter what’s the product is, only the units digit’s product matter. So only
 the least digit is 1 can be the correct answer. Now the question can be simplified
-as finding how many of <span class="math">\(1^{1}, 1^{2}, \cdots\)</span> or
-<span class="math">\(\require{cancel}\cancel{3^1}, \cancel{3^2}, \cancel{3^3}, 3^{4}, \cdots\)</span>, and so on.</p>
+as finding how many of <span class="math notranslate nohighlight">\(1^{1}, 1^{2}, \cdots\)</span> or
+<span class="math notranslate nohighlight">\(\require{cancel}\cancel{3^1}, \cancel{3^2}, \cancel{3^3}, 3^{4}, \cdots\)</span>, and so on.</p>
 </div>
 </div>
 </div>
@@ -316,7 +319,8 @@ as finding how many of <span class="math">\(1^{1}, 1^{2}, \cdots\)</span> or
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

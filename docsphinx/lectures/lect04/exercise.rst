@@ -40,3 +40,21 @@ Solution: :download:`C2 Sample Problem <../../../acsl-pydev/acsl/lect04/ascendin
 x2. Handout: ACSL C2 Problem, Senior, 2016
 
 Solution: :download:`C2 Sample Problem <../../../acsl-pydev/acsl/lect04/str_sr.py>`
+
+Part 3
+
+1. `LeetCode Problem 020. Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`_
+
+Solution: :download:`q020 <../../../challenge/leet/easy/q020.py>`
+
+2. `LeetCode Problem 21. Merge Two Sorted Lists <https://leetcode.com/problems/merge-two-sorted-lists/>`_
+
+Solution: :download:`q021 <../../../challenge/leet/easy/q021.py>`
+
+3. `LeetCode Problem 26. Remove Duplicates from Sorted Array <https://leetcode.com/problems/remove-duplicates-from-sorted-array/>`_
+
+Solution: :download:`q026 <../../../challenge/leet/easy/q026.py>`
+
+4. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
+
+Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`

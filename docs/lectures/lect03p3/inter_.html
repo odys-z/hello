@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Contest #1, Part 3" href="index.html"/>
         <link rel="next" title="2020/2021 Senior" href="senior.html"/>
@@ -88,13 +91,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 3</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="inter.html">2020/2021 Intermediate</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Octal Triangles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Octal Triangles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="senior.html">2020/2021 Senior</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lect04/index.html">Lec 04: Topics of Contest 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lect05/intro.html">Lec 05: Matrix &amp; Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lect05/index.html">Lec 04: Topics of Contest 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect06/intro.html">Lec 06: Recursive Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect07/intro.html">Lec 07: (Bit) String &amp; RegEx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect08/intro.html">Lec 08: What Does This Program Do?</a></li>
@@ -144,8 +147,8 @@
             
   <div class="section" id="octal-triangles">
 <h1>Octal Triangles<a class="headerlink" href="#octal-triangles" title="Permalink to this headline">¶</a></h1>
-<div class="math">
-\[s = 2, d = 3, r = 3\]\[\begin{split}\begin{array}{cccccc}
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}s = 2, d = 3, r = 3\\\begin{split}\begin{array}{cccccc}
 \hline
 r= 1 &amp;   2 ( 2,  2)\\
 r= 2 &amp;   5 ( 5,  3) &amp;  10 ( 1, -4)\\
@@ -153,18 +156,18 @@ r= 3 &amp;  13 ( 4,  3) &amp;  16 ( 7,  3) &amp;  21 ( 3, -4)\\
 r= 4 &amp;  24 ( 6,  3) &amp;  27 (11,  3) &amp;  32 ( 5, -4) &amp;  35 (10,  3)\\
 r= 5 &amp;  40 ( 4, -4) &amp;  43 ( 7,  3) &amp;  46 (12,  3) &amp;  51 ( 6, -4) &amp;  54 (11,  3)\\
 \hline
-\end{array}\end{split}\]</div>
-<div class="math">
-\[s = 145, d = 2, r = 2\]\[\begin{split}\begin{array}{ccccc}
+\end{array}\end{split}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}s = 145, d = 2, r = 2\\\begin{split}\begin{array}{ccccc}
 \hline
 r= 1 &amp; 221 ( 5,  5)\\
 r= 2 &amp; 223 ( 7,  2) &amp; 225 (11,  2)\\
 r= 3 &amp; 227 (13,  2) &amp; 231 ( 6, -5) &amp; 233 (10,  2)\\
 r= 4 &amp; 235 (12,  2) &amp; 237 (14,  2) &amp; 241 ( 7, -5) &amp; 243 (11,  2)\\
 \hline
-\end{array}\end{split}\]</div>
-<div class="math">
-\[s = 1, d = 4, r = 4\]\[\begin{split}\begin{array}{ccccccccccccccccccccc}
+\end{array}\end{split}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}s = 1, d = 4, r = 4\\\begin{split}\begin{array}{ccccccccccccccccccccc}
 \hline
 r= 1 &amp;   1 ( 1,  1)\\
 r= 2 &amp;   5 ( 5,  4) &amp;  11 ( 2, -3)\\
@@ -187,9 +190,9 @@ r=18 &amp; 1145 (13,  4) &amp; 1151 (10, -3) &amp; 1155 (14,  4) &amp; 1161 (11,
 r=19 &amp; 1255 (15,  4) &amp; 1261 (12, -3) &amp; 1265 (16,  4) &amp; 1271 (13, -3) &amp; 1275 (17,  4) &amp; 1301 ( 5, -10) &amp; 1305 (11,  4) &amp; 1311 ( 6, -3) &amp; 1315 (12,  4) &amp; 1321 ( 7, -3) &amp; 1325 (13,  4) &amp; 1331 (10, -3) &amp; 1335 (14,  4) &amp; 1341 (11, -3) &amp; 1345 (15,  4) &amp; 1351 (12, -3) &amp; 1355 (16,  4) &amp; 1361 (13, -3) &amp; 1365 (17,  4)\\
 r=20 &amp; 1371 (14, -3) &amp; 1375 (20,  4) &amp; 1401 ( 6, -10) &amp; 1405 (12,  4) &amp; 1411 ( 7, -3) &amp; 1415 (13,  4) &amp; 1421 (10, -3) &amp; 1425 (14,  4) &amp; 1431 (11, -3) &amp; 1435 (15,  4) &amp; 1441 (12, -3) &amp; 1445 (16,  4) &amp; 1451 (13, -3) &amp; 1455 (17,  4) &amp; 1461 (14, -3) &amp; 1465 (20,  4) &amp; 1471 (15, -3) &amp; 1475 (21,  4) &amp; 1501 ( 7, -10) &amp; 1505 (13,  4)\\
 \hline
-\end{array}\end{split}\]</div>
-<div class="math">
-\[s = 8, d = 8, r = 8\]\[\begin{split}\begin{array}{ccccccccccc}
+\end{array}\end{split}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}s = 8, d = 8, r = 8\\\begin{split}\begin{array}{ccccccccccc}
 \hline
 r= 1 &amp;  10 ( 1,  1)\\
 r= 2 &amp;  20 ( 2,  1) &amp;  30 ( 3,  1)\\
@@ -202,9 +205,9 @@ r= 8 &amp; 350 (10,  1) &amp; 360 (11,  1) &amp; 370 (12,  1) &amp; 400 ( 4, -6)
 r= 9 &amp; 450 (11,  1) &amp; 460 (12,  1) &amp; 470 (13,  1) &amp; 500 ( 5, -6) &amp; 510 ( 6,  1) &amp; 520 ( 7,  1) &amp; 530 (10,  1) &amp; 540 (11,  1) &amp; 550 (12,  1)\\
 r=10 &amp; 560 (13,  1) &amp; 570 (14,  1) &amp; 600 ( 6, -6) &amp; 610 ( 7,  1) &amp; 620 (10,  1) &amp; 630 (11,  1) &amp; 640 (12,  1) &amp; 650 (13,  1) &amp; 660 (14,  1) &amp; 670 (15,  1)\\
 \hline
-\end{array}\end{split}\]</div>
-<div class="math">
-\[s = 1701, d = 5, r = 5\]\[\begin{split}\begin{array}{cccccccccccc}
+\end{array}\end{split}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}s = 1701, d = 5, r = 5\\\begin{split}\begin{array}{cccccccccccc}
 \hline
 r= 1 &amp; 3245 (16, 14)\\
 r= 2 &amp; 3252 (14, -2) &amp; 3257 (21,  5)\\
@@ -218,7 +221,7 @@ r= 9 &amp; 3531 (14, -2) &amp; 3536 (21,  5) &amp; 3543 (17, -2) &amp; 3550 (15,
 r=10 &amp; 3606 (17,  5) &amp; 3613 (15, -2) &amp; 3620 (13, -2) &amp; 3625 (20,  5) &amp; 3632 (16, -2) &amp; 3637 (23,  5) &amp; 3644 (21, -2) &amp; 3651 (17, -2) &amp; 3656 (24,  5) &amp; 3663 (22, -2)\\
 r=11 &amp; 3670 (20, -2) &amp; 3675 (25,  5) &amp; 3702 (14, -9) &amp; 3707 (21,  5) &amp; 3714 (17, -2) &amp; 3721 (15, -2) &amp; 3726 (22,  5) &amp; 3733 (20, -2) &amp; 3740 (16, -2) &amp; 3745 (23,  5) &amp; 3752 (21, -2)\\
 \hline
-\end{array}\end{split}\]</div>
+\end{array}\end{split}\end{aligned}\end{align} \]</div>
 </div>
 
 
@@ -271,7 +274,8 @@ r=11 &amp; 3670 (20, -2) &amp; 3675 (25,  5) &amp; 3702 (14, -9) &amp; 3707 (21,
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
