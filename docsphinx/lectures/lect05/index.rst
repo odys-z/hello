@@ -1,4 +1,4 @@
-Lec 04: Topics of Contest 2
+Lec 05: Topics of Contest 3
 ===========================
 
 Contents:
