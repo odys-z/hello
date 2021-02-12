@@ -43,22 +43,26 @@ Solution: :download:`C2 Sample Problem <../../../acsl-pydev/acsl/lect04/str_sr.p
 
 Part 3
 
-1. `LeetCode Problem 020. Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`_
+1. `LeetCode Problem 278. First Bad Version <https://leetcode.com/problems/first-bad-version/>`_
+
+Solution: :download:`q278 <../../../challenge/leet/easy/q278.py>`
+
+2. `LeetCode Problem 374. Guess Number Higher or Lower <https://leetcode.com/problems/guess-number-higher-or-lower/>`_
+
+Solution: :download:`q374 <../../../challenge/leet/easy/q374.py>`
+
+3. `LeetCode Problem 020. Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`_
 
 Solution: :download:`q020 <../../../challenge/leet/easy/q020.py>`
 
-2. `LeetCode Problem 21. Merge Two Sorted Lists <https://leetcode.com/problems/merge-two-sorted-lists/>`_
+4. `LeetCode Problem 21. Merge Two Sorted Lists <https://leetcode.com/problems/merge-two-sorted-lists/>`_
 
 Solution: :download:`q021 <../../../challenge/leet/easy/q021.py>`
 
-3. `LeetCode Problem 26. Remove Duplicates from Sorted Array <https://leetcode.com/problems/remove-duplicates-from-sorted-array/>`_
+5. `LeetCode Problem 26. Remove Duplicates from Sorted Array <https://leetcode.com/problems/remove-duplicates-from-sorted-array/>`_
 
 Solution: :download:`q026 <../../../challenge/leet/easy/q026.py>`
 
-4. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
+6. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
 
 Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`
-
-5. `LeetCode Problem 374. Guess Number Higher or Lower <https://leetcode.com/problems/guess-number-higher-or-lower/>`_
-
-Solution: :download:`q088 <../../../challenge/leet/easy/q0374.py>`
