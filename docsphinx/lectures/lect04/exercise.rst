@@ -58,3 +58,7 @@ Solution: :download:`q026 <../../../challenge/leet/easy/q026.py>`
 4. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
 
 Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`
+
+5. `LeetCode Problem 374. Guess Number Higher or Lower <https://leetcode.com/problems/guess-number-higher-or-lower/>`_
+
+Solution: :download:`q088 <../../../challenge/leet/easy/q0374.py>`
