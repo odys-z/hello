@@ -10,6 +10,13 @@ class Q658
 public:
     Q658();
 
+    /**Faster than 15.91%
+     * @brief findClosestElements
+     * @param arr
+     * @param k
+     * @param x
+     * @return
+     */
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
         vector<int> buf;
         int l = arr.size();
@@ -40,8 +47,8 @@ public:
                 mid = lo;
             buf.insert(buf.end(), arr[mid]);
 
-            cout << buf[0] << lo << mid << hi << endl;
-            // low, hi = mid, mid
+            // cout << buf[0] << lo << mid << hi << endl;
+            lo = mid, hi = mid;
             while (buf.size() < k) {
                 if (0 < lo && hi+1 < l && x - arr[lo - 1] <= arr[hi+1] - x) {
                     buf.insert(buf.begin(), arr[lo - 1]);
