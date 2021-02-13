@@ -51,18 +51,33 @@ Solution: :download:`q278 <../../../challenge/leet/easy/q278.py>`
 
 Solution: :download:`q374 <../../../challenge/leet/easy/q374.py>`
 
-3. `LeetCode Problem 020. Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`_
+3*. `LeetCode Problem 658. Find K Closest Elements (medium) <https://leetcode.com/problems/find-k-closest-elements/>`_
+
+Solution: :download:`q020 <../../../challenge/leet/medium/q658.py>` &
+`cpp version <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q658/q658>`_
+
+4. `LeetCode Problem 020. Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`_
 
 Solution: :download:`q020 <../../../challenge/leet/easy/q020.py>`
 
-4. `LeetCode Problem 21. Merge Two Sorted Lists <https://leetcode.com/problems/merge-two-sorted-lists/>`_
+5. `LeetCode Problem 21. Merge Two Sorted Lists <https://leetcode.com/problems/merge-two-sorted-lists/>`_
 
 Solution: :download:`q021 <../../../challenge/leet/easy/q021.py>`
 
-5. `LeetCode Problem 26. Remove Duplicates from Sorted Array <https://leetcode.com/problems/remove-duplicates-from-sorted-array/>`_
+6. `LeetCode Problem 26. Remove Duplicates from Sorted Array <https://leetcode.com/problems/remove-duplicates-from-sorted-array/>`_
 
 Solution: :download:`q026 <../../../challenge/leet/easy/q026.py>`
 
-6. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
+7. `LeetCode Problem 88. Merge Sorted Array <https://leetcode.com/problems/merge-sorted-array/>`_
 
 Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`
+
+8. `LeetCode Problem 172. Factorial Trailing Zeroes <https://leetcode.com/problems/factorial-trailing-zeroes/>`_
+
+Solution: :download:`q172.py <../../../challenge/leet/easy/q172.py>` &
+:download: `q204.h <../../../challenge/leet.gcc/q172/q172.h>`
+
+9. `LeetCode Problem 204. Count Primes <https://leetcode.com/problems/count-primes/>`_
+
+Solution: :download:`q204.py <../../../challenge/leet/easy/q204.py>` &
+:download: `q204.h <../../../challenge/leet.gcc/q204/q204.h>`

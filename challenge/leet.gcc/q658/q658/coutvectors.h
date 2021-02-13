@@ -20,7 +20,6 @@ public:
         cout << "[";
         std::copy(str.begin(), str.end(), std::ostream_iterator<char>(std::cout, ", "));
         cout << "]";
-        // return this;
     }
 };
 
