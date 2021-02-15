@@ -2,6 +2,7 @@ Exercise
 ========
 
 Part 1
+------
 
 1. `LeetCode Problem 14. longest common prefix <https://leetcode.com/problems/longest-common-prefix/>`_
 
@@ -24,6 +25,7 @@ x. `ACSL Sample Problem, Contest 2, Intermediate <http://www.datafiles.acsl.org/
 Solution: :download:`C2 Sample Problem <../../../acsl-pydev/acsl/lect04/sampleprog.py>`
 
 Part 2
+------
 
 1. `LeetCode Problem 067. Add Binary <https://leetcode.com/problems/add-binary/>`_
 
@@ -42,6 +44,7 @@ x2. Handout: ACSL C2 Problem, Senior, 2016
 Solution: :download:`C2 Sample Problem <../../../acsl-pydev/acsl/lect04/str_sr.py>`
 
 Part 3
+------
 
 1. `LeetCode Problem 278. First Bad Version <https://leetcode.com/problems/first-bad-version/>`_
 
@@ -75,17 +78,17 @@ Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`
 8. `LeetCode Problem 172. Factorial Trailing Zeroes <https://leetcode.com/problems/factorial-trailing-zeroes/>`_
 
 Solution: :download:`q172.py <../../../challenge/leet/easy/q172.py>` &
-:download:`q204.h <../../../challenge/leet.gcc/q172/q172.h>`
-(`source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q172>`_)
+:download:`q172.h <../../../challenge/leet.gcc/q172/q172.h>`
+(`q172 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q172>`_)
 
 9. `LeetCode Problem 202. Happy Number <https://leetcode.com/problems/happy-number/>`_
 
 Solution: :download:`q202.py <../../../challenge/leet/easy/q202.py>` &
 :download:`q202.h <../../../challenge/leet.gcc/q202/q202.h>`
-(`source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q202>`_)
+(`q202 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q202>`_)
 
 10. `LeetCode Problem 204. Count Primes <https://leetcode.com/problems/count-primes/>`_
 
 Solution: :download:`q204.py <../../../challenge/leet/easy/q204.py>` &
 :download:`q204.h <../../../challenge/leet.gcc/q204/q204.h>`
-(`source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q204>`_)
+(`q204 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q204>`_)
