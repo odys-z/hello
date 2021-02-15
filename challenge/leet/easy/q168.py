@@ -35,6 +35,8 @@ from unittest import TestCase
 
 class Solution:
     '''
+    80.93%
+	
     A    Z     AA    AZ  BA   ZZ      ZZZ           AAZZ
          A@          B@       AA@     AAA@          ABA@ -> AB@Z   -> AAZZ
     1    26+0        2*26     26^2+26 26^3+26^2+26  26^3+2*26^2+26

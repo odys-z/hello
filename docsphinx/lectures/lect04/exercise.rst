@@ -75,9 +75,17 @@ Solution: :download:`q088 <../../../challenge/leet/easy/q088.py>`
 8. `LeetCode Problem 172. Factorial Trailing Zeroes <https://leetcode.com/problems/factorial-trailing-zeroes/>`_
 
 Solution: :download:`q172.py <../../../challenge/leet/easy/q172.py>` &
-:download: `q204.h <../../../challenge/leet.gcc/q172/q172.h>`
+:download:`q204.h <../../../challenge/leet.gcc/q172/q172.h>`
+(source folder ` <>`_)
 
-9. `LeetCode Problem 204. Count Primes <https://leetcode.com/problems/count-primes/>`_
+9. `LeetCode Problem 202. Happy Number <https://leetcode.com/problems/happy-number/>`_
+
+Solution: :download:`q202.py <../../../challenge/leet/easy/q202.py>` &
+:download:`q202.h <../../../challenge/leet.gcc/q202/q202.h>`
+(source folder ` <>`_)
+
+10. `LeetCode Problem 204. Count Primes <https://leetcode.com/problems/count-primes/>`_
 
 Solution: :download:`q204.py <../../../challenge/leet/easy/q204.py>` &
-:download: `q204.h <../../../challenge/leet.gcc/q204/q204.h>`
+:download:`q204.h <../../../challenge/leet.gcc/q204/q204.h>`
+(source folder ` <>`_)
