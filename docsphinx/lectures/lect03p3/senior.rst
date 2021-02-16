@@ -133,3 +133,20 @@ No matter what's the product is, only the units digit's product matter. So only
 the least digit is 1 can be the correct answer. Now the question can be simplified
 as finding how many of :math:`1^{1}, 1^{2}, \cdots` or
 :math:`\require{cancel}\cancel{3^1}, \cancel{3^2}, \cancel{3^3}, 3^{4}, \cdots`, and so on.
+
+LeetCode 258. Add Digits
+________________________
+
+`LeetCode 258. Add Digits <https://leetcode.com/problems/add-digits/>`_
+
+Given a non-negative integer num, repeatedly add all its digits until the result
+has only one digit.
+
+*Example*:
+Input: 38
+Output: 2
+Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit,
+return it.
+
+*Follow up*:
+Could you do it without any loop/recursion in O(1) runtime?
