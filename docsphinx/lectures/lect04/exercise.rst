@@ -92,3 +92,36 @@ Solution: :download:`q202.py <../../../challenge/leet/easy/q202.py>` &
 Solution: :download:`q204.py <../../../challenge/leet/easy/q204.py>` &
 :download:`q204.h <../../../challenge/leet.gcc/q204/q204.h>`
 (`q204 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q204>`_)
+
+Part x (Mandatory)
+------------------
+
+x1. Handout: ACSL C2 Problem. Ascending Numbers, 2017, Intermediate
+
+Tip: Check the samples carefully.
+
+::
+
+    SAMPLE INPUT:                             <--        SAMPLE OUTPUT:
+    1. 1314159265          |     3 (14 15 92 6 5)     |  1. 3 5 6 29 51
+    2. 11223344            |     1 (223 34 4)         |  2. 1 4 43 322
+    3. 225897257           |    25 (8 972 57)         |  3. 25 75 279
+    4. 412342987656784352  |  1234 (29876 5678 4352)  |  4. 1234 2534 8765 67892
+    5. 33984567176534321   |   398 (45671 7653 4321)  |  5. 398 1234 3567 17654
+
+    TEST INPUT                   TEST OUTPUT
+    1. 111235813213455           1. 1 5 54 312 318 532
+    2. 219782017                 2. 19 71 287
+    3. 420165102                 3. 2016
+    4. 26625122455675318505      4. 66 505 813 5765 54221
+    5. 364311                    5. 643
+
+Must try these two cases::
+
+    TEST INPUT                   TEST OUTPUT
+    6. 105544332221              6. 0 1 2 22 33 44 55
+    7. 10550440330022021         7. 0 1 2 22 33 44 55
+
+Solution: :download:`C2 2017, Intermediate <../../../acsl-pydev/acsl/lect04/ascending_int.py>`
+& c++ version :download:`asc2017/inter.h <../../../acsl-pydev/acsl/lect04.gcc/asc2017/inter.h>`,
+source folder `here <https://github.com/odys-z/hello/tree/master/acsl-pydev/acsl/leet04.gcc/asc2017>`_.
