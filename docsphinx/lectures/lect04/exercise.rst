@@ -124,4 +124,4 @@ Must try these two cases::
 
 Solution: :download:`C2 2017, Intermediate <../../../acsl-pydev/acsl/lect04/ascending_int.py>`
 & c++ version :download:`asc2017/inter.h <../../../acsl-pydev/acsl/lect04.gcc/asc2017/inter.h>`,
-source folder `here <https://github.com/odys-z/hello/tree/master/acsl-pydev/acsl/leet04.gcc/asc2017>`_.
+source folder `here <https://github.com/odys-z/hello/tree/master/acsl-pydev/acsl/lect04.gcc/asc2017>`_.
