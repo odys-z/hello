@@ -1,5 +1,11 @@
-Matrix
+Topics
 ======
 
-Graph
-=====
+Boolean Algebra
+---------------
+
+Data Structures
+---------------
+
+FSAs and Regular Expressions
+----------------------------
