@@ -21,6 +21,15 @@ public:
         std::copy(str.begin(), str.end(), std::ostream_iterator<char>(std::cout, ", "));
         cout << "]";
     }
+
+    static void ints(vector<vector<int>> vvec) {
+        cout << "[";
+        for (vector<int> vec : vvec) {
+            ints(vec);
+            cout << " ";
+        }
+        cout << "]" << endl;
+    }
 };
 
 #endif // COUTVECTORS_H

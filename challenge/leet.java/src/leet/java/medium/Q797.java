@@ -17,7 +17,6 @@ import java.util.List;
  * @author Odys Zhou
  *
  */
-@SuppressWarnings("serial")
 public class Q797 {
 	private List<List<List<Integer>>> dfs(List<List<List<Integer>>> dp, int[][] graph) {
 		int lastx = graph.length - 1;
