@@ -48,7 +48,7 @@ public class Q146 {
 	    		return -1;
 	    	else {
 	    		bilinst.linkmap.remove(n.k);
-	    		bilinst.nxt.prev = n.prev; // so what's nxt if no LinkedHashMap over ride?
+	    		// bilinst.nxt.prev = n.prev; // so what's nxt if no LinkedHashMap over ride?
 	    		return n.v;
 	    	}
 	    }
