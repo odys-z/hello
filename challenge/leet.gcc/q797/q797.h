@@ -5,29 +5,28 @@
 using namespace std;
 
 class Q797 {
-    vector<vector<vector<int>>> dfs(vector<vector<vector<int>>> &dp, vector<vector<int>> graph) {
+    vector<vector<vector<int>>> dfs(vector<vector<vector<int>>> &dp, vector<vector<int>> &graph) {
         int lastx = graph.size() - 1;
 
         for (int x = lastx - 1; 0 <= x; x--) {
             vector<vector<int>> pathx;
-            vector<int> nxtNodes = graph[x];
+            vector<int> &nxtNodes = graph[x];
             for (unsigned nxt = 0; nxt < nxtNodes.size(); nxt++) {
                 int nxtNode = nxtNodes[nxt];
                 if (nxtNode < 0) continue;  // unresolved path flag
 
-                vector<vector<int>> nxtPaths = dp[nxtNode];
-                if (nxtPaths.size() > 0) {
-                    for (vector<int> path : nxtPaths) {
-                        vector<int> p = vector<int>(path);
-                        p.insert(p.begin(), x);
-                        pathx.push_back(p);
-                    }
-                }
-                else {
+                vector<vector<int>> &nxtPaths = dp[nxtNode];
+                if (nxtPaths.size() == 0) {
                     // flag resolving path, then find it first
                     nxtNodes[nxt] = -1;
                     dp = dfs(dp, graph);
                     nxtNodes[nxt] = nxtNode;
+                }
+
+                for (vector<int> path : nxtPaths) {
+                    vector<int> p = vector<int>(path);
+                    p.insert(p.begin(), x);
+                    pathx.push_back(p);
                 }
             }
             dp[x] = pathx;

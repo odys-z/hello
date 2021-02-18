@@ -15,5 +15,8 @@ int main()
 
     CoutVectors::ints(dp0);
 
+    g = vector<vector<int>> {vector<int>{2}, vector<int>{3}, vector<int>{1}, vector<int>{}};
+    dp0 = q.allPathsSourceTarget(g);
+    CoutVectors::ints(dp0);
     return 0;
 }
