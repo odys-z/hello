@@ -5,3 +5,15 @@ Exercise
 Recursive & Backtracking
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
+
+2*. (medium)`LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
+
+Solution: :download:`q797 <../../../challenge/leet/easy/q797.py>`
+
+C++ Solution (runtime error at LeetCode): `q797 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q797>`_
+
+Tip:
+
+i. With all paths of down & right only, this is a DP problem. see *SolutionAlmost*.
+
+ii. With nodes referencing less index nodes, this is a backtracking problem. See *Solution*.
