@@ -69,6 +69,8 @@ Code Template:
     from unittest import TestCase
 
     def passport(pn: str) -> int:
+        # your code here!!!
+		pass
 
     if __name__ == "__main__":
         t = TestCase()
@@ -85,4 +87,4 @@ Code Template:
 
         print('OK!')
 
-Solution: :download:`C2 Sample Problem, 2021, Intermediate (local) <../../../acsl-pydev/acsl/lect04/passport_int.py>`
+..Solution: :download:`C2 Sample Problem, 2021, Intermediate (local) <../../../acsl-pydev/acsl/lect04/passport_int.py>`
