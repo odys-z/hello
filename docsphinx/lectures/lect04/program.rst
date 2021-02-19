@@ -70,7 +70,7 @@ Code Template:
 
     def passport(pn: str) -> int:
         # your code here!!!
-		pass
+        pass
 
     if __name__ == "__main__":
         t = TestCase()

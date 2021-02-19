@@ -11,7 +11,7 @@ A G I N O R S T       6: O - R
 '''
 from unittest import TestCase
 
-def passport(pn: str) -> int:
+def passort(pn: str) -> int:
 	ordered = sorted(pn)
 	pn = list(pn)
 
@@ -39,15 +39,15 @@ def passport(pn: str) -> int:
 
 if __name__ == "__main__":
     t = TestCase()
-    t.assertEqual(0, passport('A'))
-    t.assertEqual(6, passport('ASORTING'))
-    t.assertEqual(0, passport('AA'))
-    t.assertEqual(0, passport('AAC'))
-    t.assertEqual(1, passport('ACA'))
-    t.assertEqual(0, passport('ACC'))
-    t.assertEqual(1, passport('CBC'))
-    t.assertEqual(1, passport('CBA'))
-    t.assertEqual(2, passport('DCBA'))
-    t.assertEqual(3, passport('DABC')) # ADBC ACBD ABCD
+    t.assertEqual(0, passort('A'))
+    t.assertEqual(6, passort('ASORTING'))
+    t.assertEqual(0, passort('AA'))
+    t.assertEqual(0, passort('AAC'))
+    t.assertEqual(1, passort('ACA'))
+    t.assertEqual(0, passort('ACC'))
+    t.assertEqual(1, passort('CBC'))
+    t.assertEqual(1, passort('CBA'))
+    t.assertEqual(2, passort('DCBA'))
+    t.assertEqual(3, passort('DABC')) # ADBC ACBD ABCD
 
     print('OK!')
