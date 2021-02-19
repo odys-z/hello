@@ -1,6 +1,9 @@
 C#2 Programming Problem
 =======================
 
+2018-2019 Sample, Senior
+------------------------
+
 See `ACSL Sample Problem <http://www.datafiles.acsl.org/samples/contest2/c2-int-prog.pdf>`_
 
 ::
@@ -53,3 +56,33 @@ See `ACSL Sample Problem <http://www.datafiles.acsl.org/samples/contest2/c2-int-
     5. hp
 
 Solution: :download:`C2 Sample Problem (local) <../../../acsl-pydev/acsl/lect04/sampleprog.py>`
+
+2020-2021 Sample, Intermediate
+------------------------------
+
+Problem: See handout 2021 Passort Number.
+
+Code Template:
+
+.. code-block:: python3
+
+    from unittest import TestCase
+
+    def passport(pn: str) -> int:
+
+    if __name__ == "__main__":
+        t = TestCase()
+        t.assertEqual(0, passport('A'))
+        t.assertEqual(6, passport('ASORTING'))
+        t.assertEqual(0, passport('AA'))
+        t.assertEqual(0, passport('AAC'))
+        t.assertEqual(1, passport('ACA'))
+        t.assertEqual(0, passport('ACC'))
+        t.assertEqual(1, passport('CBC'))
+        t.assertEqual(1, passport('CBA'))
+        t.assertEqual(2, passport('DCBA'))
+        t.assertEqual(3, passport('DABC')) # ADBC ACBD ABCD
+
+        print('OK!')
+
+Solution: :download:`C2 Sample Problem, 2021, Intermediate (local) <../../../acsl-pydev/acsl/lect04/passport_int.py>`
