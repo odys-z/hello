@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Contest #1, Part 2" href="index.html"/>
         <link rel="next" title="Example Summery" href="summery.html"/>
@@ -87,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest 1</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 2</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">What does the Program Do</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What does the Program Do</a></li>
 <li class="toctree-l2"><a class="reference internal" href="summery.html">Example Summery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="homework.html">Homework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref.html">Reference</a></li>
@@ -145,47 +148,47 @@
 <h1>What does the Program Do<a class="headerlink" href="#what-does-the-program-do" title="Permalink to this headline">¶</a></h1>
 <p>Example 1:</p>
 <p>Intermediate, 2019, Question 5</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">q5</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">q5</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">/</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">c</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;1:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span> <span class="o">/</span> <span class="n">b</span> <span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;2:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="p">:</span>
         <span class="n">e</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">b</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">/</span> <span class="n">e</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;3:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">*</span> <span class="n">e</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">/</span> <span class="n">c</span> <span class="o">==</span> <span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">):</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">e</span>
     <span class="k">else</span><span class="p">:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">c</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;4:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">+</span> <span class="n">e</span> <span class="o">==</span> <span class="n">a</span><span class="p">:</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">-</span> <span class="n">c</span>
     <span class="k">else</span><span class="p">:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">/</span> <span class="n">a</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;5:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;5:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x:&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">/</span> <span class="p">(</span> <span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">-</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">a</span> <span class="o">/</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x:&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">/</span> <span class="p">(</span> <span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">-</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">a</span> <span class="o">/</span> <span class="n">e</span><span class="p">)</span>
 
 <span class="n">q5</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>output:</p>
-<div class="highlight-python"><div class="highlight"><pre>1: 10 5 20 1 2
-2: 10 5 20 25 2
-3: 10 20.0 20 25 2
-4: 10 8 20 25 2
-5: 10 8 20 5 2
-x: -18.0
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">5</span> <span class="mi">20</span> <span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">2</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">5</span> <span class="mi">20</span> <span class="mi">25</span> <span class="mi">2</span>
+<span class="mi">3</span><span class="p">:</span> <span class="mi">10</span> <span class="mf">20.0</span> <span class="mi">20</span> <span class="mi">25</span> <span class="mi">2</span>
+<span class="mi">4</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">8</span> <span class="mi">20</span> <span class="mi">25</span> <span class="mi">2</span>
+<span class="mi">5</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">8</span> <span class="mi">20</span> <span class="mi">5</span> <span class="mi">2</span>
+<span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">18.0</span>
 </pre></div>
 </div>
 </div>
@@ -240,7 +243,8 @@ x: -18.0
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
