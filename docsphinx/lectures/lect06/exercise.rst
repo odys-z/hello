@@ -10,6 +10,8 @@ Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
 
 Solution: :download:`q797 <../../../challenge/leet/easy/q797.py>`
 
+C++ Solution (runtime error at LeetCode): `q797 source folder <https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q797>`_
+
 Tip:
 
 i. With all paths of down & right only, this is a DP problem. see *SolutionAlmost*.
