@@ -24,6 +24,15 @@ Solution: :download:`q784 <../../../challenge/leet/medium/q784.py>` &
 :download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q784.java>`,
 :download:`c++ version <../../../challenge/leet.gcc/q784/q784.h>`,
 
+6. #DP `LeetCode Problem 1314. Matrix Block Sum <https://leetcode.com/problems/matrix-block-sum/>`_
+
+Hint::
+
+    Cumulative Sum;
+	Inclusion & Exclusion
+
+Solution: :download:`q784 <../../../challenge/leet/medium/q1314.py>`
+
 x1. `ABC, C#2 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
 
 Hint: read this carefully::
