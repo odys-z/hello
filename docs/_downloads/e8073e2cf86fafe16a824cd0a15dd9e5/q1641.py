@@ -61,20 +61,17 @@ from unittest import TestCase
 
 class Solution:
     '''
-    78.62%
+    97.53%
     '''
     def countVowelStrings(self, n: int) -> int:
         if n < 1: return 0
         elif n == 1: return 5
         else:
-            pn_1 = [1] * 5
-            pn = [0] * 5
+            pn = [1] * 5
             i = 2
             while i <= n:
                 for vowel in range(5):
-                    pn[vowel] = sum(pn_1[vowel:])
-
-                pn_1 = pn
+                    pn[vowel] = sum(pn[vowel:])
                 i += 1
             return sum(pn)
 

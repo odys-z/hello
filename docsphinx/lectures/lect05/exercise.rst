@@ -16,12 +16,13 @@ Solution: :download:`q1551 <../../../challenge/leet/medium/q1551.py>`
 4. #Backtracking `LeetCode Problem 78. Subsets <https://leetcode.com/problems/subsets/>`_
 
 Solution: :download:`q078 <../../../challenge/leet/medium/q078.py>` &
-:download:`java version <../../../challenge/leet.java/medium/Q078.java>`
+:download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q078.java>`,
 
 5. #Backtracking #Pemutation `LeetCode Problem 784. Letter Case Permutation <https://leetcode.com/problems/letter-case-permutation/>`_
 
 Solution: :download:`q784 <../../../challenge/leet/medium/q784.py>` &
-:download:`java version <../../../challenge/leet.java/medium/Q784.java>`
+:download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q784.java>`,
+:download:`c++ version <../../../challenge/leet.gcc/q784/q784.h>`,
 
 x1. `ABC, C#2 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
 
