@@ -30,6 +30,16 @@ public:
         }
         cout << "]" << endl;
     }
+
+
+    static void strs(vector<string> vec) {
+        cout << "[";
+        for(string s : vec) {
+            cout << "'" << s << "', ";
+        }
+        cout << "]";
+
+    }
 };
 
 #endif // COUTVECTORS_H
