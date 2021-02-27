@@ -33,7 +33,7 @@ Hint::
 
 Solution: :download:`q784 <../../../challenge/leet/medium/q1314.py>`
 
-x1. `ABC, C#2 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
+x1. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
 
 Hint: read this carefully::
 
@@ -41,3 +41,20 @@ Hint: read this carefully::
 	in that row or column starting from that direction.
 
 Solution: :download:`C3 2016, Intermediate <../../../acsl-pydev/acsl/lect05/abc_int.py>`
+
+x2. `STRECH, C#3 2018/2019 ACSL Senior <>`_
+
+Hint: this is not a path searching or DP problem::
+
+    Pieces are placed in alphabetical order. If a piece does not fit, skip it
+    and use the next piece that fits. When Piece E is either used or skipped,
+    then begin again with Piece A.
+
+Also not a backtracking::
+
+    We guarantee that if a piece can be placed, then that will be the only
+	location that it can be
+
+placed.
+
+Solution: :download:`C3 2019, Senior <../../../acsl-pydev/acsl/lect05/strech_sr.py>`
