@@ -38,10 +38,27 @@ Solution: :download:`q784 <../../../challenge/leet/medium/q784.py>` &
 
 Hint::
 
-    Cumulative Sum;
+    Accumulative Sum;
     Inclusion & Exclusion
 
 Solution: :download:`q784 <../../../challenge/leet/medium/q1314.py>`
+
+4*. #DP `LeetCode Problem 1277. Count Square Submatrices with All Ones <https://leetcode.com/problems/count-square-submatrices-with-all-ones/>`_
+
+Hint: Min Kadane distance (squres increased by :math:`a_{ij}`):
+
+    For :math:`a_{ij} = 1`, the sequre count are:
+
+..math::
+
+    a_{(i-1)j} + a_{i(j-1)} + a_{(i-1)(j-1)} + inc(a_{ij})
+..
+
+where :math:`inc(a_{ij}) = 1 + min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)} )`
+is the extra sequre increased by including :math:`a_{ij}`, since now
+:math:`min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)})` are distance to '0'.
+
+Solution: :download:`q1277 <../../../challenge/leet/medium/q1277.py>`
 
 Part X
 ------
