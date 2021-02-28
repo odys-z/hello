@@ -55,7 +55,7 @@ Hint: read this carefully::
 
 Solution: :download:`C3 2016, Intermediate <../../../acsl-pydev/acsl/lect05/abc_int.py>`
 
-x2. `STRECH, C#3 2018/2019 ACSL Senior <>`_
+x2. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)
 
 Hint1: Can not touch - 'ABCBCB' is wrong answer::
 
@@ -79,7 +79,7 @@ Hint3: Also not a backtracking::
 
 Start here::
 
-    How can A, B, C, D, E piece's shape, tiles been represented in program?
+    "How can A, B, C, D, E piece's shape, tiles been represented in program?"
 
 Tried Solution: :download:`C3 2019, Senior <../../../acsl-pydev/acsl/lect05/stretch_sr.py>`
 with issue on test case.

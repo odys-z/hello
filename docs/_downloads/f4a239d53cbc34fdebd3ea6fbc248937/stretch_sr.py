@@ -6,25 +6,25 @@ Created on 26 Feb 2021
 
 from unittest import TestCase
 
-# Offsets  [name,(x-off, y-off, c-bound), occupy, ...], where y-off is also r-bound
-regular = [['A', (2, 0, 2), [(1, 0), (2, 0)]],
-           ['B', (0, 2, 0), [(0, 1), (0, 2)]],
-           ['B', (0,-2, 0), [(0,-1), (0,-2)]],
-           ['C', (1, 1, 1), [(0, 1), (1, 1)]],
-           ['D', (1, 2, 1), [(0, 1), (1, 1), (1, 2)]],
-           ['E', (2, 1, 2), [(1, 0), (1, 1), (2, 1)]] ]
+# Offsets  [name,(x-off, y-off, c-bound), can-end, occupy, ...], where y-off is also r-bound
+regular = [['A', (2, 0, 2), True,  [(1, 0), (2, 0)]],
+           ['B', (0, 2, 0), False, [(0, 1), (0, 2)]],
+           ['B', (0,-2, 0), False, [(0,-1), (0,-2)]],
+           ['C', (1, 1, 1), True,  [(0, 1), (1, 1)]],
+           ['D', (1, 2, 1), False, [(0, 1), (1, 1), (1, 2)]],
+           ['E', (2, 1, 2), True, [(1, 0), (1, 1), (2, 1)]] ]
 
 '''
       o    D o     E o
     o C    D     o E
            o
 '''
-mirror  = [['A', (2, 0, 2), [(1, 0), (2, 0)]],
-           ['B', (0, 2, 0), [(0, 1), (0, 2)]],
-           ['B', (0,-2, 0), [(0,-1), (0,-2)]],
-           ['C', (1,-1, 1), [(1, 0), (1, -1)]],
-           ['D', (1,-2, 1), [(0,-1), (0, -2), (1, -2)]],
-           ['E', (2,-1, 2), [(1, 0), (1,-1), (2,-1)]] ]
+mirror  = [['A', (2, 0, 2), True,  [(1, 0), (2, 0)]],
+           ['B', (0, 2, 0), False, [(0, 1), (0, 2)]],
+           ['B', (0,-2, 0), False, [(0,-1), (0,-2)]],
+           ['C', (1,-1, 1), False, [(1, 0), (1, -1)]],
+           ['D', (1,-2, 1), True,  [(0,-1), (0, -2), (1, -2)]],
+           ['E', (2,-1, 2), True,  [(1, 0), (1,-1), (2,-1)]] ]
 
 def shape(r, c, s, blocks):
     ''' matrix (bolcks) & dir
@@ -54,16 +54,17 @@ def tryPiece(grid, piece, rx, cx):
     if (cx < maxc
         and 0 <= cx + piece[1][2] < maxc and 0 <= rx + piece[1][1] < maxr # y-off is also r-bound
         and grid[rx][cx] == 0):
-        for b in piece[2]:
+        for b in piece[3]:
             if (grid[rx+b[1]][cx+b[0]] == 1
-                or 0 < cx+b[0] and grid[rx+b[1]  ][cx+b[0]-1] == 2
-                or 0 < rx+b[1] and grid[rx+b[1]-1][cx+b[0]  ] == 2):
+                or 0 < cx+b[0] and grid[rx+b[1]  ][cx+b[0]-1] == 2 # adjacent occupied
+                or 0 < rx+b[1] and grid[rx+b[1]-1][cx+b[0]  ] == 2 # adjacent occupied
+                or cx == maxc - 1 and not piece[2]): # can't end
                 return (None, None);
         else:
             # fill occupied with 2 - no adjacent
             c, r = cx, rx
             grid[r][c] = 2
-            for b_ in piece[2]:
+            for b_ in piece[3]:
                 c, r = cx + b_[0], rx + b_[1]
                 grid[r][c] = 2
             return cx + piece[1][0] + 1, rx + piece[1][1]
