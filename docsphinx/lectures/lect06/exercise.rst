@@ -78,3 +78,13 @@ hint::
     pn,i = pn-1,i + pn-1,o + pn-1,u
     pn,o = pn-1,o + pn-1,u
     pn,u = pn-1,u
+
+4. #Directed Graph
+
+5. #Undirected Graph
+
+6. #Graph #DFS
+
+7. #Graph #BFS
+
+8. #Graph #DSU
