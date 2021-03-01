@@ -63,7 +63,11 @@ Solution: :download:`q1277 <../../../challenge/leet/medium/q1277.py>`
 Part X
 ------
 
-x1. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
+x1. `Duplicates, C#4 2018 ACSL Senior <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf>`_
+
+Solution: :download:`C4 2018, Senior <../../../acsl-pydev/acsl/lect05/duplicates_sr.py>`
+
+x2. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
 
 Hint: read this carefully::
 
@@ -72,7 +76,7 @@ Hint: read this carefully::
 
 Solution: :download:`C3 2016, Intermediate <../../../acsl-pydev/acsl/lect05/abc_int.py>`
 
-x2. `STRECH, C#3 2018/2019 ACSL Senior <>`_
+x3. `STRECH, C#3 2018/2019 ACSL Senior <>`_
 
 Hint1: Can not touch - 'ABCBCB' is wrong answer::
 
