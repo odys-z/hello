@@ -25,12 +25,12 @@ Part 2
 
 1. #Backtracking `LeetCode Problem 303. Subsets <https://leetcode.com/problems/subsets/>`_
 
-Solution: :download:`q078 <../../../challenge/leet/medium/q078.py>` &
+Solution: :download:`q078.py <../../../challenge/leet/medium/q078.py>` &
 :download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q078.java>`,
 
 2. #Backtracking #Pemutation `LeetCode Problem 784. Letter Case Permutation <https://leetcode.com/problems/letter-case-permutation/>`_
 
-Solution: :download:`q784 <../../../challenge/leet/medium/q784.py>` &
+Solution: :download:`q784.py <../../../challenge/leet/medium/q784.py>` &
 :download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q784.java>`,
 :download:`c++ version <../../../challenge/leet.gcc/q784/q784.h>`,
 
@@ -58,7 +58,16 @@ where :math:`inc(a_{ij}) = 1 + min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)} )`
 is the extra sequre increased by including :math:`a_{ij}`, since now
 :math:`min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)})` are distance to '0'.
 
-Solution: :download:`q1277 <../../../challenge/leet/medium/q1277.py>`
+Solution: :download:`q1277.py <../../../challenge/leet/medium/q1277.py>`
+
+Part 3
+------
+
+1. #DP `LeetCode Problem 338. Counting Bits <https://leetcode.com/problems/counting-bits/>`_
+
+Read the hints first.
+
+Solution: :download:`q338.py <../../../challenge/leet/medium/q338.py>`
 
 Part X
 ------
