@@ -1,0 +1,6 @@
+#include <Fragmentarium/3D.frag>
+
+
+vec3 color(vec3 ro, vec3 rd) {
+	return abs(rd);
+}
