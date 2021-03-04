@@ -38,15 +38,36 @@ Solution: :download:`q784 <../../../challenge/leet/medium/q784.py>` &
 
 Hint::
 
-    Cumulative Sum;
+    Accumulative Sum;
     Inclusion & Exclusion
 
 Solution: :download:`q784 <../../../challenge/leet/medium/q1314.py>`
 
+4*. #DP `LeetCode Problem 1277. Count Square Submatrices with All Ones <https://leetcode.com/problems/count-square-submatrices-with-all-ones/>`_
+
+Hint: Min Kadane distance (squres increased by :math:`a_{ij}`):
+
+    For :math:`a_{ij} = 1`, the sequre count are:
+
+..math::
+
+    a_{(i-1)j} + a_{i(j-1)} + a_{(i-1)(j-1)} + inc(a_{ij})
+..
+
+where :math:`inc(a_{ij}) = 1 + min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)} )`
+is the extra sequre increased by including :math:`a_{ij}`, since now
+:math:`min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)})` are distance to '0'.
+
+Solution: :download:`q1277 <../../../challenge/leet/medium/q1277.py>`
+
 Part X
 ------
 
-x1. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
+x1. `Duplicates, C#4 2018 ACSL Senior <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf>`_
+
+Solution: :download:`C4 2018, Senior <../../../acsl-pydev/acsl/lect05/duplicates_sr.py>`
+
+x2. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
 
 Hint: read this carefully::
 
@@ -55,7 +76,7 @@ Hint: read this carefully::
 
 Solution: :download:`C3 2016, Intermediate <../../../acsl-pydev/acsl/lect05/abc_int.py>`
 
-x2. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)
+x3. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)
 
 Hint1: Can not touch - 'ABCBCB' is wrong answer::
 
