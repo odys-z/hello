@@ -184,22 +184,32 @@
 <li>#DP <a class="reference external" href="https://leetcode.com/problems/matrix-block-sum/">LeetCode Problem 1314. Matrix Block Sum</a></li>
 </ol>
 <p>Hint:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cumulative</span> <span class="n">Sum</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Accumulative</span> <span class="n">Sum</span><span class="p">;</span>
 <span class="n">Inclusion</span> <span class="o">&amp;</span> <span class="n">Exclusion</span>
 </pre></div>
 </div>
 <p>Solution: <a class="reference download internal" download="" href="../../_downloads/b9951f29cd54bc08237c8fb75b9c2476/q1314.py"><code class="xref download docutils literal notranslate"><span class="pre">q784</span></code></a></p>
+<p>4*. #DP <a class="reference external" href="https://leetcode.com/problems/count-square-submatrices-with-all-ones/">LeetCode Problem 1277. Count Square Submatrices with All Ones</a></p>
+<p>Hint: Min Kadane distance (squres increased by <span class="math notranslate nohighlight">\(a_{ij}\)</span>):</p>
+<blockquote>
+<div>For <span class="math notranslate nohighlight">\(a_{ij} = 1\)</span>, the sequre count are:</div></blockquote>
+<p>where <span class="math notranslate nohighlight">\(inc(a_{ij}) = 1 + min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)} )\)</span>
+is the extra sequre increased by including <span class="math notranslate nohighlight">\(a_{ij}\)</span>, since now
+<span class="math notranslate nohighlight">\(min(a_{(i-1)j}, a_{i(j-1)}, a_{(i-1)(j-1)})\)</span> are distance to ‘0’.</p>
+<p>Solution: <a class="reference download internal" download="" href="../../_downloads/7835b109f6fa2b293913665d3db009a5/q1277.py"><code class="xref download docutils literal notranslate"><span class="pre">q1277</span></code></a></p>
 </div>
 <div class="section" id="part-x">
 <h2>Part X<a class="headerlink" href="#part-x" title="Permalink to this headline">¶</a></h2>
-<p>x1. <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf">ABC, C#3 2015/2016 ACSL Intermediate</a></p>
+<p>x1. <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf">Duplicates, C#4 2018 ACSL Senior</a></p>
+<p>Solution: <a class="reference download internal" download="" href="../../_downloads/4e3805c1406b688bad95d31345e9f38f/duplicates_sr.py"><code class="xref download docutils literal notranslate"><span class="pre">C4</span> <span class="pre">2018,</span> <span class="pre">Senior</span></code></a></p>
+<p>x2. <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf">ABC, C#3 2015/2016 ACSL Intermediate</a></p>
 <p>Hint: read this carefully:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">These</span> <span class="n">letters</span> <span class="p">(</span><span class="n">outside</span> <span class="n">letters</span><span class="p">)</span> <span class="n">tell</span> <span class="n">that</span> <span class="n">that</span> <span class="n">letter</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">first</span> <span class="n">found</span>
 <span class="ow">in</span> <span class="n">that</span> <span class="n">row</span> <span class="ow">or</span> <span class="n">column</span> <span class="n">starting</span> <span class="kn">from</span> <span class="nn">that</span> <span class="n">direction</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Solution: <a class="reference download internal" download="" href="../../_downloads/725ba2e23bd67056992e3deb312c818b/abc_int.py"><code class="xref download docutils literal notranslate"><span class="pre">C3</span> <span class="pre">2016,</span> <span class="pre">Intermediate</span></code></a></p>
-<p>x2. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)</p>
+<p>x3. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)</p>
 <p>Hint1: Can not touch - ‘ABCBCB’ is wrong answer:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>   <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span>
 <span class="n">o</span>   <span class="n">A</span>  <span class="n">o</span>  <span class="n">o</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span>
@@ -294,6 +304,14 @@ with issue on test case.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>x4. Lights Out, C#3 2016/2017 ACSL Senior (see handout lec 5, no. 2)</p>
+<p><strong>Note</strong>:</p>
+<p>1. Don’t open solution before you really understand the problem - how the board
+is configured.</p>
+<ol class="arabic simple" start="2">
+<li>This solution also illustrate the way of input handling of the contest platform.</li>
+</ol>
+<p>Solution: <a class="reference download internal" download="" href="../../_downloads/ee9b546a04b19f160923389c5b3df12f/lightsout_sr.py"><code class="xref download docutils literal notranslate"><span class="pre">C3</span> <span class="pre">2017,</span> <span class="pre">Senior</span></code></a></p>
 </div>
 </div>
 

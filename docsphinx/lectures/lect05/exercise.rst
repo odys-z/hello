@@ -49,7 +49,7 @@ Hint: Min Kadane distance (squres increased by :math:`a_{ij}`):
 
     For :math:`a_{ij} = 1`, the sequre count are:
 
-..math::
+.. math:
 
     a_{(i-1)j} + a_{i(j-1)} + a_{(i-1)(j-1)} + inc(a_{ij})
 ..
@@ -176,3 +176,14 @@ Helpful python script:
                 print("{:3d}".format(c), end=' ')
         print('')
 ..
+
+x4. Lights Out, C#3 2016/2017 ACSL Senior (see handout lec 5, no. 2)
+
+**Note**:
+
+1. Don't open solution before you really understand the problem - how the board
+is configured.
+
+2. This solution also illustrate the way of input handling of the contest platform.
+
+Solution: :download:`C3 2017, Senior <../../../acsl-pydev/acsl/lect05/lightsout_sr.py>`
