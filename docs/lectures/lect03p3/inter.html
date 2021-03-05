@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Contest #1, Part 3" href="index.html"/>
         <link rel="next" title="Octal Triangles" href="inter_.html"/>
@@ -90,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 3</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2020/2021 Intermediate</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2020/2021 Intermediate</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#problem">Problem</a></li>
 </ul>
 </li>
@@ -150,37 +147,37 @@
 <h1>2020/2021 Intermediate<a class="headerlink" href="#intermediate" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="problem">
 <h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Construct</span> <span class="n">a</span> <span class="n">Numberal</span> <span class="n">Octal</span> <span class="n">Triangle</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">rules</span><span class="o">.</span> <span class="n">You</span>
-<span class="n">will</span> <span class="n">be</span> <span class="n">given</span> <span class="n">three</span> <span class="n">positive</span> <span class="n">integers</span><span class="p">:</span>
-<span class="n">s</span><span class="p">,</span> <span class="n">a</span> <span class="n">starting</span> <span class="n">number</span><span class="p">;</span>
-<span class="n">d</span><span class="p">,</span> <span class="n">a</span> <span class="n">delta</span> <span class="p">(</span><span class="n">the</span> <span class="n">amount</span> <span class="n">by</span> <span class="n">which</span> <span class="n">to</span> <span class="n">increase</span> <span class="n">each</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span><span class="p">);</span>
-<span class="ow">and</span> <span class="n">r</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">rows</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Construct a Numberal Octal Triangle according to the following rules. You
+will be given three positive integers:
+s, a starting number;
+d, a delta (the amount by which to increase each number in the triangle);
+and r the number of rows.
 
-<span class="n">The</span> <span class="n">number</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">d</span> <span class="n">will</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">octal</span><span class="o">.</span>
+The number s and d will be in octal.
 
-<span class="mf">1.</span> <span class="n">The</span> <span class="n">first</span> <span class="n">row</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">number</span> <span class="n">s</span><span class="o">.</span>
-<span class="mf">2.</span> <span class="n">Each</span> <span class="n">of</span> <span class="n">the</span> <span class="n">rows</span> <span class="n">has</span> <span class="n">one</span> <span class="n">more</span> <span class="n">number</span> <span class="n">than</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">row</span><span class="o">.</span>
-<span class="mf">3.</span> <span class="n">Each</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span> <span class="ow">is</span> <span class="n">d</span> <span class="n">more</span> <span class="n">than</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">triangle</span><span class="o">.</span>
+1. The first row contains the number s.
+2. Each of the rows has one more number than the previous row.
+3. Each number in the triangle is d more than the previous number in the triangle.
 
-<span class="n">Here</span> <span class="n">are</span> <span class="n">two</span> <span class="n">examples</span> <span class="n">of</span> <span class="n">Numberal</span> <span class="n">Octal</span> <span class="n">Triangles</span><span class="p">:</span>
-<span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="mi">5</span>
+Here are two examples of Numberal Octal Triangles:
+s = 2, delta = 3, rows = 5
 
-<span class="mi">2</span>
-<span class="mi">5</span>    <span class="mi">10</span>
-<span class="mi">13</span>   <span class="mi">16</span>    <span class="mi">21</span>
-<span class="mi">24</span>   <span class="mi">27</span>    <span class="mi">32</span>    <span class="mi">35</span>
-<span class="mi">40</span>   <span class="mi">43</span>    <span class="mi">46</span>    <span class="mi">51</span>    <span class="mi">54</span>
+2
+5    10
+13   16    21
+24   27    32    35
+40   43    46    51    54
 
-<span class="n">s</span> <span class="o">=</span> <span class="mi">221</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">4</span>
+s = 221, d = 2, r = 4
 
-<span class="mi">221</span>
-<span class="mi">223</span>   <span class="mi">225</span>
-<span class="mi">227</span>   <span class="mi">231</span>   <span class="mi">233</span>
-<span class="mi">235</span>   <span class="mi">237</span>   <span class="mi">241</span>   <span class="mi">243</span>
+221
+223   225
+227   231   233
+235   237   241   243
 </pre></div>
 </div>
 <p>See next section for more triangles.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum8</span><span class="p">(</span><span class="n">n10</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sum8</span><span class="p">(</span><span class="n">n10</span><span class="p">):</span>
     <span class="n">reslt</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">n10</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">reslt</span> <span class="o">+=</span> <span class="n">n10</span> <span class="o">%</span> <span class="mi">8</span>
@@ -265,8 +262,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

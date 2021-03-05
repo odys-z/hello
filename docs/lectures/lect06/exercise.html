@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 06: Topics of Contest 4" href="index.html"/>
         <link rel="prev" title="Lec 06: Topics" href="topics.html"/> 
@@ -93,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lect05/index.html">Lec 05: Topics of Contest 3</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lec 06: Topics of Contest 4</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="topics.html">Lec 06: Topics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -144,9 +141,9 @@
 <h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h1>
 <p>1. <a class="reference external" href="https://leetcode.com/problems/binary-watch/">LeetCode Problem 401. Binary Watch</a>
 Recursive &amp; Backtracking</p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/35a1168412ccb0cbeb159b4058e5666f/q401.py"><code class="xref download docutils literal notranslate"><span class="pre">q206</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q401.py" download=""><code class="xref download docutils literal"><span class="pre">q206</span></code></a></p>
 <p>2*. (medium)`LeetCode Problem 797. All Paths From Source to Target &lt;<a class="reference external" href="https://leetcode.com/problems/all-paths-from-source-to-target/submissions/">https://leetcode.com/problems/all-paths-from-source-to-target/submissions/</a>&gt;`_</p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/6192ab5c0a9efbd17989867205979a83/q797.py"><code class="xref download docutils literal notranslate"><span class="pre">q797</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q797.py" download=""><code class="xref download docutils literal"><span class="pre">q797</span></code></a></p>
 <p>C++ Solution (runtime error at LeetCode): <a class="reference external" href="https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q797">q797 source folder</a></p>
 <p>Tip:</p>
 <ol class="lowerroman simple">
@@ -156,62 +153,62 @@ Recursive &amp; Backtracking</p>
 <ol class="arabic simple" start="3">
 <li>(medium, see hint) <a class="reference external" href="https://leetcode.com/problems/count-sorted-vowel-strings/">LeetCode Problem 1641. Count Sorted Vowel Strings</a></li>
 </ol>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/e8073e2cf86fafe16a824cd0a15dd9e5/q1641.py"><code class="xref download docutils literal notranslate"><span class="pre">q1641</span></code></a> &amp; c++
+<p>Solution: <a class="reference download internal" href="../../_downloads/q1641.py" download=""><code class="xref download docutils literal"><span class="pre">q1641</span></code></a> &amp; c++
 version <cite>q1641 &lt;../../../challenge/leet.gcc/q1641/q1641.h&gt;</cite></p>
 <p>hint:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre>n = 1
+1 + 1 + 1 + 1 + 1
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+n = 2
+5 + 4 + 3 + 2 + 1
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-  <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-      <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">6</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
-          <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">3</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
-              <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+n = 3
+5 + 4 + 3 + 2 + 1  -- p(3, a) = 15 + p(3, e)
+  + 4 + 3 + 2 + 1  -- p(3, e) = 10 + p(3, i)
+      + 3 + 2 + 1  -- p(3, i) =  6 + p(3, o)
+          + 2 + 1  -- p(3, o) =  3 + p(3, u)
+              + 1  -- p(3, u)
 
 
-<span class="n">a</span>      <span class="n">e</span>      <span class="n">i</span>      <span class="n">o</span>      <span class="n">u</span>
+a      e      i      o      u
 
-<span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="mi">5</span>      <span class="mi">4</span>      <span class="mi">3</span>      <span class="mi">2</span>      <span class="mi">1</span>      <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">p3</span><span class="p">,</span><span class="n">a</span>   <span class="n">p3</span><span class="p">,</span><span class="n">e</span>   <span class="n">p3</span><span class="p">,</span><span class="n">i</span>   <span class="n">p3</span><span class="p">,</span><span class="n">o</span>   <span class="n">p3</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">a</span>   <span class="n">p4</span><span class="p">,</span><span class="n">e</span>   <span class="n">p4</span><span class="p">,</span><span class="n">i</span>   <span class="n">p4</span><span class="p">,</span><span class="n">o</span>   <span class="n">p4</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">a</span>   <span class="n">p5</span><span class="p">,</span><span class="n">e</span>   <span class="n">p5</span><span class="p">,</span><span class="n">i</span>   <span class="n">p5</span><span class="p">,</span><span class="n">o</span>   <span class="n">p5</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+1      1      1      1      1      n = 1
+5      4      3      2      1      n = 2
+p3,a   p3,e   p3,i   p3,o   p3,u   n = 3
+p4,a   p4,e   p4,i   p4,o   p4,u   n = 4
+p5,a   p5,e   p5,i   p5,o   p5,u   n = 5
 
-<span class="n">p6</span><span class="p">,</span><span class="n">a</span>   <span class="n">p6</span><span class="p">,</span><span class="n">e</span>   <span class="n">p6</span><span class="p">,</span><span class="n">i</span>   <span class="n">p6</span><span class="p">,</span><span class="n">o</span>   <span class="n">p6</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>
+p6,a   p6,e   p6,i   p6,o   p6,u   n = 6
 
-<span class="n">p4</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
+p4,a = p3,a + p3,e + p3,i + p3,o + p3,u
+p4,e = p3,e + p3,i + p3,o + p3,u
+p4,i = p3,i + p3,o + p3,u
+p4,o = p3,o + p3,u
+p4,u = p3,u
 
-<span class="n">p5</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
+p5,a = p4,a + p4,e + p4,i + p4,o + p4,u
+p5,e = p4,e + p4,i + p4,o + p4,u
+p5,i = p4,i + p4,o + p4,u
+p5,o = p4,o + p4,u
+p5,u = p4,u
 
-<span class="n">p6</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p5</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span>        <span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span>               <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span>                      <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span>                             <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
+p6,a = p5,a + p5,e + p5,i + p5,o + p5,u
+p6,e =        p5,e + p5,i + p5,o + p5,u
+p6,i =               p5,i + p5,o + p5,u
+p6,o =                      p5,o + p5,u
+p6,u =                             p5,u
 
-<span class="n">p7</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p6</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span>        <span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span>               <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span>                      <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span>                             <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
+p7,a = p6,a + p6,e + p6,i + p6,o + p6,u
+p7,e =        p6,e + p6,i + p6,o + p6,u
+p7,i =               p6,i + p6,o + p6,u
+p7,o =                      p6,o + p6,u
+p7,u =                             p6,u
 
-<span class="n">pn</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
+pn,a = pn-1,a + pn-1,e + pn-1,i + pn-1,o + pn-1,u
+pn,e = pn-1,e + pn-1,i + pn-1,o + pn-1,u
+pn,i = pn-1,i + pn-1,o + pn-1,u
+pn,o = pn-1,o + pn-1,u
+pn,u = pn-1,u
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
@@ -271,8 +268,7 @@ version <cite>q1641 &lt;../../../challenge/leet.gcc/q1641/q1641.h&gt;</cite></p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
