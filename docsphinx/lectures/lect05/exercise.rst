@@ -12,11 +12,18 @@ Solution: :download:`q206 <../../../challenge/leet/easy/q206.py>`
 
 Solution: :download:`q083 <../../../challenge/leet/easy/q083.py>`
 
-3. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`
+3. #List #Cycle `LeetCode Problem 141. <https://leetcode.com/problems/linked-list-cycle/>`_
+
+Hint: don't try yoursefl first, read `this <https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/>`_,
+use solution 3, the Floyd Tortoise and Hare Algorithm.
+
+Solution: :download:`q141 <../../../challenge/leet/easy/q141.py>`
+
+4. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`
 
 Solution: :download:`q303 <../../../challenge/leet/easy/q303.py>`
 
-4. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/submissions/>`_
+5. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/submissions/>`_
 
 Solution: :download:`q1551 <../../../challenge/leet/medium/q1551.py>`
 
