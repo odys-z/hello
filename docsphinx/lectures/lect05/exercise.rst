@@ -17,7 +17,8 @@ Solution: :download:`q083 <../../../challenge/leet/easy/q083.py>`
 Hint: don't try yoursefl first, read `this <https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/>`_,
 use solution 3, the Floyd Tortoise and Hare Algorithm.
 
-Solution: :download:`q141 <../../../challenge/leet/easy/q141.py>`
+Solution: :download:`q141.py <../../../challenge/leet/easy/q141.py>` &
+:download:`q141.h <../../../challenge/leet.gcc/q141/q141.h>`
 
 4. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`
 
