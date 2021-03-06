@@ -39,6 +39,7 @@ Syllabus:
    lectures/lect04/index
    lectures/lect05/index
    lectures/lect06/index
+   lectures/x.aime/2021
 
 Indices and tables
 ==================
