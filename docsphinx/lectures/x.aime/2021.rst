@@ -1,13 +1,23 @@
 AIME 2021 - I
 =============
 
-1. `Problem 3, PURPLE COMET! MATH MEET April 2020 <https://purplecomet.org/views/data/2020HSSolutions.pdf>`_
+1. Number Theory - Modular
+
+`2020 AIME II Problems/Problem 5 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_5>`_
+
+->
+
+    `Number Theory <https://artofproblemsolving.com/wiki/index.php/Category:Intermediate_Number_Theory_Problems>`_
+
+2. Number Theory - Divisor
+
+2.1 `Problem 3, PURPLE COMET! MATH MEET April 2020 <https://purplecomet.org/views/data/2020HSSolutions.pdf>`_
 
 Problem 3::
 
     Find the number of perfect squares that divide 2020.
 
-2. `2020 AIME II Problems/Problem 1 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_1>`_
+2.2 `2020 AIME II Problems/Problem 1 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_1>`_
 
 Problem.
 
@@ -18,18 +28,20 @@ Take look at `Algebra Problems <https://artofproblemsolving.com/wiki/index.php/C
 
 ->
 
-`2005 AMC 12B Problems/Problem 12 <https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Problems/Problem_12>`_
+2.3 `2005 AMC 12B Problems/Problem 12 <https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Problems/Problem_12>`_
 
-`2000 AIME I Problems/Problem 11 <https://artofproblemsolving.com/wiki/index.php/2000_AIME_I_Problems/Problem_11>`_
+2.4 `2000 AIME I Problems/Problem 11 <https://artofproblemsolving.com/wiki/index.php/2000_AIME_I_Problems/Problem_11>`_
 
 3. `Vieta's formulae <https://artofproblemsolving.com/wiki/index.php/Vieta%27s_Formulas>`_
 
-`2021 AMC 12A Problems 12 (10A 14) <https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Problems/Problem_12>`_
+3.1 `2021 AMC 12A Problems 12 (10A 14) <https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Problems/Problem_12>`_
 
-`2005 AIME I Problems/Problem 8 <https://artofproblemsolving.com/wiki/index.php/2005_AIME_I_Problems/Problem_8>`_
+3.2 `2005 AIME I Problems/Problem 8 <https://artofproblemsolving.com/wiki/index.php/2005_AIME_I_Problems/Problem_8>`_
 
-4. Log
+4. `2020 AIME II Problems/Problem 6 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_6>`_
 
-`2020 AIME II Problems/Problem 3 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_3>`_
+5. Log
 
-`2019 AIME II Problems/Problem 6 <https://artofproblemsolving.com/wiki/index.php/2019_AIME_II_Problems/Problem_6>`_
+5.1 `2020 AIME II Problems/Problem 3 <https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_3>`_
+
+5.2 `2019 AIME II Problems/Problem 6 <https://artofproblemsolving.com/wiki/index.php/2019_AIME_II_Problems/Problem_6>`_
