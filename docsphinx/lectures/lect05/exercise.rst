@@ -20,11 +20,15 @@ use solution 3, the Floyd Tortoise and Hare Algorithm.
 Solution: :download:`q141.py <../../../challenge/leet/easy/q141.py>` &
 :download:`q141.h <../../../challenge/leet.gcc/q141/q141.h>`
 
-4. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`_
+4. #stack `LeetCode Problem 739 <https://www.mozilla.org/en-US/firefox/central>`_
+
+Solution: :download:`q739 <../../../challenge/leet/medium/q379.py>`
+
+5. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/>`_
 
 Solution: :download:`q303 <../../../challenge/leet/easy/q303.py>`
 
-5. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/>`_
+6. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/>`_
 
 Solution: :download:`q1551 <../../../challenge/leet/medium/q1551.py>`
 
