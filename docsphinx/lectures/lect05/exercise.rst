@@ -8,7 +8,7 @@ Part 1
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q206.py>`
 
-2. #List `LeetCode Problem 83. Remove Duplicates <https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/>`_
+2. #List `LeetCode Problem 83. Remove Duplicates <https://leetcode.com/problems/remove-duplicates-from-sorted-list/>`_
 
 Solution: :download:`q083 <../../../challenge/leet/easy/q083.py>`
 
@@ -20,18 +20,18 @@ use solution 3, the Floyd Tortoise and Hare Algorithm.
 Solution: :download:`q141.py <../../../challenge/leet/easy/q141.py>` &
 :download:`q141.h <../../../challenge/leet.gcc/q141/q141.h>`
 
-4. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`
+4. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/submissions/>`_
 
 Solution: :download:`q303 <../../../challenge/leet/easy/q303.py>`
 
-5. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/submissions/>`_
+5. #Math `LeetCode Problem 1551. Minimum op for Equal <https://leetcode.com/problems/minimum-operations-to-make-array-equal/>`_
 
 Solution: :download:`q1551 <../../../challenge/leet/medium/q1551.py>`
 
 Part 2
 ------
 
-1. #Backtracking `LeetCode Problem 303. Subsets <https://leetcode.com/problems/subsets/>`_
+1. #Backtracking `LeetCode Problem 078. Subsets <https://leetcode.com/problems/subsets/>`_
 
 Solution: :download:`q078 <../../../challenge/leet/medium/q078.py>` &
 :download:`java version <../../../challenge/leet.java/src/leet/java/medium/Q078.java>`,
@@ -72,10 +72,12 @@ Part X
 ------
 
 x1. `Duplicates, C#4 2018 ACSL Senior <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf>`_
+______________________________________________________________________________________________________________
 
 Solution: :download:`C4 2018, Senior <../../../acsl-pydev/acsl/lect05/duplicates_sr.py>`
 
 x2. `ABC, C#3 2015/2016 ACSL Intermediate <http://www.datafiles.acsl.org/samples/contest3/abc_3_int.pdf>`_
+__________________________________________________________________________________________________________
 
 Hint: read this carefully::
 
@@ -84,7 +86,10 @@ Hint: read this carefully::
 
 Solution: :download:`C3 2016, Intermediate <../../../acsl-pydev/acsl/lect05/abc_int.py>`
 
-x3. STRECH, C#3 2018/2019 ACSL Senior (see handout lec 5, no. 1)
+x3. STRECH, C#3 2018/2019 ACSL Senior
+_____________________________________
+
+See handout lec 5, no. 1.
 
 Hint1: Can not touch - 'ABCBCB' is wrong answer::
 
@@ -121,7 +126,7 @@ expected::
 
     CECDEC
 
-But first step should b 'B'?
+But first step should be 'B'?
 
 A step by step tried recordings::
 
@@ -147,7 +152,7 @@ A step by step tried recordings::
     85  86  87  88  89  90 [ ]  92  93  94  95   B
     97  98  99 100 101 102 103 104 105 [ ] 107   o
 
-    --------------------- BDE ----------------------
+    -------------------- BDE ----------------------
      1   2   3   4   5   6   7   8   9  10  11  12
     13  14  15  16  17  18  19  20  21  22  23  24
     25  26  27  28  29  30  31  32  33  34  35  36
@@ -158,7 +163,7 @@ A step by step tried recordings::
     85  86  87  88  89  90 [ ]  92  93  94  95   B
     97  98  99 100 101 102 103 104 105 [ ] 107   o
 
-    ------------------- BDEAB(-B) ------------------
+    ------------------ BDEAB(-B) ------------------
     - then D - The one and only tile allowed to touch the opposite side is a circle tile.
 
      1   2   3   4   5   6   7   8   9  10  11  12
@@ -185,7 +190,10 @@ Helpful python script:
         print('')
 ..
 
-x4. Lights Out, C#3 2016/2017 ACSL Senior (see handout lec 5, no. 2)
+x4. Lights Out, C#3 2016/2017 ACSL Senior
+_________________________________________
+
+See handout lec 5, no. 2.
 
 **Note**:
 
