@@ -22,7 +22,7 @@ Solution: :download:`q141.py <../../../challenge/leet/easy/q141.py>` &
 
 4. #stack `LeetCode Problem 739 <https://www.mozilla.org/en-US/firefox/central>`_
 
-Solution: :download:`q739 <../../../challenge/leet/medium/q379.py>`
+Solution: :download:`q739 <../../../challenge/leet/medium/q739.py>`
 
 5. #DP `LeetCode Problem 303 <https://leetcode.com/problems/range-sum-query-immutable/>`_
 
