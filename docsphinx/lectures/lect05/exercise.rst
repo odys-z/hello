@@ -14,8 +14,8 @@ Solution: :download:`q083 <../../../challenge/leet/easy/q083.py>`
 
 3. #List #Cycle `LeetCode Problem 141. <https://leetcode.com/problems/linked-list-cycle/>`_
 
-Hint: don't try yoursefl first, read `this <https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/>`_,
-use solution 3, the Floyd Tortoise and Hare Algorithm.
+Hint: don't try yourself first, read
+`LeetCode Approach 3, the Floyd Tortoise and Hare Algorithm <https://leetcode.com/problems/find-the-duplicate-number/solution//>`_.
 
 Solution: :download:`q141.py <../../../challenge/leet/easy/q141.py>` &
 :download:`q141.h <../../../challenge/leet.gcc/q141/q141.h>`
