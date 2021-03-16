@@ -40,6 +40,7 @@ Syllabus:
    lectures/lect05/index
    lectures/lect06/index
    lectures/x.aime/2021
+   lectures/y.usaco.0/intro
 
 Indices and tables
 ==================
