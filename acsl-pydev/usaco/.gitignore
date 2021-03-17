@@ -1,0 +1,3 @@
+# protect test case of HackerRank
+*.in
+*.exp
