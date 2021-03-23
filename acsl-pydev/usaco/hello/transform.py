@@ -22,29 +22,54 @@ class Transform:
         def trs4(i, j):
             return i, n - 1 - j
 
-        def trs5(i, j):
+#         def trs5(i, j):
+#             [(i, j)] = trs4(i, j)
+#             return [trs1(i, j)[0], trs2(i, j)[0], trs3(i, j)[0]]
+
+        def trs51(i, j):
             i, j = trs4(i, j)
-            return [trs1(i, j), trs2(i, j), trs3(i, j)]
+            return trs1(i, j)
+        
+        def trs52(i, j):
+            i, j = trs4(i, j)
+            return trs2(i, j)
+        
+        def trs53(i, j):
+            i, j = trs4(i, j)
+            return trs3(i, j)
         
         def trs6(i, j):
             return i, j
         
+        def matchEach(n, tiles, trsj):
+            for i in range(n):
+                for j in range(n):
+                    i1, j1 = trsj(i, j)
+                    if tiles[i][j] != tiles[i1 + n][j1]:
+                        return False
+            return True
+
+        def matchAny(n, tiles, trsi):
+            # #5 has multiple cases
+            for tr in trsi:
+                if matchEach(n, tiles, tr):
+                    return True
+            return False
+        
         tiles = []
-        for l in lines[1 : n + 1]:
+        for l in lines[1 : 2 * n + 1]:
             tiles.append(list(l))
         
-        transs = [(True, trs1), (True, trs2),  (True, trs3),  (True, trs4),  (True, trs5),  (True, trs6)]
+        transs = [[trs1], [trs2], [trs3], [trs4], 
+                  [trs51, trs52, trs53],
+                  [trs6]]
         
-        for i in range(n):
-            for j in range(n):
-                for tx in range(len(transs)):
-                    t = transs[tx]
-                    if t[0]:
-                        i1, j1 = t[1](i, j)
-                        transs[tx] = (t[0] and tiles[i1][j1] == tiles[i][j], t[1])
-        for i in range(6): 
-            if transs[i][0]: return i
-        return 7
+        for tx in range(len(transs)):
+            t = transs[tx]
+            if matchAny(n, tiles, t):
+                return str(tx + 1)
+
+        return '7'
 
 def outputLines(res: str):
     f = open('transform.out', 'w')
@@ -58,18 +83,123 @@ if __name__ != '__main__':
     t = TestCase() 
     m = Transform() 
 
-    t.assertEqual('3', m.solve(['3',
+    t.assertEqual('7', m.solve(['10', 
+        '@--------@',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '@---------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '----------',
+        '---------@' ]))
+
+    t.assertEqual('1', m.solve(['3',
                                 '@-@',
                                 '---',
                                 '@@-',
+
                                 '@-@',
                                 '@--',
                                 '--@',
                                 ]))
+
+    t.assertEqual('3', m.solve(['3',
+
+                                'x x',
+                                ' x ',
+                                '  x',
+
+                                'x x',
+                                ' x ',
+                                'x  ',
+                                ]))
+
+    t.assertEqual('3', m.solve(['4',
+
+                                '+oo+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+',
+
+                                '+oo+',
+                                'oo+o',
+                                'o+oo',
+                                '+ooo'
+                                ]))
+
+    t.assertEqual('4', m.solve(['4',
+
+                                'o+o+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+',
+
+                                '+o+o',
+                                'oo+o',
+                                'o+oo',
+                                '+ooo'
+                                ]))
+
+    ''' after mirroring:
+                                '+o+o',
+                                'oo+o',
+                                'o+oo',
+                                '+ooo',
+    '''
+    t.assertEqual('5', m.solve(['4',
+
+                                'o+o+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+',
+
+                                '+oo+',
+                                'o+oo',
+                                'oo++',
+                                'oooo'
+                                ]))
+
+    t.assertEqual('6', m.solve(['4',
+                                'o+o+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+',
+
+                                'o+o+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+'
+                                ]))
+
+
+    t.assertEqual('7', m.solve(['4',
+                                'o+o+',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+',
+
+                                'o++o',
+                                'o+oo',
+                                'oo+o',
+                                'ooo+'
+                                ]))
+
     print('OK!')
 else:
     g = Transform()
     fin = open('transform.in', 'r')
-    ans = g.milk(fin.readlines()) 
+    ans = g.solve(fin.readlines()) 
     fin.close()
     outputLines([ans])
