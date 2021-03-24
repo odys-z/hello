@@ -22,10 +22,6 @@ class Transform:
         def trs4(i, j):
             return i, n - 1 - j
 
-#         def trs5(i, j):
-#             [(i, j)] = trs4(i, j)
-#             return [trs1(i, j)[0], trs2(i, j)[0], trs3(i, j)[0]]
-
         def trs51(i, j):
             i, j = trs4(i, j)
             return trs1(i, j)
