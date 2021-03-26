@@ -1,3 +1,5 @@
 # protect test case of HackerRank
 *.in
 *.exp
+# runtime results
+*.out
