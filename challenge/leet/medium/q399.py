@@ -10,57 +10,46 @@ from unittest import TestCase
 from typing import List
 
 class Dsu:
-    def __init__(self, equations):
-        self.variables = set(sum(equations, []))
-        self.vars = {v: v for v in self.variables}
-        self.rank = {v: 0 for v in self.variables}
-        self.vals = {v: 1 for v in self.variables}
+    def __init__(self, alphabet):
+        self.parent = {c: c for c in alphabet}
+        self.value = {c: 1 for c in alphabet}
+        self.rank = {c: 1 for c in alphabet}
     
-    def find(self, x, v):
-        if x not in self.vars:
-            return x
-        while self.vars[x] != x:
-            x = self.vars[x]
-            self.vals[x] *= v
-        return x, self.vals[x]
-
-    def unify(self, x, y, v):
-        ''' x = v * y '''
-        x, vx = self.find(x, v)
-        y, vy = self.find(y, v)
+    def find(self, u):
+        if u != self.parent[u]:
+            self.parent[u], val = self.find(self.parent[u])
+            self.value[u] *= val
+        return self.parent[u], self.value[u]
+    
+    def union(self, u, v, w):
+        pu, vu = self.find(u)
+        pv, vv = self.find(v)
+        if pu == pv: return
+        if self.rank[pu] > self.rank[pv]: self.union(v, u, 1/w)
+        else: 
+            self.parent[pu] = self.parent[pv]
+            self.value[pu] = w * vv / vu
+            self.rank[pv] += self.rank[pu]
         
-        if x == y: 
-            return False
-
-        if self.rank[x] < self.rank[y]:
-            # [y] / [x] = 1/v
-            self.vars[x] = y
-            self.rank[y] += 1
-            self.vals[y] = self.vals[x] / self.vals[y] / vy
-        else:  # [x] / [y] = v
-            self.vars[y] = x
-            self.rank[x] += 1
-            self.vals[x] = self.vals[y] / self.vals[x] * vx
-    
-    def div(self, x, y):
-        if x not in self.variables or y not in self.variables:
-            return -1
-        return self.vals[x]/self.vals[y]
-
-
 class Solution:
+    ''' https://leetcode.com/problems/evaluate-division/discuss/827506/Python3-dfs
+    '''
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        dsu = Dsu(equations)
+        alphabet = set(sum(equations, []))
+        uf = Dsu(alphabet)
         
-        for (x, y), v in zip(equations, values):
-            dsu.unify(x, y, v)
+        for (u, v), w in zip(equations, values):
+            uf.union(u, v, w)
             
-        res = []
-        for x, y in queries:
-            # x, y = dsu.find(x), dsu.find(y)
-            res.append(dsu.div(x, y))
-        
-        return res
+        ans = []
+        for u, v in queries:
+            if u in alphabet and v in alphabet: 
+                pu, vu = uf.find(u)
+                pv, vv = uf.find(v)
+                if pu == pv: ans.append(vu / vv)
+                else: ans.append(-1)
+            else: ans.append(-1)
+        return ans
 
         
 if __name__ == '__main__':
@@ -68,4 +57,13 @@ if __name__ == '__main__':
     s = Solution()
     
     t.assertCountEqual([6.00000,0.50000,-1.00000,1.00000,-1.00000], s.calcEquation(
-        equations = [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]] ))
+        equations = [["a", "b"], ["b", "c"], ['c', 'd'], ['e', 'd']],
+        values =     [2.0,        3.0,        5,          2],
+        queries = [["a","c"], ["b","a"], ["a","e"], ["a","a"], ["x","x"]] ))
+
+    t.assertCountEqual([6.00000,0.50000,-1.00000,1.00000,-1.00000], s.calcEquation(
+        equations = [["a","b"],["b","c"]],
+        values    = [2.0,      3.0],
+        queries = [["a","c"], ["b","a"], ["a","e"], ["a","a"], ["x","x"]] ))
+
+    print('OK!')
