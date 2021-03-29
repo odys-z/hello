@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Quick Start &mdash; ACSL Lecture 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Lec 1: Python Quick Start" href="index.html"/>
+        <link rel="next" title="Run &amp; Debug with PyDev" href="debug.html"/>
+        <link rel="prev" title="Lec 1: Python Quick Start" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> ACSL Lecture
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to ACSL Lecture!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../lect00/index.html">Lec 0: About ACSL</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 1: Python Quick Start</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Python Quick Start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-python-program">Run Python program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#built-in-data-types">Built-in Data Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-collections">Python Collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debug.html">Run &amp; Debug with PyDev</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homework.html">Homework (2 tasks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ref.html">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect04/index.html">Lec 04: Topics of Contest 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect05/index.html">Lec 05: Topics of Contest 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect06/index.html">Lec 06: Topics of Contest 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../amc/2021.html">AIME 2021 - I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ACSL Lecture</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Welcome to ACSL Lecture!</a> &raquo;</li>
+      
+          <li><a href="index.html">Lec 1: Python Quick Start</a> &raquo;</li>
+      
+    <li>Python Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-quick-start">
+<h1>Python Quick Start<a class="headerlink" href="#python-quick-start" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="run-python-program">
+<h2>Run Python program<a class="headerlink" href="#run-python-program" title="Permalink to this headline">¶</a></h2>
+<p>Python syntax can be executed by writing directly in the Command Line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="go">Hello, World!</span>
+</pre></div>
+</div>
+<p>Or by creating a python file on the server, using the <em>.py</em> file extension, and
+running it in the Command Line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Your</span> <span class="n">Name</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">myfile</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>myfile.py:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is a comment</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="built-in-data-types">
+<h2>Built-in Data Types<a class="headerlink" href="#built-in-data-types" title="Permalink to this headline">¶</a></h2>
+<p>Variables can store data of different types, and different types can do different
+things.</p>
+<p>Python’s built-in data types by default, in these categories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span> <span class="n">Type</span><span class="p">:</span>      <span class="nb">str</span>
+<span class="n">Numeric</span> <span class="n">Types</span><span class="p">:</span>  <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span>
+<span class="n">Sequence</span> <span class="n">Types</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">range</span>
+<span class="n">Mapping</span> <span class="n">Type</span><span class="p">:</span>   <span class="nb">dict</span>
+<span class="n">Set</span> <span class="n">Types</span><span class="p">:</span>      <span class="nb">set</span><span class="p">,</span> <span class="nb">frozenset</span>
+<span class="n">Boolean</span> <span class="n">Type</span><span class="p">:</span>   <span class="nb">bool</span>
+<span class="n">Binary</span> <span class="n">Types</span><span class="p">:</span>   <span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytearray</span><span class="p">,</span> <span class="nb">memoryview</span>
+</pre></div>
+</div>
+<div class="section" id="getting-the-data-type">
+<h3>Getting the Data Type<a class="headerlink" href="#getting-the-data-type" title="Permalink to this headline">¶</a></h3>
+<p>You can get the data type of any object by using the type() function:</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Print the data type of the variable x:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="type-casting">
+<h3>Type Casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">¶</a></h3>
+<p>Casting in python is done using constructor functions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">()</span> <span class="o">-</span> <span class="n">constructs</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">number</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">integer</span> <span class="n">literal</span><span class="p">,</span> <span class="n">a</span> <span class="nb">float</span> <span class="n">literal</span>
+        <span class="n">by</span> <span class="n">rounding</span> <span class="n">down</span> <span class="n">to</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">whole</span> <span class="n">number</span><span class="p">),</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">string</span> <span class="n">literal</span>
+        <span class="p">(</span><span class="n">providing</span> <span class="n">the</span> <span class="n">string</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">whole</span> <span class="n">number</span><span class="p">)</span>
+<span class="nb">float</span><span class="p">()</span> <span class="o">-</span> <span class="n">constructs</span> <span class="n">a</span> <span class="nb">float</span> <span class="n">number</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">integer</span> <span class="n">literal</span><span class="p">,</span> <span class="n">a</span> <span class="nb">float</span> <span class="n">literal</span>
+        <span class="ow">or</span> <span class="n">a</span> <span class="n">string</span> <span class="n">literal</span> <span class="p">(</span><span class="n">providing</span> <span class="n">the</span> <span class="n">string</span> <span class="n">represents</span> <span class="n">a</span> <span class="nb">float</span> <span class="ow">or</span> <span class="n">an</span>
+        <span class="n">integer</span><span class="p">)</span>
+<span class="nb">str</span><span class="p">()</span> <span class="o">-</span> <span class="n">constructs</span> <span class="n">a</span> <span class="n">string</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">wide</span> <span class="n">variety</span> <span class="n">of</span> <span class="n">data</span> <span class="n">types</span><span class="p">,</span> <span class="n">including</span>
+        <span class="n">strings</span><span class="p">,</span> <span class="n">integer</span> <span class="n">literals</span> <span class="ow">and</span> <span class="nb">float</span> <span class="n">literals</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Integers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># x will be 1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">2.8</span><span class="p">)</span> <span class="c1"># y will be 2</span>
+</pre></div>
+</div>
+<p>Floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>     <span class="c1"># x will be 1.0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">2.8</span><span class="p">)</span>   <span class="c1"># y will be 2.8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-collections">
+<h2>Python Collections<a class="headerlink" href="#python-collections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>A list is a collection which is ordered and changeable. In Python list elements
+are written with square brackets.</p>
+<p>Create a List:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papa Rui&quot;</span><span class="p">,</span> <span class="s2">&quot;Inuit&quot;</span><span class="p">,</span> <span class="s2">&quot;Tibetan&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You access the list items by referring to the index number:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the second item of the list:</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papa Rui&quot;</span><span class="p">,</span> <span class="s2">&quot;Inuit&quot;</span><span class="p">,</span> <span class="s2">&quot;Tibetan&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Negative Indexing</p>
+<p>Negative indexing means beginning from the end, -1 refers to the last item,
+-2 refers to the second last item etc.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the last item of the list:</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Range of Indexes</p>
+<p>You can specify a range of indexes by specifying where to start and where to end
+the range.</p>
+<p>When specifying a range, the return value will be a new list with the specified
+items.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;melon&quot;</span><span class="p">,</span> <span class="s2">&quot;mango&quot;</span><span class="p">]</span>
+
+<span class="c1"># Return the third, fourth, and fifth item:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># This example returns the items from &quot;cherry&quot; and to the end:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+
+<span class="c1"># This example returns the items from index -4 (included) to index -1 (excluded)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h3>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h3>
+<p>A tuple is a collection which is ordered and unchangeable. In Python tuples are
+written with round brackets. (Vector)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the third, fourth, and fifth item:</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;melon&quot;</span><span class="p">,</span> <span class="s2">&quot;mango&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># this is another powerful feature of Python</span>
+<span class="c1"># x = 3, ...</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># a: (3, 4, 5, 1)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="map-python-dict">
+<h3>Map (Python Dict)<a class="headerlink" href="#map-python-dict" title="Permalink to this headline">¶</a></h3>
+<p>A collection which is unordered, changeable and indexed</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;Ford&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Mustang&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1964</span>
+<span class="p">}</span>
+
+<span class="c1"># change value</span>
+<span class="n">dict1</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2018</span>
+
+<span class="c1"># Loop Through a Dictionary</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">model</span>
+<span class="sd">brand</span>
+<span class="sd">year</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dict1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># check if key exists</span>
+<span class="k">if</span> <span class="s2">&quot;model&quot;</span> <span class="ow">in</span> <span class="n">dict1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes, &#39;model&#39; is one of the keys in the dictionary&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set">
+<h3>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
+<p>A set is a collection which is unordered and un-indexed. In Python, sets are
+written with curly brackets.</p>
+</div>
+<div class="section" id="and-more">
+<h3>And More<a class="headerlink" href="#and-more" title="Permalink to this headline">¶</a></h3>
+<p>More things you may want to know:</p>
+<p>Lambda, RegEx, Class, Module, Math, Pip …</p>
+<p>Resource: <a class="reference external" href="https://www.python.org/">ptyon.org</a>,
+especially the <a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Beginner’s Guide</a></p>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Time for fun…</p>
+<div class="section" id="task-1-fibonacci-number">
+<h3>Task 1: Fibonacci Number<a class="headerlink" href="#task-1-fibonacci-number" title="Permalink to this headline">¶</a></h3>
+<p>Have user input a number n, then print the n-th Fibonacci number.</p>
+<p>Tip 1:</p>
+<p>Pick the user input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return is the user input</span>
+<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Message goes here&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tip 2:</p>
+<p>For loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span>
+   <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+       <span class="k">break</span>
+</pre></div>
+</div>
+<p>For Beginner:</p>
+<p>According to some questions from beginners, if this is the first time of one
+reading a program, who may still feel confused about the source code. There are
+some knowledge you should know first.</p>
+<ul class="simple">
+<li>Array Access</li>
+<li>Function and Variable Scope</li>
+<li>range() and loop control</li>
+</ul>
+<p>But you should be faithful once you go through again following the author.</p>
+<p>The second time when we reach here, you can answer the question about the computing
+complexity.</p>
+<p>Tip: Python time should be useful here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here’s an additional example that shows how to use python time:</p>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/python-which-is-faster-to-initialize-lists/">Python | Which is faster to initialize lists?, GeeksforGeeks</a></p>
+</div>
+<div class="section" id="task-2-guess-the-number">
+<h3>Task 2: Guess the number<a class="headerlink" href="#task-2-guess-the-number" title="Permalink to this headline">¶</a></h3>
+<p>This program generates a random number from 1 to 10, or any range that is specified
+and the user must guess the number after a hint from the computer. Every time a
+user’s guess is wrong they are prompted with more hints to make it easier for
+them to guess the number but at the cost of reducing the score.</p>
+<p>The program use <em>input( )</em> functions to check if an actual number is entered by
+the user or not, to compare the input number with the actual number, to find the
+difference between the two numbers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">play the game, you will get where the binary search algorithm intuition
+come from.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Number Guessing Game</span>
+<span class="sd">----------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">attempts_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">show_score</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">attempts_list</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is currently no high score, it&#39;s yours for the taking!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The current high score is </span><span class="si">{}</span><span class="s2"> attempts&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">attempts_list</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">start_game</span><span class="p">():</span>
+    <span class="n">random_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">wanna_play</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span>
+    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">show_score</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="n">wanna_play</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Pick a number between 1 and 10 &quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please guess a number within the given range&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">==</span> <span class="n">random_number</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice! You got it!&quot;</span><span class="p">)</span>
+                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">attempts_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attempts</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It took you </span><span class="si">{}</span><span class="s2"> attempts&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attempts</span><span class="p">))</span>
+                <span class="n">play_again</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Would you like to play again? (Enter Yes/No) &quot;</span><span class="p">)</span>
+                <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">show_score</span><span class="p">()</span>
+                <span class="n">random_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">play_again</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s cool, have a good one!&quot;</span><span class="p">)</span>
+                    <span class="k">break</span>
+            <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">random_number</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s lower&quot;</span><span class="p">)</span>
+                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">random_number</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s higher&quot;</span><span class="p">)</span>
+                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oh no!, that is not a valid value. Try again...&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s cool, have a good one!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">start_game</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="task-3-tic-tac-toe">
+<h3>Task 3: Tic Tac Toe<a class="headerlink" href="#task-3-tic-tac-toe" title="Permalink to this headline">¶</a></h3>
+<p>This is a simple game:</p>
+<img alt="../../_images/01-tic-tac-toe.png" src="../../_images/01-tic-tac-toe.png" />
+<p>The python version played like this:</p>
+<img alt="../../_images/01-tic-tac-toe-cli.png" src="../../_images/01-tic-tac-toe-cli.png" />
+</div>
+</div>
+</div>
+<div class="section" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/odys-z/hello/tree/master/acsl/lect01">Task reference implementation</a>.</p>
+<p><a class="reference external" href="https://hackr.io/blog/python-projects">Cool, Fun &amp; Easy Python Projects for Beginners (with Code)</a></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debug.html" class="btn btn-neutral float-right" title="Run &amp; Debug with PyDev" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Lec 1: Python Quick Start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Odys Zhou.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
