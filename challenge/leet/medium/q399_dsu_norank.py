@@ -56,6 +56,11 @@ if __name__ == '__main__':
         values =     [2.0,        3.0,        5,          2],
         queries = [["e", "c"]] ))
 
+    t.assertCountEqual([6.0], s.calcEquation(
+        equations = [["a", "b"], ["b", "c"], ['c', 'd'], ['b', 'e']],
+        values =     [2.0,        3.0,        5,          0.5],
+        queries = [["e", "c"]] ))
+
     t.assertCountEqual([6.0, 0.5, 15.0, 1.0, -1.0], s.calcEquation(
         equations = [["a", "b"], ["b", "c"], ['c', 'd'], ['e', 'd']],
         values =     [2.0,        3.0,        5,          2],

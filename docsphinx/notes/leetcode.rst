@@ -55,19 +55,10 @@ Explanation:
 
 Almost all DSU problems have DFS/BFS solution. Let's focused on DSU. See discussion
 
-`A union-find without ranking <https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find>`.
+`A union-find without ranking <https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find>`_.
 
 To construct the DSU sets, we also need to have the equation semantics maintained.
 
-If a / c = v1, b / c = v2, to collect a, b & c into one set, we can have the common
-denominator c as the parent::
+Example:
 
-    { a, b, c | c = 1, a = c*v1, b = c*v2, a.parent = c, b.parent = c, c.parent = c }
-
-For equation c / d = v3, because c is the common root, will find c, joining d::
-
-    { a, b, c, d | ..., d = c/v3, d.parent = c }
-
-For equation c / e = v3::
-
-    { a, b, c, d, e | ..., e = v1/v3, e.parent = c }
+.. image:: imgs/q399-dsu.svg

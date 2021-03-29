@@ -18,7 +18,7 @@ Last update: |today|
    acsl/index
    amc/2021
    usaco/index
-   notes/index
+   notes/leetcode
    misc/miscellaneous.rst
 
 Indices and tables

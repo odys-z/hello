@@ -24,9 +24,6 @@ Last update: |today|
 
 Syllabus:
 
-.. attention:: Lecture 3 - 8 is upcoming and will been re-arranged ...
-..
-
 .. toctree::
    :maxdepth: 2
 
@@ -39,5 +36,3 @@ Syllabus:
    lect04/index
    lect05/index
    lect06/index
-   x.aime/2021
-   y.usaco.0/intro
