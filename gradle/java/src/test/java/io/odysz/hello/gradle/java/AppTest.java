@@ -11,5 +11,6 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
         assertEquals(classUnderTest.getPackage(), "io.odysz.hello", "f2");
+        assertEquals(1, classUnderTest.majorVersion(), "major version");
     }
 }
