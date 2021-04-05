@@ -11,23 +11,34 @@ A matrix can be used to represent paths from i to j if :math:`a_{ij} = 1`.
 
 .. math::
 
-    a = \left[\begin{array}{c|lcr}
-    n & \text{Left} & \text{Center} & \text{Right} \\
+    \begin{array}{c|lcr}
+      & \text{A} & \text{B} & \text{C} \\
     \hline
-    1 & 0.24 & 1 & 125 \\
-    2 & -1 & 189 & -8 \\
-    3 & -20 & 2000 & 1+10i
-    \end{array}\right]
+    A & 1 & 0 & 1 \\
+    B & 0 & 1 & 1 \\
+    C & 1 & 0 & 0
+    \end{array}
 ..
+
+Using matrix a,
 
 .. math::
 
-    a = \left[\begin{array}{c|lcr}
-    n & \text{Left} & \text{Center} & \text{Right} \\
-    \hline
-    1 & 0.24 & 1 & 125 \\
-    2 & -1 & 189 & -8 \\
-    3 & -20 & 2000 & 1+10i
+    a = \left[\begin{array}{lcr}
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 0
+    \end{array}\right]
+..
+
+Matrix Multiplication is defined as:
+
+.. math::
+
+    a * a = a^2 = \left[\begin{array}{lcr}
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 0
     \end{array}\right]
 ..
 
