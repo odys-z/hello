@@ -25,7 +25,7 @@ ii. With nodes referencing less index nodes, this is a backtracking problem. See
 4. (medium, see hint) `LeetCode Problem 1641. Count Sorted Vowel Strings <https://leetcode.com/problems/count-sorted-vowel-strings/>`_
 
 Solution: :download:`q1641 <../../../challenge/leet/medium/q1641.py>` & c++
-version `q1641 <../../../challenge/leet.gcc/q1641/q1641.h>`
+version :download:`q1641 <../../../challenge/leet.gcc/q1641/q1641.h>`
 
 hint::
 
