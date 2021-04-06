@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 2: Things you already know" href="index.html"/>
         <link rel="next" title="Lec 3: Topics of Contest 1" href="../lect03/index.html"/>
@@ -92,7 +89,7 @@
 <li class="toctree-l3"><a class="reference internal" href="num-sys.html">Computer Number Systems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="digit-electro.html">Digital Electronics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ref.html">Reference</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Homework</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Homework</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#task-1-exercise">Task 1 Exercise</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#task-2-debunk-cpu-myth">Task 2. Debunk CPU Myth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#task-3-convert-to-base-64">Task 3 Convert to Base 64</a></li>
@@ -169,24 +166,24 @@ to contain all possible states? Justify your answer.</p>
 <ol class="arabic" start="2">
 <li><p class="first">For the following functions, construct a truth table and draw a circuit diagram.</p>
 <blockquote>
-<div><p>(a). <span class="math notranslate nohighlight">\(y(A,B) = \overline{AB}+\overline{B}\)</span></p>
-<p>(b). <span class="math notranslate nohighlight">\(y(A,B,C) = \overline{AC} + BC\)</span></p>
-<p>(c). <span class="math notranslate nohighlight">\(y(A,B,C) = (A ⨁ B)\overline{C}\)</span></p>
-<p>(d). <span class="math notranslate nohighlight">\(y(A,B,C) = \overline{\overline{A+B}\space\overline{B+C}}\)</span></p>
-<p>(e). <span class="math notranslate nohighlight">\(y(A,B,C,D) = \overline{A}B\overline{C} + (A ⨁ B)C + \overline{A}\overline{B}C\overline{D} + ABC\)</span></p>
+<div><p>(a). <span class="math">\(y(A,B) = \overline{AB}+\overline{B}\)</span></p>
+<p>(b). <span class="math">\(y(A,B,C) = \overline{AC} + BC\)</span></p>
+<p>(c). <span class="math">\(y(A,B,C) = (A ⨁ B)\overline{C}\)</span></p>
+<p>(d). <span class="math">\(y(A,B,C) = \overline{\overline{A+B}\space\overline{B+C}}\)</span></p>
+<p>(e). <span class="math">\(y(A,B,C,D) = \overline{A}B\overline{C} + (A ⨁ B)C + \overline{A}\overline{B}C\overline{D} + ABC\)</span></p>
 </div></blockquote>
 </li>
 </ol>
 <p>3. Design a 4-input NAND gate using two 2-input NAND gates and one 2-input NOR
-gate. Hint: Use DeMorgan’s law.</p>
+gate. Hint: Use DeMorgan&#8217;s law.</p>
 <ol class="arabic simple" start="4">
 <li>Simplify</li>
 </ol>
-<p><span class="math notranslate nohighlight">\(\overline{ABC}+ \overline{AB}C+ \overline{A}B\overline{C}+ A\overline{BC}+ A\overline{B}C\)</span></p>
-<p><span class="math notranslate nohighlight">\(\overline{\overline{X\overline{Y} + XYZ} + X (Y + X\overline{Y}) }\)</span></p>
-<p><span class="math notranslate nohighlight">\((A + B)(\overline{A} + C)(B + C)\)</span></p>
-<p><span class="math notranslate nohighlight">\(XY + \overline{XZ} + X \overline{Y} Z (XY + Z)\)</span></p>
-<p>Answer: <span class="math notranslate nohighlight">\((\overline{A}+\overline{B}+\overline{C}), \quad0, \quad AC+B\overline{A}, \quad1\)</span></p>
+<p><span class="math">\(\overline{ABC}+ \overline{AB}C+ \overline{A}B\overline{C}+ A\overline{BC}+ A\overline{B}C\)</span></p>
+<p><span class="math">\(\overline{\overline{X\overline{Y} + XYZ} + X (Y + X\overline{Y}) }\)</span></p>
+<p><span class="math">\((A + B)(\overline{A} + C)(B + C)\)</span></p>
+<p><span class="math">\(XY + \overline{XZ} + X \overline{Y} Z (XY + Z)\)</span></p>
+<p>Answer: <span class="math">\((\overline{A}+\overline{B}+\overline{C}), \quad0, \quad AC+B\overline{A}, \quad1\)</span></p>
 <p>Reference</p>
 <p>1. James Feher, Introduction to Digital Logic with Laboratory Exercises, Global
 Text. (Creative Commons Attribution 3.0 License, Copyright 2009)</p>
@@ -199,13 +196,13 @@ Electronics 2, by John Wiley &amp; Sons, Inc. 2016</p>
 <div class="section" id="task-2-debunk-cpu-myth">
 <h2>Task 2. Debunk CPU Myth<a class="headerlink" href="#task-2-debunk-cpu-myth" title="Permalink to this headline">¶</a></h2>
 <p>After finished this project, you can get a basic idea about the principal of the
-CPU’s. And would provide a good understand when starting Assembly Language learning.
+CPU&#8217;s. And would provide a good understand when starting Assembly Language learning.
 (There are much more in a CPU)</p>
 <p>Step through the reference examples using <em>Logisim</em> to build the logic units:</p>
 <ul class="simple">
 <li>Half Adder (One bit ignoring carry)</li>
 </ul>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}\begin{array}{|cc|cc|}
 \hline
 Inuts &amp; &amp; Outputs &amp; \\
@@ -231,7 +228,7 @@ x &amp; y &amp; Sum &amp; Carray \\
 <li>2 Bits ALU</li>
 </ul>
 <img alt="../../_images/02-2bit-alu.png" src="../../_images/02-2bit-alu.png" />
-<p><a class="reference download internal" download="" href="../../_downloads/2bfec5dcfe147a64ce89f0a14903f798/lec02-alu.circ"><code class="xref download docutils literal notranslate"><span class="pre">Logisim</span> <span class="pre">ALU</span> <span class="pre">Circuit</span></code></a></p>
+<p><a class="reference download internal" href="../../_downloads/lec02-alu.circ" download=""><code class="xref download docutils literal"><span class="pre">Logisim</span> <span class="pre">ALU</span> <span class="pre">Circuit</span></code></a></p>
 <p>The finished ALU can be one like in the above. With the control command been set,
 finish the following truth table.</p>
 <p>The (t0, t1) and the selector part formed the function control circuit (selecting
@@ -240,7 +237,7 @@ usage).</p>
 <li>Arithmetic Add</li>
 </ul>
 <p>Set t0, t1 = 0, 0 and verify the following results.</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}\begin{array}{cc|cc}
 A  &amp; B  &amp; A+B &amp; carry\\
 \hline
@@ -257,7 +254,7 @@ A  &amp; B  &amp; A+B &amp; carry\\
 <p>This shows the 00 comand will have the 2-bit ALU add 2 binary number. If you are
 interested, you can try all 4 selected function and complete the function
 selection table.</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}\begin{array}{c|c}
 t1,t0&amp; Function \\
 \hline
@@ -271,7 +268,7 @@ t1,t0&amp; Function \\
 <li>A step further</li>
 </ul>
 <p>If you are interested in this topic, you can read through [4], Chapter 3. See
-<a class="reference internal" href="ref.html#l2-ref"><span class="std std-ref">reference section</span></a>.</p>
+<a class="reference internal" href="ref.html#l2-ref"><span>reference section</span></a>.</p>
 </div>
 <div class="section" id="task-3-convert-to-base-64">
 <h2>Task 3 Convert to Base 64<a class="headerlink" href="#task-3-convert-to-base-64" title="Permalink to this headline">¶</a></h2>
@@ -283,8 +280,8 @@ t1,t0&amp; Function \\
 <p class="first admonition-title">Attention</p>
 <p class="last">Try this after the lecture of recursive functions.</p>
 </div>
-<p>Let’s rewrite the logic with the following operator:</p>
-<div class="math notranslate nohighlight">
+<p>Let&#8217;s rewrite the logic with the following operator:</p>
+<div class="math">
 \[\begin{split}\begin{array}{c|c}
 \hline
 logic &amp; operator\\
@@ -295,8 +292,8 @@ OR  &amp; | \\
 XOR &amp; \hat \\
 \end{array}\end{split}\]</div>
 <p>Write the first four expression in step 4, task1 in prefix form. E.g (A OR B) AND
-X’s prefix form is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span> <span class="o">|</span> <span class="n">A</span> <span class="n">B</span> <span class="n">X</span><span class="o">.</span>
+X&#8217;s prefix form is:</p>
+<div class="highlight-python"><div class="highlight"><pre>&amp; | A B X.
 </pre></div>
 </div>
 <p>Then implement a program to evaluate all answers of question 4 in task 1.</p>
@@ -358,8 +355,7 @@ X’s prefix form is:</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

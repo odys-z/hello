@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Topics of Contest 1" href="index.html"/>
         <link rel="next" title="Reference" href="ref.html"/>
@@ -92,7 +89,7 @@
 <li class="toctree-l3"><a class="reference internal" href="number-sys.html">Computer Number Systems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="recursive.html">Recursive Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="what-prog-do.html">What Does This Program Do?</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Homework</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Homework</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prequisite-unit-test">Prequisite: Unit Test</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#task-0-warm-up">Task 0 warm up</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#string-validator-hackerrank">1. String Validator &#64; HackerRank</a></li>
@@ -168,10 +165,10 @@
 <h2>Prequisite: Unit Test<a class="headerlink" href="#prequisite-unit-test" title="Permalink to this headline">¶</a></h2>
 <p>TDD stands for an important software engineering practice, Test Driven Development.
 We need setup Python unit test helper to test our program.</p>
-<p>The solution’s <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/sample.py">sample.py</a>
+<p>The solution&#8217;s <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/contest1/sample.py">sample.py</a>
 provided a source file template for simulating the local tests in <cite>HackerRank</cite>
 the style (without class).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 
 <span class="k">def</span> <span class="nf">your_func</span><span class="p">():</span>
     <span class="c1"># here is your program</span>
@@ -179,13 +176,13 @@ the style (without class).</p>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">TestCase</span><span class="p">()</span>
 <span class="n">t</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">,</span> <span class="n">your_func</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OK!&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;OK!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Using unit test in Python with test <em>class</em> is also simple: import, run &amp; assert
 the results. Here is the
 <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.py/test.py">tester of a LeetCode solution</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">from</span> <span class="nn">q1404</span> <span class="kn">import</span> <span class="n">Solution</span>
 
 <span class="k">class</span> <span class="nc">Test</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -198,10 +195,10 @@ the results. Here is the
 <span class="n">t</span><span class="o">.</span><span class="n">q1404</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The <em>assert…</em> functions take what’s it expected for assertion. If your program
+<p>The <em>assert...</em> functions take what&#8217;s it expected for assertion. If your program
 results are not the same as expected, the test function, here the function q1404(),
 will throw an exception - program stopped with error.</p>
-<p>You should always use the method to test your program. It’s efficient and convenient
+<p>You should always use the method to test your program. It&#8217;s efficient and convenient
 once you get familiar with it.</p>
 </div>
 <div class="section" id="task-0-warm-up">
@@ -212,7 +209,7 @@ once you get familiar with it.</p>
 <p>See <a class="reference external" href="https://www.hackerrank.com/challenges/string-validators/problem">the problem</a>.</p>
 <p>Some <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/hackerrank/hello/str_valid.py">hint</a></p>
 <p>Test case:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#$%@^&amp;*k sv h 4oi3hu /dh ui s 0hem9m4c02mw4xo;,wh fwhlxfxu83v 08 n8OIM 03J J3L;JM3M3C3&#39;J N0N9 OHOLNHNLKNLKNKNKK330</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1">#$%@^&amp;*k sv h 4oi3hu /dh ui s 0hem9m4c02mw4xo;,wh fwhlxfxu83v 08 n8OIM 03J J3L;JM3M3C3&#39;J N0N9 OHOLNHNLKNLKNKNKK330</span>
 </pre></div>
 </div>
 </div>
@@ -222,40 +219,40 @@ once you get familiar with it.</p>
 <p>Intermediate - Number Transform</p>
 <p>PROBLEM:</p>
 <p>Given a positive integer (call it N) and a position in that integer (call it P)
-transform N.  To transform N, find the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit of N from the right.
-Replace each of the digits to the left of the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit by the sum of
-that digit and the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit.  If the sum is greater than 9, use just
+transform N.  To transform N, find the <span class="math">\(P^{th}\)</span> digit of N from the right.
+Replace each of the digits to the left of the <span class="math">\(P^{th}\)</span> digit by the sum of
+that digit and the <span class="math">\(P^{th}\)</span> digit.  If the sum is greater than 9, use just
 the units digits (see the second example below).  Replace each of the digits to
-the right of the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit by the absolute value of the difference
-between it and the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit. Do not change the <span class="math notranslate nohighlight">\(P^{th}\)</span> digit.</p>
+the right of the <span class="math">\(P^{th}\)</span> digit by the absolute value of the difference
+between it and the <span class="math">\(P^{th}\)</span> digit. Do not change the <span class="math">\(P^{th}\)</span> digit.</p>
 <p>Example 1:</p>
 <p>N=102439, P=3.</p>
-<p>Answer is: <span class="math notranslate nohighlight">\((1+4)(0+4)(2+4)4(|3-4|)(|9-4|) =&gt; 546415\)</span></p>
+<p>Answer is: <span class="math">\((1+4)(0+4)(2+4)4(|3-4|)(|9-4|) =&gt; 546415\)</span></p>
 <p>Example 2:</p>
 <p>N=4329, P=1.</p>
-<p>Answer is: <span class="math notranslate nohighlight">\((4+9)(3+9)(2+9)9 =&gt; (13)(12)(11)9 =&gt; 3219\)</span></p>
+<p>Answer is: <span class="math">\((4+9)(3+9)(2+9)9 =&gt; (13)(12)(11)9 =&gt; 3219\)</span></p>
 <p>INPUT:</p>
 <p>There will be 5 sets of data. Each set contains two positive integers: N and P.
-N will be less than <span class="math notranslate nohighlight">\(10^{15}\)</span>, and P will be valid. No input will cause an
+N will be less than <span class="math">\(10^{15}\)</span>, and P will be valid. No input will cause an
 output to have a leading digit of 0.</p>
 <p>OUTPUT:</p>
 <p>The transformed value of each input set. The printed number may not have any
 spaces between the digits.</p>
 <p>SAMPLE INPUT:</p>
 <p>(<a class="reference external" href="http://www.datafiles.acsl.org/2020/contest1/int-sample-input.txt">http://www.datafiles.acsl.org/2020/contest1/int-sample-input.txt</a>)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">296351</span> <span class="mi">5</span>
-<span class="mi">762184</span> <span class="mi">3</span>
-<span class="mi">45873216</span> <span class="mi">7</span>
-<span class="mi">19750418</span> <span class="mi">6</span>
-<span class="mi">386257914</span> <span class="mi">5</span>
+<div class="highlight-python"><div class="highlight"><pre>296351 5
+762184 3
+45873216 7
+19750418 6
+386257914 5
 </pre></div>
 </div>
 <p>SAMPLE OUTPUT:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="mi">193648</span>
-<span class="mf">2.</span> <span class="mi">873173</span>
-<span class="mf">3.</span> <span class="mi">95322341</span>
-<span class="mf">4.</span> <span class="mi">86727361</span>
-<span class="mf">5.</span> <span class="mi">831752441</span>
+<div class="highlight-python"><div class="highlight"><pre>1. 193648
+2. 873173
+3. 95322341
+4. 86727361
+5. 831752441
 </pre></div>
 </div>
 </div>
@@ -263,7 +260,7 @@ spaces between the digits.</p>
 <h2>Task 2. Number / String Replacement<a class="headerlink" href="#task-2-number-string-replacement" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/">LeetCode 1295. Find Numbers with Even Number of Digits,</a></p>
 <p>A C++ Reference (Faster than 96%)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">findNumbers</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -294,7 +291,7 @@ which can be used for quickly start LeetCode exercise.</p>
 </div>
 <div class="section" id="task-3-replace-chars">
 <h2>Task 3. Replace Chars<a class="headerlink" href="#task-3-replace-chars" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/">LeetCode 1576. Replace All ?’s to Avoid Consecutive Repeating Characters</a></p>
+<p><a class="reference external" href="https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/">LeetCode 1576. Replace All ?&#8217;s to Avoid Consecutive Repeating Characters</a></p>
 </div>
 <div class="section" id="task-4-replace-string">
 <h2>Task 4. Replace String*<a class="headerlink" href="#task-4-replace-string" title="Permalink to this headline">¶</a></h2>
@@ -352,8 +349,7 @@ which can be used for quickly start LeetCode exercise.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -97,6 +97,31 @@ hint::
 
 x.1 `Sample Problem, Intermediate, c4 <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
 
+Hint 1: carefully study the example.
+
+Initial::
+
+    A B C D O R T
+    7 5 2 1 1 2 1
+
+ADD H::
+
+    A B C D H O R T
+    7 5 2 1 1 1 2 1
+
+The letters are sorted! So the same the first sample output makes sense - 'R' is
+initially at '3'.
+
+Here is the critical problem the data structure must handling:
+
+How to save the moved character's position (how to know the original position the
+before it's been sorted)?
+
+Once understood the unspoken critical point, it's clear that figuring out the
+hidden information is essential to pass the test.
+
+Hint 2: will it asking for reporting position beyond result length?
+
 SAMPLE INPUT SAMPLE::
 
     RESET abracadabracabob
@@ -120,5 +145,13 @@ OUTPUT::
     3. ROH
     4. ROHRT
     5. UTSRPRS
+
+Issue:
+
+:ref:`Our test case shows there are issue <issue_2018>`.
+
+Shouldn't the 5-th output is 'UTSRPRSTU'?
+
+Solution with issue: :download:`2017-18 Intermediate <../../../acsl-pydev/acsl/lect06/duplicates_int.py>`
 
 x.2 Sample Problem, Senior
