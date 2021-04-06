@@ -1,12 +1,16 @@
 Exercise
 ========
 
-1. `LeetCode Problem 401. Binary Watch <https://leetcode.com/problems/binary-watch/>`_
+1. `LeetCode Problem 1791. Find Center of Star Graph <https://leetcode.com/problems/find-center-of-star-graph/>`_
+
+Solution: :download:`q1791 <../../../challenge/leet/easy/q1791.py>`
+
+2. `LeetCode Problem 401. Binary Watch <https://leetcode.com/problems/binary-watch/>`_
 Recursive & Backtracking
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
 
-2*. (medium)`LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
+3*. (medium)`LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
 
 Solution: :download:`q797 <../../../challenge/leet/medium/q797.py>`
 
@@ -18,7 +22,7 @@ i. With all paths of down & right only, this is a DP problem. see *SolutionAlmos
 
 ii. With nodes referencing less index nodes, this is a backtracking problem. See *Solution*.
 
-3. (medium, see hint) `LeetCode Problem 1641. Count Sorted Vowel Strings <https://leetcode.com/problems/count-sorted-vowel-strings/>`_
+4. (medium, see hint) `LeetCode Problem 1641. Count Sorted Vowel Strings <https://leetcode.com/problems/count-sorted-vowel-strings/>`_
 
 Solution: :download:`q1641 <../../../challenge/leet/medium/q1641.py>` & c++
 version `q1641 <../../../challenge/leet.gcc/q1641/q1641.h>`
@@ -79,15 +83,17 @@ hint::
     pn,o = pn-1,o + pn-1,u
     pn,u = pn-1,u
 
-4. #Directed Graph
+5. #Directed Graph
 
-5. #Undirected Graph
+6. #Undirected Graph
 
-6. #Graph #DFS
-
-7. #Graph #BFS
+7. #Graph #DFS
 
 8. #Graph #DSU
+
+9. #Graph #BFS
+
+10. #Graph #DSU
 
 x.1 `Sample Problem, Intermediate, c4 <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
 

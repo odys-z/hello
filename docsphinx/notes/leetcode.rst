@@ -53,12 +53,42 @@ Explanation:
 
     return: [6.0, 0.5, -1.0, 1.0, -1.0 ]
 
-Almost all DSU problems have DFS/BFS solution. Let's focused on DSU. See discussion
+Solution:
 
+To find a proper way to solve the problem, let's focused on the equation relation
+first. If :math:`\frac{a}{b}=2, \frac{c}{b}=3`, we just have a tree to get
+:math:`\frac{a}{c}=\frac{\frac{a}{b}}{\frac{c}{b}}`::
+
+        b=1
+       /   \
+     a=2   c=3
+
+If a, c in the same tree, they will have a common ancestor, which is equivalent
+of finding a relation between a & c.
+
+But tree is expensive to travel each time. If all relationship like a vs. c is
+bridged via a common denominator, the tree relation can be flattened. E.g.
+:math:`\frac{a}{b}=2, \frac{b}{c}=3` initially can be a tree like::
+
+        c=1
+        /
+      b=3
+      /
+    a=2
+
+Obviously :math:`\frac{a}{c}=6` can be got from the path. But if we re-construct
+it as a DSU, the tree now look like this::
+
+          c=1
+         /  |
+        /  b=3
+       a=6
+
+That's what the Lee215's find() function doing. See
 `A union-find without ranking <https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find>`_.
-
-To construct the DSU sets, we also need to have the equation semantics maintained.
 
 Example:
 
 .. image:: imgs/q399-dsu.svg
+
+Note: Almost all DSU problems have DFS/BFS solution. Let's focused on DSU.

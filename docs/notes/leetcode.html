@@ -173,11 +173,40 @@ return -1.0.</p>
 <p>queries are: a / c = ?, b / a = ?, a / e = ?, a / a = ?, x / x = ?</p>
 <p>return: [6.0, 0.5, -1.0, 1.0, -1.0 ]</p>
 </div></blockquote>
-<p>Almost all DSU problems have DFS/BFS solution. Let’s focused on DSU. See discussion</p>
-<p><a class="reference external" href="https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find">A union-find without ranking</a>.</p>
-<p>To construct the DSU sets, we also need to have the equation semantics maintained.</p>
+<p>Solution:</p>
+<p>To find a proper way to solve the problem, let’s focused on the equation relation
+first. If <span class="math notranslate nohighlight">\(\frac{a}{b}=2, \frac{c}{b}=3\)</span>, we just have a tree to get
+<span class="math notranslate nohighlight">\(\frac{a}{c}=\frac{\frac{a}{b}}{\frac{c}{b}}\)</span>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">b</span><span class="o">=</span><span class="mi">1</span>
+  <span class="o">/</span>   \
+<span class="n">a</span><span class="o">=</span><span class="mi">2</span>   <span class="n">c</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>If a, c in the same tree, they will have a common ancestor, which is equivalent
+of finding a relation between a &amp; c.</p>
+<p>But tree is expensive to travel each time. If all relationship like a vs. c is
+bridged via a common denominator, the tree relation can be flattened. E.g.
+<span class="math notranslate nohighlight">\(\frac{a}{b}=2, \frac{b}{c}=3\)</span> initially can be a tree like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">/</span>
+  <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+  <span class="o">/</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Obviously <span class="math notranslate nohighlight">\(\frac{a}{c}=6\)</span> can be got from the path. But if we re-construct
+it as a DSU, the tree now look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">c</span><span class="o">=</span><span class="mi">1</span>
+  <span class="o">/</span>  <span class="o">|</span>
+ <span class="o">/</span>  <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>That’s what the Lee215’s find() function doing. See
+<a class="reference external" href="https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find">A union-find without ranking</a>.</p>
 <p>Example:</p>
-<img alt="../_images/q399-dsu.svg" src="../_images/q399-dsu.svg" /></div>
+<img alt="../_images/q399-dsu.svg" src="../_images/q399-dsu.svg" /><p>Note: Almost all DSU problems have DFS/BFS solution. Let’s focused on DSU.</p>
+</div>
 </div>
 
 
