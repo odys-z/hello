@@ -88,3 +88,31 @@ hint::
 7. #Graph #BFS
 
 8. #Graph #DSU
+
+x.1 `Sample Problem, Intermediate, c4 <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
+
+SAMPLE INPUT SAMPLE::
+
+    RESET abracadabracabob
+    REPORT 3
+    REPORT 5
+    ADD BATH
+    DELETE boa
+    REPORT 5
+    DELETE drr
+    REPORT 5
+    RESET American Computer Science League
+    ADD Computer
+    DELETE Computer
+    DELETE COMPUTER
+    REPORT 10
+
+OUTPUT::
+
+    1. RC
+    2. RO
+    3. ROH
+    4. ROHRT
+    5. UTSRPRS
+
+x.2 Sample Problem, Senior
