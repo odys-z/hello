@@ -163,34 +163,35 @@
 <h3>Prerequisite: Matrix Multiplication<a class="headerlink" href="#prerequisite-matrix-multiplication" title="Permalink to this headline">¶</a></h3>
 <p>A matrix can be used to represent paths from i to j if <span class="math notranslate nohighlight">\(a_{ij} = 1\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}a = \left[\begin{array}{c|lcr}
-n &amp; \text{Left} &amp; \text{Center} &amp; \text{Right} \\
-\hline
-1 &amp; 0.24 &amp; 1 &amp; 125 \\
-2 &amp; -1 &amp; 189 &amp; -8 \\
-3 &amp; -20 &amp; 2000 &amp; 1+10i
+\[\begin{split}a = \left[\begin{array}{lcr}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
 \end{array}\right]\end{split}\]</div>
+<p>Matrix multiplication is defined as:</p>
+<p>for n x m matrix A, m x k matrix B,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}a = \left[\begin{array}{c|lcr}
-n &amp; \text{Left} &amp; \text{Center} &amp; \text{Right} \\
-\hline
-1 &amp; 0.24 &amp; 1 &amp; 125 \\
-2 &amp; -1 &amp; 189 &amp; -8 \\
-3 &amp; -20 &amp; 2000 &amp; 1+10i
-\end{array}\right]\end{split}\]</div>
+\[A \cdot B = C\]</div>
+<p>where C is a n x k matrix,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{t=0}^m a_{jt} \cdot b_{tj} = c_{ij}.\]</div>
+<p>Example, <span class="math notranslate nohighlight">\(A_{2x4} \cdot M_{4x3} = C_{2x3}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
-v_{0} &amp; v_{1} &amp; v_{2} &amp; v_{3}
+a_{00} &amp; a_{01} &amp; a_{02} &amp; a_{03} \\
+a_{10} &amp; a_{11} &amp; a_{12} &amp; a_{13}
 \end{bmatrix}
 \begin{bmatrix}
-m_{0} &amp; m_{1} &amp; m_{2} &amp; m_{3} \\
-m_{4} &amp; m_{5} &amp; m_{6} &amp; m_{7} \\
-m_{8} &amp; m_{9} &amp; m_{10} &amp; m_{11} \\
-m_{12} &amp; m_{13} &amp; m_{14} &amp; m_{15}
+m_{00} &amp; m_{01} &amp; m_{02} \\
+m_{10} &amp; m_{11} &amp; m_{12} \\
+m_{20} &amp; m_{21} &amp; m_{22} \\
+m_{30} &amp; m_{31} &amp; m_{32}
 \end{bmatrix} =
 \begin{bmatrix}
-r_{0} &amp; r_{1} &amp; r_{2} &amp; r_{3}
+c_{00} &amp; c_{01} &amp; c_{02} \\
+c_{10} &amp; c_{11} &amp; c_{12}
 \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_{00} = a_{00} \cdot b_{00} + a_{01} \cdot b_{10} + a_{02}\cdot b_{20} + a_{03} \cdot b_{30}\)</span>.</p>
 </div>
 </div>
 <div class="section" id="digital-electronics">

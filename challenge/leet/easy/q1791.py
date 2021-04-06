@@ -21,11 +21,11 @@ class Solution:
                 found.add(e[0])
                 found.add(e[1])
         return None
-    
+
 if __name__ == '__main__':
     t = TestCase()
     s = Solution()
-    
+
     t.assertEqual(1, s.findCenter([[1,2],[5,1],[1,3],[1,4]]))
-    
+
     print('OK!')
