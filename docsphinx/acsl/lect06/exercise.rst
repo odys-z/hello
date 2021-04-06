@@ -10,7 +10,7 @@ Recursive & Backtracking
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
 
-3*. (medium)`LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
+3*. (medium) `LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
 
 Solution: :download:`q797 <../../../challenge/leet/medium/q797.py>`
 
