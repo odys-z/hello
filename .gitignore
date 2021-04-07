@@ -262,3 +262,14 @@ __pycache__/
 
 # Revit temp file
 *.*.rvt
+*coursera*
+docs/jsdoc
+*.pem
+
+.metadata
+RemoteSystemsTempFiles
+.recommenders
+__pycache__
+GDX
+www-res
+

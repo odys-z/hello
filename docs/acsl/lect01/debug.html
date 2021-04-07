@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run &amp; Debug with PyDev &mdash; ACSL Lecture 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Lec 1: Python Quick Start" href="index.html"/>
+        <link rel="next" title="Homework (2 tasks)" href="homework.html"/>
+        <link rel="prev" title="Python Quick Start" href="intro.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> ACSL Lecture
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to ACSL Lecture!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../lect00/index.html">Lec 0: About ACSL</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 1: Python Quick Start</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="intro.html">Python Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html#reference">Reference</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Run &amp; Debug with PyDev</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#totorial">Totorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trouble-shootings">Trouble Shootings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="homework.html">Homework (2 tasks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ref.html">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect04/index.html">Lec 04: Topics of Contest 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect05/index.html">Lec 05: Topics of Contest 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lect06/index.html">Lec 06: Topics of Contest 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../amc/2021.html">AIME 2021 - I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ACSL Lecture</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Welcome to ACSL Lecture!</a> &raquo;</li>
+      
+          <li><a href="index.html">Lec 1: Python Quick Start</a> &raquo;</li>
+      
+    <li>Run &amp; Debug with PyDev</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-debug-with-pydev">
+<span id="dubg-fibonacci"></span><h1>Run &amp; Debug with PyDev<a class="headerlink" href="#run-debug-with-pydev" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="totorial">
+<h2>Totorial<a class="headerlink" href="#totorial" title="Permalink to this headline">¶</a></h2>
+<p>Wit PyDev, you can run, debug, break and check variable.</p>
+<div class="section" id="create-a-pydev-project">
+<h3>1. create a PyDev project<a class="headerlink" href="#create-a-pydev-project" title="Permalink to this headline">¶</a></h3>
+<p>After installed PyDev, the file -&gt; new... menu can now create new PyDev project:</p>
+<div class="highlight-python"><div class="highlight"><pre>file -&gt; new ... -&gt; others ... -&gt; PyDev -&gt; PyDev Project
+</pre></div>
+</div>
+<p>Then follow the new project dialog, create a new project.</p>
+<a class="reference internal image-reference" href="../../_images/01-create-prj.png"><img alt="../../_images/01-create-prj.png" src="../../_images/01-create-prj.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="add-a-source-folder">
+<h3>2. add a source folder<a class="headerlink" href="#add-a-source-folder" title="Permalink to this headline">¶</a></h3>
+<p>After project been created, create a new PyDev module by:</p>
+<div class="highlight-python"><div class="highlight"><pre>right click in project panel -&gt; new folder
+</pre></div>
+</div>
+<p>Input folder name: lect01.</p>
+</div>
+<div class="section" id="add-a-source-file">
+<h3>3. add a source file<a class="headerlink" href="#add-a-source-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>right click folder -&gt; new file
+</pre></div>
+</div>
+<p>Input file name: fibonacci.py. Then in the file, past the file content,
+<a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect01/fibonacci.py">fibonacci.py</a>
+into your new fibonacci.py file.</p>
+</div>
+<div class="section" id="add-a-break-point">
+<h3>4. add a break point<a class="headerlink" href="#add-a-break-point" title="Permalink to this headline">¶</a></h3>
+<p>Set a break point by click at the source file line number. (by double click a the
+left of line number or in menu, Run, Debug)</p>
+<a class="reference internal image-reference" href="../../_images/01-break-point.png"><img alt="../../_images/01-break-point.png" src="../../_images/01-break-point.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="debug">
+<h3>5. debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
+<p>Now debug it:</p>
+<div class="highlight-python"><div class="highlight"><pre>right click the project -&gt; debug as -&gt; Python Run
+</pre></div>
+</div>
+<p>With break point stop the program, you can check what&#8217;s going on at the point,
+such as the variables are values like expected.</p>
+<a class="reference internal image-reference" href="../../_images/01-debug-ui.png"><img alt="../../_images/01-debug-ui.png" src="../../_images/01-debug-ui.png" style="width: 600px;" /></a>
+<p>Tip:</p>
+<div class="highlight-python"><div class="highlight"><pre>Name your project and source file name with a starting letter. Otherwise
+the breakpoint doesn&#39;t stop the process (Windows 10, Eclipse 4.17.0, PyDev
+8.0.0.20209061309).
+</pre></div>
+</div>
+<p>Like any other programming language, follow the common conventions e.g. start a
+variable with letter or underscore, &#8220;_&#8221;. We&#8217;ve encountered a weired situation
+that someone&#8217;s debug precess doesn&#8217;t stop at where the line with a breakpoint.
+After rename her project name, which is actually &#8220;1&#8221;, and the python source file
+name, which is &#8220;12.py&#8221;, everything works as expected.</p>
+</div>
+</div>
+<div class="section" id="trouble-shootings">
+<h2>Trouble Shootings<a class="headerlink" href="#trouble-shootings" title="Permalink to this headline">¶</a></h2>
+<p>When a new python source module importing another module, e.g. a tester importing
+a tested class, Eclipse PyDev may show error markers.</p>
+<a class="reference internal image-reference" href="../../_images/01-pydev-error-maker.png"><img alt="../../_images/01-pydev-error-maker.png" src="../../_images/01-pydev-error-maker.png" style="width: 600px;" /></a>
+<p>To get rid of the wrong error report:</p>
+<div class="highlight-python"><div class="highlight"><pre>right click project -&gt; PyDev -&gt; remove error markers
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="homework.html" class="btn btn-neutral float-right" title="Homework (2 tasks)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Python Quick Start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Odys Zhou.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

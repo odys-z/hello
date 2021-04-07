@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="32" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="10">
+ <tileset firstgid="1" source="t01.tsx"/>
+ <layer id="1" name="tiles01" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eAHtl1EKAjEMROsBxWt6BL2BHkb0AIK26AMpO0y6LRRkP0K2SfbNRHdB7ymlR45Djn2O4/e6nJfilOtn0Vuad7VXZqXdR+uWL5+Gfcn9q5lxmj390fu3etn2377/f3r+eZ/qrN6L0c8/vDorfXyqfm/d8fHZq6Pud3znT3Gjdcd3/qI6as7xnT/FjdYd3/mL6qg5x3f+FDdad3znL6qj5hzf+VPcaN3xnb+oDnPokeFzdhnO2oweGT3OLq/VVfehp/rU8cl5VI7qR+dafUW5s/dHn9y6p5pnf7jlv04d9MrvMOYVr7UOj1w06qBX2Hhp1Rk1/+tlFLOFM3v/2fq9n/8bsQiEOw==
+  </data>
+ </layer>
+ <objectgroup id="3" name="static bodies">
+  <object id="3" name="rock" x="633" y="485" width="147" height="186">
+   <properties>
+    <property name="rigid" value="true"/>
+   </properties>
+  </object>
+  <object id="5" name="b1" x="482.216" y="384.709" width="30.1385" height="28.3657">
+   <properties>
+    <property name="rigid" value="true"/>
+   </properties>
+  </object>
+  <object id="6" name="b2" x="321.89" y="478.67" width="31.9114" height="33.6842">
+   <properties>
+    <property name="rigid" value="true"/>
+   </properties>
+  </object>
+  <object id="7" name="corner_elipse" x="896" y="900" width="221.333" height="125.333">
+   <ellipse/>
+  </object>
+  <object id="8" name="hilltop1" x="676" y="484">
+   <polygon points="-4,-3 -36,29.3333 -36,89.3333 -2.66667,122 58.6667,122 93.3333,89.3333 93.3333,28 60,-3"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="npcs">
+  <object id="9" name="foe1" x="233" y="285" width="47" height="86">
+   <properties>
+    <property name="rigid" value="true"/>
+   </properties>
+  </object>
+  <object id="10" name="foe2" x="284.666" y="286.667" width="33" height="12">
+   <ellipse/>
+  </object>
+  <object id="9" x="248.813" y="257.833" width="92.375" height="19">
+   <text wrap="1" color="#7e138c">Hello World</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="players">
+  <object id="12" name="fairyA" x="368" y="868" width="33" height="12">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <layer id="2" name="Tile Layer 2" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eAHd1zdPxDAUwPFHXemsR9+pO3CwU3fq58pXuQJIwHKFQ6IMVwAJxECXYOF/W2QliuPkHMSTflLsPL+XWPJgkf8TGX4lixzyUMdMaccRmcc40V4hUiC3iBLKUMdMaccFmRVcaq8QqZJbQx0NqGOmtOOOzHs8aK8QeSH3FW94hzpmSjs+yPzEl/YKkVNyz0Lkx516RcHruIuGqPdI7lOI/LhTvyn4E3dRn3om59OnlNG0yfk0auSzyOR8+pQKnPbaa5PzGdjIJ+Ev7nUP39rU6/rmNp7b0YFOdKEbUcNrr1MUbRpxFe/juR8DGMQQhmErRmk0hnFMYBJTsBXTNJrBLOYwjwXYikUaLWEZaaxgFbZijUbr2MAmtrANW7FDo13sYR8HOESr47zVDQLq3wS8t/Ha5h549bK5B169bm1sstLD3fNZeWdjmETPqP/FncCpooAMotYLu577iVNDEdkE+nM3cuooIZdAf+5lTgNl5PELtjpq0A==
+  </data>
+ </layer>
+</map>

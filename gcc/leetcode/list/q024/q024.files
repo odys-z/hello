@@ -1,0 +1,11 @@
+default.json
+ico.qrc
+imgs/arrow_down.png
+imgs/arrow_up.png
+imgs/favicon.ico
+main.cpp
+q024.cpp
+q024.h
+q024.pro
+q024.ui
+tst_q024.cpp
