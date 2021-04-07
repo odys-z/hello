@@ -154,4 +154,6 @@ Shouldn't the 5-th output is 'UTSRPRSTU'?
 
 Solution with issue: :download:`2017-18 Intermediate <../../../acsl-pydev/acsl/lect06/duplicates_int.py>`
 
-x.2 Sample Problem, Senior
+x.2 `Sample Problem, 2017-18 Senior <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf>`_
+
+Solution: :download:`2017-18 Senior <../../../acsl-pydev/acsl/lect06/duplicates_sr.py>`
