@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 06: Topics of Contest 4" href="index.html"/>
-        <link rel="next" title="AIME 2021 - I" href="../../amc/2021.html"/>
+        <link rel="next" title="Issue 2018 Intermediate" href="issue_int.html"/>
         <link rel="prev" title="Lec 06: Topics" href="topics.html"/> 
 
   
@@ -96,6 +96,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 06: Topics of Contest 4</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="topics.html">Lec 06: Topics</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issue_int.html">Issue 2018 Intermediate</a></li>
 </ul>
 </li>
 </ul>
@@ -159,7 +160,7 @@
 <p>2. <a class="reference external" href="https://leetcode.com/problems/binary-watch/">LeetCode Problem 401. Binary Watch</a>
 Recursive &amp; Backtracking</p>
 <p>Solution: <a class="reference download internal" download="" href="../../_downloads/35a1168412ccb0cbeb159b4058e5666f/q401.py"><code class="xref download docutils literal notranslate"><span class="pre">q206</span></code></a></p>
-<p>3*. (medium)`LeetCode Problem 797. All Paths From Source to Target &lt;<a class="reference external" href="https://leetcode.com/problems/all-paths-from-source-to-target/submissions/">https://leetcode.com/problems/all-paths-from-source-to-target/submissions/</a>&gt;`_</p>
+<p>3*. (medium) <a class="reference external" href="https://leetcode.com/problems/all-paths-from-source-to-target/submissions/">LeetCode Problem 797. All Paths From Source to Target</a></p>
 <p>Solution: <a class="reference download internal" download="" href="../../_downloads/6192ab5c0a9efbd17989867205979a83/q797.py"><code class="xref download docutils literal notranslate"><span class="pre">q797</span></code></a></p>
 <p>C++ Solution (runtime error at LeetCode): <a class="reference external" href="https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q797">q797 source folder</a></p>
 <p>Tip:</p>
@@ -171,7 +172,7 @@ Recursive &amp; Backtracking</p>
 <li>(medium, see hint) <a class="reference external" href="https://leetcode.com/problems/count-sorted-vowel-strings/">LeetCode Problem 1641. Count Sorted Vowel Strings</a></li>
 </ol>
 <p>Solution: <a class="reference download internal" download="" href="../../_downloads/e8073e2cf86fafe16a824cd0a15dd9e5/q1641.py"><code class="xref download docutils literal notranslate"><span class="pre">q1641</span></code></a> &amp; c++
-version <cite>q1641 &lt;../../../challenge/leet.gcc/q1641/q1641.h&gt;</cite></p>
+version <a class="reference download internal" download="" href="../../_downloads/12dc30fb561ae6d483d3e8d5524c1aca/q1641.h"><code class="xref download docutils literal notranslate"><span class="pre">q1641</span></code></a></p>
 <p>hint:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
@@ -232,11 +233,59 @@ version <cite>q1641 &lt;../../../challenge/leet.gcc/q1641/q1641.h&gt;</cite></p>
 <li>#Directed Graph</li>
 <li>#Undirected Graph</li>
 <li>#Graph #DFS</li>
-</ol>
-<ol class="arabic simple" start="9">
+<li>#Graph #DSU</li>
 <li>#Graph #BFS</li>
 <li>#Graph #DSU</li>
 </ol>
+<p>x.1 <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf">Sample Problem, Intermediate, c4</a></p>
+<p>Hint 1: carefully study the example.</p>
+<p>Initial:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">O</span> <span class="n">R</span> <span class="n">T</span>
+<span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>ADD H:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">H</span> <span class="n">O</span> <span class="n">R</span> <span class="n">T</span>
+<span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The letters are sorted! So the same the first sample output makes sense - ‘R’ is
+initially at ‘3’.</p>
+<p>Here is the critical problem the data structure must handling:</p>
+<p>How to save the moved character’s position (how to know the original position the
+before it’s been sorted)?</p>
+<p>Once understood the unspoken critical point, it’s clear that figuring out the
+hidden information is essential to pass the test.</p>
+<p>Hint 2: will it asking for reporting position beyond result length?</p>
+<p>SAMPLE INPUT SAMPLE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">abracadabracabob</span>
+<span class="n">REPORT</span> <span class="mi">3</span>
+<span class="n">REPORT</span> <span class="mi">5</span>
+<span class="n">ADD</span> <span class="n">BATH</span>
+<span class="n">DELETE</span> <span class="n">boa</span>
+<span class="n">REPORT</span> <span class="mi">5</span>
+<span class="n">DELETE</span> <span class="n">drr</span>
+<span class="n">REPORT</span> <span class="mi">5</span>
+<span class="n">RESET</span> <span class="n">American</span> <span class="n">Computer</span> <span class="n">Science</span> <span class="n">League</span>
+<span class="n">ADD</span> <span class="n">Computer</span>
+<span class="n">DELETE</span> <span class="n">Computer</span>
+<span class="n">DELETE</span> <span class="n">COMPUTER</span>
+<span class="n">REPORT</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>OUTPUT:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">RC</span>
+<span class="mf">2.</span> <span class="n">RO</span>
+<span class="mf">3.</span> <span class="n">ROH</span>
+<span class="mf">4.</span> <span class="n">ROHRT</span>
+<span class="mf">5.</span> <span class="n">UTSRPRS</span>
+</pre></div>
+</div>
+<p>Issue:</p>
+<p><a class="reference internal" href="issue_int.html#issue-2018"><span class="std std-ref">Our test case shows there are issue</span></a>.</p>
+<p>Shouldn’t the 5-th output is ‘UTSRPRSTU’?</p>
+<p>Solution with issue: <a class="reference download internal" download="" href="../../_downloads/6f4c4b09a9d6ade263ed168cbd890d4e/duplicates_int.py"><code class="xref download docutils literal notranslate"><span class="pre">2017-18</span> <span class="pre">Intermediate</span></code></a></p>
+<p>x.2 Sample Problem, Senior</p>
 </div>
 
 
@@ -246,7 +295,7 @@ version <cite>q1641 &lt;../../../challenge/leet.gcc/q1641/q1641.h&gt;</cite></p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../amc/2021.html" class="btn btn-neutral float-right" title="AIME 2021 - I" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="issue_int.html" class="btn btn-neutral float-right" title="Issue 2018 Intermediate" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="topics.html" class="btn btn-neutral" title="Lec 06: Topics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
