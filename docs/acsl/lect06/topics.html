@@ -193,12 +193,92 @@ c_{10} &amp; c_{11} &amp; c_{12}
 \end{bmatrix}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c_{00} = a_{00} \cdot b_{00} + a_{01} \cdot b_{10} + a_{02}\cdot b_{20} + a_{03} \cdot b_{30}\)</span>.</p>
 </div>
+<div class="section" id="graph-path">
+<h3>Graph Path<a class="headerlink" href="#graph-path" title="Permalink to this headline">¶</a></h3>
+<p>In a n nodes graph, paths of length 2 from node i to node j are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; n_i \rightarrow n_0 \rightarrow n_j \\
+&amp; n_i \rightarrow n_1 \rightarrow n_j \\
+&amp; ... \\
+&amp; n_i \rightarrow n_{n-1} \rightarrow n_j
+\end{align}\end{split}\]</div>
+<p>Possible paths from <span class="math notranslate nohighlight">\(n_i\)</span> to <span class="math notranslate nohighlight">\(n_j\)</span> can be:</p>
+<div class="math notranslate nohighlight">
+\[a_{i0} \cdot a_{0j} + a_{i1} \cdot a_{1j} + ... + a_{i(n-1)} \cdot a_{(n-1)j}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{ij}\)</span> can be either 1 or 0, stands for a path from i to j or not.</p>
+<p>A length 2 path matrix can be multiplication of 2 matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+a_{00} &amp; a_{01} &amp; a_{02} &amp; a_{03} \\
+a_{10} &amp; a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{20} &amp; a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{30} &amp; a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}
+\begin{bmatrix}
+a_{00} &amp; a_{01} &amp; a_{02} &amp; a_{03} \\
+a_{10} &amp; a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{20} &amp; a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{30} &amp; a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix} =
+\begin{bmatrix}
+b_{00} &amp; b_{01} &amp; b_{02} &amp; b_{03} \\
+b_{10} &amp; b_{11} &amp; b_{12} &amp; b_{13} \\
+b_{20} &amp; b_{21} &amp; b_{22} &amp; b_{23} \\
+b_{30} &amp; b_{31} &amp; b_{32} &amp; b_{33}
+\end{bmatrix}\end{split}\]</div>
+</div>
+<div class="section" id="acsl-sample-problem-2">
+<h3>ACSL Sample Problem 2<a class="headerlink" href="#acsl-sample-problem-2" title="Permalink to this headline">¶</a></h3>
+<p>Paths:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; A \rightarrow A &amp; B \rightarrow B \\
+&amp; A \rightarrow C &amp; C \rightarrow A \\
+&amp; B \rightarrow C &amp;
+\end{align}\end{split}\]</div>
+<p>In matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M =
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix},
+M^2 =
+\begin{bmatrix}
+2 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix},
+M^4 =
+\begin{bmatrix}
+5 &amp; 0 &amp; 3 \\
+4 &amp; 1 &amp; 3 \\
+3 &amp; 0 &amp; 2
+\end{bmatrix}\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="digital-electronics">
 <h2>Digital Electronics<a class="headerlink" href="#digital-electronics" title="Permalink to this headline">¶</a></h2>
+<p>We’ve already done <a class="reference internal" href="../lect02/digit-electro.html#digit-electronics"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="assembly-language">
 <h2>Assembly Language<a class="headerlink" href="#assembly-language" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Assembly_Language_Programming">ACSL Topic: Assembly Language</a></p>
+<p>In the previous section, we already implemented a simple ALU that can do Addition
+and Subtraction. A simple CPU (Control Process Unit) can like this:</p>
+<a class="reference internal image-reference" href="../../_images/06-CPU.png"><img alt="../../_images/06-CPU.png" src="../../_images/06-CPU.png" style="width: 400px;" /></a>
+<p><a class="reference external" href="https://www.proprofs.com/quiz-school/story.php?title=computer-organization">Source</a></p>
+<p>A simple computer organization:</p>
+<a class="reference internal image-reference" href="../../_images/06-computer-org.gif"><img alt="../../_images/06-computer-org.gif" src="../../_images/06-computer-org.gif" style="width: 400px;" /></a>
+<p><a class="reference external" href="http://www.simplecpudesign.com/simple_cpu_v1/">Source</a></p>
+<p>This structure help us understand how computer program works, it’s all code and
+data stored in memory. The code is actually assembly program.</p>
+<p><em>ACSL chose to define its own assembly language rather than use a “real” one in
+order to eliminate the many sticky details associated with real languages</em>. Be
+familiar with the <a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Assembly_Language_Programming">OPCODE</a>.</p>
+<p><strong>Walk through the OP CODE is a must.</strong></p>
 </div>
 </div>
 
