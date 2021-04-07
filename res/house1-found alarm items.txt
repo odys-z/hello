@@ -1,0 +1,19 @@
+﻿// prompt += $"{e.Name}: {e.Id}, type {e.GetType()} : {e.GetTypeId()}, {e.IsHidden(view)}\n";
+
+The Autodesk.Revit.DB.BuiltInCategory in the current document are:
+
+标准: 219944, type Autodesk.Revit.DB.FamilyInstance : 219919, False
+
+点型: 223415, type Autodesk.Revit.DB.FamilyInstance : 223363, False
+
+点型: 223539, type Autodesk.Revit.DB.FamilyInstance : 223363, False
+
+点型: 223985, type Autodesk.Revit.DB.FamilyInstance : 223363, False
+
+点型: 225276, type Autodesk.Revit.DB.FamilyInstance : 223363, True
+
+点型: 225403, type Autodesk.Revit.DB.FamilyInstance : 223363, True
+
+点型: 225438, type Autodesk.Revit.DB.FamilyInstance : 223363, False
+
+防爆型: 226599, type Autodesk.Revit.DB.FamilyInstance : 221935, False
