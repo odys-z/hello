@@ -22,10 +22,10 @@ Problem 4
 & `Solution Galois <https://www.cemc.uwaterloo.ca/contests/past_contests/2020/2020GaloisSolution.pdf>`_
 
 `Hypatia 2018 <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018HypatiaContest.pdf>`_
-& `Solution 2018 <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018HypatiaSolution.pdf>`_
+& `Solution 2018 Hypatia <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018HypatiaSolution.pdf>`_
 
 `Galois 2018 <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018GaloisContest.pdf>`_
-& `Solution 2018 <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018GaloisSolution.pdf>`_
+& `Solution 2018 Galois <https://www.cemc.uwaterloo.ca/contests/past_contests/2018/2018GaloisSolution.pdf>`_
 
 `Hypatia 2017 <https://cemc.uwaterloo.ca/contests/past_contests/2017/2017HypatiaContest.pdf>`_
 & `Solution 2017 <https://cemc.uwaterloo.ca/contests/past_contests/2017/2017HypatiaSolution.pdf>`_
