@@ -1,3 +1,5 @@
+.. _digit-electronics:
+
 Digital Electronics
 ===================
 
@@ -17,10 +19,14 @@ Topic Summary
 Prerequisite: Java JDK
 
 1. download *Logisim* at `sourceforge <https://sourceforge.net/projects/circuit/>`_
+or from *resource page*.
 
-2. run (suppose java program in your PATH, and in the downloaded folder)::
+2. run (suppose java program in your PATH, and in the downloaded folder):
+
+.. code-block:: bash
 
     java -jar logisim-generic-2.7.1.jar
+..
 
 where *logisim-generic-2.7.1.jar* is the downloaded file.
 

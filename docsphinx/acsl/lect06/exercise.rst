@@ -1,3 +1,24 @@
+Extension: Backtracking
+=======================
+
+About
+-----
+
+An import way to brutally enumerate all possible situations.
+
+1. `Backtracking explained <https://medium.com/@andreaiacono/backtracking-explained-7450d6ef9e1a>`_
+
+2. `Recursion and Backtracking <https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/tutorial/>`_
+
+3. `Backtracking Algorithms & Problems @ GeeksforGeeks <https://www.geeksforgeeks.org/backtracking-algorithms/>`_
+
+Problem:
+--------
+
+1. `LeetCode Problem 46. Permutations <https://leetcode.com/problems/permutations/>`_
+
+Solution: :download:`q046 <../../../challenge/leet/medium/q046.py>`
+
 Exercise
 ========
 
@@ -10,7 +31,7 @@ Recursive & Backtracking
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
 
-3*. (medium) `LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/submissions/>`_
+3*. (medium) `LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/>`_
 
 Solution: :download:`q797 <../../../challenge/leet/medium/q797.py>`
 
@@ -154,4 +175,6 @@ Shouldn't the 5-th output is 'UTSRPRSTU'?
 
 Solution with issue: :download:`2017-18 Intermediate <../../../acsl-pydev/acsl/lect06/duplicates_int.py>`
 
-x.2 Sample Problem, Senior
+x.2 `Sample Problem, 2017-18 Senior <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf>`_
+
+.. Solution: :download:`2017-18 Senior <../../../acsl-pydev/acsl/lect06/duplicates_sr.py>`

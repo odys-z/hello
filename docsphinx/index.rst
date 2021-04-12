@@ -16,7 +16,8 @@ Last update: |today|
    :maxdepth: 2
 
    acsl/index
-   amc/2021
+   amc/aime-2021
+   cemc/hypatia-galois-2021
    usaco/index
    notes/leetcode
    misc/miscellaneous.rst

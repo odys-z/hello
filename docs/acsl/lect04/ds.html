@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 04: Topics of Contest 2" href="index.html"/>
         <link rel="next" title="Topics" href="fix.html"/>
@@ -89,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect03p2/index.html">Lec 3: Contest #1, Part 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 04: Topics of Contest 2</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Data Structure</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Structure</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#stacks-and-queues">Stacks and Queues</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#stack-in-python3">Stack in Python3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#list">List</a></li>
@@ -106,7 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect06/index.html">Lec 06: Topics of Contest 4</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../amc/2021.html">AIME 2021 - I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amc/aime-2021.html">AIME 2021 - I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
@@ -162,19 +166,19 @@
 <div class="section" id="stacks-and-queues">
 <h2>Stacks and Queues<a class="headerlink" href="#stacks-and-queues" title="Permalink to this headline">¶</a></h2>
 <p>LIFO:</p>
-<div class="highlight-python"><div class="highlight"><pre>PUSH(&#39;A&#39;)
-PUSH(&#39;B&#39;)
-x = POP()
-y = POP()
-PRINT x y
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
+<span class="n">PRINT</span> <span class="n">x</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>output:</p>
-<div class="highlight-python"><div class="highlight"><pre>B A
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="n">A</span>
 </pre></div>
 </div>
 <p>Sample Problem:</p>
-<div class="highlight-python"><div class="highlight"><pre>A star indicates a pop operation and a letter indicates push the letter.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A star indicates a pop operation and a letter indicates push the letter.
 What would be the next item to be popped?
 
 Z A * N * S * O M * * Y O R * * G * X A * D E S * * *
@@ -182,19 +186,19 @@ Z A * N * S * O M * * Y O R * * G * X A * D E S * * *
 </div>
 <p>Answer: X</p>
 <p>The operations can be quickly simplified as:</p>
-<div class="highlight-python"><div class="highlight"><pre>Z Y X
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="n">Y</span> <span class="n">X</span>
 </pre></div>
 </div>
 <p>FIFO:</p>
-<div class="highlight-python"><div class="highlight"><pre>PUSH(&#39;A&#39;)
-PUSH(&#39;B&#39;)
-x = POP()
-y = POP()
-PRINT x y
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">PUSH</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">POP</span><span class="p">()</span>
+<span class="n">PRINT</span> <span class="n">x</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>output:</p>
-<div class="highlight-python"><div class="highlight"><pre>A B
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span>
 </pre></div>
 </div>
 </div>
@@ -202,7 +206,7 @@ PRINT x y
 <h2>Stack in Python3<a class="headerlink" href="#stack-in-python3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-list">
 <h3>Using List<a class="headerlink" href="#using-list" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python3"><div class="highlight"><pre><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
@@ -213,7 +217,7 @@ PRINT x y
 </div>
 <div class="section" id="using-queue">
 <h3>Using Queue<a class="headerlink" href="#using-queue" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python3"><div class="highlight"><pre><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
 <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -225,14 +229,14 @@ PRINT x y
 <div class="section" id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>ACSL:</p>
-<div class="highlight-python"><div class="highlight"><pre>Although ACSL does not cover linked lists per se, they are a great preliminary
-study for binary search trees.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Although</span> <span class="n">ACSL</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">cover</span> <span class="n">linked</span> <span class="n">lists</span> <span class="n">per</span> <span class="n">se</span><span class="p">,</span> <span class="n">they</span> <span class="n">are</span> <span class="n">a</span> <span class="n">great</span> <span class="n">preliminary</span>
+<span class="n">study</span> <span class="k">for</span> <span class="n">binary</span> <span class="n">search</span> <span class="n">trees</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Example Problem: <a class="reference external" href="https://leetcode.com/problems/reverse-linked-list/">reverse list</a></p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="c1"># Definition for singly-linked list.</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition for singly-linked list.</span>
 <span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
 
@@ -259,35 +263,35 @@ study for binary search trees.
 <span class="n">t</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Solution: <a class="reference download internal" href="../../_downloads/q206.py" download=""><code class="xref download docutils literal"><span class="pre">List</span> <span class="pre">Sample</span> <span class="pre">Problem</span></code></a></p>
+<p>Solution: <a class="reference download internal" download="" href="../../_downloads/a5750c75c98651195681c97730494a83/q206.py"><code class="xref download docutils literal notranslate"><span class="pre">List</span> <span class="pre">Sample</span> <span class="pre">Problem</span></code></a></p>
 </div>
 <div class="section" id="trees">
 <h2>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h2>
 <p>Some different terms:</p>
-<div class="highlight-python"><div class="highlight"><pre>root  leaf / external node   internal node
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span>  <span class="n">leaf</span> <span class="o">/</span> <span class="n">external</span> <span class="n">node</span>   <span class="n">internal</span> <span class="n">node</span>
 
-Our ACSL convention places duplicate keys into the tree as if they were less
-than their equal key. (In some textbooks and software libraries, duplicate
-keys may be considered larger than their equal key.)
+<span class="n">Our</span> <span class="n">ACSL</span> <span class="n">convention</span> <span class="n">places</span> <span class="n">duplicate</span> <span class="n">keys</span> <span class="n">into</span> <span class="n">the</span> <span class="n">tree</span> <span class="k">as</span> <span class="k">if</span> <span class="n">they</span> <span class="n">were</span> <span class="n">less</span>
+<span class="n">than</span> <span class="n">their</span> <span class="n">equal</span> <span class="n">key</span><span class="o">.</span> <span class="p">(</span><span class="n">In</span> <span class="n">some</span> <span class="n">textbooks</span> <span class="ow">and</span> <span class="n">software</span> <span class="n">libraries</span><span class="p">,</span> <span class="n">duplicate</span>
+<span class="n">keys</span> <span class="n">may</span> <span class="n">be</span> <span class="n">considered</span> <span class="n">larger</span> <span class="n">than</span> <span class="n">their</span> <span class="n">equal</span> <span class="n">key</span><span class="o">.</span><span class="p">)</span>
 
-Our ACSL convention is that an external node is the name given to a place
-where a new node could be attached to the tree. (In some textbooks, an external
-node is synonymous with a leaf node.)
+<span class="n">Our</span> <span class="n">ACSL</span> <span class="n">convention</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">an</span> <span class="n">external</span> <span class="n">node</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">given</span> <span class="n">to</span> <span class="n">a</span> <span class="n">place</span>
+<span class="n">where</span> <span class="n">a</span> <span class="n">new</span> <span class="n">node</span> <span class="n">could</span> <span class="n">be</span> <span class="n">attached</span> <span class="n">to</span> <span class="n">the</span> <span class="n">tree</span><span class="o">.</span> <span class="p">(</span><span class="n">In</span> <span class="n">some</span> <span class="n">textbooks</span><span class="p">,</span> <span class="n">an</span> <span class="n">external</span>
+<span class="n">node</span> <span class="ow">is</span> <span class="n">synonymous</span> <span class="k">with</span> <span class="n">a</span> <span class="n">leaf</span> <span class="n">node</span><span class="o">.</span><span class="p">)</span>
 
-This tree has 9 external nodes and 31 external path length.
+<span class="n">This</span> <span class="n">tree</span> <span class="n">has</span> <span class="mi">9</span> <span class="n">external</span> <span class="n">nodes</span> <span class="ow">and</span> <span class="mi">31</span> <span class="n">external</span> <span class="n">path</span> <span class="n">length</span><span class="o">.</span>
 
-          A
-      A          M
-    o  o      E       R
-            C   I   N   o
-           o o o o o o
+          <span class="n">A</span>
+      <span class="n">A</span>          <span class="n">M</span>
+    <span class="n">o</span>  <span class="n">o</span>      <span class="n">E</span>       <span class="n">R</span>
+            <span class="n">C</span>   <span class="n">I</span>   <span class="n">N</span>   <span class="n">o</span>
+           <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span>
 
-    2   2  4 4 4 4 4 4  3
+    <span class="mi">2</span>   <span class="mi">2</span>  <span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span>  <span class="mi">3</span>
 </pre></div>
 </div>
 <p>Python example:</p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">():</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">lchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">lchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rchild</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">v</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">lchild</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">rchild</span>
@@ -297,25 +301,25 @@ This tree has 9 external nodes and 31 external path length.
 <span class="n">n</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>  0
-1   2
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">0</span>
+<span class="mi">1</span>   <span class="mi">2</span>
 </pre></div>
 </div>
 <div class="section" id="inernal-path-length">
 <h3>Inernal Path Length<a class="headerlink" href="#inernal-path-length" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre>         P
-      O    R
-     G    R
-    A M
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">P</span>
+      <span class="n">O</span>    <span class="n">R</span>
+     <span class="n">G</span>    <span class="n">R</span>
+    <span class="n">A</span> <span class="n">M</span>
 
-2 * 1 + 2 * 2 + 2 * 3 = 12
+<span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">12</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="binary-search">
 <h3>Binary search<a class="headerlink" href="#binary-search" title="Permalink to this headline">¶</a></h3>
 <p>pseudo code:</p>
-<div class="highlight-python"><div class="highlight"><pre>p = root
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>p = root
 found = FALSE
 while (p ≠ NIL) and (not found)
   if (x &lt; p’s key)
@@ -329,7 +333,7 @@ end while
 </pre></div>
 </div>
 <p>Python program:</p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">root</span>          <span class="c1"># root = TreeNode(v)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">root</span>          <span class="c1"># root = TreeNode(v)</span>
 <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">while</span> <span class="n">p</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">p</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
@@ -344,7 +348,7 @@ end while
 <div class="section" id="delete-node">
 <h3>Delete Node<a class="headerlink" href="#delete-node" title="Permalink to this headline">¶</a></h3>
 <p>pseudo code:</p>
-<div class="highlight-python"><div class="highlight"><pre>p = node to delete
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>p = node to delete
 f = father of p
 if (p has no children)
   delete p
@@ -364,8 +368,8 @@ end if
 l   r         r
 </pre></div>
 </div>
-<p>Exercise: implement function <em>deleteNode()</em>, delete node &#8216;p&#8217;.</p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">unittest</span> <span class="k">import</span> <span class="n">TestCase</span>
+<p>Exercise: implement function <em>deleteNode()</em>, delete node ‘p’.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 
 <span class="k">def</span> <span class="nf">deleteNode</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="c1"># ...</span>
@@ -388,10 +392,10 @@ l   r         r
 </div>
 <div class="section" id="recursive-travel">
 <h3>Recursive Travel<a class="headerlink" href="#recursive-travel" title="Permalink to this headline">¶</a></h3>
-<p>Although ACSL topics doesn&#8217;t include recusive function, the recursive tree travelling
+<p>Although ACSL topics doesn’t include recusive function, the recursive tree travelling
 algorithm is a basic knowledge and skill of data structure.</p>
-<p>Let&#8217;s have a look at an example:</p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<p>Let’s have a look at an example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 
@@ -407,7 +411,7 @@ algorithm is a basic knowledge and skill of data structure.</p>
 </div>
 <p>Source file: <a class="reference external" href="https://raw.githubusercontent.com/odys-z/hello/master/acsl-pydev/acsl/lect04/firstvisit.py">first visiting tree travelling example</a></p>
 <p>Exercise: implement a last visiting algorithm. With the tree above, print</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -418,27 +422,27 @@ algorithm is a basic knowledge and skill of data structure.</p>
 the smallest item and retrieve the smallest item only. These insert and delete
 operations can be done in a guaranteed time proportional to the log (base 2) of
 the number of items; the retrieve-the-smallest can be done in constant time.</p>
-<p>The queue is usually called as heap, or min heap. In python/python3, it&#8217;s
+<p>The queue is usually called as heap, or min heap. In python/python3, it’s
 <a class="reference external" href="https://docs.python.org/3/library/heapq.html">heapq</a>.</p>
 <p>A heap can implemented with an array. The parent-children relation is fixed with
 indexes:</p>
-<div class="highlight-python"><div class="highlight"><pre>parent  = (child - 1) // 2
-l-child = parent * 2 + 1
-r-child = parent * 2 + 2
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span>  <span class="o">=</span> <span class="p">(</span><span class="n">child</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">l</span><span class="o">-</span><span class="n">child</span> <span class="o">=</span> <span class="n">parent</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">r</span><span class="o">-</span><span class="n">child</span> <span class="o">=</span> <span class="n">parent</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 
-0 1 2   0 1 2 3 4 5 6
-  0          0
- 1 2      1     2
-         3 4   5 6
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span>   <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span>
+  <span class="mi">0</span>          <span class="mi">0</span>
+ <span class="mi">1</span> <span class="mi">2</span>      <span class="mi">1</span>     <span class="mi">2</span>
+         <span class="mi">3</span> <span class="mi">4</span>   <span class="mi">5</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <p>Here is what Python 3.9 documents define a heap:</p>
-<div class="highlight-python"><div class="highlight"><pre>arrays for which heap[k] &lt;= heap[2*k+1] and heap[k] &lt;= heap[2*k+2] for all k,
-counting elements from zero
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arrays</span> <span class="k">for</span> <span class="n">which</span> <span class="n">heap</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">heap</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">heap</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">heap</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">k</span><span class="p">,</span>
+<span class="n">counting</span> <span class="n">elements</span> <span class="kn">from</span> <span class="nn">zero</span>
 </pre></div>
 </div>
 <p>Adding an element:</p>
-<div class="highlight-python"><div class="highlight"><pre>0 1 2 3 4 ?
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 ?
 
      0
   1     2
@@ -447,15 +451,15 @@ counting elements from zero
 </div>
 <p>Then competing up.</p>
 <p>Deleting an element (heap can only delete the first/top):</p>
-<div class="highlight-python"><div class="highlight"><pre>0 1 2 3 4 5                                       1 3 2 5 4
-    ( )               (5)             1              1
-  1     2           1     2       (5)    2        5     2
- 3 4   5           3 4            3 4            3 4
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>                                       <span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">5</span> <span class="mi">4</span>
+    <span class="p">(</span> <span class="p">)</span>               <span class="p">(</span><span class="mi">5</span><span class="p">)</span>             <span class="mi">1</span>              <span class="mi">1</span>
+  <span class="mi">1</span>     <span class="mi">2</span>           <span class="mi">1</span>     <span class="mi">2</span>       <span class="p">(</span><span class="mi">5</span><span class="p">)</span>    <span class="mi">2</span>        <span class="mi">5</span>     <span class="mi">2</span>
+ <span class="mi">3</span> <span class="mi">4</span>   <span class="mi">5</span>           <span class="mi">3</span> <span class="mi">4</span>            <span class="mi">3</span> <span class="mi">4</span>            <span class="mi">3</span> <span class="mi">4</span>
 </pre></div>
 </div>
 <p>Actually pop the top, move last, then competing downward.</p>
 <p>Exercise: implement a min-heap.</p>
-<div class="highlight-python3"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MinHeap</span><span class="p">():</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MinHeap</span><span class="p">():</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Implement a min-heap</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -473,7 +477,7 @@ counting elements from zero
         <span class="k">pass</span>
 </pre></div>
 </div>
-<p>Solution: <a class="reference download internal" href="../../_downloads/minheap.py" download=""><code class="xref download docutils literal"><span class="pre">MinHeap</span> <span class="pre">(local)</span></code></a></p>
+<p>Solution: <a class="reference download internal" download="" href="../../_downloads/9087d6ad95e217806f26292d8b6d921b/minheap.py"><code class="xref download docutils literal notranslate"><span class="pre">MinHeap</span> <span class="pre">(local)</span></code></a></p>
 </div>
 </div>
 
@@ -527,7 +531,8 @@ counting elements from zero
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

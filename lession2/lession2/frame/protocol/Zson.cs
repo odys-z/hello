@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.CodeDom;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace lession2.frame.protocol {
 
@@ -12,34 +14,34 @@ namespace lession2.frame.protocol {
             return type;
         }
         public Object GetObjectToSerialize(Object obj, Type targetType) {
-            if (obj is A) {
-                ((A)obj)._b = Convert.ToBase64String(((A)obj).b);
+            if (obj is ZObj) {
+                ((ZObj)obj)._name = Convert.ToBase64String(((ZObj)obj).zname);
             }
             return obj;
         }
         public Object GetDeserializedObject(Object obj, Type targetType) {
-            if (obj is A) {
-                ((A)obj).b = Convert.FromBase64String(((A)obj)._b);
+            if (obj is ZObj) {
+                ((ZObj)obj).zname = Convert.FromBase64String(((ZObj)obj)._name);
             }
             return obj;
         }
         public Type GetReferencedTypeOnImport(string typeName, string typeNamespace, Object customData) {
             return null;
         }
-        public System.CodeDom.CodeTypeDeclaration ProcessImportedType(System.CodeDom.CodeTypeDeclaration typeDeclaration, System.CodeDom.CodeCompileUnit compileUnit) {
+        public CodeTypeDeclaration ProcessImportedType(CodeTypeDeclaration typeDeclaration, CodeCompileUnit compileUnit) {
             return typeDeclaration;
         }
         public Object GetCustomDataToExport(Type clrType, Type dataContractType) {
             return null;
         }
-        public Object GetCustomDataToExport(System.Reflection.MemberInfo memberInfo, Type dataContractType) {
+        public Object GetCustomDataToExport(MemberInfo memberInfo, Type dataContractType) {
             return null;
         }
         public void GetKnownCustomDataTypes(Collection<Type> customDataTypes) {
         }
     }
 
-    class Zson {
+    public class Zson {
         // here it is necessary include the Type because "obj" could be null
         public static String toJson(Object obj, Type t) {
             DataContractJsonSerializerSettings settings = new DataContractJsonSerializerSettings();
@@ -60,18 +62,33 @@ namespace lession2.frame.protocol {
                 return j.ReadObject(m);
             }
         }
-        static void Main() {
-            A a = new A();
-            a.b = new byte[] { 65, 66, 67, 68 };
-            a.s = "xyz";
-            a.i = 12345;
-            a.d = DateTime.Now;
-            String s = toJson(a, typeof(A));
-            Console.WriteLine(s);
-            A a2 = (A)fromJson(s, typeof(A));
-            Console.WriteLine(a2.s + " " + a2.i + " " + a2.b[0] + " " + a2.b[1] + " " +
-                                          a2.b[2] + " " + a2.b[3] + " " + a2.d);
-        }
     }
 
+    [DataContract]
+    abstract public class ZObj {
+        [DataMember]
+        public string _name;
+        public byte[] zname;
+    }
+
+
+    [DataContract]
+    public class EchoPayload : ZObj {
+        [DataMember]
+        public DateTime localTime;
+        [DataMember]
+        public DateTime remoteTime;
+
+        [DataMember]
+        public string msg;
+
+        public EchoPayload (string msg) {
+            localTime = new DateTime();
+            this.msg = msg;
+        }
+
+        public override string ToString() {
+            return string.Format("local {0}, remote {1}, msg {2}", localTime, remoteTime, msg);
+        }
+    }
 }
