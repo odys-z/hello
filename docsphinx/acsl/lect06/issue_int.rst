@@ -8,7 +8,7 @@ Problem:
 American Computer Science League Contest #4
 Intermediate Division Programming Problem: Duplicates
 
-'See here <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
+`See here <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
 
 SAMPLE INPUT SAMPLE::
 
