@@ -4,8 +4,6 @@ Lec 06: Topics of Contest 4
 Welcome
 =======
 
-.. image::
-
 Last update: |today|
 
 Contents:
