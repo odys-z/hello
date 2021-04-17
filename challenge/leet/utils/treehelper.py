@@ -52,6 +52,5 @@ def stringToTreeNode(enput):
 if __name__ == '__main__':
     
     t = TestCase()
-    # TODO not work currently
     t.assertEqual('TreeNode{val: 3, left: TreeNode{val: 5, left: TreeNode{val: 6, left: None, right: None}, right: TreeNode{val: 2, left: TreeNode{val: 7, left: None, right: None}, right: TreeNode{val: 4, left: None, right: None}}}, right: TreeNode{val: 1, left: TreeNode{val: 0, left: None, right: None}, right: TreeNode{val: 8, left: None, right: None}}}',
         '{}'.format(stringToTreeNode('3,5,1,6,2,0,8,null,null,7,4')))
