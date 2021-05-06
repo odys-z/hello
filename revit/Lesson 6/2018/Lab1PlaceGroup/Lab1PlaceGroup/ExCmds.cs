@@ -10,11 +10,14 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.DB.Architecture;
 
-namespace Lab1PlaceGroup
+namespace io.odysz.hello.revit.lession6
 {
+    /// <remarks>
+    /// The "Lession 6" external command. The class must be Public.
+    /// </remarks>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
-    public class Class1 : IExternalCommand
+    public class ExCmds : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -63,7 +66,7 @@ namespace Lab1PlaceGroup
             {
                 message = ex.Message;
             }
-           
+
             return Result.Succeeded;
         }
         public class GroupPickFilter : ISelectionFilter
@@ -94,11 +97,11 @@ namespace Lab1PlaceGroup
                 room = elem as Room;
                 if (room != null)
                 {
-                    // Decide if this point is in the picked room                  
+                    // Decide if this point is in the picked room
                     if (room.IsPointInRoom(point))
                     {
                         break;
-                    }                   
+                    }
                 }
             }
             return room;
@@ -114,6 +117,5 @@ namespace Lab1PlaceGroup
             return roomCenter;
         }
     }
-    
-}
 
+}
