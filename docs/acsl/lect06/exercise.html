@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 06: Topics of Contest 4" href="index.html"/>
         <link rel="next" title="Issue 2018 Intermediate" href="issue_int.html"/>
@@ -95,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect05/index.html">Lec 05: Topics of Contest 3</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 06: Topics of Contest 4</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="topics.html">Contest4 Topics</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Backtracking</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Extension: Backtracking</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#about">About</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#problem">Problem:</a></li>
 </ul>
@@ -113,8 +110,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../amc/aime-2021.html">AIME 2021 - I</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acadynamo/index.html">Acadanymo Project Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">1&nbsp;&nbsp;&nbsp;Miscellaneous</a></li>
 </ul>
 
             
@@ -177,7 +175,7 @@
 <ol class="arabic simple">
 <li><a class="reference external" href="https://leetcode.com/problems/permutations/">LeetCode Problem 46. Permutations</a></li>
 </ol>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/51ad42837fc941ea1e03ac30220b3d5b/q046.py"><code class="xref download docutils literal notranslate"><span class="pre">q046</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q046.py" download=""><code class="xref download docutils literal"><span class="pre">q046</span></code></a></p>
 </div>
 </div>
 <div class="section" id="exercise">
@@ -187,40 +185,40 @@
 <ol class="arabic simple">
 <li><a class="reference external" href="https://leetcode.com/problems/find-center-of-star-graph/">LeetCode Problem 1791. Find Center of Star Graph</a></li>
 </ol>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/1c02fe87269450254ed76f61c80c3ce7/q1791.py"><code class="xref download docutils literal notranslate"><span class="pre">q1791</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q1791.py" download=""><code class="xref download docutils literal"><span class="pre">q1791</span></code></a></p>
 <p>2. <a class="reference external" href="https://leetcode.com/problems/binary-watch/">LeetCode Problem 401. Binary Watch</a>
 Recursive &amp; Backtracking</p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/35a1168412ccb0cbeb159b4058e5666f/q401.py"><code class="xref download docutils literal notranslate"><span class="pre">q206</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q401.py" download=""><code class="xref download docutils literal"><span class="pre">q206</span></code></a></p>
 <ol class="arabic simple" start="3">
 <li>#tree</li>
 </ol>
 <p>3.1 convert tree from array to TreeNode.</p>
 <p>Problem:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">array</span> <span class="n">to</span> <span class="n">tree</span> <span class="n">of</span> <span class="n">TreeNode</span><span class="o">.</span> <span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="kn">from</span>
-<span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="o">=&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre>Convert tree in array to tree of TreeNode. E.g. from
+0, 1, 2, 3, 4, 5, 6 =&gt;
 
-       <span class="mi">0</span>
-   <span class="mi">1</span>       <span class="mi">2</span>
- <span class="mi">3</span>   <span class="mi">4</span>    <span class="mi">5</span> <span class="mi">6</span>
-<span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">10</span>
+       0
+   1       2
+ 3   4    5 6
+7 8 9 10
 </pre></div>
 </div>
 <p>where</p>
-<p><span class="math notranslate nohighlight">\(l = 2m+1, r = 2m + 2\)</span></p>
+<p><span class="math">\(l = 2m+1, r = 2m + 2\)</span></p>
 <p>i.e.</p>
-<p><span class="math notranslate nohighlight">\(m = (l-1)//2, m = (r-2)//2\)</span></p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/d99c34b29aa24bb02cc09fc25cec4b38/treehelper2.py"><code class="xref download docutils literal notranslate"><span class="pre">convert</span> <span class="pre">tree</span> <span class="pre">node</span></code></a></p>
+<p><span class="math">\(m = (l-1)//2, m = (r-2)//2\)</span></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/treehelper2.py" download=""><code class="xref download docutils literal"><span class="pre">convert</span> <span class="pre">tree</span> <span class="pre">node</span></code></a></p>
 <p>3.2 print tree (DFV)</p>
 <p>Problem:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Print</span> <span class="n">above</span> <span class="n">tree</span> <span class="n">to</span> <span class="n">string</span> <span class="n">of</span>
-<span class="s1">&#39;{0, l: {1, l: {3, l: </span><span class="si">{7}</span><span class="s1">, r: </span><span class="si">{8}</span><span class="s1">}, r: {4, l: </span><span class="si">{9}</span><span class="s1">, r: </span><span class="si">{10}</span><span class="s1">}}, r: {2, l: </span><span class="si">{5}</span><span class="s1">, r: </span><span class="si">{6}</span><span class="s1">}}&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>Print above tree to string of
+&#39;{0, l: {1, l: {3, l: {7}, r: {8}}, r: {4, l: {9}, r: {10}}}, r: {2, l: {5}, r: {6}}}&#39;
 </pre></div>
 </div>
 <p>3.3 build tree</p>
 <p><a class="reference external" href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">LeetCode Problem 108. Convert Sorted Array to Binary Search Tree</a>.</p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/7dfb273e58ce9eea02e428696e9a9672/q108.py"><code class="xref download docutils literal notranslate"><span class="pre">q108</span> <span class="pre">Python</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q108.py" download=""><code class="xref download docutils literal"><span class="pre">q108</span> <span class="pre">Python</span></code></a></p>
 <p>4*. (medium) <a class="reference external" href="https://leetcode.com/problems/all-paths-from-source-to-target/">LeetCode Problem 797. All Paths From Source to Target</a></p>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/6192ab5c0a9efbd17989867205979a83/q797.py"><code class="xref download docutils literal notranslate"><span class="pre">q797</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q797.py" download=""><code class="xref download docutils literal"><span class="pre">q797</span></code></a></p>
 <p>C++ Solution (runtime error at LeetCode): <a class="reference external" href="https://github.com/odys-z/hello/tree/master/challenge/leet.gcc/q797">q797 source folder</a></p>
 <p>Tip:</p>
 <ol class="lowerroman simple">
@@ -230,62 +228,62 @@ Recursive &amp; Backtracking</p>
 <ol class="arabic simple" start="5">
 <li>(medium, see hint) <a class="reference external" href="https://leetcode.com/problems/count-sorted-vowel-strings/">LeetCode Problem 1641. Count Sorted Vowel Strings</a></li>
 </ol>
-<p>Solution: <a class="reference download internal" download="" href="../../_downloads/e8073e2cf86fafe16a824cd0a15dd9e5/q1641.py"><code class="xref download docutils literal notranslate"><span class="pre">q1641</span></code></a> &amp; c++
-version <a class="reference download internal" download="" href="../../_downloads/12dc30fb561ae6d483d3e8d5524c1aca/q1641.h"><code class="xref download docutils literal notranslate"><span class="pre">q1641</span></code></a></p>
+<p>Solution: <a class="reference download internal" href="../../_downloads/q1641.py" download=""><code class="xref download docutils literal"><span class="pre">q1641</span></code></a> &amp; c++
+version <a class="reference download internal" href="../../_downloads/q1641.h" download=""><code class="xref download docutils literal"><span class="pre">q1641</span></code></a></p>
 <p>hint:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre>n = 1
+1 + 1 + 1 + 1 + 1
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+n = 2
+5 + 4 + 3 + 2 + 1
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-  <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-      <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">6</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
-          <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">3</span> <span class="o">+</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
-              <span class="o">+</span> <span class="mi">1</span>  <span class="o">--</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+n = 3
+5 + 4 + 3 + 2 + 1  -- p(3, a) = 15 + p(3, e)
+  + 4 + 3 + 2 + 1  -- p(3, e) = 10 + p(3, i)
+      + 3 + 2 + 1  -- p(3, i) =  6 + p(3, o)
+          + 2 + 1  -- p(3, o) =  3 + p(3, u)
+              + 1  -- p(3, u)
 
 
-<span class="n">a</span>      <span class="n">e</span>      <span class="n">i</span>      <span class="n">o</span>      <span class="n">u</span>
+a      e      i      o      u
 
-<span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="mi">1</span>      <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="mi">5</span>      <span class="mi">4</span>      <span class="mi">3</span>      <span class="mi">2</span>      <span class="mi">1</span>      <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">p3</span><span class="p">,</span><span class="n">a</span>   <span class="n">p3</span><span class="p">,</span><span class="n">e</span>   <span class="n">p3</span><span class="p">,</span><span class="n">i</span>   <span class="n">p3</span><span class="p">,</span><span class="n">o</span>   <span class="n">p3</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">a</span>   <span class="n">p4</span><span class="p">,</span><span class="n">e</span>   <span class="n">p4</span><span class="p">,</span><span class="n">i</span>   <span class="n">p4</span><span class="p">,</span><span class="n">o</span>   <span class="n">p4</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">a</span>   <span class="n">p5</span><span class="p">,</span><span class="n">e</span>   <span class="n">p5</span><span class="p">,</span><span class="n">i</span>   <span class="n">p5</span><span class="p">,</span><span class="n">o</span>   <span class="n">p5</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+1      1      1      1      1      n = 1
+5      4      3      2      1      n = 2
+p3,a   p3,e   p3,i   p3,o   p3,u   n = 3
+p4,a   p4,e   p4,i   p4,o   p4,u   n = 4
+p5,a   p5,e   p5,i   p5,o   p5,u   n = 5
 
-<span class="n">p6</span><span class="p">,</span><span class="n">a</span>   <span class="n">p6</span><span class="p">,</span><span class="n">e</span>   <span class="n">p6</span><span class="p">,</span><span class="n">i</span>   <span class="n">p6</span><span class="p">,</span><span class="n">o</span>   <span class="n">p6</span><span class="p">,</span><span class="n">u</span>   <span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>
+p6,a   p6,e   p6,i   p6,o   p6,u   n = 6
 
-<span class="n">p4</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p4</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">p3</span><span class="p">,</span><span class="n">u</span>
+p4,a = p3,a + p3,e + p3,i + p3,o + p3,u
+p4,e = p3,e + p3,i + p3,o + p3,u
+p4,i = p3,i + p3,o + p3,u
+p4,o = p3,o + p3,u
+p4,u = p3,u
 
-<span class="n">p5</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p5</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">p4</span><span class="p">,</span><span class="n">u</span>
+p5,a = p4,a + p4,e + p4,i + p4,o + p4,u
+p5,e = p4,e + p4,i + p4,o + p4,u
+p5,i = p4,i + p4,o + p4,u
+p5,o = p4,o + p4,u
+p5,u = p4,u
 
-<span class="n">p6</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p5</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span>        <span class="n">p5</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span>               <span class="n">p5</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span>                      <span class="n">p5</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p6</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span>                             <span class="n">p5</span><span class="p">,</span><span class="n">u</span>
+p6,a = p5,a + p5,e + p5,i + p5,o + p5,u
+p6,e =        p5,e + p5,i + p5,o + p5,u
+p6,i =               p5,i + p5,o + p5,u
+p6,o =                      p5,o + p5,u
+p6,u =                             p5,u
 
-<span class="n">p7</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">p6</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span>        <span class="n">p6</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span>               <span class="n">p6</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span>                      <span class="n">p6</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
-<span class="n">p7</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span>                             <span class="n">p6</span><span class="p">,</span><span class="n">u</span>
+p7,a = p6,a + p6,e + p6,i + p6,o + p6,u
+p7,e =        p6,e + p6,i + p6,o + p6,u
+p7,i =               p6,i + p6,o + p6,u
+p7,o =                      p6,o + p6,u
+p7,u =                             p6,u
 
-<span class="n">pn</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">i</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">o</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">o</span> <span class="o">+</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
-<span class="n">pn</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">pn</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span>
+pn,a = pn-1,a + pn-1,e + pn-1,i + pn-1,o + pn-1,u
+pn,e = pn-1,e + pn-1,i + pn-1,o + pn-1,u
+pn,i = pn-1,i + pn-1,o + pn-1,u
+pn,o = pn-1,o + pn-1,u
+pn,u = pn-1,u
 </pre></div>
 </div>
 </div>
@@ -294,51 +292,51 @@ version <a class="reference download internal" download="" href="../../_download
 <p>x.1 <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf">Sample Problem, Intermediate, c4</a></p>
 <p>Hint 1: carefully study the example.</p>
 <p>Initial:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">O</span> <span class="n">R</span> <span class="n">T</span>
-<span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre>A B C D O R T
+7 5 2 1 1 2 1
 </pre></div>
 </div>
 <p>ADD H:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">H</span> <span class="n">O</span> <span class="n">R</span> <span class="n">T</span>
-<span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre>A B C D H O R T
+7 5 2 1 1 1 2 1
 </pre></div>
 </div>
-<p>The letters are sorted! So the same the first sample output makes sense - ‘R’ is
-initially at ‘3’.</p>
+<p>The letters are sorted! So the same the first sample output makes sense - &#8216;R&#8217; is
+initially at &#8216;3&#8217;.</p>
 <p>Here is the critical problem the data structure must handling:</p>
-<p>How to save the moved character’s position (how to know the original position the
-before it’s been sorted)?</p>
-<p>Once understood the unspoken critical point, it’s clear that figuring out the
+<p>How to save the moved character&#8217;s position (how to know the original position the
+before it&#8217;s been sorted)?</p>
+<p>Once understood the unspoken critical point, it&#8217;s clear that figuring out the
 hidden information is essential to pass the test.</p>
 <p>Hint 2: will it asking for reporting position beyond result length?</p>
 <p>SAMPLE INPUT SAMPLE:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">abracadabracabob</span>
-<span class="n">REPORT</span> <span class="mi">3</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">ADD</span> <span class="n">BATH</span>
-<span class="n">DELETE</span> <span class="n">boa</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">DELETE</span> <span class="n">drr</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">RESET</span> <span class="n">American</span> <span class="n">Computer</span> <span class="n">Science</span> <span class="n">League</span>
-<span class="n">ADD</span> <span class="n">Computer</span>
-<span class="n">DELETE</span> <span class="n">Computer</span>
-<span class="n">DELETE</span> <span class="n">COMPUTER</span>
-<span class="n">REPORT</span> <span class="mi">10</span>
+<div class="highlight-python"><div class="highlight"><pre>RESET abracadabracabob
+REPORT 3
+REPORT 5
+ADD BATH
+DELETE boa
+REPORT 5
+DELETE drr
+REPORT 5
+RESET American Computer Science League
+ADD Computer
+DELETE Computer
+DELETE COMPUTER
+REPORT 10
 </pre></div>
 </div>
 <p>OUTPUT:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">RC</span>
-<span class="mf">2.</span> <span class="n">RO</span>
-<span class="mf">3.</span> <span class="n">ROH</span>
-<span class="mf">4.</span> <span class="n">ROHRT</span>
-<span class="mf">5.</span> <span class="n">UTSRPRS</span>
+<div class="highlight-python"><div class="highlight"><pre>1. RC
+2. RO
+3. ROH
+4. ROHRT
+5. UTSRPRS
 </pre></div>
 </div>
 <p>Issue:</p>
-<p><a class="reference internal" href="issue_int.html#issue-2018"><span class="std std-ref">Our test case shows there are issue</span></a>.</p>
-<p>Shouldn’t the 5-th output is ‘UTSRPRSTU’?</p>
-<p>Solution with issue: <a class="reference download internal" download="" href="../../_downloads/6f4c4b09a9d6ade263ed168cbd890d4e/duplicates_int.py"><code class="xref download docutils literal notranslate"><span class="pre">2017-18</span> <span class="pre">Intermediate</span></code></a></p>
+<p><a class="reference internal" href="issue_int.html#issue-2018"><span>Our test case shows there are issue</span></a>.</p>
+<p>Shouldn&#8217;t the 5-th output is &#8216;UTSRPRSTU&#8217;?</p>
+<p>Solution with issue: <a class="reference download internal" href="../../_downloads/duplicates_int.py" download=""><code class="xref download docutils literal"><span class="pre">2017-18</span> <span class="pre">Intermediate</span></code></a></p>
 <p>x.2 <a class="reference external" href="http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_sr.pdf">Sample Problem, 2017-18 Senior</a></p>
 </div>
 </div>
@@ -393,8 +391,7 @@ hidden information is essential to pass the test.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

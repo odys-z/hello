@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 2: Things you already know" href="index.html"/>
         <link rel="next" title="Computer Number Systems" href="num-sys.html"/>
@@ -88,7 +85,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect00/index.html">Lec 0: About ACSL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lect01/index.html">Lec 1: Python Quick Start</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 2: Things you already know</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Boolean Algebra</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Boolean Algebra</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#topic-summary">Topic Summary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#quiz">Quiz</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exercise">Exercise</a></li>
@@ -111,8 +108,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../amc/aime-2021.html">AIME 2021 - I</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acadynamo/index.html">Acadanymo Project Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">1&nbsp;&nbsp;&nbsp;Miscellaneous</a></li>
 </ul>
 
             
@@ -166,7 +164,7 @@
 <h2>Topic Summary<a class="headerlink" href="#topic-summary" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">Procedence:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NOT</span> <span class="o">&gt;</span> <span class="n">AND</span> <span class="o">&gt;</span> <span class="n">XOR</span><span class="o">/</span><span class="n">XNOR</span> <span class="o">&gt;</span> <span class="n">OR</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">NOT</span> <span class="o">&gt;</span> <span class="n">AND</span> <span class="o">&gt;</span> <span class="n">XOR</span><span class="o">/</span><span class="n">XNOR</span> <span class="o">&gt;</span> <span class="n">OR</span>
 </pre></div>
 </div>
 </li>
@@ -177,17 +175,17 @@
 <p>/ˌʌɪdɛmˈpəʊt(ə)nt, ʌɪˈdɛmpət(ə)nt/</p>
 <p>Operation applied multiple times without changing the result beyond the initial
 application.</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[x + x = x \quad x ⋅ x = x`\]</div>
-<p>Annihilator: <span class="math notranslate nohighlight">\(x + 1 = 1 \quad x ⋅ 0 = 0\)</span></p>
-<p>Complement Law: <span class="math notranslate nohighlight">\(x+\bar{x}=1 \quad x⋅\bar{x}=0\)</span></p>
+<p>Annihilator: <span class="math">\(x + 1 = 1 \quad x ⋅ 0 = 0\)</span></p>
+<p>Complement Law: <span class="math">\(x+\bar{x}=1 \quad x⋅\bar{x}=0\)</span></p>
 <p>Absorptive Law (easily forgotten):</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}x+xy=x \quad \space\\
 x+\bar{x}y=x+y\end{split}\]</div>
-<p>Distributive Law &amp; DeMorgan’s Law</p>
-<p>Relationship between XOR and XNOR: <span class="math notranslate nohighlight">\(\quad x⊙y=\overline{x⊕y}=x⊕\bar{y}=\bar{x}⊕y\)</span></p>
-<div class="math notranslate nohighlight">
+<p>Distributive Law &amp; DeMorgan&#8217;s Law</p>
+<p>Relationship between XOR and XNOR: <span class="math">\(\quad x⊙y=\overline{x⊕y}=x⊕\bar{y}=\bar{x}⊕y\)</span></p>
+<div class="math">
 \[\begin{split}\begin{array}{cc|cc|cc}
 x &amp; y &amp; XOR &amp; XNOR &amp; x⊕\bar{y} &amp; \bar{x}⊕y \\
 \hline
@@ -205,88 +203,88 @@ x &amp; y &amp; XOR &amp; XNOR &amp; x⊕\bar{y} &amp; \bar{x}⊕y \\
 <p><a class="reference external" href="http://www.ee.surrey.ac.uk/Projects/Labview/boolalgebra/quiz/index.html">source</a></p>
 <p>Finish this quiz <strong>without</strong> paper &amp; pencil.</p>
 <p>1. Give the relationship that represents the dual of the Boolean property A + 1 = 1?
-(Note: * = AND, + = OR and ‘ = NOT) (2)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">A</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">A</span> <span class="o">*</span> <span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+(Note: * = AND, + = OR and &#8216; = NOT) (2)</p>
+<div class="highlight-python"><div class="highlight"><pre>(1) A * 1 = 1
+(2) A * 0 = 0
+(3) A + 0 = 0
+(4) A * A = A
+(5) A * 1 = 1
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>Give the best definition of a literal? (3)</li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">A</span> <span class="n">Boolean</span> <span class="n">variable</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">The</span> <span class="n">complement</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Boolean</span> <span class="n">variable</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">A</span> <span class="n">Boolean</span> <span class="n">variable</span> <span class="n">interpreted</span> <span class="n">literally</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">The</span> <span class="n">actual</span> <span class="n">understanding</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Boolean</span> <span class="n">variable</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) A Boolean variable
+(2) The complement of a Boolean variable
+(3) 1 or 2
+(4) A Boolean variable interpreted literally
+(5) The actual understanding of a Boolean variable
 </pre></div>
 </div>
-<p>3. Simplify the Boolean expression (A+B+C)(D+E)’ + (A+B+C)(D+E) and choose the
+<p>3. Simplify the Boolean expression (A+B+C)(D+E)&#8217; + (A+B+C)(D+E) and choose the
 best answer. (1)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span> <span class="o">+</span> <span class="n">C</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">D</span> <span class="o">+</span> <span class="n">E</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">A</span><span class="s1">&#39;B&#39;</span><span class="n">C</span><span class="s1">&#39;</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">D</span><span class="s1">&#39;E&#39;</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="kc">None</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) A + B + C
+(2) D + E
+(3) A&#39;B&#39;C&#39;
+(4) D&#39;E&#39;
+(5) None of the above
 </pre></div>
 </div>
 <p>4. Which of the following relationships represents the dual of the Boolean
-property x + x’y = x + y? (5)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">x</span><span class="s1">&#39;(x + y&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="s1">&#39;y&#39;</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="s1">&#39;y) = xy</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="s1">&#39; + y = xy</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">x</span><span class="s1">&#39;(xy&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="s1">&#39;y&#39;</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="s1">&#39; + y) = xy</span>
+property x + x&#8217;y = x + y? (5)</p>
+<div class="highlight-python"><div class="highlight"><pre>(1) x&#39;(x + y&#39;) = x&#39;y&#39;
+(2) x(x&#39;y) = xy
+(3) x*x&#39; + y = xy
+(4) x&#39;(xy&#39;) = x&#39;y&#39;
+(5) x(x&#39; + y) = xy
 </pre></div>
 </div>
-<p>5. Given the function F(X,Y,Z) = XZ + Z(X’+ XY), the equivalent most simplified
+<p>5. Given the function F(X,Y,Z) = XZ + Z(X&#8217;+ XY), the equivalent most simplified
 Boolean representation for F is: (5 [Z])</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Z</span> <span class="o">+</span> <span class="n">YZ</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Z</span> <span class="o">+</span> <span class="n">XYZ</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">XZ</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">X</span> <span class="o">+</span> <span class="n">YZ</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="kc">None</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) Z + YZ
+(2) Z + XYZ
+(3) XZ
+(4) X + YZ
+(5) None of the above
 </pre></div>
 </div>
-<p>6. Simplification of the Boolean expression (A + B)’(C + D + E)’ + (A + B)’
+<p>6. Simplification of the Boolean expression (A + B)&#8217;(C + D + E)&#8217; + (A + B)&#8217;
 yields which of the following results? (2)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">A</span><span class="s1">&#39;B&#39;</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">+</span> <span class="n">E</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">C</span><span class="s1">&#39;D&#39;</span><span class="n">E</span><span class="s1">&#39;</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">A</span><span class="s1">&#39;B&#39;</span><span class="n">C</span><span class="s1">&#39;D&#39;</span><span class="n">E</span><span class="s1">&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) A + B
+(2) A&#39;B&#39;
+(3) C + D + E
+(4) C&#39;D&#39;E&#39;
+(5) A&#39;B&#39;C&#39;D&#39;E&#39;
 </pre></div>
 </div>
-<p>7. Given that F = A’B’+ C’+ D’+ E’, which of the following represent the only
-correct expression for F’? (5)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="sa">F</span><span class="s1">&#39;= A+B+C+D+E</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="sa">F</span><span class="s1">&#39;= ABCDE</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="sa">F</span><span class="s1">&#39;= AB(C+D+E)</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="sa">F</span><span class="s1">&#39;= AB+C&#39;</span><span class="o">+</span><span class="n">D</span><span class="s1">&#39;+E&#39;</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="sa">F</span><span class="s1">&#39;= (A+B)CDE</span>
+<p>7. Given that F = A&#8217;B&#8217;+ C&#8217;+ D&#8217;+ E&#8217;, which of the following represent the only
+correct expression for F&#8217;? (5)</p>
+<div class="highlight-python"><div class="highlight"><pre>(1) F&#39;= A+B+C+D+E
+(2) F&#39;= ABCDE
+(3) F&#39;= AB(C+D+E)
+(4) F&#39;= AB+C&#39;+D&#39;+E&#39;
+(5) F&#39;= (A+B)CDE
 </pre></div>
 </div>
 <ol class="arabic simple" start="8">
-<li>An equivalent representation for the Boolean expression A’ + 1 is</li>
+<li>An equivalent representation for the Boolean expression A&#8217; + 1 is</li>
 </ol>
 <ol class="arabic simple" start="3">
 <li></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">A</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">A</span><span class="s1">&#39;</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="mi">1</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="mi">0</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) A
+(2) A&#39;
+(3) 1
+(4) 0
 </pre></div>
 </div>
 <p>9. Simplification of the Boolean expression AB + ABC + ABCD + ABCDE + ABCDEF
 yields which of the following results? (2)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">ABCDEF</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">AB</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">AB</span> <span class="o">+</span> <span class="n">CD</span> <span class="o">+</span> <span class="n">EF</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span> <span class="o">+</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">+</span> <span class="n">E</span> <span class="o">+</span> <span class="n">F</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">(</span><span class="n">C</span><span class="o">+</span><span class="n">D</span><span class="p">(</span><span class="n">E</span><span class="o">+</span><span class="n">F</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre>(1) ABCDEF
+(2) AB
+(3) AB + CD + EF
+(4) A + B + C + D + E + F
+(5) A + B(C+D(E+F))
 </pre></div>
 </div>
 </div>
@@ -298,15 +296,15 @@ yields which of the following results? (2)</p>
 <img alt="../../_images/02-xnor-by-basics.gif" src="../../_images/02-xnor-by-basics.gif" />
 <p><a class="reference external" href="http://hyperphysics.phy-astr.gsu.edu/hbase/Electronic/xnor.html">source</a></p>
 <ol class="arabic simple" start="2">
-<li>Truth Sequence of ABC (ordered triples) for <span class="math notranslate nohighlight">\((AB+\bar{C})(\bar{A}+BC)(A+\bar{B}+C)\)</span></li>
+<li>Truth Sequence of ABC (ordered triples) for <span class="math">\((AB+\bar{C})(\bar{A}+BC)(A+\bar{B}+C)\)</span></li>
 </ol>
 <p>answer: [0, 0, 0], [1, 1, 1]</p>
 <ol class="arabic simple" start="3">
-<li>Simplification of the expression: <span class="math notranslate nohighlight">\(\overline{(\bar{A}+B)}(B+C)\overline{(A+\bar{C})}(A\bar{B}+BC)\)</span></li>
+<li>Simplification of the expression: <span class="math">\(\overline{(\bar{A}+B)}(B+C)\overline{(A+\bar{C})}(A\bar{B}+BC)\)</span></li>
 </ol>
 <p>answer: 0</p>
 <ol class="arabic simple" start="4">
-<li>Simplify <span class="math notranslate nohighlight">\(\overline{ \overline{(A+\overline{B})} (AB) } + \overline{(A+B) \overline{( \overline{A} B)} }\)</span></li>
+<li>Simplify <span class="math">\(\overline{ \overline{(A+\overline{B})} (AB) } + \overline{(A+B) \overline{( \overline{A} B)} }\)</span></li>
 </ol>
 <p>answer: 1</p>
 </div>
@@ -362,8 +360,7 @@ yields which of the following results? (2)</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

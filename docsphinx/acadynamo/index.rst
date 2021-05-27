@@ -13,5 +13,5 @@ Last update: |today|
 .. toctree::
    :maxdepth: 2
 
-   acadynamo/wp-starup
-   acadynamo/docker
+   wordpress/wp-startup
+   wordpress/docker
