@@ -227,6 +227,7 @@ FakesAssemblies/
 
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
+vue
 
 # Visual Studio 6 build log
 *.plg
@@ -272,4 +273,3 @@ RemoteSystemsTempFiles
 __pycache__
 GDX
 www-res
-
