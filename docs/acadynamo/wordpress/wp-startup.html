@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup Docker Wordpress &mdash; ACSL Lecture 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
+        <link rel="next" title="Docker Quick Start" href="docker.html"/>
+        <link rel="prev" title="Acadanymo Project Resources" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> ACSL Lecture
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acsl/index.html">Welcome to ACSL Lecture!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amc/aime-2021.html">AIME 2021 - I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Acadanymo Project Resources</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Setup Docker Wordpress</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-docker">Install Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-wordpress">Setup Wordpress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wordpress-hands-on">Wordpress Hands on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#play-with-docker-labs-optional">Play with Docker Labs (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">Docker Quick Start</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">1&nbsp;&nbsp;&nbsp;Miscellaneous</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ACSL Lecture</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Acadanymo Project Resources</a> &raquo;</li>
+      
+    <li>Setup Docker Wordpress</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-docker-wordpress">
+<h1>Setup Docker Wordpress<a class="headerlink" href="#setup-docker-wordpress" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-docker">
+<h2>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h2>
+<p>Docker is getting popular in recent years. It&#8217;s worth to have a try!</p>
+<p>Download Docker <a class="reference external" href="https://www.docker.com/get-started">here</a>.
+Follow the <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">installation instructions</a>.
+Or follow <a class="reference internal" href="docker.html#install-docker"><span>the tutorial here (TODO: comming soon for Windows)</span></a>.</p>
+<p>For now, you can think Docker is an advanced virtual machine and can work everywhere.
+So Wordpress can provide web page service on it.</p>
+</div>
+<div class="section" id="setup-wordpress">
+<h2>Setup Wordpress<a class="headerlink" href="#setup-wordpress" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://wordpress.org/">Wordpress</a> is a website builder with support from
+developers all over the world. And Docker provide us a quick way to use it:</p>
+<div class="highlight-python"><div class="highlight"><pre>::
+</pre></div>
+</div>
+<blockquote>
+<div>docker pull wordpress</div></blockquote>
+<p>Once Wordpress image is ready, we can start and run our first web server like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>docker run --name wp -e WORDPRESS_DB_HOST=&lt;mysql-host&gt;:3306 -e WORDPRESS_DB_NAME=cdfls -e WORDPRESS_DB_USER=&lt;user-name&gt; -e WORDPRESS_DB_PASSWORD=&lt;user-pswd&gt; -dp 80:80 --rm wordpress
+</pre></div>
+</div>
+<p>You should get something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>193e3fc1081e3167f631fe0b71a4fe64415a736fa64295488d8b70478287efd0
+</pre></div>
+</div>
+<p>Which is the container Id.</p>
+<img alt="../../_images/01-wordpress-mysql.png" src="../../_images/01-wordpress-mysql.png" />
+<p>Now visit the address in a browser:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost
+</pre></div>
+</div>
+<p>and you should see something like this:</p>
+<a class="reference internal image-reference" href="../../_images/02-wordpress-init.png"><img alt="../../_images/02-wordpress-init.png" src="../../_images/02-wordpress-init.png" style="width: 320px;" /></a>
+<p>That&#8217;s it.</p>
+</div>
+<div class="section" id="wordpress-hands-on">
+<h2>Wordpress Hands on<a class="headerlink" href="#wordpress-hands-on" title="Permalink to this headline">¶</a></h2>
+<p>Follow the previous step, setup your manager account, then your website dashboard
+should look like this:</p>
+<img alt="../../_images/03-wordpress-setup.png" src="../../_images/03-wordpress-setup.png" />
+<p>To publish your first page, you can click <em>New</em> in the top banner or <em>Pages</em> in
+navigator at the left side.</p>
+<p>The page editing is basically <em>What You See Is What You Get</em>. You can <em>preview</em> or
+see the final results in public site following the URL at the right side.</p>
+<img alt="../../_images/04-wp-page0.png" src="../../_images/04-wp-page0.png" />
+<p>Now you can publish the page. Your first website is working!</p>
+<p>The next step is to consider hosting your website on a public accessible server.
+Before doing this, you already got advantage that your website image can be moved
+anywhere in hole image of Docker. And many cloud service support Docker.</p>
+<p>Before moving your website from server to server, you&#8217;d better host your image at
+Docker Hub.</p>
+<p>The first thing you might want to change is the site&#8217;s favicon. You can follow this
+<a class="reference external" href="https://yoast.com/how-to-change-your-favicon-in-wordpress-a-step-by-step-guide/">blog</a>
+to customize.</p>
+<p>To get maximum visial effects of your site, you are suggested following some video
+tutorial of Wordpress to get yourself familiar this it.</p>
+</div>
+<div class="section" id="play-with-docker-labs-optional">
+<h2>Play with Docker Labs (Optional)<a class="headerlink" href="#play-with-docker-labs-optional" title="Permalink to this headline">¶</a></h2>
+<p>Docker Hub is a cloud service free to save Docker images. Before you can install
+docker, you can to <a class="reference external" href="https://hub.docker.com/">register at Docker Hub</a> and play
+with Wordpress at <a class="reference external" href="https://labs.play-with-docker.com/">Dock Labs</a>.</p>
+<p>Once you sign up, you can login in with Docker and pull Wordpress and start it (
+click ADD NEW INSTANCE):</p>
+<div class="highlight-python"><div class="highlight"><pre>docker pull wordpress
+docker run --name wp -e WORDPRESS_DB_HOST=&lt;mysql-host&gt;:3306 -e WORDPRESS_DB_NAME=cdfls -e WORDPRESS_DB_USER=&lt;user-name&gt; -e WORDPRESS_DB_PASSWORD=&lt;user-pswd&gt; -dp 80:80 --rm wordpress
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your connection is slow, you need key-in slowly.</p>
+</div>
+<p>Then copy the address to your browser&#8217;s.</p>
+<img alt="../../_images/05-wp-docker-labs.png" src="../../_images/05-wp-docker-labs.png" />
+<p>After the image is running, open the site by clicking the link shown above, you
+should see the page:</p>
+<img alt="../../_images/06-wp-docker-lab-page0.png" src="../../_images/06-wp-docker-lab-page0.png" />
+<p>This is a quick way to verify your Mysql connection is setup correctly.</p>
+<p>Now go to Docker Labs (click Labs at Docker Hub page). Once logged in and created
+a new node, you can pull down your image uploaded just now. You can verify everyone
+can work with it or can be used latter on other servers.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker Quick Start" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Acadanymo Project Resources" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Odys Zhou.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
