@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 06: Topics of Contest 4" href="index.html"/>
         <link rel="next" title="AIME 2021 - I" href="../../amc/aime-2021.html"/>
@@ -97,7 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="topics.html">Contest4 Topics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercise.html">Extension: Backtracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercise.html#exercise">Exercise</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Issue 2018 Intermediate</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Issue 2018 Intermediate</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#problem">Problem:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#issue">Issue:</a></li>
 </ul>
@@ -109,8 +106,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../amc/aime-2021.html">AIME 2021 - I</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acadynamo/index.html">Acadanymo Project Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/miscellaneous.html">1&nbsp;&nbsp;&nbsp;Miscellaneous</a></li>
 </ul>
 
             
@@ -166,84 +164,84 @@ American Computer Science League Contest #4
 Intermediate Division Programming Problem: Duplicates</p>
 <p><a class="reference external" href="http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf">See here</a></p>
 <p>SAMPLE INPUT SAMPLE:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">abracadabracabob</span>
-<span class="n">REPORT</span> <span class="mi">3</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">ADD</span> <span class="n">BATH</span>
-<span class="n">DELETE</span> <span class="n">boa</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">DELETE</span> <span class="n">drr</span>
-<span class="n">REPORT</span> <span class="mi">5</span>
-<span class="n">RESET</span> <span class="n">American</span> <span class="n">Computer</span> <span class="n">Science</span> <span class="n">League</span>
-<span class="n">ADD</span> <span class="n">Computer</span>
-<span class="n">DELETE</span> <span class="n">Computer</span>
-<span class="n">DELETE</span> <span class="n">COMPUTER</span>
-<span class="n">REPORT</span> <span class="mi">10</span>
+<div class="highlight-python"><div class="highlight"><pre>RESET abracadabracabob
+REPORT 3
+REPORT 5
+ADD BATH
+DELETE boa
+REPORT 5
+DELETE drr
+REPORT 5
+RESET American Computer Science League
+ADD Computer
+DELETE Computer
+DELETE COMPUTER
+REPORT 10
 </pre></div>
 </div>
 <p>OUTPUT:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">RC</span>
-<span class="mf">2.</span> <span class="n">RO</span>
-<span class="mf">3.</span> <span class="n">ROH</span>
-<span class="mf">4.</span> <span class="n">ROHRT</span>
-<span class="mf">5.</span> <span class="n">UTSRPRS</span>
+<div class="highlight-python"><div class="highlight"><pre>1. RC
+2. RO
+3. ROH
+4. ROHRT
+5. UTSRPRS
 </pre></div>
 </div>
 </div>
 <div class="section" id="issue">
 <span id="issue-2018"></span><h2>Issue:<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
-<p>Shouldn’t the 5-th output is ‘UTSRPRSTU’?</p>
-<p>(Add ‘Computer’, Delete ‘Computer’ won’t affect the sequence)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RESET</span> <span class="n">American</span> <span class="n">Computer</span> <span class="n">Science</span> <span class="n">League</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;MNOR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;OPR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;PRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;STU&#39;</span><span class="p">),</span>
-     <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+<p>Shouldn&#8217;t the 5-th output is &#8216;UTSRPRSTU&#8217;?</p>
+<p>(Add &#8216;Computer&#8217;, Delete &#8216;Computer&#8217; won&#8217;t affect the sequence)</p>
+<div class="highlight-python"><div class="highlight"><pre>RESET American Computer Science League
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 6, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;),
+ (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;), (&#39;M&#39;, 1, &#39;MNOR&#39;), (&#39;N&#39;, 1, &#39;NOPR&#39;),
+ (&#39;O&#39;, 1, &#39;OPR&#39;), (&#39;P&#39;, 1, &#39;PRSTU&#39;), (&#39;R&#39;, 1, &#39;RSTU&#39;), (&#39;S&#39;, 1, &#39;STU&#39;),
+     (&#39;T&#39;, 1, &#39;TU&#39;), (&#39;U&#39;, 2, &#39;U&#39;)]
 
 
-<span class="o">-</span> <span class="n">CO</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;MNOR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;POPR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- CO
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 6, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;),
+ (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;), (&#39;M&#39;, 1, &#39;MNOR&#39;), (&#39;N&#39;, 1, &#39;NOPR&#39;),
+ (&#39;P&#39;, 1, &#39;POPR&#39;), (&#39;R&#39;, 1, &#39;RPRSTU&#39;), (&#39;S&#39;, 1, &#39;SRSTU&#39;), (&#39;T&#39;, 1, &#39;TSTU&#39;),
+ (&#39;U&#39;, 2, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 
-<span class="o">-</span> <span class="n">M</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NMNOR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;PNOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RPOPR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TSRSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;UTSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- M
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 6, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;),
+ (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;),
+ (&#39;N&#39;, 1, &#39;NMNOR&#39;), (&#39;P&#39;, 1, &#39;PNOPR&#39;),
+ (&#39;R&#39;, 1, &#39;RPOPR&#39;), (&#39;S&#39;, 1, &#39;SRPRSTU&#39;), (&#39;T&#39;, 1, &#39;TSRSTU&#39;),
+ (&#39;U&#39;, 2, &#39;UTSTU&#39;), (&#39;&#39;, 0, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 
-<span class="o">-</span> <span class="n">P</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NMNOR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RPNOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRPOPR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TSRPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;UTSRSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- P
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 6, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;),
+ (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;),
+ (&#39;N&#39;, 1, &#39;NMNOR&#39;),
+ (&#39;R&#39;, 1, &#39;RPNOPR&#39;),
+ (&#39;S&#39;, 1, &#39;SRPOPR&#39;), (&#39;T&#39;, 1, &#39;TSRPRSTU&#39;), (&#39;U&#39;, 2, &#39;UTSRSTU&#39;),
+ (&#39;&#39;, 0, &#39;UTSTU&#39;), (&#39;&#39;, 0, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 
-<span class="o">-</span> <span class="n">U</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NMNOR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RPNOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRPOPR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TSRPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;UTSRSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- U
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 6, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;), (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;),
+ (&#39;N&#39;, 1, &#39;NMNOR&#39;),
+ (&#39;R&#39;, 1, &#39;RPNOPR&#39;),
+ (&#39;S&#39;, 1, &#39;SRPOPR&#39;), (&#39;T&#39;, 1, &#39;TSRPRSTU&#39;), (&#39;U&#39;, 1, &#39;UTSRSTU&#39;),
+ (&#39;&#39;, 0, &#39;UTSTU&#39;), (&#39;&#39;, 0, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 
-<span class="o">-</span> <span class="n">TE</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NMNOR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;RPNOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRPOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;UTSRPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- TE
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 5, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;), (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;),
+ (&#39;N&#39;, 1, &#39;NMNOR&#39;),
+ (&#39;R&#39;, 1, &#39;RPNOPR&#39;),
+ (&#39;S&#39;, 1, &#39;SRPOPR&#39;),
+ (&#39;U&#39;, 1, &#39;UTSRPRSTU&#39;), (&#39;&#39;, 0, &#39;UTSRSTU&#39;), (&#39;&#39;, 0, &#39;UTSTU&#39;),
+ (&#39;&#39;, 0, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 
-<span class="o">-</span> <span class="n">R</span>
-<span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;CEM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;EIM&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GIMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ILMR&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;LMNR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NMNOR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SRPNOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;USRPOPR&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSRPRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSRSTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTSTU&#39;</span><span class="p">),</span>
- <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;UTU&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">)]</span>
+- R
+[(&#39;A&#39;, 3, &#39;A&#39;), (&#39;C&#39;, 4, &#39;CEM&#39;), (&#39;E&#39;, 5, &#39;EIM&#39;), (&#39;G&#39;, 1, &#39;GIMR&#39;), (&#39;I&#39;, 1, &#39;ILMR&#39;), (&#39;L&#39;, 1, &#39;LMNR&#39;),
+ (&#39;N&#39;, 1, &#39;NMNOR&#39;),
+ (&#39;S&#39;, 1, &#39;SRPNOPR&#39;),
+ (&#39;U&#39;, 1, &#39;USRPOPR&#39;),
+ (&#39;&#39;, 0, &#39;UTSRPRSTU&#39;), (&#39;&#39;, 0, &#39;UTSRSTU&#39;), (&#39;&#39;, 0, &#39;UTSTU&#39;),
+ (&#39;&#39;, 0, &#39;UTU&#39;), (&#39;&#39;, 0, &#39;U&#39;)]
 </pre></div>
 </div>
 </div>
@@ -299,8 +297,7 @@ Intermediate Division Programming Problem: Duplicates</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
