@@ -17,25 +17,30 @@ Setup Wordpress
 ---------------
 
 `Wordpress <https://wordpress.org/>`_ is a website builder with support from
-developers all over the world. And Docker provide us a quick way to use it::
+developers all over the world. And Docker provide us a quick way to use it.
 
-::
+Two different way of deploying Wordpress together with Mysql are introduced here.
 
-    docker pull wordpress
+Compose Mysql & Wordpress
+_________________________
 
-Once Wordpress image is ready, we can start and run our first web server like this:
+This is the recommended simple way.
 
-::
+Compose is a powerful way Docker employed for different satuations. Using compose
+we can setup Wordpress in one line in the same directory of
+:download:`file docker-compose.yml <../../../docker/wordpress/docker-compose.yml>`::
 
-    docker run --name wp -e WORDPRESS_DB_HOST=<mysql-host>:3306 -e WORDPRESS_DB_NAME=<...> -e WORDPRESS_DB_USER=<user-name> -e WORDPRESS_DB_PASSWORD=<user-pswd> -dp 80:80 --rm wordpress
+    docker-compose up -d
 
-You should get something like::
+This will bring up the 2 containers and with another mysql container, the mysql DB
+can be connected::
 
-    193e3fc1081e3167f631fe0b71a4fe64415a736fa64295488d8b70478287efd0
+    docker run --network wordpress_default -it --rm mysql:5.7 mysql -h mysql -uroot -p
 
-Which is the container Id.
+The network name, wordpress_default is the name when Docker compse and run the
+containers, wordpress and mysql.
 
-.. image:: ../imgs/01-wordpress-mysql.png
+.. attention:: Don't forget change the mysql's root password.
 
 Now visit the address in a browser::
 
@@ -48,6 +53,31 @@ and you should see something like this:
 
 That's it.
 
+Independent Mysql Server
+________________________
+
+In this way, mysql is running without a docker container.
+
+::
+
+    docker pull wordpress
+
+Once Wordpress image is ready, we can start and run our first web server like this::
+
+    docker run --name wp -e WORDPRESS_DB_HOST=<mysql-host>:3306 -e WORDPRESS_DB_NAME=<...> -e WORDPRESS_DB_USER=<user-name> -e WORDPRESS_DB_PASSWORD=<user-pswd> -dp 80:80 --rm wordpress
+
+You should get something like::
+
+    193e3fc1081e3167f631fe0b71a4fe64415a736fa64295488d8b70478287efd0
+
+Which is the container Id.
+
+.. image:: ../imgs/01-wordpress-mysql.png
+
+You can visit the page now at::
+
+    http://localhost
+    
 Wordpress Hands on
 ------------------
 

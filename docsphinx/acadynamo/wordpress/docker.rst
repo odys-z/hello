@@ -27,4 +27,21 @@ install it (`doc <https://docs.docker.com/engine/install/ubuntu/>`_)::
 Install on Windows 10
 ---------------------
 
-...
+Before installing Docker on Windows 10, make sure the system meet the prerequisites::
+
+1. Windows version later than 1903 (Build 18362 or higher).
+
+To check the system version, run *winver*.
+
+.. image:: ../imgs/07-winver.png
+
+.. image:: ../imgs/07-win-version.png
+
+2. Virtualization enabled
+
+.. image:: ../imgs/08-win-virtual.png
+
+For details, see `Docker ducuments about install on Windows 10 <https://docs.docker.com/docker-for-windows/install/#system-requirements>`_.
+
+Download the installer `here <https://docs.docker.com/docker-for-windows/install/>`_
+and follow the instructions. (Install WSL later).
