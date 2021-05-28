@@ -1,13 +1,13 @@
 Tutorial: 3 steps setting up a website
 ======================================
 
-Steps: 
+Steps:
 
--	Install Docker
+-	:ref:`Install Docker <install-docker>`
 
--	Compose Wordpress image
+-	:ref:`Compose Wordpress image <wp-docker-compose>`
 
--	Create first page
+-	:ref:`Create the first page <wp-hands-on>`
 
 About Docker
 
@@ -24,5 +24,3 @@ About Mysql
 One last step for publishing your websites
 
 	Push your image to Docker Hub and test it with Docker Labs.
-
-

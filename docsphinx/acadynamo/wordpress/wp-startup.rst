@@ -21,6 +21,8 @@ developers all over the world. And Docker provide us a quick way to use it.
 
 Two different way of deploying Wordpress together with Mysql are introduced here.
 
+.. _wp-docker-compose:
+
 Compose Mysql & Wordpress
 _________________________
 
@@ -77,7 +79,9 @@ Which is the container Id.
 You can visit the page now at::
 
     http://localhost
-    
+
+.. _wp-hands-on:
+
 Wordpress Hands on
 ------------------
 
