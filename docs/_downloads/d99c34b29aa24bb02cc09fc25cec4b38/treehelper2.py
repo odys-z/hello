@@ -4,6 +4,7 @@ where list is actually an array of tree.
 
 @author: Odys Zhou
 '''
+from typing import List
 from unittest import TestCase
 
 class TreeNode(object):
@@ -23,7 +24,7 @@ class TreeNode(object):
             buf += ', r: ' + self.right.print()
         return buf + '}'
 
-def list2tree(lst):
+def list2tree(lst: List):
     '''
     convert int array (sorted in dfs binary tree) to tree of TreeNode 
     0, 1, 2, 3, 4, 5, 6 =>

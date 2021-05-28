@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
         <link rel="next" title="LeetCode Problem Notes" href="../../notes/leetcode.html"/>
@@ -86,8 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Acadanymo Project Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="3steps.html">Tutorial: 3 steps setting up a website</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wp-startup.html">Setup Docker Wordpress</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Docker Quick Start</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docker Quick Start</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-on-ubuntu">Install on Ubuntu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-on-windows-10">Install on Windows 10</a></li>
 </ul>
@@ -147,7 +151,7 @@
 <p>Our test shows the <em>apt-get</em> way is not working via our network.
 <a class="reference external" href="https://www.docker.com/get-started">Download package</a> &amp;
 install it (<a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">doc</a>):</p>
-<div class="highlight-python"><div class="highlight"><pre># find out system architecture (amd64, armhf or arm64)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># find out system architecture (amd64, armhf or arm64)
     dpkg-architecture -q DEB_BUILD_ARCH
 
 # then download the package, upzip
@@ -165,7 +169,20 @@ sudo groupadd docker
 </div>
 <div class="section" id="install-on-windows-10">
 <h2>Install on Windows 10<a class="headerlink" href="#install-on-windows-10" title="Permalink to this headline">¶</a></h2>
-<p>...</p>
+<p>Before installing Docker on Windows 10, make sure the system meet the prerequisites:</p>
+<ol class="arabic simple">
+<li>Windows version later than 1903 (Build 18362 or higher).</li>
+</ol>
+<p>To check the system version, run <em>winver</em>.</p>
+<img alt="../../_images/07-winver.png" src="../../_images/07-winver.png" />
+<img alt="../../_images/07-win-version.png" src="../../_images/07-win-version.png" />
+<ol class="arabic simple" start="2">
+<li>Virtualization enabled</li>
+</ol>
+<img alt="../../_images/08-win-virtual.png" src="../../_images/08-win-virtual.png" />
+<p>For details, see <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/#system-requirements">Docker ducuments about install on Windows 10</a>.</p>
+<p>Download the installer <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">here</a>
+and follow the instructions. (Install WSL later).</p>
 </div>
 </div>
 
@@ -219,7 +236,8 @@ sudo groupadd docker
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
