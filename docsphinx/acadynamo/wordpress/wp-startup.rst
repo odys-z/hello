@@ -53,6 +53,28 @@ and you should see something like this:
 .. image:: ../imgs/02-wordpress-init.png
     :width: 320px
 
+We are deploying Mysql with Docker using Docker Compose method. So we need to tell
+where Wordpress can find database. If you didn't change anything else except password
+in the download 'docker-compse.yml' file, you can set information in the page
+like this::
+
+    database name: my-wpdb
+    database user: root
+    database host: mysql
+    db password: your-password
+
+.. image:: ../imgs/09-wp-compose-init.png
+    :width: 480px
+
+In this page you may still have some trouble to connect database. See troubleshootings
+:ref:`details for Docker network <trouble-compose-mysql>`_ for how to solve the
+problem.
+
+In the next page, you can create the administrator of your website.
+
+.. image:: ../imgs/10-wp-compose-init.png
+    :width: 480px
+
 That's it.
 
 Independent Mysql Server
