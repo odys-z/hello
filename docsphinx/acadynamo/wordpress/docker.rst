@@ -27,7 +27,7 @@ install it (`doc <https://docs.docker.com/engine/install/ubuntu/>`_)::
 Install on Windows 10
 ---------------------
 
-Before installing Docker on Windows 10, make sure the system meet the prerequisites::
+Before installing Docker on Windows 10, make sure the system meet the prerequisites:
 
 1. Windows version later than 1903 (Build 18362 or higher).
 
