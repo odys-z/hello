@@ -98,6 +98,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#wordpress-hands-on">Wordpress Hands on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publish-to-docker-hub">Publish to Docker Hub</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#play-with-docker-labs-optional">Play with Docker Labs (Optional)</a></li>
 </ul>
 </li>
@@ -229,20 +230,39 @@ see the final results in public site following the URL at the right side.</p>
 <p>Now you can publish the page. Your first website is working!</p>
 <p>The next step is to consider hosting your website on a public accessible server.
 Before doing this, you already got advantage that your website image can be moved
-anywhere in hole image of Docker. And many cloud service support Docker.</p>
-<p>Before moving your website from server to server, you’d better host your image at
-Docker Hub.</p>
+anywhere in a hole image of Docker. And many cloud service support Docker.</p>
 <p>The first thing you might want to change is the site’s favicon. You can follow this
 <a class="reference external" href="https://yoast.com/how-to-change-your-favicon-in-wordpress-a-step-by-step-guide/">blog</a>
 to customize.</p>
 <p>To get maximum visial effects of your site, you are suggested following some video
 tutorial of Wordpress to get yourself familiar this it.</p>
 </div>
+<div class="section" id="publish-to-docker-hub">
+<h2>Publish to Docker Hub<a class="headerlink" href="#publish-to-docker-hub" title="Permalink to this headline">¶</a></h2>
+<p>Before moving your website from server to server, you’d better host your image
+at Docker Hub.</p>
+<p>Docker Hub is a cloud service free for saving Docker images. Before you can push
+image to Docker Hub, you have to <a class="reference external" href="https://hub.docker.com/">register at Docker Hub</a>.</p>
+<p>To push images up to Docker Hub after registering:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">login</span> <span class="o">--</span><span class="n">username</span> <span class="s1">&#39;account-id-you-just-created&#39;</span> <span class="o">--</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;your-passowrd&#39;</span>
+
+    <span class="c1"># tag your image with a unique mark.</span>
+    <span class="c1"># e.g. docker tag eb3 odysz/wordpress-acadynamo:1.1</span>
+<span class="n">docker</span> <span class="n">tag</span> <span class="p">[</span><span class="n">first</span> <span class="mi">3</span> <span class="n">char</span> <span class="n">of</span> <span class="n">image</span> <span class="n">Id</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">accout</span><span class="o">-</span><span class="n">Id</span><span class="o">&gt;/&lt;</span><span class="n">image</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+
+    <span class="c1"># publish</span>
+    <span class="c1"># e.g. docker push odysz/wordpress-acadynamo:1.1</span>
+    <span class="n">docker</span> <span class="n">push</span> <span class="o">&lt;</span><span class="n">accout</span><span class="o">-</span><span class="n">Id</span><span class="o">&gt;/&lt;</span><span class="n">image</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For more details, see Docker Documents: <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/push/">Docker Push</a>.</p>
+</div>
 <div class="section" id="play-with-docker-labs-optional">
 <h2>Play with Docker Labs (Optional)<a class="headerlink" href="#play-with-docker-labs-optional" title="Permalink to this headline">¶</a></h2>
-<p>Docker Hub is a cloud service free to save Docker images. Before you can install
-docker, you can to <a class="reference external" href="https://hub.docker.com/">register at Docker Hub</a> and play
-with Wordpress at <a class="reference external" href="https://labs.play-with-docker.com/">Dock Labs</a>.</p>
+<p>Before publish your site, you’d better verify it at <a class="reference external" href="https://labs.play-with-docker.com/">Dock Labs</a>.</p>
+<p>Now go to Docker Labs (click Labs at Docker Hub page). Once logged in and created
+a new node, you can pull down your image uploaded just now. You can verify everyone
+can work with it or can be used latter on other servers.</p>
 <p>Once you sign up, you can login in with Docker and pull Wordpress and start it (
 click ADD NEW INSTANCE):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">wordpress</span>
@@ -258,10 +278,8 @@ click ADD NEW INSTANCE):</p>
 <p>After the image is running, open the site by clicking the link shown above, you
 should see the page:</p>
 <img alt="../../_images/06-wp-docker-lab-page0.png" src="../../_images/06-wp-docker-lab-page0.png" />
-<p>This is a quick way to verify your Mysql connection is setup correctly.</p>
-<p>Now go to Docker Labs (click Labs at Docker Hub page). Once logged in and created
-a new node, you can pull down your image uploaded just now. You can verify everyone
-can work with it or can be used latter on other servers.</p>
+<p>This is a quick way to verify your Docker image is setup / composed correctly and
+can be re-deployed anywhere in the future.</p>
 </div>
 </div>
 

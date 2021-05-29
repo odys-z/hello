@@ -34,14 +34,17 @@ Before installing Docker on Windows 10, make sure the system meet the prerequisi
 To check the system version, run *winver*.
 
 .. image:: ../imgs/07-winver.png
+    :width: 320px
 
 .. image:: ../imgs/07-win-version.png
+    :width: 320px
 
-2. Virtualization enabled
+2. WSL 2 enabled
 
 .. image:: ../imgs/08-win-virtual.png
+    :width: 320px
 
-For details, see `Docker ducuments about install on Windows 10 <https://docs.docker.com/docker-for-windows/install/#system-requirements>`_.
+For details, see Docker ducuments about `install on Windows 10 <https://docs.docker.com/docker-for-windows/install/#system-requirements>`_.
 
 Download the installer `here <https://docs.docker.com/docker-for-windows/install/>`_
-and follow the instructions. (Install WSL later).
+and follow the instructions - will request Linux kernel update package.

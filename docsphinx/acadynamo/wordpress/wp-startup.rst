@@ -102,10 +102,7 @@ Now you can publish the page. Your first website is working!
 
 The next step is to consider hosting your website on a public accessible server.
 Before doing this, you already got advantage that your website image can be moved
-anywhere in hole image of Docker. And many cloud service support Docker.
-
-Before moving your website from server to server, you'd better host your image at
-Docker Hub.
+anywhere in a hole image of Docker. And many cloud service support Docker.
 
 The first thing you might want to change is the site's favicon. You can follow this
 `blog <https://yoast.com/how-to-change-your-favicon-in-wordpress-a-step-by-step-guide/>`_
@@ -114,12 +111,37 @@ to customize.
 To get maximum visial effects of your site, you are suggested following some video
 tutorial of Wordpress to get yourself familiar this it.
 
+Publish to Docker Hub
+---------------------
+
+Before moving your website from server to server, you'd better host your image
+at Docker Hub.
+
+Docker Hub is a cloud service free for saving Docker images. Before you can push
+image to Docker Hub, you have to `register at Docker Hub <https://hub.docker.com/>`_.
+
+To push images up to Docker Hub after registering::
+
+    docker login --username 'account-id-you-just-created' --password='your-passowrd'
+
+	# tag your image with a unique mark.
+	# e.g. docker tag eb3 odysz/wordpress-acadynamo:1.1
+    docker tag [first 3 char of image Id] <accout-Id>/<image-name>:<version>
+
+	# publish
+	# e.g. docker push odysz/wordpress-acadynamo:1.1
+	docker push <accout-Id>/<image-name>:<version>
+
+For more details, see Docker Documents: `Docker Push <https://docs.docker.com/engine/reference/commandline/push/>`_.
+
 Play with Docker Labs (Optional)
 --------------------------------
 
-Docker Hub is a cloud service free to save Docker images. Before you can install
-docker, you can to `register at Docker Hub <https://hub.docker.com/>`_ and play
-with Wordpress at `Dock Labs <https://labs.play-with-docker.com/>`_.
+Before publish your site, you'd better verify it at `Dock Labs <https://labs.play-with-docker.com/>`_.
+
+Now go to Docker Labs (click Labs at Docker Hub page). Once logged in and created
+a new node, you can pull down your image uploaded just now. You can verify everyone
+can work with it or can be used latter on other servers.
 
 Once you sign up, you can login in with Docker and pull Wordpress and start it (
 click ADD NEW INSTANCE)::
@@ -139,8 +161,5 @@ should see the page:
 
 .. image:: ../imgs/06-wp-docker-lab-page0.png
 
-This is a quick way to verify your Mysql connection is setup correctly.
-
-Now go to Docker Labs (click Labs at Docker Hub page). Once logged in and created
-a new node, you can pull down your image uploaded just now. You can verify everyone
-can work with it or can be used latter on other servers.
+This is a quick way to verify your Docker image is setup / composed correctly and
+can be re-deployed anywhere in the future.
