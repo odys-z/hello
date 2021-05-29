@@ -11,7 +11,7 @@ Our test shows the *apt-get* way is not working via our network.
 install it (`doc <https://docs.docker.com/engine/install/ubuntu/>`_)::
 
     # find out system architecture (amd64, armhf or arm64)
-	dpkg-architecture -q DEB_BUILD_ARCH
+    dpkg-architecture -q DEB_BUILD_ARCH
 
     # then download the package, upzip
     sudo dpkg -i /path/to/package.deb
@@ -21,8 +21,8 @@ install it (`doc <https://docs.docker.com/engine/install/ubuntu/>`_)::
 
     # docker for all users not only root
     sudo groupadd docker
-	sudo usermod -aG docker $USER
-	# then re-login
+    sudo usermod -aG docker $USER
+    # then re-login
 
 Install on Windows 10
 ---------------------
