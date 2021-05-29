@@ -93,8 +93,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Setup Docker Wordpress</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-docker">Install Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setup-wordpress">Setup Wordpress</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#compose-mysql-wordpress">Compose Mysql &amp; Wordpress</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#independent-mysql-server">Independent Mysql Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-1-docker-compose">Option 1: Docker Compose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-2-independent-mysql-server">Option 2: Independent Mysql Server</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#wordpress-hands-on">Wordpress Hands on</a></li>
@@ -103,6 +103,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="docker.html">Docker Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wp-troubles.html">Troubleshootings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
@@ -153,9 +154,12 @@
             
   <div class="section" id="setup-docker-wordpress">
 <h1>Setup Docker Wordpress<a class="headerlink" href="#setup-docker-wordpress" title="Permalink to this headline">¶</a></h1>
+<p>Docker is getting popular in recent years. It’s worth to have a try!</p>
+<p>Docker Image: A running environment configuration.</p>
+<p>Docker Container: A running instance of Docker image.</p>
 <div class="section" id="install-docker">
 <h2>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h2>
-<p>Docker is getting popular in recent years. It’s worth to have a try!</p>
+<p>Skip this if you are folloing the <a class="reference internal" href="3steps.html#tutor-3steps"><span class="std std-ref">3 steps tutorial</span></a>.</p>
 <p>Download Docker <a class="reference external" href="https://www.docker.com/get-started">here</a>.
 Follow the <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">installation instructions</a>.
 Or follow <a class="reference internal" href="docker.html#install-docker"><span class="std std-ref">the tutorial here (TODO: comming soon for Windows)</span></a>.</p>
@@ -167,16 +171,16 @@ So Wordpress can provide web page service on it.</p>
 <p><a class="reference external" href="https://wordpress.org/">Wordpress</a> is a website builder with support from
 developers all over the world. And Docker provide us a quick way to use it.</p>
 <p>Two different way of deploying Wordpress together with Mysql are introduced here.</p>
-<div class="section" id="compose-mysql-wordpress">
-<span id="wp-docker-compose"></span><h3>Compose Mysql &amp; Wordpress<a class="headerlink" href="#compose-mysql-wordpress" title="Permalink to this headline">¶</a></h3>
-<p>This is the recommended simple way.</p>
-<p>Compose is a powerful way Docker employed for different satuations. Using compose
+<div class="section" id="option-1-docker-compose">
+<span id="wp-docker-compose"></span><h3>Option 1: Docker Compose<a class="headerlink" href="#option-1-docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>This is the recommended simple way - composing Mysql &amp; Wordpress.</p>
+<p>Compose is a powerful way Docker employed for different situations. Using compose
 we can setup Wordpress in one line in the same directory of
-<a class="reference download internal" download="" href="../../_downloads/a59ded88080e88318f1fa06bfe6a3b60/docker-compose.yml"><code class="xref download docutils literal notranslate"><span class="pre">file</span> <span class="pre">docker-compose.yml</span></code></a>:</p>
+<a class="reference download internal" download="" href="../../_downloads/a59ded88080e88318f1fa06bfe6a3b60/docker-compose.yml"><code class="xref download docutils literal notranslate"><span class="pre">docker-compose.yml</span></code></a> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
 </div>
-<p>This will bring up the 2 containers and with another mysql container, the mysql DB
+<p>This will bring up the 2 containers. With another mysql container, the mysql DB
 can be connected:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">network</span> <span class="n">wordpress_default</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="n">mysql</span><span class="p">:</span><span class="mf">5.7</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">h</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
 </pre></div>
@@ -193,11 +197,28 @@ containers, wordpress and mysql.</p>
 </div>
 <p>and you should see something like this:</p>
 <a class="reference internal image-reference" href="../../_images/02-wordpress-init.png"><img alt="../../_images/02-wordpress-init.png" src="../../_images/02-wordpress-init.png" style="width: 320px;" /></a>
+<p>We are deploying Mysql with Docker using Docker Compose method. So we need to tell
+where Wordpress can find database. If you didn’t change anything else except password
+in the download ‘docker-compse.yml’ file, you can set information in the page
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span> <span class="n">name</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">wpdb</span>
+<span class="n">database</span> <span class="n">user</span><span class="p">:</span> <span class="n">root</span>
+<span class="n">database</span> <span class="n">host</span><span class="p">:</span> <span class="n">mysql</span>
+<span class="n">db</span> <span class="n">password</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">password</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/09-wp-compose-init.png"><img alt="../../_images/09-wp-compose-init.png" src="../../_images/09-wp-compose-init.png" style="width: 480px;" /></a>
+<p>In this page you may still have some trouble to connect database. See troubleshootings
+<a class="reference internal" href="wp-troubles.html#trouble-compose-mysql"><span class="std std-ref">details for Docker network</span></a> for how to solve the
+problem.</p>
+<p>In the next page, you can create the administrator of your website.</p>
+<a class="reference internal image-reference" href="../../_images/10-wp-compose-init.png"><img alt="../../_images/10-wp-compose-init.png" src="../../_images/10-wp-compose-init.png" style="width: 480px;" /></a>
 <p>That’s it.</p>
 </div>
-<div class="section" id="independent-mysql-server">
-<h3>Independent Mysql Server<a class="headerlink" href="#independent-mysql-server" title="Permalink to this headline">¶</a></h3>
-<p>In this way, mysql is running without a docker container.</p>
+<div class="section" id="option-2-independent-mysql-server">
+<h3>Option 2: Independent Mysql Server<a class="headerlink" href="#option-2-independent-mysql-server" title="Permalink to this headline">¶</a></h3>
+<p>Skip this part if you are trying docker for the first time.</p>
+<p>In this way, Mysql is running without a docker container.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">wordpress</span>
 </pre></div>
 </div>

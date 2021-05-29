@@ -1,10 +1,16 @@
 Setup Docker Wordpress
 ======================
 
+Docker is getting popular in recent years. It's worth to have a try!
+
+Docker Image: A running environment configuration.
+
+Docker Container: A running instance of Docker image.
+
 Install Docker
 --------------
 
-Docker is getting popular in recent years. It's worth to have a try!
+Skip this if you are folloing the :ref:`3 steps tutorial <tutor-3steps>`.
 
 Download Docker `here <https://www.docker.com/get-started>`_.
 Follow the `installation instructions <https://docs.docker.com/engine/install/ubuntu/>`_.
@@ -23,18 +29,18 @@ Two different way of deploying Wordpress together with Mysql are introduced here
 
 .. _wp-docker-compose:
 
-Compose Mysql & Wordpress
+Option 1: Docker Compose
 _________________________
 
-This is the recommended simple way.
+This is the recommended simple way - composing Mysql & Wordpress.
 
-Compose is a powerful way Docker employed for different satuations. Using compose
+Compose is a powerful way Docker employed for different situations. Using compose
 we can setup Wordpress in one line in the same directory of
-:download:`file docker-compose.yml <../../../docker/wordpress/docker-compose.yml>`::
+:download:`docker-compose.yml <../../../docker/wordpress/docker-compose.yml>` file::
 
     docker-compose up -d
 
-This will bring up the 2 containers and with another mysql container, the mysql DB
+This will bring up the 2 containers. With another mysql container, the mysql DB
 can be connected::
 
     docker run --network wordpress_default -it --rm mysql:5.7 mysql -h mysql -uroot -p
@@ -67,7 +73,7 @@ like this::
     :width: 480px
 
 In this page you may still have some trouble to connect database. See troubleshootings
-:ref:`details for Docker network <trouble-compose-mysql>`_ for how to solve the
+:ref:`details for Docker network <trouble-compose-mysql>` for how to solve the
 problem.
 
 In the next page, you can create the administrator of your website.
@@ -77,10 +83,12 @@ In the next page, you can create the administrator of your website.
 
 That's it.
 
-Independent Mysql Server
-________________________
+Option 2: Independent Mysql Server
+__________________________________
 
-In this way, mysql is running without a docker container.
+Skip this part if you are trying docker for the first time.
+
+In this way, Mysql is running without a docker container.
 
 ::
 

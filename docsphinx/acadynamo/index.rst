@@ -16,3 +16,4 @@ Last update: |today|
    wordpress/3steps
    wordpress/wp-startup
    wordpress/docker
+   wordpress/wp-troubles
