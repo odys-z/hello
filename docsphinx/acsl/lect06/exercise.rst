@@ -22,6 +22,9 @@ Solution: :download:`q046 <../../../challenge/leet/medium/q046.py>`
 Exercise
 ========
 
+LeetCode
+--------
+
 1. `LeetCode Problem 1791. Find Center of Star Graph <https://leetcode.com/problems/find-center-of-star-graph/>`_
 
 Solution: :download:`q1791 <../../../challenge/leet/easy/q1791.py>`
@@ -31,7 +34,44 @@ Recursive & Backtracking
 
 Solution: :download:`q206 <../../../challenge/leet/easy/q401.py>`
 
-3*. (medium) `LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/>`_
+3. #tree
+
+3.1 convert tree from array to TreeNode.
+
+Problem::
+
+    Convert tree in array to tree of TreeNode. E.g. from
+    0, 1, 2, 3, 4, 5, 6 =>
+
+           0
+       1       2
+     3   4    5 6
+    7 8 9 10
+
+where
+
+:math:`l = 2m+1, r = 2m + 2`
+
+i.e.
+
+:math:`m = (l-1)//2, m = (r-2)//2`
+
+Solution: :download:`convert tree node <../../../challenge/leet/utils/treehelper2.py>`
+
+3.2 print tree (DFV)
+
+Problem::
+
+    Print above tree to string of
+    '{0, l: {1, l: {3, l: {7}, r: {8}}, r: {4, l: {9}, r: {10}}}, r: {2, l: {5}, r: {6}}}'
+
+3.3 build tree
+
+`LeetCode Problem 108. Convert Sorted Array to Binary Search Tree <https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/>`_.
+
+Solution: :download:`q108 Python <../../../challenge/leet/easy/q108.py>`
+
+4*. (medium) `LeetCode Problem 797. All Paths From Source to Target <https://leetcode.com/problems/all-paths-from-source-to-target/>`_
 
 Solution: :download:`q797 <../../../challenge/leet/medium/q797.py>`
 
@@ -43,7 +83,7 @@ i. With all paths of down & right only, this is a DP problem. see *SolutionAlmos
 
 ii. With nodes referencing less index nodes, this is a backtracking problem. See *Solution*.
 
-4. (medium, see hint) `LeetCode Problem 1641. Count Sorted Vowel Strings <https://leetcode.com/problems/count-sorted-vowel-strings/>`_
+5. (medium, see hint) `LeetCode Problem 1641. Count Sorted Vowel Strings <https://leetcode.com/problems/count-sorted-vowel-strings/>`_
 
 Solution: :download:`q1641 <../../../challenge/leet/medium/q1641.py>` & c++
 version :download:`q1641 <../../../challenge/leet.gcc/q1641/q1641.h>`
@@ -104,17 +144,8 @@ hint::
     pn,o = pn-1,o + pn-1,u
     pn,u = pn-1,u
 
-5. #Directed Graph
-
-6. #Undirected Graph
-
-7. #Graph #DFS
-
-8. #Graph #DSU
-
-9. #Graph #BFS
-
-10. #Graph #DSU
+Sample Problems:
+----------------
 
 x.1 `Sample Problem, Intermediate, c4 <http://www.datafiles.acsl.org/samples/contest4/c_4_duplicates_int.pdf>`_
 

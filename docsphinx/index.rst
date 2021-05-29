@@ -19,6 +19,7 @@ Last update: |today|
    amc/aime-2021
    cemc/hypatia-galois-2021
    usaco/index
+   acadynamo/index
    notes/leetcode
    misc/miscellaneous.rst
 
