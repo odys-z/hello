@@ -1,3 +1,5 @@
+.. _tutor-3steps:
+
 Tutorial: 3 steps setting up a website
 ======================================
 

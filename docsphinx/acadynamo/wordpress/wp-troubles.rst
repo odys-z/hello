@@ -5,7 +5,7 @@ Troubleshootings
 
 1. Setup db for composed image
 
-.. image:: ../imgs/09-wp-compose-db.png
+.. image:: ../imgs/09-wp-compose-init.png
 
 If it report trouble, first check your network::
 

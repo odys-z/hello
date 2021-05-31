@@ -11,8 +11,9 @@ Last update: |today|
 ..
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    wordpress/3steps
    wordpress/wp-startup
    wordpress/docker
+   wordpress/wp-troubles

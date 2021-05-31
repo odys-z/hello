@@ -34,7 +34,7 @@
   
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
-        <link rel="next" title="LeetCode Problem Notes" href="../../notes/leetcode.html"/>
+        <link rel="next" title="Troubleshootings" href="wp-troubles.html"/>
         <link rel="prev" title="Setup Docker Wordpress" href="wp-startup.html"/> 
 
   
@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#install-on-windows-10">Install on Windows 10</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="wp-troubles.html">Troubleshootings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
@@ -149,7 +150,7 @@
 <a class="reference external" href="https://www.docker.com/get-started">Download package</a> &amp;
 install it (<a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">doc</a>):</p>
 <div class="highlight-python"><div class="highlight"><pre># find out system architecture (amd64, armhf or arm64)
-    dpkg-architecture -q DEB_BUILD_ARCH
+dpkg-architecture -q DEB_BUILD_ARCH
 
 # then download the package, upzip
 sudo dpkg -i /path/to/package.deb
@@ -159,8 +160,8 @@ sudo docker run hell-world
 
 # docker for all users not only root
 sudo groupadd docker
-    sudo usermod -aG docker $USER
-    # then re-login
+sudo usermod -aG docker $USER
+# then re-login
 </pre></div>
 </div>
 </div>
@@ -171,15 +172,15 @@ sudo groupadd docker
 <li>Windows version later than 1903 (Build 18362 or higher).</li>
 </ol>
 <p>To check the system version, run <em>winver</em>.</p>
-<img alt="../../_images/07-winver.png" src="../../_images/07-winver.png" />
-<img alt="../../_images/07-win-version.png" src="../../_images/07-win-version.png" />
+<a class="reference internal image-reference" href="../../_images/07-winver.png"><img alt="../../_images/07-winver.png" src="../../_images/07-winver.png" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../../_images/07-win-version.png"><img alt="../../_images/07-win-version.png" src="../../_images/07-win-version.png" style="width: 320px;" /></a>
 <ol class="arabic simple" start="2">
-<li>Virtualization enabled</li>
+<li>WSL 2 enabled</li>
 </ol>
-<img alt="../../_images/08-win-virtual.png" src="../../_images/08-win-virtual.png" />
-<p>For details, see <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/#system-requirements">Docker ducuments about install on Windows 10</a>.</p>
+<a class="reference internal image-reference" href="../../_images/08-win-virtual.png"><img alt="../../_images/08-win-virtual.png" src="../../_images/08-win-virtual.png" style="width: 320px;" /></a>
+<p>For details, see Docker ducuments about <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/#system-requirements">install on Windows 10</a>.</p>
 <p>Download the installer <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">here</a>
-and follow the instructions. (Install WSL later).</p>
+and follow the instructions - will request Linux kernel update package.</p>
 </div>
 </div>
 
@@ -190,7 +191,7 @@ and follow the instructions. (Install WSL later).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../notes/leetcode.html" class="btn btn-neutral float-right" title="LeetCode Problem Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="wp-troubles.html" class="btn btn-neutral float-right" title="Troubleshootings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="wp-startup.html" class="btn btn-neutral" title="Setup Docker Wordpress" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
