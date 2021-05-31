@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 1: Python Quick Start" href="index.html"/>
         <link rel="next" title="Homework (2 tasks)" href="homework.html"/>
@@ -89,7 +86,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 1: Python Quick Start</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">Python Quick Start</a></li>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#reference">Reference</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Run &amp; Debug with PyDev</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Run &amp; Debug with PyDev</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#totorial">Totorial</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trouble-shootings">Trouble Shootings</a></li>
 </ul>
@@ -166,8 +163,8 @@
 <p>Wit PyDev, you can run, debug, break and check variable.</p>
 <div class="section" id="create-a-pydev-project">
 <h3>1. create a PyDev project<a class="headerlink" href="#create-a-pydev-project" title="Permalink to this headline">¶</a></h3>
-<p>After installed PyDev, the file -&gt; new… menu can now create new PyDev project:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">-&gt;</span> <span class="n">new</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">others</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">PyDev</span> <span class="o">-&gt;</span> <span class="n">PyDev</span> <span class="n">Project</span>
+<p>After installed PyDev, the file -&gt; new... menu can now create new PyDev project:</p>
+<div class="highlight-python"><div class="highlight"><pre>file -&gt; new ... -&gt; others ... -&gt; PyDev -&gt; PyDev Project
 </pre></div>
 </div>
 <p>Then follow the new project dialog, create a new project.</p>
@@ -176,14 +173,14 @@
 <div class="section" id="add-a-source-folder">
 <h3>2. add a source folder<a class="headerlink" href="#add-a-source-folder" title="Permalink to this headline">¶</a></h3>
 <p>After project been created, create a new PyDev module by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">right</span> <span class="n">click</span> <span class="ow">in</span> <span class="n">project</span> <span class="n">panel</span> <span class="o">-&gt;</span> <span class="n">new</span> <span class="n">folder</span>
+<div class="highlight-python"><div class="highlight"><pre>right click in project panel -&gt; new folder
 </pre></div>
 </div>
 <p>Input folder name: lect01.</p>
 </div>
 <div class="section" id="add-a-source-file">
 <h3>3. add a source file<a class="headerlink" href="#add-a-source-file" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">right</span> <span class="n">click</span> <span class="n">folder</span> <span class="o">-&gt;</span> <span class="n">new</span> <span class="n">file</span>
+<div class="highlight-python"><div class="highlight"><pre>right click folder -&gt; new file
 </pre></div>
 </div>
 <p>Input file name: fibonacci.py. Then in the file, past the file content,
@@ -199,23 +196,23 @@ left of line number or in menu, Run, Debug)</p>
 <div class="section" id="debug">
 <h3>5. debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
 <p>Now debug it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">right</span> <span class="n">click</span> <span class="n">the</span> <span class="n">project</span> <span class="o">-&gt;</span> <span class="n">debug</span> <span class="k">as</span> <span class="o">-&gt;</span> <span class="n">Python</span> <span class="n">Run</span>
+<div class="highlight-python"><div class="highlight"><pre>right click the project -&gt; debug as -&gt; Python Run
 </pre></div>
 </div>
-<p>With break point stop the program, you can check what’s going on at the point,
+<p>With break point stop the program, you can check what&#8217;s going on at the point,
 such as the variables are values like expected.</p>
 <a class="reference internal image-reference" href="../../_images/01-debug-ui.png"><img alt="../../_images/01-debug-ui.png" src="../../_images/01-debug-ui.png" style="width: 600px;" /></a>
 <p>Tip:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="n">your</span> <span class="n">project</span> <span class="ow">and</span> <span class="n">source</span> <span class="n">file</span> <span class="n">name</span> <span class="k">with</span> <span class="n">a</span> <span class="n">starting</span> <span class="n">letter</span><span class="o">.</span> <span class="n">Otherwise</span>
-<span class="n">the</span> <span class="n">breakpoint</span> <span class="n">doesn</span><span class="s1">&#39;t stop the process (Windows 10, Eclipse 4.17.0, PyDev</span>
-<span class="mf">8.0</span><span class="o">.</span><span class="mf">0.20209061309</span><span class="p">)</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre>Name your project and source file name with a starting letter. Otherwise
+the breakpoint doesn&#39;t stop the process (Windows 10, Eclipse 4.17.0, PyDev
+8.0.0.20209061309).
 </pre></div>
 </div>
 <p>Like any other programming language, follow the common conventions e.g. start a
-variable with letter or underscore, “_”. We’ve encountered a weired situation
-that someone’s debug precess doesn’t stop at where the line with a breakpoint.
-After rename her project name, which is actually “1”, and the python source file
-name, which is “12.py”, everything works as expected.</p>
+variable with letter or underscore, &#8220;_&#8221;. We&#8217;ve encountered a weired situation
+that someone&#8217;s debug precess doesn&#8217;t stop at where the line with a breakpoint.
+After rename her project name, which is actually &#8220;1&#8221;, and the python source file
+name, which is &#8220;12.py&#8221;, everything works as expected.</p>
 </div>
 </div>
 <div class="section" id="trouble-shootings">
@@ -224,7 +221,7 @@ name, which is “12.py”, everything works as expected.</p>
 a tested class, Eclipse PyDev may show error markers.</p>
 <a class="reference internal image-reference" href="../../_images/01-pydev-error-maker.png"><img alt="../../_images/01-pydev-error-maker.png" src="../../_images/01-pydev-error-maker.png" style="width: 600px;" /></a>
 <p>To get rid of the wrong error report:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">right</span> <span class="n">click</span> <span class="n">project</span> <span class="o">-&gt;</span> <span class="n">PyDev</span> <span class="o">-&gt;</span> <span class="n">remove</span> <span class="n">error</span> <span class="n">markers</span>
+<div class="highlight-python"><div class="highlight"><pre>right click project -&gt; PyDev -&gt; remove error markers
 </pre></div>
 </div>
 </div>
@@ -280,8 +277,7 @@ a tested class, Eclipse PyDev may show error markers.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

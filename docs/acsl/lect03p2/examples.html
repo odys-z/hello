@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Contest #1, Part 2" href="index.html"/>
         <link rel="next" title="What does the Program Do" href="wdtpd.html"/>
@@ -90,7 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lect03/index.html">Lec 3: Topics of Contest 1</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 3: Contest #1, Part 2</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wdtpd.html">What does the Program Do</a></li>
 <li class="toctree-l3"><a class="reference internal" href="summery.html">Example Summery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="homework.html">Homework</a></li>
@@ -162,21 +159,21 @@
 </ul>
 <p>Given an integer n, return true if it is a power of two. Otherwise, return false.
 An integer n is a power of two, if there exists an integer x such that
-<span class="math notranslate nohighlight">\(n == 2^x\)</span>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">36</span> <span class="n">ms</span><span class="p">,</span> <span class="n">faster</span> <span class="n">than</span> <span class="mf">20.31</span><span class="o">%</span><span class="p">,</span> <span class="n">Memory</span> <span class="n">Usage</span><span class="p">:</span> <span class="mi">14</span> <span class="n">MB</span><span class="p">,</span> <span class="n">less</span> <span class="n">than</span> <span class="mf">95.80</span><span class="o">%</span>
+<span class="math">\(n == 2^x\)</span>.</p>
+<div class="highlight-python"><div class="highlight"><pre>36 ms, faster than 20.31%, Memory Usage: 14 MB, less than 95.80%
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">isPowerOfTwo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">isPowerOfTwo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="bp">False</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">True</span>
+                <span class="k">return</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
 </pre></div>
@@ -188,7 +185,7 @@ for more solutions.</p>
 </ul>
 <p>See handout.</p>
 <p>Reference Answer</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agram2</span><span class="p">(</span><span class="n">cards</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">agram2</span><span class="p">(</span><span class="n">cards</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        scan without sort</span>
 <span class="sd">        -----------------</span>
@@ -202,9 +199,9 @@ for more solutions.</p>
     <span class="n">suit</span> <span class="o">=</span> <span class="p">[]</span>         <span class="c1"># greater ranks in the suit</span>
     <span class="n">s</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cards</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">rule</span><span class="p">[</span><span class="n">cards</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="c1"># spade, rank</span>
 
-    <span class="n">least_r</span><span class="p">,</span> <span class="n">least_card</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="kc">None</span> <span class="c1"># minimal higher rank than card 0</span>
-    <span class="n">min_r</span><span class="p">,</span> <span class="n">min_card</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="kc">None</span>     <span class="c1"># minimal rank &amp; card of all cards</span>
-    <span class="n">min_s</span><span class="p">,</span> <span class="n">min_suit</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="kc">None</span>     <span class="c1"># minimal rank &amp; card of the suit</span>
+    <span class="n">least_r</span><span class="p">,</span> <span class="n">least_card</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="bp">None</span> <span class="c1"># minimal higher rank than card 0</span>
+    <span class="n">min_r</span><span class="p">,</span> <span class="n">min_card</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="bp">None</span>     <span class="c1"># minimal rank &amp; card of all cards</span>
+    <span class="n">min_s</span><span class="p">,</span> <span class="n">min_suit</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="bp">None</span>     <span class="c1"># minimal rank &amp; card of the suit</span>
 
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cards</span><span class="p">)):</span>
         <span class="n">rx</span> <span class="o">=</span> <span class="n">rule</span><span class="p">[</span><span class="n">cards</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>     <span class="c1"># rank of card x</span>
@@ -221,9 +218,9 @@ for more solutions.</p>
             <span class="n">min_r</span> <span class="o">=</span> <span class="n">rx</span>
             <span class="n">min_card</span> <span class="o">=</span> <span class="n">cards</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">least_card</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">least_card</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">least_card</span>
-    <span class="k">elif</span> <span class="n">min_suit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">min_suit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">min_suit</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">min_card</span>
@@ -281,8 +278,7 @@ for more solutions.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

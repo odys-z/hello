@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
         <link rel="next" title="Docker Quick Start" href="docker.html"/>
@@ -90,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usaco/index.html">Welcome to USACO Exercise</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Acadanymo Project Resources</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="3steps.html">Tutorial: 3 steps setting up a website</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setup Docker Wordpress</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Setup Docker Wordpress</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-docker">Install Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setup-wordpress">Setup Wordpress</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#compose-mysql-wordpress">Compose Mysql &amp; Wordpress</a></li>
@@ -154,10 +151,10 @@
 <h1>Setup Docker Wordpress<a class="headerlink" href="#setup-docker-wordpress" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-docker">
 <h2>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h2>
-<p>Docker is getting popular in recent years. It’s worth to have a try!</p>
+<p>Docker is getting popular in recent years. It&#8217;s worth to have a try!</p>
 <p>Download Docker <a class="reference external" href="https://www.docker.com/get-started">here</a>.
 Follow the <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">installation instructions</a>.
-Or follow <a class="reference internal" href="docker.html#install-docker"><span class="std std-ref">the tutorial here (TODO: comming soon for Windows)</span></a>.</p>
+Or follow <a class="reference internal" href="docker.html#install-docker"><span>the tutorial here (TODO: comming soon for Windows)</span></a>.</p>
 <p>For now, you can think Docker is an advanced virtual machine and can work everywhere.
 So Wordpress can provide web page service on it.</p>
 </div>
@@ -171,47 +168,63 @@ developers all over the world. And Docker provide us a quick way to use it.</p>
 <p>This is the recommended simple way.</p>
 <p>Compose is a powerful way Docker employed for different satuations. Using compose
 we can setup Wordpress in one line in the same directory of
-<a class="reference download internal" download="" href="../../_downloads/a59ded88080e88318f1fa06bfe6a3b60/docker-compose.yml"><code class="xref download docutils literal notranslate"><span class="pre">file</span> <span class="pre">docker-compose.yml</span></code></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
+<a class="reference download internal" href="../../_downloads/docker-compose.yml" download=""><code class="xref download docutils literal"><span class="pre">file</span> <span class="pre">docker-compose.yml</span></code></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>docker-compose up -d
 </pre></div>
 </div>
 <p>This will bring up the 2 containers and with another mysql container, the mysql DB
 can be connected:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">network</span> <span class="n">wordpress_default</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="n">mysql</span><span class="p">:</span><span class="mf">5.7</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">h</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
+<div class="highlight-python"><div class="highlight"><pre>docker run --network wordpress_default -it --rm mysql:5.7 mysql -h mysql -uroot -p
 </pre></div>
 </div>
 <p>The network name, wordpress_default is the name when Docker compse and run the
 containers, wordpress and mysql.</p>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
-<p class="last">Don’t forget change the mysql’s root password.</p>
+<p class="last">Don&#8217;t forget change the mysql&#8217;s root password.</p>
 </div>
 <p>Now visit the address in a browser:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost
 </pre></div>
 </div>
 <p>and you should see something like this:</p>
 <a class="reference internal image-reference" href="../../_images/02-wordpress-init.png"><img alt="../../_images/02-wordpress-init.png" src="../../_images/02-wordpress-init.png" style="width: 320px;" /></a>
-<p>That’s it.</p>
+<p>We are deploying Mysql with Docker using Docker Compose method. So we need to tell
+where Wordpress can find database. If you didn&#8217;t change anything else except password
+in the download &#8216;docker-compse.yml&#8217; file, you can set information in the page
+like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>database name: my-wpdb
+database user: root
+database host: mysql
+db password: your-password
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/09-wp-compose-init.png"><img alt="../../_images/09-wp-compose-init.png" src="../../_images/09-wp-compose-init.png" style="width: 480px;" /></a>
+<p>In this page you may still have some trouble to connect database. See troubleshootings
+<a href="#id1"><span class="problematic" id="id2">:ref:`details for Docker network &lt;trouble-compose-mysql&gt;`_</span></a> for how to solve the
+problem.</p>
+<p>In the next page, you can create the administrator of your website.</p>
+<a class="reference internal image-reference" href="../../_images/10-wp-compose-init.png"><img alt="../../_images/10-wp-compose-init.png" src="../../_images/10-wp-compose-init.png" style="width: 480px;" /></a>
+<p>That&#8217;s it.</p>
 </div>
 <div class="section" id="independent-mysql-server">
 <h3>Independent Mysql Server<a class="headerlink" href="#independent-mysql-server" title="Permalink to this headline">¶</a></h3>
 <p>In this way, mysql is running without a docker container.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">wordpress</span>
+<div class="highlight-python"><div class="highlight"><pre>docker pull wordpress
 </pre></div>
 </div>
 <p>Once Wordpress image is ready, we can start and run our first web server like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">name</span> <span class="n">wp</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_HOST</span><span class="o">=&lt;</span><span class="n">mysql</span><span class="o">-</span><span class="n">host</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">3306</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_NAME</span><span class="o">=&lt;...&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_USER</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_PASSWORD</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">pswd</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">dp</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="o">--</span><span class="n">rm</span> <span class="n">wordpress</span>
+<div class="highlight-python"><div class="highlight"><pre>docker run --name wp -e WORDPRESS_DB_HOST=&lt;mysql-host&gt;:3306 -e WORDPRESS_DB_NAME=&lt;...&gt; -e WORDPRESS_DB_USER=&lt;user-name&gt; -e WORDPRESS_DB_PASSWORD=&lt;user-pswd&gt; -dp 80:80 --rm wordpress
 </pre></div>
 </div>
 <p>You should get something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">193e3</span><span class="n">fc1081e3167f631fe0b71a4fe64415a736fa64295488d8b70478287efd0</span>
+<div class="highlight-python"><div class="highlight"><pre>193e3fc1081e3167f631fe0b71a4fe64415a736fa64295488d8b70478287efd0
 </pre></div>
 </div>
 <p>Which is the container Id.</p>
 <img alt="../../_images/01-wordpress-mysql.png" src="../../_images/01-wordpress-mysql.png" />
 <p>You can visit the page now at:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost
 </pre></div>
 </div>
 </div>
@@ -230,9 +243,9 @@ see the final results in public site following the URL at the right side.</p>
 <p>The next step is to consider hosting your website on a public accessible server.
 Before doing this, you already got advantage that your website image can be moved
 anywhere in hole image of Docker. And many cloud service support Docker.</p>
-<p>Before moving your website from server to server, you’d better host your image at
+<p>Before moving your website from server to server, you&#8217;d better host your image at
 Docker Hub.</p>
-<p>The first thing you might want to change is the site’s favicon. You can follow this
+<p>The first thing you might want to change is the site&#8217;s favicon. You can follow this
 <a class="reference external" href="https://yoast.com/how-to-change-your-favicon-in-wordpress-a-step-by-step-guide/">blog</a>
 to customize.</p>
 <p>To get maximum visial effects of your site, you are suggested following some video
@@ -245,15 +258,15 @@ docker, you can to <a class="reference external" href="https://hub.docker.com/">
 with Wordpress at <a class="reference external" href="https://labs.play-with-docker.com/">Dock Labs</a>.</p>
 <p>Once you sign up, you can login in with Docker and pull Wordpress and start it (
 click ADD NEW INSTANCE):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">wordpress</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">name</span> <span class="n">wp</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_HOST</span><span class="o">=&lt;</span><span class="n">mysql</span><span class="o">-</span><span class="n">host</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">3306</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_NAME</span><span class="o">=&lt;...&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_USER</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_PASSWORD</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">pswd</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">dp</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="o">--</span><span class="n">rm</span> <span class="n">wordpress</span>
+<div class="highlight-python"><div class="highlight"><pre>docker pull wordpress
+docker run --name wp -e WORDPRESS_DB_HOST=&lt;mysql-host&gt;:3306 -e WORDPRESS_DB_NAME=&lt;...&gt; -e WORDPRESS_DB_USER=&lt;user-name&gt; -e WORDPRESS_DB_PASSWORD=&lt;user-pswd&gt; -dp 80:80 --rm wordpress
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If your connection is slow, you need key-in slowly.</p>
 </div>
-<p>Then copy the address to your browser’s.</p>
+<p>Then copy the address to your browser&#8217;s.</p>
 <img alt="../../_images/05-wp-docker-labs.png" src="../../_images/05-wp-docker-labs.png" />
 <p>After the image is running, open the site by clicking the link shown above, you
 should see the page:</p>
@@ -315,8 +328,7 @@ can work with it or can be used latter on other servers.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 3: Topics of Contest 1" href="index.html"/>
         <link rel="next" title="Recursive Functions" href="recursive.html"/>
@@ -89,7 +86,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect01/index.html">Lec 1: Python Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lect02/index.html">Lec 2: Things you already know</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 3: Topics of Contest 1</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Computer Number Systems</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Computer Number Systems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#topic-summary">Topic Summary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
@@ -163,22 +160,22 @@
 <h1>Computer Number Systems<a class="headerlink" href="#computer-number-systems" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="topic-summary">
 <h2>Topic Summary<a class="headerlink" href="#topic-summary" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="../lect02/num-sys.html#l2-comp-num-sys"><span class="std std-ref">Topic Summary</span></a> in lec 2.</p>
+<p>See <a class="reference internal" href="../lect02/num-sys.html#l2-comp-num-sys"><span>Topic Summary</span></a> in lec 2.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Let’s have our skill progressing into a new level.</p>
+<p>Let&#8217;s have our skill progressing into a new level.</p>
 <div class="section" id="convert-color-value">
 <h3>1. Convert Color Value<a class="headerlink" href="#convert-color-value" title="Permalink to this headline">¶</a></h3>
-<p>In html source, color can be expressed as ‘#0405ff’. Which means:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">red</span><span class="p">:</span> <span class="mi">04</span>
-<span class="n">green</span><span class="p">:</span> <span class="mi">05</span>
-<span class="n">blue</span><span class="p">:</span> <span class="mi">255</span>
+<p>In html source, color can be expressed as &#8216;#0405ff&#8217;. Which means:</p>
+<div class="highlight-python"><div class="highlight"><pre>red: 04
+green: 05
+blue: 255
 </pre></div>
 </div>
-<p>The problem is it is a string that can’t been understood internally. Let’s parse
+<p>The problem is it is a string that can&#8217;t been understood internally. Let&#8217;s parse
 the formated string into 3 integer, each range from 0 ~ 255.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parseColor</span><span class="p">(</span><span class="n">col</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>   <span class="c1"># &quot;col: str&quot; shows the argument is a str type</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parseColor</span><span class="p">(</span><span class="n">col</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>   <span class="c1"># &quot;col: str&quot; shows the argument is a str type</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">col</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
         <span class="n">g</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">col</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
@@ -197,18 +194,18 @@ integer.</p>
 <p>Solution:</p>
 <p>We can use characters from Base64 to represent each digit in radix 64 integer.
 They are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">~</span> <span class="mi">9</span><span class="p">,</span> <span class="n">U</span> <span class="o">~</span> <span class="n">U</span><span class="p">,</span> <span class="n">a</span> <span class="o">~</span> <span class="n">u</span><span class="p">,</span> <span class="o">+</span><span class="p">,</span> <span class="o">-</span>
-<span class="n">There</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">an</span> <span class="n">extra</span> <span class="n">char</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span> <span class="n">which</span> <span class="n">we</span> <span class="n">don</span><span class="s1">&#39;t use.</span>
+<div class="highlight-python"><div class="highlight"><pre>0 ~ 9, U ~ U, a ~ u, +, -
+There is also an extra char, &#39;=&#39; which we don&#39;t use.
 </pre></div>
 </div>
 <p>To find the correct digits in base 64, we need a table to map value less than 64
 into the digit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">63</span>
-<span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span> <span class="mi">9</span><span class="p">,</span>  <span class="n">A</span><span class="p">,</span>  <span class="n">B</span><span class="p">,</span> <span class="o">...</span>   <span class="n">Z</span><span class="p">,</span>  <span class="n">a</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span>  <span class="n">z</span><span class="p">,</span>  <span class="o">+</span><span class="p">,</span>  <span class="o">/</span>
+<div class="highlight-python"><div class="highlight"><pre>0, 1, 2, ... 9, 10, 11, ..., 35, 36, ..., 61, 62, 63
+0, 1, 2, ... 9,  A,  B, ...   Z,  a, ...,  z,  +,  /
 </pre></div>
 </div>
 <p>With this table, the conversion is straight forward:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">conv_64</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">conv_64</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">v64</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">v10</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>             <span class="c1"># See comment below</span>
     <span class="k">if</span> <span class="n">v10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -227,7 +224,7 @@ string into one large integer, and divide it by 64 each time. This is time
 consuming and using a lot of memory.</p>
 <p>For reference answer, see <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl-pydev/acsl/lect03/dec_r64.py">here</a>.</p>
 <p>For python implementation, see <a class="reference external" href="https://github.com/python/cpython/blob/7668a8bc93c2bd573716d1bea0f52ea520502b28/Modules/binascii.c">python source at github</a></p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">table_b2a_base64</span><span class="p">[]</span> <span class="o">=</span>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">static</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">table_b2a_base64</span><span class="p">[]</span> <span class="o">=</span>
 <span class="s">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -250,11 +247,11 @@ reduce it to 1 under the following rules:</p>
 <blockquote>
 <div><p>If the current number is even, you have to divide it by 2.</p>
 <p>If the current number is odd, you have to add 1 to it.</p>
-<p>It’s guaranteed that you can always reach to one for all testcases.</p>
+<p>It&#8217;s guaranteed that you can always reach to one for all testcases.</p>
 </div></blockquote>
 <p>See <a class="reference external" href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/">examples there</a>.</p>
 <p>test cases</p>
-<div class="math notranslate nohighlight">
+<div class="math">
 \[\begin{split}\begin{array}{l|c}
 \hline
 Input &amp; Output \\
@@ -264,15 +261,15 @@ Input &amp; Output \\
 1111  &amp; 5 \\
 011111111011111111 &amp; 19 \\
 \end{array}\end{split}\]</div>
-<p>With Python, we don’t have to care about integer overflow. In some language, int
-type has a maximum limitation, for C++, it’s <span class="math notranslate nohighlight">\(2^{32} - 1\)</span>.</p>
-<p>We can take a Python’s advantage, just directly convert a base 2 string into integer:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10011&#39;</span> <span class="c1"># can be very large, above 2^32 -1</span>
+<p>With Python, we don&#8217;t have to care about integer overflow. In some language, int
+type has a maximum limitation, for C++, it&#8217;s <span class="math">\(2^{32} - 1\)</span>.</p>
+<p>We can take a Python&#8217;s advantage, just directly convert a base 2 string into integer:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10011&#39;</span> <span class="c1"># can be very large, above 2^32 -1</span>
 <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This converted integer can be checked like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">numSteps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -285,13 +282,13 @@ type has a maximum limitation, for C++, it’s <span class="math notranslate noh
         <span class="k">return</span> <span class="n">c</span>
 </pre></div>
 </div>
-<p>Save the above code in file “q1404.py”.</p>
+<p>Save the above code in file &#8220;q1404.py&#8221;.</p>
 <p>To test your python, you can take use of <em>unittest</em> module from python:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">q1404</span> <span class="kn">import</span> <span class="n">Solution</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">unittest</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tester</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tester</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">numSteps</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre>python3
+&gt;&gt;&gt; from q1404 import Solution
+&gt;&gt;&gt; import unittest
+&gt;&gt;&gt; tester = unittest.TestCase()
+&gt;&gt;&gt; tester.assertEqual(0, Solution().numSteps(&#39;1&#39;))
 </pre></div>
 </div>
 <p>Now try it! Verify the test cases from above table.</p>
@@ -304,11 +301,11 @@ question 1404 of which input s can as long as 500 digits, the above way can not
 simply ported to Java or C++, etc.</p>
 <p>There are <a class="reference external" href="https://github.com/odys-z/hello/blob/master/acsl/lect03/leetcode.qt/q1404.h">2 C++ solution for reference</a>.
 One modified the question, which can only working correctly with input value less
-than <span class="math notranslate nohighlight">\(2^{31}-1\)</span>. The other use another way to handle the carry out.</p>
+than <span class="math">\(2^{31}-1\)</span>. The other use another way to handle the carry out.</p>
 </div>
 <div class="section" id="roman-numbers">
 <h3>4. Roman Numbers<a class="headerlink" href="#roman-numbers" title="Permalink to this headline">¶</a></h3>
-<p>TODO …</p>
+<p>TODO ...</p>
 </div>
 </div>
 </div>
@@ -363,8 +360,7 @@ than <span class="math notranslate nohighlight">\(2^{31}-1\)</span>. The other u
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/language_data.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
