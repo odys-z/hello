@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Lec 05: Topics of Contest 3" href="index.html"/>
         <link rel="next" title="Exercise" href="exercise.html"/>
@@ -90,7 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lect03p3/index.html">Lec 3: Contest #1, Part 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lect04/index.html">Lec 04: Topics of Contest 2</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Lec 05: Topics of Contest 3</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Topics</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Topics</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#boolean-algebra">Boolean Algebra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data-structures">Data Structures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fsas-and-regular-expressions">FSAs and Regular Expressions</a></li>
@@ -165,7 +168,7 @@
 <h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h2>
 <p>ACSL Topics: <a class="reference external" href="http://www.categories.acsl.org/wiki/index.php?title=Data_Structures">Data Structure</a></p>
 <p>How many nodes have only one child in the binary search tree for:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">WINDSORCONNECTICUT</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WINDSORCONNECTICUT</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/05-tree.jpg"><img alt="../../_images/05-tree.jpg" src="../../_images/05-tree.jpg" style="width: 420px;" /></a>
@@ -178,35 +181,35 @@
 <p>Ex1. Which, if any, of the following regular expressions are equivalent?</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><span class="math">\((a | b)(a b*)(b* | a)\)</span></li>
-<li><span class="math">\((aab* | bab*)a\)</span></li>
-<li><span class="math">\(aab* | bab* | aaba | bab*a\)</span></li>
-<li><span class="math">\(aab* | bab* | aab*a | bab*a\)</span></li>
-<li><span class="math">\(a* | b*\)</span></li>
+<li><span class="math notranslate nohighlight">\((a | b)(a b*)(b* | a)\)</span></li>
+<li><span class="math notranslate nohighlight">\((aab* | bab*)a\)</span></li>
+<li><span class="math notranslate nohighlight">\(aab* | bab* | aaba | bab*a\)</span></li>
+<li><span class="math notranslate nohighlight">\(aab* | bab* | aab*a | bab*a\)</span></li>
+<li><span class="math notranslate nohighlight">\(a* | b*\)</span></li>
 </ol>
 </div></blockquote>
 <ul>
-<li><p class="first">B end with &#8216;a&#8217;</p>
+<li><p class="first">B end with ‘a’</p>
 </li>
-<li><p class="first">E will like aa... b...</p>
+<li><p class="first">E will like aa… b…</p>
 </li>
-<li><p class="first"><span class="math">\(C \neq D\)</span> as b* is not b</p>
+<li><p class="first"><span class="math notranslate nohighlight">\(C \neq D\)</span> as b* is not b</p>
 </li>
 <li><p class="first">expand A:</p>
-<div class="highlight-python"><div class="highlight"><pre>a a b... [b... a]
-    -&gt; a a b*
-    -&gt; a a b* a
-b a b... [b... a]
-    -&gt; b a b*
-    -&gt; b a b* a
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="n">a</span> <span class="n">b</span><span class="o">...</span> <span class="p">[</span><span class="n">b</span><span class="o">...</span> <span class="n">a</span><span class="p">]</span>
+    <span class="o">-&gt;</span> <span class="n">a</span> <span class="n">a</span> <span class="n">b</span><span class="o">*</span>
+    <span class="o">-&gt;</span> <span class="n">a</span> <span class="n">a</span> <span class="n">b</span><span class="o">*</span> <span class="n">a</span>
+<span class="n">b</span> <span class="n">a</span> <span class="n">b</span><span class="o">...</span> <span class="p">[</span><span class="n">b</span><span class="o">...</span> <span class="n">a</span><span class="p">]</span>
+    <span class="o">-&gt;</span> <span class="n">b</span> <span class="n">a</span> <span class="n">b</span><span class="o">*</span>
+    <span class="o">-&gt;</span> <span class="n">b</span> <span class="n">a</span> <span class="n">b</span><span class="o">*</span> <span class="n">a</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p><span class="math">\(aab* | bab* | aaba | bab*a\)</span></p>
+<p><span class="math notranslate nohighlight">\(aab* | bab* | aaba | bab*a\)</span></p>
 <p>Ex2. FSA to RegEx</p>
 <a class="reference internal image-reference" href="../../_images/05-fsa1.jpg"><img alt="../../_images/05-fsa1.jpg" src="../../_images/05-fsa1.jpg" style="width: 600px;" /></a>
-<p>Solution: <span class="math">\(10*11((01*)|0*)10*0\)</span></p>
+<p>Solution: <span class="math notranslate nohighlight">\(10*11((01*)|0*)10*0\)</span></p>
 </div>
 <div class="section" id="handout">
 <h2>Handout<a class="headerlink" href="#handout" title="Permalink to this headline">¶</a></h2>
@@ -264,7 +267,8 @@ b a b... [b... a]
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

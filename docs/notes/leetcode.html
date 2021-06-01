@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../index.html"/>
         <link rel="next" title="1   Miscellaneous" href="../misc/miscellaneous.html"/>
         <link rel="prev" title="Troubleshootings" href="../acadynamo/wordpress/wp-troubles.html"/> 
@@ -85,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usaco/index.html">Welcome to USACO Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acadynamo/index.html">Acadanymo Project Resources</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">LeetCode Problem Notes</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LeetCode Problem Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dsu">DSU</a></li>
 </ul>
 </li>
@@ -157,13 +160,13 @@ return -1.0.</p>
 </div></blockquote>
 <p>Example 1:</p>
 <p>Input:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">equations</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">],[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">equations</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">],[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]],</span>
 <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">],</span>
 <span class="n">queries</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">],[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">],[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">],[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">],[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="mf">6.00000</span><span class="p">,</span><span class="mf">0.50000</span><span class="p">,</span><span class="o">-</span><span class="mf">1.00000</span><span class="p">,</span><span class="mf">1.00000</span><span class="p">,</span><span class="o">-</span><span class="mf">1.00000</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">6.00000</span><span class="p">,</span><span class="mf">0.50000</span><span class="p">,</span><span class="o">-</span><span class="mf">1.00000</span><span class="p">,</span><span class="mf">1.00000</span><span class="p">,</span><span class="o">-</span><span class="mf">1.00000</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Explanation:</p>
@@ -173,38 +176,38 @@ return -1.0.</p>
 <p>return: [6.0, 0.5, -1.0, 1.0, -1.0 ]</p>
 </div></blockquote>
 <p>Solution:</p>
-<p>To find a proper way to solve the problem, let&#8217;s focused on the equation relation
-first. If <span class="math">\(\frac{a}{b}=2, \frac{c}{b}=3\)</span>, we just have a tree to get
-<span class="math">\(\frac{a}{c}=\frac{\frac{a}{b}}{\frac{c}{b}}\)</span>:</p>
-<div class="highlight-python"><div class="highlight"><pre>   b=1
-  /   \
-a=2   c=3
+<p>To find a proper way to solve the problem, let’s focused on the equation relation
+first. If <span class="math notranslate nohighlight">\(\frac{a}{b}=2, \frac{c}{b}=3\)</span>, we just have a tree to get
+<span class="math notranslate nohighlight">\(\frac{a}{c}=\frac{\frac{a}{b}}{\frac{c}{b}}\)</span>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">b</span><span class="o">=</span><span class="mi">1</span>
+  <span class="o">/</span>   \
+<span class="n">a</span><span class="o">=</span><span class="mi">2</span>   <span class="n">c</span><span class="o">=</span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>If a, c in the same tree, they will have a common ancestor, which is equivalent
 of finding a relation between a &amp; c.</p>
 <p>But tree is expensive to travel each time. If all relationship like a vs. c is
 bridged via a common denominator, the tree relation can be flattened. E.g.
-<span class="math">\(\frac{a}{b}=2, \frac{b}{c}=3\)</span> initially can be a tree like:</p>
-<div class="highlight-python"><div class="highlight"><pre>    c=1
-    /
-  b=3
-  /
-a=2
+<span class="math notranslate nohighlight">\(\frac{a}{b}=2, \frac{b}{c}=3\)</span> initially can be a tree like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">c</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">/</span>
+  <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+  <span class="o">/</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>Obviously <span class="math">\(\frac{a}{c}=6\)</span> can be got from the path. But if we re-construct
+<p>Obviously <span class="math notranslate nohighlight">\(\frac{a}{c}=6\)</span> can be got from the path. But if we re-construct
 it as a DSU, the tree now look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>   c=1
-  /  |
- /  b=3
-a=6
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">c</span><span class="o">=</span><span class="mi">1</span>
+  <span class="o">/</span>  <span class="o">|</span>
+ <span class="o">/</span>  <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">6</span>
 </pre></div>
 </div>
-<p>That&#8217;s what the Lee215&#8217;s find() function doing. See
+<p>That’s what the Lee215’s find() function doing. See
 <a class="reference external" href="https://leetcode.com/problems/evaluate-division/discuss/255407/Python-Union-Find">A union-find without ranking</a>.</p>
 <p>Example:</p>
-<img src="../_images/q399-dsu.svg" /><p>Note: Almost all DSU problems have DFS/BFS solution. Let&#8217;s focused on DSU.</p>
+<img alt="../_images/q399-dsu.svg" src="../_images/q399-dsu.svg" /><p>Note: Almost all DSU problems have DFS/BFS solution. Let’s focused on DSU.</p>
 </div>
 </div>
 
@@ -258,7 +261,8 @@ a=6
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

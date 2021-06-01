@@ -32,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="ACSL Lecture 1.0 documentation" href="../../index.html"/>
         <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
         <link rel="next" title="LeetCode Problem Notes" href="../../notes/leetcode.html"/>
@@ -89,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3steps.html">Tutorial: 3 steps setting up a website</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wp-startup.html">Setup Docker Wordpress</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docker.html">Docker Quick Start</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Troubleshootings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshootings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes/leetcode.html">LeetCode Problem Notes</a></li>
@@ -145,16 +148,16 @@
 </ol>
 <img alt="../../_images/09-wp-compose-init.png" src="../../_images/09-wp-compose-init.png" />
 <p>If it report trouble, first check your network:</p>
-<div class="highlight-python"><div class="highlight"><pre>docker network ls
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">network</span> <span class="n">ls</span>
 </pre></div>
 </div>
 <p>Then inspect the network</p>
-<div class="highlight-python"><div class="highlight"><pre># &#39;wordpress&#39; is the image name showed above
-docker network inspact wordpress
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;wordpress&#39; is the image name showed above</span>
+<span class="n">docker</span> <span class="n">network</span> <span class="n">inspact</span> <span class="n">wordpress</span>
 </pre></div>
 </div>
 <p>Here is an example causing trouble:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
     <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;wordpress_default&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;bd7d0b083d606aaf20b5bceff725093e423d74fce0a79938040b600c53c4a48d&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Created&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-27T14:25:08.4686924Z&quot;</span><span class="p">,</span>
@@ -188,10 +191,10 @@ docker network inspact wordpress
 <span class="p">}]</span>
 </pre></div>
 </div>
-<p>This is probably you start up docker container with &#8216;run&#8217; command, letting mysql
+<p>This is probably you start up docker container with ‘run’ command, letting mysql
 container not up.</p>
 <p>Here is the correct one (mysql is up):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span>
     <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;wordpress_default&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;bd7d0b083d606aaf20b5bceff725093e423d74fce0a79938040b600c53c4a48d&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Created&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-27T14:25:08.4686924Z&quot;</span><span class="p">,</span>
@@ -292,7 +295,8 @@ container not up.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
