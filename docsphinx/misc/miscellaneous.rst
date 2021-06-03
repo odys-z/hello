@@ -21,6 +21,11 @@ Docker
 
 Deploy website on cloud service, e.g Azure & AWS.
 
+XMPP & Jitis
+------------
+
+See references.
+
 Reference
 ---------
 
@@ -54,4 +59,14 @@ _________________________________________________
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/pYhLEV-sRpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+..
+
+XMPP.org & Jitsi
+
+`Jitsi video bridge <https://jitsi.org/jitsi-videobridge/>`_ & a jitsi review:
+______________________________________________________________________________
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AgCpsb_KHuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ..
