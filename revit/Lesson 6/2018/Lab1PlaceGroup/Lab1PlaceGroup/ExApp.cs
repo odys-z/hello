@@ -16,12 +16,12 @@ namespace io.odysz.hello.revit.lession6
 
         public Result OnStartup(UIControlledApplication application) {
             // Add a new ribbon panel
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel("Inforise Test");
+            RibbonPanel ribbonPanel = application.CreateRibbonPanel("Lesson 6");
 
             // Create a push button to trigger a command add it to the ribbon panel.
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
             PushButtonData buttonData = new PushButtonData("cmdHelloWorld",
-               "Hello World", thisAssemblyPath, "io.odysz.hello.revit.lession6.ExCmds");
+               "L6 Cmd", thisAssemblyPath, "io.odysz.hello.revit.lession6.ExCmds");
 
             PushButton pushButton = ribbonPanel.AddItem(buttonData) as PushButton;
 
