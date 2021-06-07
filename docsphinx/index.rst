@@ -16,7 +16,7 @@ Last update: |today|
    :maxdepth: 2
 
    acsl/index
-   amc/aime-2021
+   amc/index
    cemc/hypatia-galois-2021
    usaco/index
    acadynamo/index

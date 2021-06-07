@@ -37,12 +37,12 @@ To check the system version, run *winver*.
     :width: 320px
 
 .. image:: ../imgs/07-win-version.png
-    :width: 320px
+    :width: 240px
 
 2. WSL 2 enabled
 
 .. image:: ../imgs/08-win-virtual.png
-    :width: 320px
+    :width: 480px
 
 For details, see Docker ducuments about `install on Windows 10 <https://docs.docker.com/docker-for-windows/install/#system-requirements>`_.
 
