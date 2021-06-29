@@ -70,3 +70,19 @@ ______________________________________________________________________________
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/AgCpsb_KHuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ..
+
+First sight
+___________
+
+- Jitsi Architecture
+
+.. image:: https://raw.githubusercontent.com/jitsi/handbook/master/docs/assets/ArchitectureDiagram.png
+
+- `Jitsi handbook <https://jitsi.github.io/handbook/docs/intro>`_
+
+- `D. G., Instant Messaging with Jitsi Meet, Gifted Chat, React Native, and Redux, Oct 23, 2018 <https://medium.com/@dgeorgiev06/instant-messaging-with-jitsi-meet-gifted-chat-react-native-and-redux-1ca723ab69eb>`
+
+Built on `Gifted Chat, React Native, <https://github.com/FaridSafi/react-native-gifted-chat>`_
+
+- `Jitsi server can be self hosted <https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-start>`_,
+especialy `with docker <https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker>`_
