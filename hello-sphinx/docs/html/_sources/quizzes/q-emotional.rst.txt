@@ -8,6 +8,12 @@ Sub-title
 
 1. Code Block
 
+::
+
+    raw text
+
+text
+
 .. code-block:: java
 
     public class Foo {
