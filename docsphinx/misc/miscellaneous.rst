@@ -1,5 +1,5 @@
-Miscellaneous
-=============
+Online doc tools
+================
 
 Github Quick Start
 ------------------
@@ -86,6 +86,8 @@ Built on `Gifted Chat, React Native, <https://github.com/FaridSafi/react-native-
 
 - `Jitsi server can be self hosted <https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-start>`_,
   especialy `with docker <https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker>`_
+
+::
 
 .. excel-table::
    :file: res/xmpp-survey.xlsm
