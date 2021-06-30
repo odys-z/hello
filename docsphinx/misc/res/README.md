@@ -2,8 +2,16 @@
 
 ## Usage
 
+'''
 .. excel-table::
    :file: res/xmpp-survey.xlsm
+'''
+
+see last 2 lines in
+
+```
+../miscellaneous.rst
+```
 
 ## CLI Error
 
