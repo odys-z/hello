@@ -2,3 +2,4 @@ docker-jitsi-meet/*
 
 !docker-jitsi-meet/*.yml
 !docker-jitsi-meet/.env
+!docker-jitsi-meet/gen-passwords.sh
