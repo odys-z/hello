@@ -1,4 +1,4 @@
 docker-jitsi-meet/**
 
 !docker-jitsi-meet/*.yml
-!Dockerfile
+!docker-jitsi-meet/gen-passwords.sh
