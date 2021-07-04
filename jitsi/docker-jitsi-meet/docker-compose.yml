@@ -4,7 +4,7 @@ services:
     # Frontend
     web:
         image: jitsi/web:stable-5963
-        restart: ${RESTART_POLICY}
+        # restart: ${RESTART_POLICY}
         ports:
             - '${HTTP_PORT}:80'
             - '${HTTPS_PORT}:443'
@@ -112,7 +112,7 @@ services:
     # XMPP server
     prosody:
         image: jitsi/prosody:stable-5963
-        restart: ${RESTART_POLICY}
+        # restart: ${RESTART_POLICY}
         expose:
             - '5222'
             - '5347'
@@ -181,7 +181,7 @@ services:
     # Focus component
     jicofo:
         image: jitsi/jicofo:stable-5963
-        restart: ${RESTART_POLICY}
+        # restart: ${RESTART_POLICY}
         volumes:
             - ${CONFIG}/jicofo:/config:Z
         environment:
@@ -203,8 +203,8 @@ services:
             - JICOFO_CONF_SINGLE_PARTICIPANT_TIMEOUT
             - JICOFO_ENABLE_HEALTH_CHECKS
             - JICOFO_SHORT_ID
-            - JICOFO_RESERVATION_ENABLED 
-            - JICOFO_RESERVATION_REST_BASE_URL 
+            - JICOFO_RESERVATION_ENABLED
+            - JICOFO_RESERVATION_REST_BASE_URL
             - JIBRI_BREWERY_MUC
             - JIBRI_REQUEST_RETRIES
             - JIBRI_PENDING_TIMEOUT
@@ -227,7 +227,7 @@ services:
     # Video bridge
     jvb:
         image: jitsi/jvb:stable-5963
-        restart: ${RESTART_POLICY}
+        # restart: ${RESTART_POLICY}
         ports:
             - '${JVB_PORT}:${JVB_PORT}/udp'
             - '${JVB_TCP_PORT}:${JVB_TCP_PORT}'
