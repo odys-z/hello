@@ -19,6 +19,12 @@ Issue cert while nginx stopped:
     sudo certbot certonly --standalone
 ```
 
+Generating Diffie-Hellman Ephemeral algorithm parameters (Not sure?) :
+
+```
+    openssl dhparam -out /etc/nginx/dhparam.pem
+```
+
 # Turn on SSL
 
 [Issue certs with Let's Encrypt Certbot standalone]()
