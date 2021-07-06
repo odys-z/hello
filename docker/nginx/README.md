@@ -36,7 +36,3 @@ Generating Diffie-Hellman Ephemeral algorithm parameters (Not sure?) :
 
     ssl_dhparam         /etc/nginx/dhparam.pem;
 ```
-
-ssl_dhparam         /etc/nginx/dhparam.pem;
-
-Tool: [an online tester](https://www.ssllabs.com/ssltest/index.html)
