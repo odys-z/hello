@@ -8,6 +8,17 @@
     firewall-cmd --reload
 ```
 
+# Issue certificates with Let's Encrypt
+
+Install snapd, certbot on CentOS,
+see [certbot instructions](https://certbot.eff.org/lets-encrypt/centosrhel7-other).
+
+Issue cert while nginx stopped:
+
+```
+    sudo certbot certonly --standalone
+```
+
 # Turn on SSL
 
 [Issue certs with Let's Encrypt Certbot standalone]()
@@ -24,9 +35,7 @@ ssl_dhparam         /etc/nginx/dhparam.pem;
 
 Tool: [an online tester](https://www.ssllabs.com/ssltest/index.html)
 
-# Issue certificates with Let's Encrypt
-
-Prosody documents:
+# Prosody documents:
 
 [Certificates](https://prosody.im/doc/certificates)
 
