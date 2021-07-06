@@ -67,4 +67,4 @@ But can be installed in a hack way - copy the source into modules folder(verifie
 
 [source](https://modules.prosody.im/mod_vcard_muc.html)
 
-Online verifier: [XMPP Compliance Tester](https://compliance.conversations.im/server/inforise.com.cn/)
+Online verifier: [XMPP Compliance Tester](https://compliance.conversations.im/)
