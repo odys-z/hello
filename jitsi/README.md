@@ -13,7 +13,6 @@ Download the .gz file, then
 ```
     cd docker-jitsi-meet
 	cp env.example .env
-
 ```
 
 # troubleshootings
