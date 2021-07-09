@@ -1,0 +1,16 @@
+{
+  "name": "hell-npm",
+  "version": "1.0.0",
+  "description": "Npm + React hello world",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "webpack": "^5.41.1"
+  }
+}

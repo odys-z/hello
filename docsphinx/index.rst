@@ -21,7 +21,7 @@ Last update: |today|
    usaco/index
    acadynamo/index
    notes/leetcode
-   misc/miscellaneous.rst
+   misc/index
 
 Indices and tables
 ==================

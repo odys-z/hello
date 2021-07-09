@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'ACSL Lecture'
-copyright = u'2020, Odys Zhou'
+project = u'Lectures'
+copyright = u'2021, Odys Zhou'
 author = u'Odys Zhou'
 
 # The short X.Y version
@@ -40,7 +40,8 @@ release = u'1.0'
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'sphinx_rtd_theme',
+    # 'sphinx_rtd_theme',
+	'sphinxcontrib.excel_table_plus',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
