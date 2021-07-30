@@ -1,20 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Docker Quick Start &mdash; Lectures 1.0 documentation</title>
   
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -22,39 +17,42 @@
   
 
   
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Lectures 1.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Acadanymo Project Resources" href="../index.html"/>
+        <link rel="next" title="Troubleshootings" href="wp-troubles.html"/>
+        <link rel="prev" title="Setup Docker Wordpress" href="wp-startup.html"/> 
 
-    
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Troubleshootings" href="wp-troubles.html" />
-    <link rel="prev" title="Setup Docker Wordpress" href="wp-startup.html" /> 
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -81,15 +79,11 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../acsl/index.html">Welcome to ACSL Lecture!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../amc/index.html">From AMC12 To AIME 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
@@ -112,63 +106,40 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Lectures</a>
-        
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Lectures</a>
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
           <li><a href="../index.html">Acadanymo Project Resources</a> &raquo;</li>
-        
-      <li>Docker Quick Start</li>
-    
-    
+      
+    <li>Docker Quick Start</li>
       <li class="wy-breadcrumbs-aside">
         
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -201,13 +172,13 @@ sudo usermod -aG docker $USER
 <h2>Install on Windows 10<a class="headerlink" href="#install-on-windows-10" title="Permalink to this headline">¶</a></h2>
 <p>Before installing Docker on Windows 10, make sure the system meet the prerequisites:</p>
 <ol class="arabic simple">
-<li><p>Windows version later than 1903 (Build 18362 or higher).</p></li>
+<li>Windows version later than 1903 (Build 18362 or higher).</li>
 </ol>
 <p>To check the system version, run <em>winver</em>.</p>
 <a class="reference internal image-reference" href="../../_images/07-winver.png"><img alt="../../_images/07-winver.png" src="../../_images/07-winver.png" style="width: 320px;" /></a>
 <a class="reference internal image-reference" href="../../_images/07-win-version.png"><img alt="../../_images/07-win-version.png" src="../../_images/07-win-version.png" style="width: 240px;" /></a>
 <ol class="arabic simple" start="2">
-<li><p>WSL 2 enabled</p></li>
+<li>WSL 2 enabled</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/08-win-virtual.png"><img alt="../../_images/08-win-virtual.png" src="../../_images/08-win-virtual.png" style="width: 480px;" /></a>
 <p>For details, see Docker ducuments about <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/#system-requirements">install on Windows 10</a>.</p>
@@ -218,32 +189,31 @@ and follow the instructions - will request Linux kernel update package.</p>
 
 
            </div>
-           
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="wp-troubles.html" class="btn btn-neutral float-right" title="Troubleshootings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="wp-startup.html" class="btn btn-neutral float-left" title="Setup Docker Wordpress" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="wp-troubles.html" class="btn btn-neutral float-right" title="Troubleshootings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="wp-startup.html" class="btn btn-neutral" title="Setup Docker Wordpress" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, Odys Zhou.
+        &copy; Copyright 2021, Odys Zhou.
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -252,15 +222,38 @@ and follow the instructions - will request Linux kernel update package.</p>
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

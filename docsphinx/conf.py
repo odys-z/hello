@@ -40,8 +40,8 @@ release = u'1.0'
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    # 'sphinx_rtd_theme',
-	'sphinxcontrib.excel_table_plus',
+    'sphinx_rtd_theme',
+	# 'sphinxcontrib.excel_table_plus',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
