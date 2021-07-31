@@ -36,3 +36,4 @@ Syllabus:
    lect04/index
    lect05/index
    lect06/index
+   lect07/index
