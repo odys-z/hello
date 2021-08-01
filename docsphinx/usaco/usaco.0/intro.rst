@@ -14,7 +14,13 @@ Task 0: test
 
 :download:`task.python3 <task-test/hello3.py>`
 
-See also
-++++++++
+Chapter 1
+---------
 
-Handout: ACSL 2016-2017: Program #8: BST Stats
+`Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01>`_
+
+Chapter 2
+---------
+
+TODO
+`Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter02>`_
