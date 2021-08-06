@@ -81,6 +81,12 @@ dict checking:
     Test 14: TEST OK [0.032 secs, 9912 KB]
     Test 15: TEST OK [0.031 secs, 9568 KB]
 
+- palsquare
+
+`Section 1.3 PROB Palindromic Squares <https://train.usaco.org/usacogate>`_
+
+
+
 Chapter 2
 ---------
 
