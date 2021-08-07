@@ -8,12 +8,8 @@ from typing import List
 
 def milk(N, M, PAs):
 	res = 0
-	PAs.sort() # e.g. '5 20'
-	for pa in PAs:
-		pa = pa.strip()
-		if len(pa) == 0: break;
-		pa = pa.split()
-		p, a = int(pa[0]), int(pa[1])
+	for p, a in sorted(PAs):
+		#p, a = int(pa[0]), int(pa[1])
 		N_ = max(N - a, 0)
 		res += (N - N_) * p
 		if N_ == 0:
@@ -32,5 +28,9 @@ fin = open('milk.in')
 PAs = fin.readlines()
 fin.close()
 
-res = milk(int(N), int(M), PAs)
+def convert(line):
+	lnss = line.split()
+	return int(lnss[0]), int(lnss[1])
+
+res = milk(int(N), int(M), map(convert, PAs))
 outputLines(res)

@@ -63,29 +63,37 @@ dict checking:
     O(l), where l = len(dict.txt)
 ..
 
-::
-
-    Test 1: TEST OK [0.031 secs, 9912 KB]
-    Test 2: TEST OK [0.032 secs, 9968 KB]
-    Test 3: TEST OK [0.053 secs, 10236 KB]
-    Test 4: TEST OK [0.031 secs, 9584 KB]
-    Test 5: TEST OK [0.031 secs, 9708 KB]
-    Test 6: TEST OK [0.035 secs, 9580 KB]
-    Test 7: TEST OK [0.031 secs, 9984 KB]
-    Test 8: TEST OK [0.032 secs, 10164 KB]
-    Test 9: TEST OK [0.106 secs, 10252 KB]
-    Test 10: TEST OK [0.260 secs, 10956 KB]
-    Test 11: TEST OK [0.039 secs, 10376 KB]
-    Test 12: TEST OK [0.262 secs, 10936 KB]
-    Test 13: TEST OK [0.032 secs, 9968 KB]
-    Test 14: TEST OK [0.032 secs, 9912 KB]
-    Test 15: TEST OK [0.031 secs, 9568 KB]
-
 - palsquare
 
 `Section 1.3 PROB Palindromic Squares <https://train.usaco.org/usacogate>`_
 
+- 1.4 Mixing Milk
 
+`Section 1.4 PROB Mixing Milk <https://train.usaco.org/usacogate>`_
+
+hint: convert lines of strings to number arrays ready for sort
+
+test data::
+
+   10 11
+   101 22
+   2  33
+
+.. code-block:: python3
+
+    def convert(line):
+        numss = line.split()
+        return (int(numss[0]), int(numss[1]))
+
+    fin = open('file.in', 'r')
+    lines = fin.readlines()
+    fin.close()
+
+    mapobj = map(convert, lines)
+
+    # to sort:
+    ls = sorted(mapobj)
+..
 
 Chapter 2
 ---------
