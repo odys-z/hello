@@ -89,10 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cemc/hypatia-galois-2021.html">CEMC Waterloo</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to USACO Exercise</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">About USACO Guid</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#task-0-test">Task 0: test</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-0-test">Task 0: test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chapter-1">Chapter 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chapter-2">Chapter 2</a></li>
 </ul>
 </li>
 </ul>
@@ -153,10 +152,74 @@
 <p><a class="reference download internal" download="" href="../../_downloads/83e544f83ef5337eb27302ee68c0a0b4/hello.c"><code class="xref download docutils literal notranslate"><span class="pre">task.c</span></code></a></p>
 <p><a class="reference download internal" download="" href="../../_downloads/9b65300519b1ca445eb51372ec07106c/hello.py"><code class="xref download docutils literal notranslate"><span class="pre">task.py</span></code></a></p>
 <p><a class="reference download internal" download="" href="../../_downloads/437b8276ed4ef5503daa4cdbd32198aa/hello3.py"><code class="xref download docutils literal notranslate"><span class="pre">task.python3</span></code></a></p>
-<div class="section" id="see-also">
-<h3>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
-<p>Handout: ACSL 2016-2017: Program #8: BST Stats</p>
 </div>
+<div class="section" id="chapter-1">
+<h2>Chapter 1<a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h2>
+<p>Reference Solution: <a class="reference external" href="https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01">milk2</a></p>
+<ul class="simple">
+<li>milk2</li>
+</ul>
+<p><a class="reference external" href="https://train.usaco.org/usacogate">Section 1.3 PROB Milking Cows, milk2</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span><span class="o">-</span><span class="n">th</span> <span class="n">interval</span> <span class="n">overlap</span> <span class="k">with</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">merge</span> <span class="n">it</span><span class="p">,</span> <span class="n">update</span> <span class="nb">max</span><span class="o">-</span><span class="n">miling</span><span class="p">;</span>
+<span class="k">if</span> <span class="n">i</span><span class="o">-</span><span class="n">th</span> <span class="n">inteval</span> <span class="n">doesn</span><span class="s1">&#39;t overlap with i-1, update max-waiting.</span>
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/4f7bd68f8869a63f4105dcdc0ca8c9f8/milk2.py"><code class="xref download docutils literal notranslate"><span class="pre">Reference</span> <span class="pre">Solution</span> <span class="pre">milk2.py</span></code></a></p>
+<ul class="simple">
+<li>transform</li>
+</ul>
+<p><a class="reference external" href="https://train.usaco.org/usacogate">Section 1.3 PROB Transformation</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hint: if a matrix is transposed, where does m[i, j] go ?
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/1de9f2fc90034d962730149ecbea8473/transform.py"><code class="xref download docutils literal notranslate"><span class="pre">Reference</span> <span class="pre">Solution</span> <span class="pre">transform.yp</span></code></a></p>
+<ul class="simple">
+<li>namenum</li>
+</ul>
+<p><a class="reference external" href="https://train.usaco.org/usacogate">Section 1.3 PROB Name that Number</a></p>
+<p>Performance consideration:</p>
+<p>We use number to generated a permutation set, then read dict line by line to check
+is it in permutation results.</p>
+<p>permutation complexity (d = number of digits):</p>
+<div class="math notranslate nohighlight">
+\[O(d * d ^ 3)\]</div>
+<p>dict checking:</p>
+<div class="math notranslate nohighlight">
+\[O(l), where l = len(dict.txt)\]</div>
+<ul class="simple">
+<li>palsquare</li>
+</ul>
+<p><a class="reference external" href="https://train.usaco.org/usacogate">Section 1.3 PROB Palindromic Squares</a></p>
+<ul class="simple">
+<li>1.4 Mixing Milk</li>
+</ul>
+<p><a class="reference external" href="https://train.usaco.org/usacogate">Section 1.4 PROB Mixing Milk</a></p>
+<p>hint: convert lines of strings to number arrays ready for sort</p>
+<p>test data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="mi">11</span>
+<span class="mi">101</span> <span class="mi">22</span>
+<span class="mi">2</span>  <span class="mi">33</span>
+</pre></div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="n">numss</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numss</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">numss</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">fin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.in&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">fin</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">fin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">mapobj</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">convert</span><span class="p">,</span> <span class="n">lines</span><span class="p">)</span>
+
+<span class="c1"># to sort:</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mapobj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-2">
+<h2>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h2>
+<p>TODO
+<a class="reference external" href="https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter02">Reference Solution</a></p>
 </div>
 </div>
 

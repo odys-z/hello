@@ -17,7 +17,7 @@ Task 0: test
 Chapter 1
 ---------
 
-`Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01>`_
+Reference Solution: `milk2 <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01>`_
 
 - milk2
 
@@ -28,7 +28,7 @@ Chapter 1
     if i-th interval overlap with i-1, merge it, update max-miling;
     if i-th inteval doesn't overlap with i-1, update max-waiting.
 
-:download:`Reference Solution <../../../acsl-pydev/usaco/charpter01/milk2.py>`
+:download:`Reference Solution milk2.py <../../../acsl-pydev/usaco/chapter01/milk2.py>`
 
 - transform
 
@@ -38,7 +38,7 @@ Chapter 1
 
     hint: if a matrix is transposed, where does m[i, j] go ?
 
-:download:`Reference Solution <../../../acsl-pydev/usaco/charpter01/transform.py>`
+:download:`Reference Solution transform.yp <../../../acsl-pydev/usaco/chapter01/transform.py>`
 
 - namenum
 
