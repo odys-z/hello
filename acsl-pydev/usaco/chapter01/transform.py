@@ -4,7 +4,8 @@ LANG: PYTHON3
 TASK: transform
 '''
 
-# https://train.usaco.org/usacoprob2?a=ksu2wlLybOe&S=milk2
+# https://train.usaco.org/usacogate
+# Section 1.3 PROB Transformation
 class Transform:
     def solve(self, lines):
         n = int(lines[0])
