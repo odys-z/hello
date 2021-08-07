@@ -17,7 +17,7 @@ class Friday:
         
         explain:
         --------
-        1. Find out how many days before each 13th - mode 7 can found the day;
+        1. Find out how many days before each 13th - mode 7 can find what's the day;
         2. As calendar is complex, break it down to days/month dictionary and a function return is it a leap year
         '''
         # hint 1
@@ -39,6 +39,7 @@ class Friday:
         m = 1
         endMonth = N * 12
 
+        # hint 2
         # For each month, find how many days to 13th scence starting day (d13)
         # It's easy to know the day if mod 7
         while m <= endMonth:
@@ -47,8 +48,8 @@ class Friday:
             d13 += leaps[mth] if isleap(m // 12 + startyear) else months[mth]
             m += 1
 
-        # move Saturday the last to the first
-        # question: 13th falls on Saturday, Sunday, Monday, Tuesday, ..., Friday.
+        # move Saturday the last to the first, as asked by the question: 
+        # 13th falls on Saturday, Sunday, Monday, Tuesday, ..., Friday.
         days.insert(0, days.pop(-1))
 
         # convert integers to str
