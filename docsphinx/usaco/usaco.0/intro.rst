@@ -19,6 +19,17 @@ Chapter 1
 
 `Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01>`_
 
+- gift
+
+`Section 1.2 PROB Greedy Gift Givers <https://train.usaco.org/usacogate>`_
+
+Problem on hash map? Try some exercises:
+
+`LeetCode Question 217. Contains Duplicate <https://leetcode.com/problems/contains-duplicate>`_,
+`LeetCode Question 219. Contains Duplicate II <https://leetcode.com/problems/contains-duplicate-ii>`_ &
+`LeetCode Question 220. Contains Duplicate III [MEDIUM] <https://leetcode.com/problems/contains-duplicate-iii/>`_
+(don't spend too much time solution is here :download:`Reference Solution <../../../challenge/medium/q220.py>`)
+
 - milk2
 
 `Section 1.3 PROB Milking Cows, milk2 <https://train.usaco.org/usacogate>`_
