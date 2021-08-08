@@ -17,7 +17,7 @@ Task 0: test
 Chapter 1
 ---------
 
-`Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter01>`_
+`Reference Solutions: chapter 1 <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/chapter01>`_
 
 - gift
 
@@ -28,7 +28,7 @@ Problem on hash map? Try some exercises:
 `LeetCode Question 217. Contains Duplicate <https://leetcode.com/problems/contains-duplicate>`_,
 `LeetCode Question 219. Contains Duplicate II <https://leetcode.com/problems/contains-duplicate-ii>`_ &
 `LeetCode Question 220. Contains Duplicate III [MEDIUM] <https://leetcode.com/problems/contains-duplicate-iii/>`_
-(don't spend too much time solution is here :download:`Reference Solution <../../../challenge/medium/q220.py>`)
+(don't spend too much time solution is here :download:`Reference Solution <../../../challenge/leet/medium/q220.py>`)
 
 - milk2
 
@@ -39,7 +39,7 @@ Problem on hash map? Try some exercises:
     if i-th interval overlap with i-1, merge it, update max-miling;
     if i-th inteval doesn't overlap with i-1, update max-waiting.
 
-:download:`Reference Solution <../../../acsl-pydev/usaco/charpter01/milk2.py>`
+:download:`Reference Solution: milk2.py <../../../acsl-pydev/usaco/chapter01/milk2.py>`
 
 - transform
 
@@ -49,7 +49,7 @@ Problem on hash map? Try some exercises:
 
     hint: if a matrix is transposed, where does m[i, j] go ?
 
-:download:`Reference Solution <../../../acsl-pydev/usaco/charpter01/transform.py>`
+:download:`Reference Solution: transfom.py <../../../acsl-pydev/usaco/chapter01/transform.py>`
 
 - namenum
 
@@ -102,4 +102,4 @@ Chapter 2
 ---------
 
 TODO
-`Reference Solution <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/charpter02>`_
+`Reference Solutions: chapter 2 <https://github.com/odys-z/hello/tree/master/acsl-pydev/usaco/chapter02>`_
