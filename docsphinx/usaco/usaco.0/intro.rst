@@ -26,7 +26,9 @@ Chapter 1
 Problem on hash map? Try some exercises:
 
 `LeetCode Question 217. Contains Duplicate <https://leetcode.com/problems/contains-duplicate>`_,
+
 `LeetCode Question 219. Contains Duplicate II <https://leetcode.com/problems/contains-duplicate-ii>`_ &
+
 `LeetCode Question 220. Contains Duplicate III [MEDIUM] <https://leetcode.com/problems/contains-duplicate-iii/>`_
 (don't spend too much time solution is here :download:`Reference Solution <../../../challenge/leet/medium/q220.py>`)
 
