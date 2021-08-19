@@ -1,2 +1,3 @@
 **/dist/*
 !**/dist/*.html
+# but what's husky doing?
