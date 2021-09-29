@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Example</title>
+  <script src="promise.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <div id='cb'></div>
+  <p>text = await new Client().postSync('async - await: ');
+    <div id='v2'></div>
+  </p>
+  <script>
+  new Client().post('Callback Client: ', (v) => {
+	  document.getElementById('cb').innerHTML = v;
+	  getv2();
+  })
+
+  async function getv2() {
+	let v2 = await new Client().postSync('async - await: ');
+	document.getElementById('v2').innerHTML = v2;
+  }
+  </script>
+</body>
+</html>
