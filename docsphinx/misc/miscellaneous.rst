@@ -90,4 +90,5 @@ Built on `Gifted Chat, React Native, <https://github.com/FaridSafi/react-native-
 ::
 
 .. excel-table::
-    :file: res/xmpp-survey.xlsm
+
+    :file: res/xmpp-survey.xls
