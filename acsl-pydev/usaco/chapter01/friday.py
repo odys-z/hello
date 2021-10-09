@@ -12,9 +12,9 @@ class Friday:
     def days(self, startyear, startday, N):
         '''
         startyear: 1900
-        startday: weekday for starting date, e.g. 1 for Monday, January 1, Sunday = 0
+        startday: weekday for starting date, e.g. if January 1 is Monday, startday == 1. (Sunday = 0)
         N: years
-        
+
         explain:
         --------
         1. Find out how many days before each 13th - mode 7 can find what's the day;
@@ -40,7 +40,7 @@ class Friday:
         endMonth = N * 12
 
         # hint 2
-        # For each month, find how many days to 13th scence starting day (d13)
+        # For each month, find how many days to 13th scince starting day (d13)
         # It's easy to know the day if mod 7
         while m <= endMonth:
             days[d13 % 7] += 1
@@ -48,7 +48,7 @@ class Friday:
             d13 += leaps[mth] if isleap(m // 12 + startyear) else months[mth]
             m += 1
 
-        # move Saturday the last to the first, as asked by the question: 
+        # move Saturday the last to the first, as asked by the question:
         # 13th falls on Saturday, Sunday, Monday, Tuesday, ..., Friday.
         days.insert(0, days.pop(-1))
 
