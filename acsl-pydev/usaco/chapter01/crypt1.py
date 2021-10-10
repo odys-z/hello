@@ -46,7 +46,7 @@ def threeProd(abcde, nums) -> bool:
 
 def crypt1(n: int, nums: List[int]) -> int:
     ans = 0
-    # permutation
+    # permutation (python product)
     for perm in product(nums, repeat=5):
         if threeProd(perm, nums):
             ans += 1
@@ -55,18 +55,46 @@ def crypt1(n: int, nums: List[int]) -> int:
 
 def crypt2(n: int, nums: List[int]) -> int:
     ans = 0
-    perm = [nums[0]] * 5
-    for i in range(1, 5):
-        for j in range(0, i):
-            perm[i] = nums[i - 1]
-            for k in range(n):
 
+    '''
+    reading:
+    https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm   
+    https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+    '''
+
+    # brutal
+
+    def products(digits, radx):
+        perm = [0] * 5
+        c = 0
+        while True:
+            yield perm
+            perm[digits - 1] += 1
+            if perm[digits - 1] >= radx:
+                perm[digits - 1] = 0
+                c = 1
+
+            digit = 3
+            while c > 0 and digit >= 0: # c must be 1
+                perm[digit] += 1
+                if perm[digit] >= radx:
+                    perm[digit] = 0
+                    c = 1
+                else: c = 0
+                digit -= 1
+            if c > 0:
+                break
     
+    for p in products(5, len(nums)):
+        abcde = [nums[p[0]], nums[p[1]], nums[p[2]], nums[p[3]], nums[p[4]]]
+        if threeProd(abcde, nums):
+            ans += 1
+
     return ans
     
 if __name__ != "__main__": # PyUnit
     t = TestCase()
-    ans = crypt1(5, [2, 3, 4, 6, 8])
+    ans = crypt2(5, [2, 3, 4, 6, 8])
     print(ans)
     t.assertEqual(1, ans)
 
@@ -78,7 +106,7 @@ else: # main
     fin.close()
 
     nums = list(map(lambda s: int(s.strip()), lines[1].split()))
-    ans = crypt1(int(lines[0]), nums)
+    ans = crypt2(int(lines[0]), nums)
 
     fo = open('crypt1.out', 'w')
     fo.write(str(ans) + '\n')
