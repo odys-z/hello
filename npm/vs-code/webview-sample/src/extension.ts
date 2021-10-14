@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as cp from "child_process";
 import { web } from 'webpack';
 
 const cats = {
@@ -27,6 +28,20 @@ export function activate(context: vscode.ExtensionContext) {
 			if (CatCodingPanel.currentPanel) {
 				CatCodingPanel.currentPanel.doRefactor();
 			}
+		})
+	);
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand('catCoding.start_server', () => {
+			const cmd = "python3 -m http.server 8888 &";
+			new Promise<string>((resolve, reject) => {
+				cp.exec(cmd, (err, out) => {
+					if (err) {
+						return reject(err);
+					}
+					return resolve(out);
+				});
+			});
 		})
 	);
 

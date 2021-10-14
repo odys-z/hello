@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const vscode = require("vscode");
+const cp = require("child_process");
 const cats = {
     'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
@@ -20,6 +21,17 @@ function activate(context) {
         if (CatCodingPanel.currentPanel) {
             CatCodingPanel.currentPanel.doRefactor();
         }
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('catCoding.start_server', () => {
+        const cmd = "python3 -m http.server 8888 &";
+        new Promise((resolve, reject) => {
+            cp.exec(cmd, (err, out) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(out);
+            });
+        });
     }));
     if (vscode.window.registerWebviewPanelSerializer) {
         // Make sure we register a serializer in activation event

@@ -2,33 +2,27 @@
 
 Demonstrates VS Code's [webview API](https://code.visualstudio.com/api/extension-guides/webview). This includes:
 
-- Creating and showing a basic webview.
-- Dynamically updating a webview's content.
-- Loading local content in a webview.
-- Running scripts in a webview.
-- Sending message from an extension to a webview.
-- Sending messages from a webview to an extension.
-- Using a basic content security policy.
-- Webview lifecycle and handling dispose.
-- Saving and restoring state when the panel goes into the background.
-- Serialization and persistence across VS Code reboots.
+- Load webpack watched results.
+- The local http server can be started using teminal (see teminal-sample).
+- Terminate python http server way 1, [kill process](https://stackoverflow.com/a/37214138/7362888):
 
-## Demo
+```
+    kill `ps -ef |grep http.server |grep 8888 |awk '{print $2}'`
+```
 
-![demo](demo.gif)
+- Terminate python http server way 2, [hack the source](../../../acsl-pydev/hacking/anserv.py).
 
-## VS Code API
+Why? The terminal extension can't recieves CLI results. 
+[Terminal: add a way of getting the exit code #62103](https://github.com/microsoft/vscode/issues/91016)
+[TerminalOptions.waitOnExit API #70444](https://github.com/microsoft/vscode/issues/70444)
 
-### `vscode` module
+[Terminal API](https://code.visualstudio.com/api/references/vscode-api#Terminal)
 
-- [`window.createWebviewPanel`](https://code.visualstudio.com/api/references/vscode-api#window.createWebviewPanel)
-- [`window.registerWebviewPanelSerializer`](https://code.visualstudio.com/api/references/vscode-api#window.registerWebviewPanelSerializer)
+[How to run a system command](https://stackoverflow.com/a/64598488/7362888)
 
-## Running the example
+## Quick Start
 
 - Open this example in VS Code 1.47+
 - `npm install`
 - `npm run watch` or `npm run compile`
 - `F5` to start debugging
-
-Run the `Cat Coding: Start cat coding session` to create the webview.

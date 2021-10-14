@@ -37,6 +37,11 @@
 				"command": "catCoding.refresh",
 				"title": "reload",
 				"category": "Cat Coding"
+			},
+			{
+				"command": "catCoding.start_server",
+				"title": "start web server",
+				"category": "Cat Coding"
 			}
 		]
 	},
