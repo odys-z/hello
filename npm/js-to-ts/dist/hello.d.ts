@@ -1,3 +1,3 @@
 export class Hello {
-    hi(): void;
+    hi(name: any): void;
 }

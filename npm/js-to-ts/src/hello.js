@@ -1,11 +1,14 @@
 import $ from 'jquery';
 
 export class Hello {
+	/**
+	 * @constructor
+	 */
 	constructor() {
-
+		console.log("Hello constructor...");
 	}
 
-	hi() {
-		console.log("hello TypeScript!");
+	hi(name) {
+		console.log(`Hello ${name}!`);
 	}
 }
