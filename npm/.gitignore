@@ -1,5 +1,6 @@
 **/dist/*
 !**/dist/*.html
+!./js-to-ts/dist
 # but what's husky doing? works?
 # see here: https://github.com/typicode/husky/issues/333
 # and https://stackoverflow.com/a/40148602
