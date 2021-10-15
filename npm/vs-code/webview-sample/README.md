@@ -7,18 +7,24 @@ Demonstrates VS Code's [webview API](https://code.visualstudio.com/api/extension
 - Terminate python http server way 1, [kill process](https://stackoverflow.com/a/37214138/7362888):
 
 ```
-    kill `ps -ef |grep http.server |grep 8888 |awk '{print $2}'`
+    kill `ps -ef |grep http.server |grep python |awk '{print $2}'`
 ```
 
 - Terminate python http server way 2, [hack the source](../../../acsl-pydev/hacking/anserv.py).
 
-Why? The terminal extension can't recieves CLI results. 
-[Terminal: add a way of getting the exit code #62103](https://github.com/microsoft/vscode/issues/91016)
-[TerminalOptions.waitOnExit API #70444](https://github.com/microsoft/vscode/issues/70444)
+Why?
 
-[Terminal API](https://code.visualstudio.com/api/references/vscode-api#Terminal)
+The vs code terminal extension can't receive CLI results.
 
-[How to run a system command](https://stackoverflow.com/a/64598488/7362888)
+Reference
+
+- [Terminal: add a way of getting the exit code #62103](https://github.com/microsoft/vscode/issues/91016)
+
+- [TerminalOptions.waitOnExit API #70444](https://github.com/microsoft/vscode/issues/70444)
+
+- [Terminal API](https://code.visualstudio.com/api/references/vscode-api#Terminal)
+
+- [How to run a system command](https://stackoverflow.com/a/64598488/7362888)
 
 ## Quick Start
 
@@ -26,3 +32,9 @@ Why? The terminal extension can't recieves CLI results.
 - `npm install`
 - `npm run watch` or `npm run compile`
 - `F5` to start debugging
+
+## Packing
+
+```
+    vsce package
+```

@@ -1,24 +1,8 @@
-# import html
-# import http.client
-# import io
-# import mimetypes
-# import os
-# import posixpath
-# import select
-# import shutil
-# import socket # For gethostbyaddr()
-# import socketserver
-# import sys
-# import time
-# import urllib.parse
-# import copy
 import argparse
 
 from urllib.parse import urlparse, parse_qs
 
-# from http import HTTPStatus
-
-from http.server import test, SimpleHTTPRequestHandler
+from http.server import test, SimpleHTTPRequestHandler, HTTPServer
 
 class AnHttpRequestHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
@@ -27,9 +11,32 @@ class AnHttpRequestHandler(SimpleHTTPRequestHandler):
         '''
         # super.do_GET()
         self.shutdownFlag = parse_qs(urlparse(self.path).query).get('_shut-down_', [''])
-        print(self.shutdownFlag, self.shutdownFlag[0] == 'True')
+        # print(self.shutdownFlag, self.shutdownFlag[0] == 'True')
         super(type(self), self).do_GET()
+        if self.shutdownFlag[0] == 'True':
+            raise KeyboardInterrupt
         
+class AnHTTPServer(HTTPServer):
+
+    def _handle_request_noblock(self):
+        try:
+            request, client_address = self.get_request()
+        except OSError:
+            return
+        if self.verify_request(request, client_address):
+            try:
+                self.process_request(request, client_address)
+            except KeyboardInterrupt:
+                print('-------------')
+                raise KeyboardInterrupt
+            except:
+                self.handle_error(request, client_address)
+                self.shutdown_request(request)
+        else:
+            self.shutdown_request(request)
+         
+        print(client_address)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--cgi', action='store_true',
@@ -38,12 +45,13 @@ if __name__ == '__main__':
                         help='Specify alternate bind address '
                              '[default: all interfaces]')
     parser.add_argument('port', action='store',
-                        default=8000, type=int,
+                        default=8888, type=int,
                         nargs='?',
-                        help='Specify alternate port [default: 8000]')
+                        help='Specify alternate port [default: 8888]')
     args = parser.parse_args()
     if args.cgi:
-        pass # handler_class = CGIHTTPRequestHandler
+        handler_class = CGIHTTPRequestHandler
     else:
         handler_class = AnHttpRequestHandler # SimpleHTTPRequestHandler
-    test(HandlerClass=handler_class, port=args.port, bind=args.bind)
+
+    test(HandlerClass=handler_class, ServerClass=AnHTTPServer, port=args.port, bind=args.bind)

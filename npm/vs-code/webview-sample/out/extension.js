@@ -3,12 +3,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const vscode = require("vscode");
 const cp = require("child_process");
+const platform_1 = require("./platform");
 const cats = {
     'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
     'Testing Cat': 'https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif'
 };
 function activate(context) {
+    if (platform_1.OS == 3 /* Linux */)
+        console.log('Linux');
+    else if (platform_1.OS == 1 /* Windows */)
+        console.log('Windows');
+    else
+        console.log("OS: other");
     context.subscriptions.push(vscode.commands.registerCommand('catCoding.start', () => {
         CatCodingPanel.createOrShow(context.extensionUri);
     }));
@@ -22,8 +29,9 @@ function activate(context) {
             CatCodingPanel.currentPanel.doRefactor();
         }
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('catCoding.start_server', () => {
-        const cmd = "python3 -m http.server 8888 &";
+    context.subscriptions.push(vscode.commands.registerCommand('catCoding.startServer', () => {
+        const port = '8888';
+        const cmd = `python3 -m http.server ${port} &`;
         new Promise((resolve, reject) => {
             cp.exec(cmd, (err, out) => {
                 if (err) {
@@ -129,9 +137,7 @@ class CatCodingPanel {
             case vscode.ViewColumn.One:
             default:
                 // this._updateForCat(webview, 'Coding Cat');
-                // this._loadOnline(webview, "http://localhost:8888/test.html");
                 this._loadOnline("http://localhost:8888/index.html");
-                // this._loadOnline(webview, "https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik");
                 return;
         }
     }
