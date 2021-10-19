@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Example</title>
+  <script src="promise.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <p>Try: how to save blob to file. See
+	  <a href='https://stackoverflow.com/a/68698826/7362888'>kishore's answer</a></p>
+  <canvas id='my-canvas'></canvas>
+  <script>
+	var canvas = document.getElementById("my-canvas");
+	var ctx = canvas.getContext("2d");
+	var pixel_size = 1;
+
+	function draw() {
+	    console.log("draw");
+	    for (x = 0; x < canvas.width; x += pixel_size) {
+	        for (y = 0; y < canvas.height; y += pixel_size) {
+	            var b = 0.5;
+	            ctx.fillStyle =
+	                "rgba(" +
+	                (x / canvas.width) * 255 + "," +
+	                (y / canvas.height) * 255 + "," +
+	                b * 255 +
+	                ",255)"
+	            ;
+	            ctx.fillRect(x, y, pixel_size, pixel_size);
+	        }
+	    }
+	    // canvas.toBlob(function(blob) {
+	    //   saveAs(blob, 'mypng.png');
+	    // });
+		canvas.toBlob(function(blob){
+
+			console.log(typeof(blob)) //let you have 'blob' here
+
+			var blobUrl = URL.createObjectURL(blob);
+
+			var link = document.createElement("a"); // Or maybe get it from the current document
+			link.id = 'dl';
+			link.href = blobUrl;
+			link.download = "image.jpg";
+			link.innerHTML = "Click here to download the file";
+			link.style="display: none";
+
+			document.body.appendChild(link); // Or append it whereever you want
+			//document.querySelector('#dl').click() //can add an id to be specific if multiple anchor tag, and use #id
+			link.click() //can add an id to be specific if multiple anchor tag, and use #id
+
+		}, 'image/jpeg', 1); // JPEG at 100% quality
+	}
+	window.requestAnimationFrame(draw);
+
+  </script>
+</body>
+</html>

@@ -7,29 +7,41 @@ import ReactDOM from 'react-dom';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link,
-  useParams
-} from "react-router-dom";
+} from "./router-dom";
+
+//home/ody/git/hello/npm/react/3-router-dom/src/router-index.tsx
+// import { Route } from './router';
+class Home extends React.Component {
+
+  constructor(props) {
+    console.log(props);
+  }
+
+  render() {
+    return <>HOOOOOOOME</>
+  }
+}
 
 const routes = [
-  {
-    path: "/",
+  { path: "/",
     exact: true,
-	name: 'Home',
-    sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
+    name: 'Home',
+    // sidebar: () => <div>home!</div>,
+    // // main: () => <h2>Home</h2>
+    main: () => Home
   },
   {
     path: "/bubblegum",
-	name: 'Bubb',
+    name: 'Bubb',
     sidebar: () => <div>bubblegum!</div>,
     main: () => <h2>Bubblegum</h2>
   },
   {
     path: "/shoelaces",
-	name: 'Shoe',
+    name: 'Shoe',
     sidebar: () => <div>shoelaces!</div>,
     main: () => <h2>Shoelaces</h2>
   }
@@ -46,17 +58,18 @@ export default function NaviExample() {
             background: "#f0f0f0"
           }}
         >
-          <Switch>
+          {/* <Routes>
             {routes.map((route, index) => (
               <Route
                 key={index}
                 path={route.path}
                 exact={route.exact}
                 // children={<>Current: <route.sidebar /></>}
-                children={<>Current: {route.name}</>}
+                component={route.main}
+                children={<>Current: {route.main}</>}
               />
             ))}
-          </Switch>
+          </Routes> */}
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <Link to="/">Home</Link>
@@ -72,7 +85,7 @@ export default function NaviExample() {
         </div>
 
         <div style={{ flex: 1, padding: "10px" }}>
-          <Switch>
+          <Routes>
             {routes.map((route, index) => (
               // Render more <Route>s with the same paths as
               // above, but different components this time.
@@ -80,10 +93,10 @@ export default function NaviExample() {
                 key={index}
                 path={route.path}
                 exact={route.exact}
-                children={<route.main />}
+                component={<Home/>}
               />
             ))}
-          </Switch>
+          </Routes>
         </div>
       </div>
     </Router>
