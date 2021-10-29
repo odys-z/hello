@@ -5,6 +5,11 @@ TASK: namenum
 '''
 from typing import List
 
+'''
+    See also Leecode q1863.
+    https://leetcode.com/problems/sum-of-all-subset-xor-totals/
+'''
+
 # 2: A,B,C     5: J,K,L    8: T,U,V      3: D,E,F     6: M,N,O    9: W,X,Y     4: G,H,I     7: P,R,S
 dial = [None] * 10
 dial[2] = ['A', 'B', 'C']
