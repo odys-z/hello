@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Example</title>
+  <script src="promise.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <div id='cb'></div>
+  <p>text = new Client().postSync().then(v => text = v);
+    <div id='1'></div>
+    <div id='2'></div>
+    <div id='all'></div>
+  </p>
+  <script>
+  getv2();
+  console.log("Main thread ends here.");
+
+  async function getv2() {
+	const c = new Client();
+	let p1 = c.postSync("A")
+	// .then( v => {
+	// 	console.log('then 1: ', v);
+	// 	document.getElementById('1').innerHTML = v
+	// });
+
+	let p2 = c.postSync("B")
+	// .then( v => {
+	// 	console.log('then 2: ', v);
+	// 	document.getElementById('2').innerHTML = v
+	// });
+	Promise.all([p1, p2])
+	.then( v => {
+		console.log('then all: ', v);
+		document.getElementById('all').innerHTML = v
+	});
+  }
+  </script>
+</body>
+</html>

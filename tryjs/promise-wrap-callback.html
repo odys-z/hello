@@ -13,13 +13,16 @@
     <div id='v2'></div>
   </p>
   <script>
-  new Client().post('Callback Client: ', (v) => {
+  new Client().post('posting with new Client...', (v) => {
+	  console.log('posting called back.')
 	  document.getElementById('cb').innerHTML = v;
 	  getv2();
   })
+  console.log("Main thread ends here.");
 
   async function getv2() {
-	let v2 = await new Client().postSync('async - await: ');
+	let v2 = await new Client().postSync();
+	console.log('await return: ', v2);
 	document.getElementById('v2').innerHTML = v2;
   }
   </script>
