@@ -1,9 +1,0 @@
-{
-  "include": ["src/**/*", "dist/host.ts"],
-  "compilerOptions": {
-    "allowJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist"
-  }
-}

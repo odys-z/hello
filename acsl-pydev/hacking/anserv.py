@@ -1,6 +1,7 @@
 import argparse
 import sys
 import os
+import re
 
 from urllib.parse import urlparse, parse_qs
 
@@ -10,8 +11,21 @@ class AnHttpRequestHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         '''
         Thanks to https://stackoverflow.com/a/8930440/7362888
+
+        note: self.path is the url sub-path. 
         '''
-        self.shutdownFlag = parse_qs(urlparse(self.path).query).get('_shut-down_', [''])
+        qs = parse_qs(urlparse(self.path).query);
+        self.shutdownFlag = qs.get('_shut-down_', [''])
+
+        # replace nonce (getNonce()) with nonce (should be *.html)
+        nonce = qs.get('nonce')
+        if nonce and len(nonce[0]) > 0:
+            self.path = re.sub(r'\w{10,}.html', nonce[0] + '.html', self.path)
+            self.path = re.sub(r'\w{10,}.py', nonce[0] + '.py', self.path)
+            self.path = re.sub(r'\w{10,}.tier', nonce[0] + '.tier', self.path)
+            self.path = re.sub(r'\w{10,}.less', nonce[0] + '.less', self.path)
+        print(self.path);
+        
         # print(self.shutdownFlag, self.shutdownFlag[0] == 'True')
         super(type(self), self).do_GET()
         if self.shutdownFlag[0] == 'True':
