@@ -154,7 +154,3 @@ for l in lines[1:]:
 
 s = Solution2()
 outputLines(s.enumpath(N, locs))
-
-# t = TestCase()
-# t.assertEqual(2, s.permute(N, locs))
-# print('OK')
