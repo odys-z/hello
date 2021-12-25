@@ -22,22 +22,27 @@ def redesign(lines):
     center = (hills[0] + hills[-1]) // 2
     cost = stat(hills, center)
     
-    # d = 1
-    # center += d
-    # cost_ = stat(hills, center)
+    d = 1
+    center += d
+    cost_ = stat(hills, center)
     
-    # if cost_ > cost:
-    #     d = -1
-    #     cost_, cost = cost, cost_
+    if cost_ > cost:
+        d = -1
+        cost_, cost = cost, cost_
     
-    # while cost_ < cost:
-    #     cost = cost_ 
-    #     center += d
-    #     cost_ = stat(hills, center)
+    while cost_ < cost:
+        cost = cost_ 
+        center += d
+        print(cost_)
+        cost_ = stat(hills, center)
 
-    for x in range(9, 91):
-        cost = min(stat(hills, x), cost)
+    # cost = float('inf')
+    # for x in range(9, 91):
+    #     print(stat(hills, x))
+    #     cost = min(stat(hills, x), cost)
     
+    # print(cost)
+
     return cost
 
 def outputLines(ss: int) -> int:
@@ -46,9 +51,11 @@ def outputLines(ss: int) -> int:
     f.close()
     return ss
  
-# fin = open('skidesign.in', 'r') # 18
+# fin = open('skidesign3.in', 'r') # 18
 # fin = open('skidesign2.in', 'r')  # 22946
-fin = open('skidesign.in', 'r')  # 42940
+# fin = open('skidesign.in', 'r')  # 42940
+fin = open('skidesign4.in', 'r')  # 395875 
+N = fin.readline()
 lines = fin.readlines()
 fin.close()
 

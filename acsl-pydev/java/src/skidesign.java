@@ -1,12 +1,11 @@
-/*
-ID: odys.zh1
-LANG: JAVA
-TASK: skidesign
-*/
 
 import java.io.*;
 import java.util.*;
 
+/** See
+ * https://github.com/jvonk/USACO/blob/master/Chapter_1/skidesign/skidesign.java
+ *
+ */
 public class skidesign {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new FileReader("skidesign.in"));
@@ -31,7 +30,7 @@ public class skidesign {
                 }
                 cost += diff * diff;
             }
-            total=Math.min(cost, total);
+            total = Math.min(cost, total);
         }
         out.println(total);
         out.close();
