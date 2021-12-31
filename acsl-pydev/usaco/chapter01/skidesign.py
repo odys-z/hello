@@ -28,7 +28,7 @@ def redesign(lines):
     
     if cost_ > cost:
         d = -1
-        cost_, cost = cost, cost_
+        cost_, cost, center = cost, cost_, center - 1
     
     while cost_ < cost:
         cost = cost_ 
@@ -38,7 +38,7 @@ def redesign(lines):
 
     # cost = float('inf')
     # for x in range(9, 91):
-    #     print(stat(hills, x))
+    #     print(x, '\t', stat(hills, x))
     #     cost = min(stat(hills, x), cost)
     
     # print(cost)
@@ -54,7 +54,7 @@ def outputLines(ss: int) -> int:
 # fin = open('skidesign3.in', 'r') # 18
 # fin = open('skidesign2.in', 'r')  # 22946
 # fin = open('skidesign.in', 'r')  # 42940
-fin = open('skidesign4.in', 'r')  # 395875 
+fin = open('skidesign.in', 'r')  # 395875 
 N = fin.readline()
 lines = fin.readlines()
 fin.close()
