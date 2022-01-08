@@ -252,11 +252,11 @@ class Solution2:
         return cnt
 '''
 
-def outputLines(ss: int) -> int:
+def outputLines(intArr2: int) -> int:
     f = open('wormhole.out', 'w')
-    f.write(str(ss) + '\n')
+    f.write(str(intArr2) + '\n')
     f.close()
-    return ss
+    return intArr2
  
 fin = open('wormhole.in', 'r')
 lines = fin.readlines()

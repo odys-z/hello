@@ -45,11 +45,11 @@ def redesign(lines):
 
     return cost
 
-def outputLines(ss: int) -> int:
+def outputLines(intArr2: int) -> int:
     f = open('skidesign.out', 'w')
-    f.write(str(ss) + '\n')
+    f.write(str(intArr2) + '\n')
     f.close()
-    return ss
+    return intArr2
  
 # fin = open('skidesign3.in', 'r') # 18
 # fin = open('skidesign2.in', 'r')  # 22946
