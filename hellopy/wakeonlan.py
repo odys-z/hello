@@ -8,6 +8,8 @@ Small module for use with the wake on lan protocol.
 
 For dumping package at target mechine:
 sudo tcpdump arp src <local-ip>
+
+-X for show package output
 """
 
 import argparse
