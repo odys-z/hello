@@ -25,13 +25,13 @@ else:
     def outputLines(intArr2: List[List[int]]) -> int:
         f = open('ariprog.out', 'w')
         for s in intArr2:
-            f.writeLine('{} {}'.format(s[0], s[1]))
+            f.write('{} {}\n'.format(s[0], s[1]))
         f.close()
         return len(intArr2)
  
     g = Ari()
     fin = open('arilprog.in', 'r')
-    l = fin.readlines().split()
+    l = fin.readlines()
     fin.close()
     N, M = int(l[0]), int(l[1])
 
