@@ -38,16 +38,7 @@ class Ari:
             if p // 2 >= s: break
             self.primes[p//2] = p
         self.primes[0] = 2
-        '''
-        for i in range(len1k // 2, s):
-            i_2 = i ** 0.5
-            for dividor in self.primes:
-                if dividor > i_2:
-                    break
-                if dividor > 0 and i % dividor == 0:
-                    self.primes[i//2] = 0
-                    break
-        '''
+
         # len1k is even
         for digit in range(len1k + 1, s * 2, 2):
             if self.isPrime(digit):
@@ -82,6 +73,7 @@ class Ari:
                 v = digit * 10 ** (midlen + 1) + midigits * 10 + digit
                 if v > b: break
 
+                # https://math.stackexchange.com/questions/783393/a-quick-way-to-determine-whether-a-number-is-prime-by-hand/783414
                 if digit == 5 or digit == 0 or digit % 2 == 0 or (midsum + digit + digit) % 3 == 0:
                     pass
                 elif v % 2 == 0:
