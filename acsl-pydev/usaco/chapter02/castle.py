@@ -120,7 +120,8 @@ def findWall(rn: int, rm: int, rooms: List[Room], maptiles: List[List[Tile]]):
     if len(walls) == 0:
         return None, -1
 
-    most = sorted(walls, key = lambda w: (-w[0], w[1], 0 if w[2] == 'N' else 1))
+    # w = y, x, E/N
+    most = sorted(walls, key = lambda w: (w[1], -w[0], 0 if w[2] == 'N' else 1))
     most = most[0]
     return (most[0]+1, most[1]+1, most[2]), rooms[rn].space + rooms[rm].space
 
@@ -140,21 +141,23 @@ class Ari:
         
         rooms = sortSpace(rooms)
         
-        # [(space-sum, (tile, wall-char))]
         maxMerged, maxMergeSize = None, 0
         
         for rn in range(len(rooms)):
             for rm in range(rn+1, len(rooms)):
                 t0, size = findWall(rn, rm, rooms, tiles)
                 if t0 != None and size >= maxMergeSize:
-                    r, c, w = t0[0], t0[1], t0[2]
-                    sortT0 = (-c, r, w)
-                    maxMerged, maxMergeSize = sortT0 if maxMerged == None else max(sortT0, maxMerged), size
-                    if size <= 2 and w == 'N': # so many small rooms 
+                    # r, c, w = t0[0], t0[1], t0[2]
+                    # sortT0 = (-c, r, w)
+                    # maxMerged, maxMergeSize = sortT0 if maxMerged == None else max(sortT0, maxMerged), size
+                    maxMerged, maxMergeSize = t0, size
+                    if size <= 2 and t0[2] == 'N': # so many small rooms 
                         break
+            if 0 < maxMergeSize <= 2 and maxMerged[2] == 'N':
+                break
 
         return [len(rooms), rooms[0].space, maxMergeSize,
-                '{} {} {}'.format(maxMerged[1], -maxMerged[0], maxMerged[2])]
+                '{} {} {}'.format(maxMerged[0], maxMerged[1], maxMerged[2])]
 
 if __name__ != '__main__':
     from unittest import TestCase
@@ -187,9 +190,7 @@ if __name__ != '__main__':
     # 9    8    8    12## 13## 13## 9    8    8    12#   10
     # # ## # ## # ## # ## # ## # ## # ## # ## # ## # #
     '''
-    # can't pass this test case. Shouldn't be '2 1 N' the correct answer?
-    # t.assertCountEqual( [9, 36, 41, '6 10 N'],
-    t.assertCountEqual( [9, 36, 41, '2 1 N'],
+    t.assertCountEqual( [9, 36, 41, '6 10 N'],
                         a.prog( 10, 10, [
                         '11 10 10 14 7 3 10 2 2 6',
                         '3 2 2 6 5 1 2 0 0 4',
