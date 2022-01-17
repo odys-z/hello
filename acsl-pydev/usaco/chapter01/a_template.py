@@ -30,7 +30,7 @@ else:
         return len(intArr2)
  
     g = Ari()
-    fin = open('arilprog.in', 'r')
+    fin = open('ariprog.in', 'r')
     l = fin.readlines()
     fin.close()
     N, M = int(l[0]), int(l[1])
