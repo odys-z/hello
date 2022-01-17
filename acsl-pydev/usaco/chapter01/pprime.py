@@ -102,6 +102,14 @@ if __name__ != '__main__':
     print(ans)
     t.assertCountEqual([5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383],
                        ans)
+    
+    a = Ari(2, 10 ** 9 - 1)
+    ans = []
+    for p in a.primes:
+        if p > 0:
+            ans.append(p)
+    print(ans)
+
     print('OK!')
 
 else:
