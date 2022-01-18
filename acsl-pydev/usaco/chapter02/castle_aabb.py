@@ -39,6 +39,17 @@ C++ DFS & Greedy
    Test 7: TEST OK [0.007 secs, 1332 KB]
    Test 8: TEST OK [0.007 secs, 1352 KB]
 = 0.051 secs
+
+Java DFS & Gready
+   Test 1: TEST OK [0.110 secs, 23624 KB]
+   Test 2: TEST OK [0.110 secs, 23192 KB]
+   Test 3: TEST OK [0.112 secs, 23624 KB]
+   Test 4: TEST OK [0.117 secs, 23612 KB]
+   Test 5: TEST OK [0.110 secs, 23668 KB]
+   Test 6: TEST OK [0.133 secs, 23928 KB]
+   Test 7: TEST OK [0.128 secs, 24212 KB]
+   Test 8: TEST OK [0.126 secs, 24192 KB]
+= 0.946 secs
 '''
 
 class Tile:
