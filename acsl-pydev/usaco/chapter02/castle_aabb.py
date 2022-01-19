@@ -7,7 +7,18 @@ TASK: castle
 from typing import List
 
 '''
-PYTHON3 BFS with space sort & cut off
+PYTHON3 dfs gready
+   Test 1: TEST OK [0.035 secs, 9612 KB]
+   Test 2: TEST OK [0.035 secs, 9588 KB]
+   Test 3: TEST OK [0.038 secs, 9520 KB]
+   Test 4: TEST OK [0.039 secs, 9920 KB]
+   Test 5: TEST OK [0.039 secs, 9548 KB]
+   Test 6: TEST OK [0.043 secs, 10036 KB]
+   Test 7: TEST OK [0.046 secs, 10052 KB]
+   Test 8: TEST OK [0.048 secs, 10020 KB]
+= 0.323
+
+PYTHON3 BFS with space sort & cut off  - iterate through rooms, which is wrong
    Test 1: TEST OK [0.039 secs, 9644 KB]
    Test 2: TEST OK [0.036 secs, 9572 KB]
    Test 3: TEST OK [0.036 secs, 9540 KB]
