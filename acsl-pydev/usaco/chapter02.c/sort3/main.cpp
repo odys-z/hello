@@ -29,10 +29,10 @@ int countpq( int counts[], int len, int seq[])
                         seq[x] = medal; right = y;
                         count++;
 
-                        cout << x << " '" << y << " ";
-                        for (int c = 0; c < len; c++)
-                            cout << seq[c] << ' ' ;
-                        cout << endl;
+//                        cout << x << " '" << y << " ";
+//                        for (int c = 0; c < len; c++)
+//                            cout << seq[c] << ' ' ;
+//                        cout << endl;
 
 
                         found = true;
@@ -48,10 +48,10 @@ int countpq( int counts[], int len, int seq[])
                             seq[x] = medal; right = y;
                             count++;
 
-                            cout << x << " '" << y << " ";
-                            for (int c = 0; c < len; c++)
-                                cout << seq[c] << ' ' ;
-                            cout << endl;
+//                            cout << x << " '" << y << " ";
+//                            for (int c = 0; c < len; c++)
+//                                cout << seq[c] << ' ' ;
+//                            cout << endl;
 
 
                             found = true;
