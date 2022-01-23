@@ -7,6 +7,7 @@ TASK: hamming
 #include <fstream>
 #include <vector>
 #include <set>
+#include <bitset>
 
 using namespace std;
 
@@ -24,6 +25,21 @@ int count(int v)
     return cnt;
 }
 
+/**
+   Test 1: TEST OK [0.007 secs, 1360 KB]
+   Test 2: TEST OK [0.004 secs, 1376 KB]
+   Test 3: TEST OK [0.004 secs, 1408 KB]
+   Test 4: TEST OK [0.004 secs, 1344 KB]
+   Test 5: TEST OK [0.004 secs, 1336 KB]
+   Test 6: TEST OK [0.004 secs, 1372 KB]
+   Test 7: TEST OK [0.004 secs, 1348 KB]
+   Test 8: TEST OK [0.007 secs, 1348 KB]
+   Test 9: TEST OK [0.007 secs, 1360 KB]
+   Test 10: TEST OK [0.007 secs, 1344 KB]
+   Test 11: TEST OK [0.007 secs, 1348 KB]
+ * @brief main
+ * @return
+ */
 int main()
 {
     //  64 8  7
@@ -34,45 +50,64 @@ int main()
     fin >> N >> B >> D;
     fin.close();
 
+//    N = 10, B = 8, D = 4;
+
+    // Can't find some better algorithsm ?
     // 7 11 13 14 19 21 22 25 26 28 35 37 38 41 42 44 49 50 52 56 67 69 70 73 74 76 81 82 84 88 97 98 100 104 112
-    vector<int> dists;
-    for (int i = 0; i < (1 << (B+1)); i++)
-    {
-        if (count(i) == 3)
-            dists.push_back(i);
-    }
+//    vector<short> dists;
+//    for (int i = 0; i < (1 << (B+1)); i++)
+//    {
+//        if (count(i) == 3)
+//            dists.push_back(i);
+//    }
 
-    vector<int> codes;
-    codes.push_back(0);
-
-    for (int dist : dists)
+//    set<short> codes;
+//    codes.insert(0);
+//    for (ulong i = 0; i < dists.size(); i++)
+//    {
+//        for (ulong j = i; j < dists.size(); j++)
+//        {
+//            [&]{
+//                int x = i == j ? dists[i] : dists[i] ^ dists[j];
+//                for (int c : codes) {
+//                    if (count(c ^ x) < 3)
+//                        return;
+//                }
+//                codes.insert(x);
+//            }();
+//        }
+//    }
+    set<short> codes;
+    for (int i = 0; i < (2 << B); i++)
     {
-        bool yes = true;
-        for (int c : codes)
-        {
-            if (c == dist || count(c ^ dist) < D)
-            {
-                yes = false;
-                break;
+        [&]{
+            for (int c : codes) {
+                if (count(c ^ i) < D)
+                    return;
             }
-        }
-        if (yes)
-            codes.push_back(dist);
-        if (codes.size() >= (ulong) N)
+            codes.insert(i);
+        }();
+        if (codes.size() >= N)
             break;
     }
 
     ofstream cout;
     cout.open("hamming.out");
 
-    for (int x = 0; x < codes.size() - 1; x++)
+    set<short>::iterator it = codes.begin();
+    int cnt = 0;
+    while (it != codes.end())
     {
-        cout << codes[x];
-        if (x % 10 != 9)
+        cout << *it;
+        it++;
+        cnt %= 10;
+        if (cnt == 9)
+            cout << endl;
+        else if (it != codes.end())
             cout << " ";
-        else cout << endl;
+        cnt++;
     }
-    cout << codes[codes.size() - 1] << endl;
-
+    if ((cnt % 10) != 0)
+        cout << endl;
     return 0;
 }
