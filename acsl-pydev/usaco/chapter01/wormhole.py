@@ -7,7 +7,7 @@ TASK: wormhole
 
 class Solution2:
     '''
-    Not work for test case:
+    Fix for test case according to Rob Kolstad:
     6
      1 15 
     20 15 
@@ -16,6 +16,9 @@ class Solution2:
     25 11 
     20 17 
     
+
+    +x = down
+
        11  15  17  21
      1     a
     17  b
@@ -27,7 +30,6 @@ class Solution2:
     def __init__(self) -> None:
         self.rows = dict()
     
-    # def permute(self, sublocs: List[tuple]) -> List[List[tuple]]:
     def permute(self, sublocs):
         '''
             build sparse matrix
@@ -75,9 +77,7 @@ class Solution2:
 
         return grid
 
-    # def walkBessie(self, r: int, grid: dict[List[tuple]]):
     def walkBessie(self, r, grid):
-        # def moveStep(grid: dict[List], step: tuple):
         def moveStep(grid, step):
             x, y = step
             step = grid[x]['row'][y]
@@ -131,8 +131,11 @@ class Solution2:
 
         permts = self.permute(locs)
 
+        print(locs)
+        print(len(permts))
+        
         for perm in permts:
-            print(perm)
+            # print(perm)
             self.rows = self.linkup(perm)
             cnt += self.findLoop(self.rows)
         return cnt
@@ -150,7 +153,7 @@ N = int(lines[0])
 locs = []
 for l in lines[1:]:
     l = l.split()
-    locs.append((int(l[0]), int(l[1])))
+    locs.append((int(l[1]), int(l[0])))
 
 s = Solution2()
 outputLines(s.enumpath(N, locs))
