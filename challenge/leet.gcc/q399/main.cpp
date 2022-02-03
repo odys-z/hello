@@ -35,6 +35,11 @@ public:
     }
 };
 
+/**
+ * 100.00% 0ms, 55.39% 4ms
+ *
+ * @brief The Sol100Percent class
+ */
 class Sol100Percent {
     double evaluate(map<string, Variable100> &nodes, vector<string> &expr)
     {
@@ -125,10 +130,12 @@ public:
     }
 };
 
-class Solution {
-    //  ["a", "b" ...]
+/**
+ * 8.07% 9ms
+ * @brief The Solution class
+ */
+class SolutionArrayBuf {
     map<string, int> names;
-    // vector<int> variables;
     vector<bool> visited;
 
     /** [nominator, denominator] */
@@ -137,6 +144,7 @@ class Solution {
     int maxv;
 public:
     vector<double> calcEquation(vector<vector<string>>& eqs, vector<double>& vals, vector<vector<string>>& queries) {
+        names.clear();
         maxv = eqs.size() * 2;
         vector<vector<double>> edges(maxv, vector<double>(maxv, 0));
 
@@ -156,7 +164,7 @@ public:
                 dId = names.size();
                 names.insert(pair<string, int>(d, dId));
             }
-            else dId = names[n];
+            else dId = names[d];
             if (nId >= 0 and dId >=0)
             {
                 edges[nId][dId] = vals[x];
@@ -176,13 +184,18 @@ public:
         {
             for (int i = 0; i < maxv; i++)
             {
-                edges[i][i] = 1.;
+                this->edges[i][i] = 1.;
                 this->visited[i] = false;
             }
 
             queue<int> root;
-            root.push(names[qry[0]]);
-            reslts.push_back(bfs(root, names[qry[1]]));
+            if (names.find(qry[0]) != names.end() and names.find(qry[1]) != names.end())
+            {
+                root.push(names[qry[0]]);
+                reslts.push_back(bfs(root, names[qry[1]]));
+            }
+            else
+                reslts.push_back(-1);
         }
         return reslts;
     }
@@ -211,14 +224,15 @@ public:
         }
 
         if (q.size() > 0)
-            bfs(q, until);
-        return -1.;
+            return bfs(q, until);
+        else
+            return -1.;
     }
 };
 
 int main()
 {
-    Solution s1;
+    SolutionArrayBuf s1;
     Sol100Percent s;
 
     vector<vector<string>> eqs = {{"a", "b"}, {"b", "c"}};
@@ -316,5 +330,6 @@ int main()
     for (ulong x = 0; x < answers.size(); x++)
         assert(answers[x] == ans1[x]);
 
+    cout << "OK!" << endl;
     return 0;
 }
