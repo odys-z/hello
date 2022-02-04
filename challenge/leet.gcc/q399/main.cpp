@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Variable100 {
+class Variable {
 public:
     map<string, double> mulwith;
     string name;
@@ -23,9 +23,9 @@ public:
      * https://stackoverflow.com/a/13570219/7362888
      * @brief Variable
      */
-    Variable100() : name(""), val(1.0), visited(false) {}
+    Variable() : name(""), val(1.0), visited(false) {}
 
-    Variable100(string name) : name(name), val(1.0), visited(false)
+    Variable(string name) : name(name), val(1.0), visited(false)
     { }
 
     void addEdge(string n, double v)
@@ -41,12 +41,12 @@ public:
  * @brief The Sol100Percent class
  */
 class Sol100Percent {
-    double evaluate(map<string, Variable100> &nodes, vector<string> &expr)
+    double evaluate(map<string, Variable> &nodes, vector<string> &expr)
     {
         map<string, bool> visited;
-        queue<Variable100*> rim;
+        queue<Variable*> rim;
 
-        map<string, Variable100>::iterator root = nodes.find(expr[0]);
+        map<string, Variable>::iterator root = nodes.find(expr[0]);
         if (root == nodes.end() or nodes.find(expr[1]) == nodes.end())
             return -1;
         else if (expr[1] == expr[0])
@@ -58,17 +58,17 @@ class Sol100Percent {
         return bfs(rim, expr[1], nodes);
     }
 
-    double bfs(queue<Variable100*> q, string until, map<string, Variable100> &nodes)
+    double bfs(queue<Variable*> q, string until, map<string, Variable> &nodes)
     {
-        queue<Variable100*> rim;
+        queue<Variable*> rim;
         while (q.size() > 0)
         {
-            Variable100 *me = q.front(); q.pop();
+            Variable *me = q.front(); q.pop();
             me->visited = true;
 
             for (const auto &mulwith: me->mulwith)
             {
-                map<string, Variable100>::iterator var = nodes.find(mulwith.first);
+                map<string, Variable>::iterator var = nodes.find(mulwith.first);
 
                 if (var == nodes.end())
                     return -1;
@@ -91,33 +91,33 @@ class Sol100Percent {
 
 public:
     vector<double> calcEquation(vector<vector<string>>& eqs, vector<double>& vals, vector<vector<string>>& queries) {
-        map<string, Variable100> nodes;
+        map<string, Variable> nodes;
 
         for (ulong x = 0; x < eqs.size(); x++)
         {
             if (eqs[x][0] == eqs[x][1]) continue;
 
-            Variable100 *n, *d;
-            map<string, Variable100>::iterator itn = nodes.find(eqs[x][0]);
-            map<string, Variable100>::iterator itd = nodes.find(eqs[x][1]);
+            Variable *n, *d;
+            map<string, Variable>::iterator itn = nodes.find(eqs[x][0]);
+            map<string, Variable>::iterator itd = nodes.find(eqs[x][1]);
             if (itn != nodes.end())
                 n = &itn->second;
-            else n = new Variable100(eqs[x][0]);
+            else n = new Variable(eqs[x][0]);
             if (itd != nodes.end())
                 d = &itd->second;
-            else d = new Variable100(eqs[x][1]);
+            else d = new Variable(eqs[x][1]);
 
             n->addEdge(eqs[x][1], vals[x]);
             d->addEdge(eqs[x][0], 1.0 / vals[x]);
 
-            nodes.insert(pair<string, Variable100>(n->name, *n));
-            nodes.insert(pair<string, Variable100>(d->name, *d));
+            nodes.insert(pair<string, Variable>(n->name, *n));
+            nodes.insert(pair<string, Variable>(d->name, *d));
         }
 
         vector<double> rest;
         for (vector<string> q : queries)
         {
-            map<string, Variable100>::iterator it = nodes.begin();
+            map<string, Variable>::iterator it = nodes.begin();
             while (it != nodes.end())
             {
                 it->second.visited = false;
@@ -127,6 +127,90 @@ public:
         }
 
         return rest;
+    }
+};
+
+/**
+ * 100.00%, 0ms
+ * @brief BFS with node structure, without rescursion
+ */
+class Solution
+{
+public:
+    vector<double> calcEquation(vector<vector<string>>& eqs, vector<double>& vals, vector<vector<string>>& queries) {
+        map<string, Variable> nodes;
+
+        for (ulong x = 0; x < eqs.size(); x++)
+        {
+            if (eqs[x][0] == eqs[x][1]) continue;
+
+            Variable *n, *d;
+            map<string, Variable>::iterator itn = nodes.find(eqs[x][0]);
+            map<string, Variable>::iterator itd = nodes.find(eqs[x][1]);
+            if (itn != nodes.end())
+                n = &itn->second;
+            else n = new Variable(eqs[x][0]);
+            if (itd != nodes.end())
+                d = &itd->second;
+            else d = new Variable(eqs[x][1]);
+
+            n->addEdge(eqs[x][1], vals[x]);
+            d->addEdge(eqs[x][0], 1.0 / vals[x]);
+
+            nodes.insert(pair<string, Variable>(n->name, *n));
+            nodes.insert(pair<string, Variable>(d->name, *d));
+        }
+
+        vector<double> rest;
+        for (vector<string> q : queries)
+        {
+
+            rest.push_back(evaluate(nodes, q[0], q[1]));
+        }
+
+        return rest;
+    }
+
+    double evaluate(map<string, Variable> & nodes, string n0, string d9)
+    {
+        if (nodes.find(n0) == nodes.end() or nodes.find(d9) == nodes.end())
+            return -1;
+        else if (n0 == d9) return 1;
+
+        set<string> visited;
+        queue<string> q;
+        // root's value not always 1 - updated by last round.
+        double v0 = nodes.find(n0)->second.val;
+        q.push(n0);
+
+        while (q.size() > 0)
+        {
+            queue<string> q_;
+            while(q.size() > 0)
+            {
+                Variable *me = &nodes.find(q.front())->second; q.pop();
+                visited.insert(me->name);
+                if (me->name == d9)
+                    return me->val;
+
+                for (const auto &edge : me->mulwith)
+                {
+                    map<string, Variable>::iterator toIt = nodes.find(edge.first);
+                    if (toIt == nodes.end()) return -1;
+
+                    Variable* to = &toIt->second;
+                    if (to->name == d9)
+                        return me->val * edge.second / v0;
+                    if (visited.find(to->name) == visited.end())
+                    {
+                        to->val = me->val * edge.second;
+                        q_.push(to->name);
+                    }
+                }
+            }
+            q = q_;
+        }
+        return -1;
     }
 };
 
@@ -232,7 +316,8 @@ public:
 
 int main()
 {
-    SolutionArrayBuf s1;
+    // SolutionArrayBuf s1;
+    Solution s1;
     Sol100Percent s;
 
     vector<vector<string>> eqs = {{"a", "b"}, {"b", "c"}};
@@ -330,6 +415,13 @@ int main()
     for (ulong x = 0; x < answers.size(); x++)
         assert(answers[x] == ans1[x]);
 
+    /*
+     * [["a","b"],["b","c"],["c", "d"],["d","e"], ["e", "f"], ["d", "g"], ["g", "h"]]
+     * [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+     * [["a","f"],["d","h"]]
+     *
+     * [32.00000,4.00000]
+     */
     cout << "OK!" << endl;
     return 0;
 }
