@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentActivity;
 import com.bumptech.glide.MemoryCategory;
 
 /** Displays a {@link HorizontalGalleryFragment}. */
-@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 public class MainActivity extends FragmentActivity {
 
   private static final int REQUEST_READ_STORAGE = 0;
