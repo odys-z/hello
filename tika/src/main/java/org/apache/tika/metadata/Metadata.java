@@ -41,7 +41,7 @@ import org.apache.tika.utils.DateUtils;
  * A multi-valued metadata container.
  */
 public class Metadata
-        implements HTML, IPTC, TIFF, Serializable {
+        implements HTML, HttpHeaders, IPTC, TIFF, Serializable {
 
     /**
      * Serial version UID

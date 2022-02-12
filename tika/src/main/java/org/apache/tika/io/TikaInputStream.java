@@ -41,7 +41,7 @@ import org.apache.commons.io.input.TaggedInputStream;
 
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.metadata.TikaCoreProperties;
-import org.apache.tika.parser.Parser;
+//import org.apache.tika.parser.Parser;
 
 /**
  * Input stream with extended capabilities. The purpose of this class is
