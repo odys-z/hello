@@ -13,24 +13,42 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    static final String Tag = "Hello";
 
-    ActivityResultLauncher<Intent> startActivityForResult;
+    ActivityResultLauncher<Intent> prefDemoStart;
+    ActivityResultLauncher<Intent> qrScannStart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivityForResult = registerForActivityResult(
+        prefDemoStart = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == AppCompatActivity.RESULT_OK) {
                     Intent data = result.getData();
-                    Log.i("jserv-root", data.getAction());
+                    Log.i(Tag, data.getAction());
                 }
                 SharedPreferences sharedPreferences =
                         PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
                 String name = sharedPreferences.getString("key_gallery_name", "");
-                Log.i("jserv-root-name", name);
+                Log.i(Tag, name);
+            }
+        );
+
+        qrScannStart = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == AppCompatActivity.RESULT_OK) {
+
+                    SharedPreferences sharedPreferences =
+                            PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
+                    String name = sharedPreferences.getString("key_qr", "");
+                    Log.i(Tag, name);
+                }
+                else
+                    Log.i(Tag, "jserv-qr cancled");
             }
         );
     }
@@ -49,8 +67,12 @@ public class MainActivity extends AppCompatActivity {
             // launch settings activity
             // startActivity(new Intent(MainActivity.this, SettingsPrefActivity.class));
 //            startActivityForResult(new Intent(MainActivity.this, SettingsPrefActivity.class), 0);
-            startActivityForResult.launch(new Intent(MainActivity.this, SettingsPrefActivity.class));
+            prefDemoStart.launch(new Intent(MainActivity.this, SettingsPrefActivity.class));
 
+            return true;
+        }
+        else if (id == R.id.action_scan) {
+            qrScannStart.launch(new Intent(MainActivity.this, QrScanActy.class));
             return true;
         }
 

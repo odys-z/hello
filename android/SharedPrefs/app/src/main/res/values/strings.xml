@@ -39,4 +39,7 @@
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
+    <string name="key_scan_format">key_scan_fomat</string>
+    <string name="key_scan_content">key_scan_content</string>
+    <string name="key_qr_pref">key_qr_pref</string>
 </resources>
