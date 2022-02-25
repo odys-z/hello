@@ -15,13 +15,11 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class QrScanActy extends AppCompatActivity {
-//    static ScanPreferenceFragment ctx;
     private ScanPreferenceFragment prefragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        ctx = this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // load settings fragment
@@ -40,10 +38,6 @@ public class QrScanActy extends AppCompatActivity {
     public static class ScanPreferenceFragment extends PreferenceFragment {
         private Preference mContent;
         private Preference mFormat;
-
-        public void onScan() {
-            Log.d("TAG", "...........\n.\n.\n.\n.\n.\n..");
-        }
 
         @Override
         public void onCreate(final Bundle savedInstanceState) {
@@ -75,7 +69,14 @@ public class QrScanActy extends AppCompatActivity {
         }
     }
 
-    // intentIntegrator.setOrientationLocked(true);
+    /**
+     * Tried <a href='https://github.com/journeyapps/zxing-android-embedded#usage-with-scancontract'>
+     * new way</a>, registerForActivityResult, but not working for starting activity in preference
+     * fragment.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
