@@ -58,15 +58,15 @@ public class Tika {
      */
     private final Detector detector;
 
-    /**
-     * The parser instance used by this facade.
-     */
-    private final Parser parser;
+//    /**
+//     * The parser instance used by this facade.
+//     */
+//    private final Parser parser;
 
-    /**
-     * The Translator instance used by this facade.
-     */
-    private final Translator translator;
+//    /**
+//     * The Translator instance used by this facade.
+//     */
+//    private final Translator translator;
 
     /**
      * Maximum length of the strings returned by the parseToString methods.
@@ -75,33 +75,33 @@ public class Tika {
      */
     private int maxStringLength = 100 * 1000;
 
-    /**
-     * Creates a Tika facade using the given detector and parser instances, but the default
-     * Translator.
-     *
-     * @param detector type detector
-     * @param parser   document parser
-     * @since Apache Tika 0.8
-     */
-    public Tika(Detector detector, Parser parser) {
-        this.detector = detector;
-        this.parser = parser;
-        this.translator = TikaConfig.getDefaultConfig().getTranslator();
-    }
-
-    /**
-     * Creates a Tika facade using the given detector, parser, and translator instances.
-     *
-     * @param detector   type detector
-     * @param parser     document parser
-     * @param translator text translator
-     * @since Apache Tika 1.6
-     */
-    public Tika(Detector detector, Parser parser, Translator translator) {
-        this.detector = detector;
-        this.parser = parser;
-        this.translator = translator;
-    }
+//    /**
+//     * Creates a Tika facade using the given detector and parser instances, but the default
+//     * Translator.
+//     *
+//     * @param detector type detector
+//     * @param parser   document parser
+//     * @since Apache Tika 0.8
+//     */
+//    public Tika(Detector detector, Parser parser) {
+//        this.detector = detector;
+//        this.parser = parser;
+//        this.translator = TikaConfig.getDefaultConfig().getTranslator();
+//    }
+//
+//    /**
+//     * Creates a Tika facade using the given detector, parser, and translator instances.
+//     *
+//     * @param detector   type detector
+//     * @param parser     document parser
+//     * @param translator text translator
+//     * @since Apache Tika 1.6
+//     */
+//    public Tika(Detector detector, Parser parser, Translator translator) {
+//        this.detector = detector;
+//        this.parser = parser;
+//        this.translator = translator;
+//    }
 
     /**
      * Creates a Tika facade using the given configuration.

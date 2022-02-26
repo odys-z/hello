@@ -13,6 +13,9 @@
             android:name=".SettingsPrefActivity"
             android:exported="false" />
         <activity
+            android:name=".QrScanActy"
+            android:exported="false" />
+        <activity
             android:name=".AppCompatPreferenceActivity"
             android:exported="false" />
         <activity
