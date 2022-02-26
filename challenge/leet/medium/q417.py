@@ -24,7 +24,7 @@ class Solution:
             x, y, h = land.x, land.y, land.h
             r = lands[x+1][y]
 
-            if h > lands[x+1][y].h or lands[x+1][y].vp:
+            if h > r.h or r.vp:
                 return None
             else:
                 return lands[land.x+1][lands.y]
