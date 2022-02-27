@@ -23,7 +23,11 @@ type Dxy = {
     y: -1 | 0 | 1;
 }
 
-
+/**
+ *  70.21%
+ * @param heights 
+ * @returns 
+ */
 function pacificAtlantic(heights: Array<Array<number | Land>>) : Array<number[]> {
     if (!heights || heights.length == 0)
         return [];
