@@ -18,7 +18,7 @@ class TreeNode {
  * @returns 
  */
 function rightSideView(root: TreeNode | null): number[] {
-    if (TreeNode == null) return [];
+    if (!root) return [];
     
     let q = [root];
     let q_ = [] as TreeNode[];
@@ -39,3 +39,6 @@ function rightSideView(root: TreeNode | null): number[] {
     
     return rview;
 };
+
+export default rightSideView ;
+export { TreeNode };
