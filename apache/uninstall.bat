@@ -1,1 +1,1 @@
-./hellosrv //DS//hellosrv
+hellosrv //DS//hellosrv

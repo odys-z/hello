@@ -1,1 +1,16 @@
-./hellosrv.exe //IS//hellosrv --Install=%CURRENT_DIR%\apache\hellosrv.exe --Description="Hello Service" --Jvm=auto --Classpath=%CURRENT_DIR%\target\classes --StartMode=jvm --StartClass=io.oz.hello.daemon.HelloDaemon --StartMethod=windowsService --StartParams=start --StopMode=jvm --StopClass=io.oz.hello.daemon.HelloDaemon --StopMethod=windowsService --StopParams=stop --LogPath=%CURRENT_DIR%\logs --StdOutput=auto --StdError=auto
+echo %cd%
+hellosrv.exe //IS//hellosrv --Install=%cd%\hellosrv.exe ^
+--Description="Hello Service" ^
+--Jvm=auto ^
+--Classpath=%cd%\target\classes ^
+--StartMode=jvm ^
+--StartClass=io.oz.hello.daemon.HelloDaemon ^
+--StartMethod=windowsService ^
+--StartParams=start ^
+--StopMode=jvm ^
+--StopClass=io.oz.hello.daemon.HelloDaemon ^
+--StopMethod=windowsService ^
+--StopParams=stop ^
+--LogPath=%cd%\logs ^
+--StdOutput=auto ^
+--StdError=auto
