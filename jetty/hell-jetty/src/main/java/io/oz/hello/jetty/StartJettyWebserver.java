@@ -11,7 +11,6 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import io.odysz.semantic.jprotocol.AnsonBody;
 import io.odysz.semantic.jserv.ServPort;
 import io.oz.album.tier.Albums;
-import javax.servlet.GenericServlet;
 import javax.servlet.Servlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +33,8 @@ public class StartJettyWebserver {
 //        wacHandler.setConfigurationDiscovered(true);
 
         WebAppContext wacHandler = new WebAppContext();
+        wacHandler.setContextPath("/jserv");
+        wacHandler.setResourceBase(".");
         registerServlets(wacHandler, AnnotateServlet.class);
         registerServlets(wacHandler, Albums.class);
 
