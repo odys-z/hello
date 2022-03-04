@@ -1,16 +1,16 @@
+package io.oz.hello.embed;
+
 import java.io.File;
-import java.io.InputStream;
 import java.net.URL;
-import org.apache.catalina.connector.Connector;
+
 import org.apache.catalina.Context;
-import org.apache.catalina.Engine;
 import org.apache.catalina.Host;
-import org.apache.catalina.ant.DeployTask;
+import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.CatalinaProperties;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.coyote.http11.Http11NioProtocol;
-import org.apache.tomcat.util.buf.ByteChunk;
-import org.apache.catalina.Container;
+
+import jakarta.servlet.Servlet;
 
 public class EmbeddedTomcat {
 
@@ -57,7 +57,7 @@ public class EmbeddedTomcat {
       // No file system docBase required
       Context ctx = tomcat.addContext("", null);
 
-      Tomcat.addServlet(ctx, "myServlet", new HelloWorld());
+      Tomcat.addServlet(ctx, "myServlet", (Servlet) new HelloWorld());
       ctx.addServletMappingDecoded("/", "myServlet");
 
       tomcat.start();
@@ -131,29 +131,29 @@ public class EmbeddedTomcat {
     embedded.stop();
   }
 
-  /**
-    * Registers a WAR with the container.
-    *
-    * @param contextPath - the context path under which the
-    *               application will be registered
-    * @param warFile - the URL of the WAR to be
-    * registered.
-    */
-  public void registerWAR(String contextPath, URL warFile)
-    throws Exception {
-
-    if ( contextPath == null ) {
-
-      throw new Exception("Invalid Path : " + contextPath);
-    }
-    if( contextPath.equals("/") ) {
-
-      contextPath = "";
-    }
-    if ( warFile == null ) {
-
-      throw new Exception("Invalid WAR : " + warFile);
-    }
+//  /**
+//    * Registers a WAR with the container.
+//    *
+//    * @param contextPath - the context path under which the
+//    *               application will be registered
+//    * @param warFile - the URL of the WAR to be
+//    * registered.
+//    */
+//  public void registerWAR(String contextPath, URL warFile)
+//    throws Exception {
+//
+//    if ( contextPath == null ) {
+//
+//      throw new Exception("Invalid Path : " + contextPath);
+//    }
+//    if( contextPath.equals("/") ) {
+//
+//      contextPath = "";
+//    }
+//    if ( warFile == null ) {
+//
+//      throw new Exception("Invalid WAR : " + warFile);
+//    }
 
 //    Deployer deployer = (Deployer)host;
 //    Context context = deployer.findDeployedApp(contextPath);
@@ -166,41 +166,42 @@ public class EmbeddedTomcat {
 //    }
 //    deployer.install(contextPath, warFile);
     
-    DeployTask deployTask = new DeployTask() {
 
-        @Override
-        public void execute(String command, InputStream istream, String contentType, long contentLength)
-                throws BuildException {
-            // Assert.assertEquals("/deploy?path=somepath", command);
-            // Assert.assertEquals("application/octet-stream", contentType);
-            try {
-                istream.close();
-            } catch (IOException e) {
-            }
-        }
-    };
-  }
+//    DeployTask deployTask = new DeployTask() {
+//
+//        @Override
+//        public void execute(String command, InputStream istream, String contentType, long contentLength)
+//                throws BuildException {
+//            // Assert.assertEquals("/deploy?path=somepath", command);
+//            // Assert.assertEquals("application/octet-stream", contentType);
+//            try {
+//                istream.close();
+//            } catch (IOException e) {
+//            }
+//        }
+//    };
+//  }
 
-  /**
-    * Unregisters a WAR from the web server.
-    *
-    * @param contextPath - the context path to be removed
-    */
-  public void unregisterWAR(String contextPath)
-    throws   Exception {
-
-    Context context = host.map(contextPath);
-    if ( context != null ) {
-
-      embedded.removeContext(context);
-    }
-    else {
-
-      throw new
-        Exception("Context does not exist for named path : "
-        + contextPath);
-    }
-  }
+//  /**
+//    * Unregisters a WAR from the web server.
+//    *
+//    * @param contextPath - the context path to be removed
+//    */
+//  public void unregisterWAR(String contextPath)
+//    throws   Exception {
+//
+//    Context context = host.map(contextPath);
+//    if ( context != null ) {
+//
+//      embedded.removeContext(context);
+//    }
+//    else {
+//
+//      throw new
+//        Exception("Context does not exist for named path : "
+//        + contextPath);
+//    }
+//  }
 
   public static void main(String args[]) {
 
@@ -210,10 +211,8 @@ public class EmbeddedTomcat {
       tomcat.setPath("d:/jakarta-tomcat-4.0.1");
       tomcat.startTomcat();
 
-      URL url =
-        new URL("file:D:/jakarta-tomcat-4.0.1"
-        + "/webapps/onjava");
-      tomcat.registerWAR("/onjava", url);
+      URL url = new URL("file:D:/jakarta-tomcat-4.0.1/webapps/onjava");
+//      tomcat.registerWAR("/onjava", url);
 
       Thread.sleep(1000000);
 
@@ -222,7 +221,6 @@ public class EmbeddedTomcat {
       System.exit(0);
     }
     catch( Exception e ) {
-
       e.printStackTrace();
     }
   }
