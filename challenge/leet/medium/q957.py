@@ -23,7 +23,7 @@ class Solution:
         for i in range(n):
             if cells in footprint.keys():
                 stride = len(steps - footprint[i])
-                n - ik
+                # n - ik
         
         
 if __name__ == "__main__":
