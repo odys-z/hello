@@ -10,6 +10,8 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import io.odysz.semantic.jprotocol.AnsonBody;
 import io.odysz.semantic.jserv.ServPort;
 import io.oz.album.tier.Albums;
+
+import javax.servlet.Servlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
@@ -19,7 +21,7 @@ public class StartJettyWebserver {
         Server server = new Server(8082);
 
         WebAppContext wacHandler = new WebAppContext();
-        wacHandler.setContextPath("/jserv");
+        wacHandler.setContextPath("/jserv-album");
         wacHandler.setResourceBase(".");
         registerServlets(wacHandler, AnnotateServlet.class);
         registerServlets(wacHandler, Albums.class);
@@ -36,7 +38,7 @@ public class StartJettyWebserver {
     		throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		WebServlet info = type.getAnnotation(WebServlet.class);
 		for (String pattern : info.urlPatterns()) {
-			javax.servlet.Servlet servlet = type.getConstructor().newInstance();
+			Servlet servlet = type.getConstructor().newInstance();
 			context.addServlet(new ServletHolder(servlet), pattern);
 		}
 	}
