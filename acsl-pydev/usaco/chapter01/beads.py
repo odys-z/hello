@@ -47,12 +47,12 @@ class Beads:
         return min(maxl, int(datalines[0]))
 
 
-def outputLines(ss: List[str]) -> int:
+def outputLines(intArr2: List[str]) -> int:
     f = open('beads.out', 'w')
-    for s in ss:
+    for s in intArr2:
         f.write(str(s) + '\n')
     f.close()
-    return len(ss)
+    return len(intArr2)
  
 if __name__ != '__main__':
     from unittest import TestCase

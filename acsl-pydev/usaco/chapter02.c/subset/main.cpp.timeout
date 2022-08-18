@@ -1,0 +1,48 @@
+/*
+ID: odys.zh1
+LANG: C++
+TASK: subset
+ */
+#include <iostream>
+#include <fstream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int N;
+    ifstream fin;
+    fin.open("subset.in");
+    fin >> N;
+    fin.close();
+
+    N = 31; // 8273610
+
+    int res = 0;
+    // 39 * 40 /2 = 780
+    int sum = N * (1 + N) / 2;
+    if (sum % 2 != 0)
+        res = 0; // no way
+    else sum /= 2;
+
+    int setsum = 0;
+    for (long combine = 1; combine < (1L << N); combine++)
+    {
+        for (int cur = 0; cur < N; cur++)
+        {
+            if ((combine & (1 << cur)) > 0)
+                setsum += (cur + 1);  // cur == N_i
+        }
+        if (setsum == sum)
+            res++;
+        setsum = 0;
+    }
+
+    ofstream cout;
+    cout.open("subset.out");
+    cout << res / 2 << endl;
+    cout.close();
+
+    return 0;
+}

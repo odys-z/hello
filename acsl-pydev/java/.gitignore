@@ -1,1 +1,4 @@
 /bin/
+*.in
+*.out
+**/concom.java

@@ -42,9 +42,9 @@ class GiftGame:
 
         return res
 
-def outputLines(ss):
+def outputLines(intArr2):
     f = open('gift1.out', 'w')
-    for s in ss:
+    for s in intArr2:
         f.write(s + '\n')
     f.close()
         
