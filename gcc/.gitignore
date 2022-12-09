@@ -2,3 +2,4 @@ build-*/**
 !build-*/*.in
 build
 *.user
+**/*-Debug
