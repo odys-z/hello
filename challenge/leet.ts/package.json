@@ -1,0 +1,22 @@
+{
+  "name": "hello-challenge",
+  "version": "1.0.0",
+  "description": "Shouldn't published to npm",
+  "main": "index.js",
+  "scripts": {
+    "debug": "webpack-cli --config mocha.config.js && mocha -- --inspect inspect dist/testBundle.js ",
+    "test": "webpack-cli --config mocha.config.js && mocha dist/testBundle.js "
+  },
+  "author": "Ody Zhou",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.1",
+    "@types/mocha": "^9.1.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.3",
+    "chai": "^4.3.6",
+    "mocha": "^9.2.1",
+    "webpack": "^5.69.1"
+  }
+}

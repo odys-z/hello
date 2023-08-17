@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory android:title="General">
+    <Preference
+        android:defaultValue=""
+        android:key="@string/key_scan_content"
+        android:summary=""
+        android:title="Content" />
+
+    <Preference
+        android:defaultValue=""
+        android:key="@string/key_scan_format"
+        android:summary="@string/default_gallery_storage"
+        android:title="Format" />
+
+</PreferenceCategory>
+</PreferenceScreen>
