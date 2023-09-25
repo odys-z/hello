@@ -1,3 +1,8 @@
+/*
+ * Compile: g++ q2.c
+ * Tested on gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.12)
+ */
+ 
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
