@@ -29,7 +29,8 @@ presentation. E.g.
     cGp = (c) * 62 ^ 2 + (G) * 62  + (p) = 15840
 ```
 
-where (c), (G), (p) are base 62 digits with values equals base 10 values 4,  & 3 respectively.
+where (c), (G), (p) are base 62 digits with values equals base 10 values 4, 7 & 30 respectively, see
+[q2.h](https://github.com/odys-z/hello/blob/master/challenge/Storwell.ca/embedded/q2.h).
 
 Here is what the data in the Spreedsheet have told us:
 
