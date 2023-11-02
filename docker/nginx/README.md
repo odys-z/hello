@@ -36,3 +36,11 @@ Generating Diffie-Hellman Ephemeral algorithm parameters (Not sure?) :
 
     ssl_dhparam         /etc/nginx/dhparam.pem;
 ```
+
+# Extend certificate expiration
+
+```
+    certbot
+```
+
+then select the domain.

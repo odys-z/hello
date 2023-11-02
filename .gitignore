@@ -273,3 +273,5 @@ RemoteSystemsTempFiles
 __pycache__
 GDX
 www-res
+
+*.zip
