@@ -20,7 +20,7 @@
     https://stackoverflow.com/a/66368511/7362888
     jetty 10+ no longer using javax.servlet
     -->
-		<jetty.version>9.4.45.v20220203</jetty.version>
+		<jetty.version>9.4.51.v20230217</jetty.version>
 		<jetty.slf4j.version>11.0.3</jetty.slf4j.version>
 	</properties>
 
