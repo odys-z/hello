@@ -25,7 +25,7 @@
     "react-router-dom": "^5.3.0",
     "react-touch-carousel": "^0.10.2",
     "styled-components": "^5.3.3",
-    "webpack": "^5.69.1",
+    "webpack": "^5.76.0",
     "yo": "^4.3.0"
   },
   "devDependencies": {
