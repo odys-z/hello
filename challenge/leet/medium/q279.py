@@ -7,11 +7,15 @@ https://leetcode.com/problems/perfect-squares/description/
 '''
 import sys
 import unittest
-from typing import List
 
 dp = []
 
 def gendp():
+    '''
+        Generating dp. Slightly modified from dp easy to understand
+        vijay_patneedi, c++ dp easy to understand,
+        https://leetcode.com/problems/perfect-squares/solutions/1520447/c-dp-easy-to-understand/
+    '''
     dp = [i for i in range(10001)]
     for n in range(1, 100):
         sq = n * n;
@@ -22,6 +26,7 @@ def gendp():
             dp[i] = min(dp[i-sq] + 1, dp[i])
 
     print(dp)
+
 
 dp0 = [0, 1, 2, 3, 1, 2, 3, 4, 2, 1, 2, 3, 3, 2, 3, 4, 1, 2, 2, 3, 2, 3, 3, 4, 3, 1, 2, 3, 4, 2, 3, 4, 2, 3, 2, 3, 1, 2, 3, 4, 2, 2, 3, 3, 3, 2, 3, 4, 3, 1, 2, 3, 2, 2, 3, 4, 3, 3, 2, 3, 4,
 2, 3, 4, 1, 2, 3, 3, 2, 3, 3, 4, 2, 2, 2, 3, 3, 3, 3, 4, 2, 1, 2, 3, 3, 2, 3, 4, 3, 2, 2, 3, 4, 3, 3, 4, 3, 2, 2, 3, 1, 2, 3, 4, 2, 3, 2, 3, 3, 2, 3, 4, 4, 2, 3, 3, 2, 2, 3, 4, 3, 1, 2
