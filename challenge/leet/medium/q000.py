@@ -3,6 +3,7 @@ from typing import List
 
 class Solution:
     def copyQuestionHere(self, points: List[List[int]]) -> int:
+        pass
         
 
 if __name__ == "__main__":
