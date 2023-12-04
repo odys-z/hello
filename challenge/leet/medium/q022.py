@@ -70,6 +70,24 @@ class Solution:
         generate(stack, l, r)
         return list(res.keys())
 
+
+def generateParenthesis(n: int) -> List[str]:
+	def dfs(left, right, s):
+		if len(s) == n * 2:
+			res.append(s)
+			return
+
+		if left < n:
+			dfs(left + 1, right, s + '(')
+
+		if right < left:
+			dfs(left, right + 1, s + ')')
+
+	res = []
+	dfs(0, 0, '')
+	return res
+
+
 if __name__ == "__main__":
     
     t = unittest.TestCase()
@@ -83,5 +101,7 @@ if __name__ == "__main__":
     # First has 1, Second has 0:  '((()))()'
     t.assertCountEqual(["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"],
                        s.generateParenthesis(4))
-   
+
+    t.assertEqual(['()'], generateParenthesis(1))
+
     print('OK!')
