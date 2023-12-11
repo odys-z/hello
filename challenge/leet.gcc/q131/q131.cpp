@@ -52,10 +52,52 @@ public:
     }
 };
 
+class Solution2 {
+
+public:
+    vector<vector<string>> res;
+
+    bool isparlindrome(string &s, set<string> &dp) {
+        if (dp.count(s) || s.length() == 1)
+            return true;
+
+        if (s.length() > 1)
+            for (int i = 0; i < s.length(); i++)
+                if (s.at(i) != s.at(s.length() - 1 - i))
+                return false;
+
+        dp.insert(s);
+        return true;
+    }
+
+    void backtrack(int x, string s, vector<string> &buf, set<string> &dp) {
+        if (x >= s.length()) {
+            this->res.push_back(buf);
+            return;
+        }
+        else
+        for (int px = x+1; px <= s.length(); px++) {
+            string p = s.substr(x, px - x);
+            if (isparlindrome(p, dp)) {
+                buf.push_back(p);
+                backtrack(px, s, buf, dp);
+                buf.pop_back();
+            }
+        }
+    }
+
+    vector<vector<string>> partition(string s) {
+        vector<string> buf;
+        set<string> dp;
+        backtrack(0, s, buf, dp);
+        return this->res;
+    }
+};
+
 int main()
 {
-    Solution s;
-    vector<string> qs{ "aba", "b", "aa", "aab", "abcaa", "abaaba"};
+    Solution2 s;
+    vector<string> qs{ "aab", "b", "aa", "aba", "abcaa", "abaaba"};
     for (string q : qs) {
 		cout << endl << q << endl;
 		for (vector<string> ps : s.partition(q)) {
@@ -63,6 +105,7 @@ int main()
 				cout << p << ", ";
 			cout << endl;
 		}
+        s.res.clear();
     }
     return 0;
 }
