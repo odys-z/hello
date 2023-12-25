@@ -76,7 +76,6 @@ class Solution2():
             if r < 0: return
             for c in range(m):
                 bit = 1 << c
-                # print(f"{colvisit: b} {r},{c} : {colvisit & bit:b}")
                 if colvisit & bit == 0:
                     self.maxsim = max(self.maxsim, similar + dist[r][c])
                     dfs(colvisit | bit, r - 1, similar + dist[r][c])

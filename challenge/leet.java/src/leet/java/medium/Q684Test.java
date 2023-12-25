@@ -1,6 +1,6 @@
 package leet.java.medium;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
