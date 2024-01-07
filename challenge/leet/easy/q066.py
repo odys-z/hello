@@ -17,8 +17,8 @@ class Solution:
 class MyTestCase(unittest.TestCase):
     def test_something(self):
         s = Solution()
-        self.assertEqual([1,0], s.plusOne([9]))  # add assertion here
-        self.assertEqual([1,2,4], s.plusOne([1,2,3]))  # add assertion here
+        self.assertEqual([1,0], s.plusOne([9]))
+        self.assertEqual([1,2,4], s.plusOne([1,2,3]))
 
 
 if __name__ == '__main__':
