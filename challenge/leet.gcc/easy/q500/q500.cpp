@@ -1,7 +1,7 @@
 /**
  * 500. Keyboard Row
- * https://leetcode.com/problems/keyboard-row/description/ 
- * 
+ * https://leetcode.com/problems/keyboard-row/description/
+ *
  */
 #include <vector>
 #include <map>
@@ -37,7 +37,7 @@ public:
     }
 };
 
-string reduce(vector<string> s) {
+string reduce(vector<string>& s) {
     return reduce(next(s.begin()), s.end(), s[0],
         [](string a, string b) {return move(a) + ", " + b; });
 }

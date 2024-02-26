@@ -1,6 +1,6 @@
 /**
  * 496. Next Greater Element I
- * https://leetcode.com/problems/next-greater-element-i/description/ 
+ * https://leetcode.com/problems/next-greater-element-i/description/
  *
  */
 
@@ -44,7 +44,7 @@ public:
     }
 };
 
-string reduce(vector<int> v) {
+string reduce(vector<int>& v) {
     return reduce(next(v.begin()), v.end(), string("[") + to_string(v[0]), [](string a, int b) { return move(a) + "," + to_string(b); }) + string("]");
 }
 
