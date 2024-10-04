@@ -38,6 +38,7 @@ public:
     }
 };
 
+/*
 int main() {
     Solution s;
     vector<string> garbage;
@@ -55,3 +56,4 @@ int main() {
     cout << "ok 2391" << endl;
     return 0;
 }
+*/

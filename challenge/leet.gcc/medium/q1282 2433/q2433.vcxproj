@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="q1282.cpp" />
+    <ClCompile Include="q1769.cpp" />
     <ClCompile Include="q2391.cpp" />
     <ClCompile Include="q2433.cpp" />
     <ClCompile Include="q2610.cpp" />
