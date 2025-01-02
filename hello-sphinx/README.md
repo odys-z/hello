@@ -34,7 +34,7 @@ make html
 - install sphinx rtd theme
 
 ```
-pip install sphinx rtd theme
+pip install sphinx_rtd_theme
 ```
 
 - optional: conf.py
