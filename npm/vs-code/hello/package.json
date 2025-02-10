@@ -11,8 +11,6 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:hello.hi",
-        "onCommand:hello.py"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
