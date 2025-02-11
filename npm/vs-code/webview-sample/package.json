@@ -16,10 +16,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:catCoding.start",
-		"onCommand:catCoding.doRefactor",
-		"onWebviewPanel:catCoding",
-		"onCommand:catCoding.startServer"
+		"onWebviewPanel:catCoding"
 	],
 	"main": "./out/extension.js",
 	"contributes": {

@@ -1,13 +1,13 @@
 
 [![Ukraine](https://cdn3.emoji.gg/emojis/6101-ukraine.gif)](https://emoji.gg/emoji/6101-ukraine)
 
-## About hello
+## About Hello
 
-Helloworld project for test
+The Helloworld projects for tests.
 
 ### Troubleshootings
 
-How to deal with unstable github connection when clone a repository.
+How to deal with unstable github connection when cloning a repository.
 
 ```
     unzip <repo>.zip

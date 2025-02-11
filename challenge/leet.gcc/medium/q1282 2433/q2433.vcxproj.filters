@@ -33,6 +33,9 @@
     <ClCompile Include="q2391.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="q1769.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
