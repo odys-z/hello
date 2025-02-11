@@ -3,3 +3,4 @@ MAC
 dist
 venv
 build
+.qtcreator
