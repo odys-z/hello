@@ -2,7 +2,7 @@
 
 import requests
 
-url = 'http://192.168.0.145:8964/jserv-album/login.serv'
+url = 'http://{0}/jserv-album/login.serv'
 myobj = {
 "type": "io.odysz.semantic.jprotocol.AnsonMsg",
 "version": "1.0", "seq": 966, "port": "session",
@@ -22,6 +22,8 @@ class Anclient:
     def __init__(self):
         pass
 
-    def ping(self):
-        x = requests.post(url, json = myobj)
+    def ping(self, ip):
+        u = url.format(ip)
+        print(u)
+        x = requests.post(u, json = myobj)
         print(x)

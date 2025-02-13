@@ -24,7 +24,9 @@ class Widget(QWidget):
         print(self.ui.bDialog)
         print(check)
         x = Anclient()
-        x.ping()
+        ip = self.ui.txtIP.text()
+        print(self.ui.txtIP, ip)
+        x.ping(self.ui.txtIP.text())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
