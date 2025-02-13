@@ -20,3 +20,9 @@ How to deal with unstable github connection when cloning a repository.
 ```
 
 See [arctelix' answer](https://stackoverflow.com/questions/15681643/how-to-clone-git-repository-from-its-zip)
+
+- Tocken verification
+
+```
+    curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/repos/odys-z/hello
+```
