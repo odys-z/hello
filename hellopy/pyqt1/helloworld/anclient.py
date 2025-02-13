@@ -2,7 +2,7 @@
 
 import requests
 
-url = 'http://localhost:8964/jserv-album/login.serv'
+url = 'http://192.168.0.145:8964/jserv-album/login.serv'
 myobj = {
 "type": "io.odysz.semantic.jprotocol.AnsonMsg",
 "version": "1.0", "seq": 966, "port": "session",
