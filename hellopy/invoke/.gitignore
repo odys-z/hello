@@ -1,0 +1,6 @@
+winsrv
+web-inf
+web-dist
+volume
+*.whl
+*.zip
