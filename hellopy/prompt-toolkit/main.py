@@ -66,10 +66,7 @@ color = choice(
         message=HTML("<u>Please select a dish</u>:"),
         options=[
             (1, "Pizza with mushrooms"),
-            (
-                2,
-                HTML("<ansigreen>Salad</ansigreen> with <ansired>tomatoes</ansired>"),
-            ),
+            (2, HTML("<ansigreen>Salad</ansigreen> with <ansired>tomatoes</ansired>")),
             (3, "Sushi"),
         ],
     style=style,
