@@ -173,6 +173,7 @@ ApplicationWindow {
                             console.log(`Add some items in the list view ${path} ...`)
                             root.currentFilePath = path
                             root.show_dir_file = 1
+                            folderModel.folder = Qt.resolvedUrl("file:" + path)
                         }
                     }
                 }
@@ -202,16 +203,6 @@ ApplicationWindow {
                         color: "lightgrey"
                         anchors.centerIn: rightpan;
                         text: `This is a gallery: ${root.currentFilePath} : ${folderModel.folder} [${folderModel.count}]...`
-                    }
-
-                    onVisibleChanged: {
-                        if (visible) {
-                            // Force reload by resetting the folder property
-                            // var temp = myFolderModel.folder;
-                            folderModel.folder = "";
-                            folderModel.folder = Qt.resolvedUrl("file:" + root.currentFilePath);
-                            console.log('Changing the visibility on', root.currentFilePath, folderModel.count)
-                        }
                     }
 
                     ListView {
