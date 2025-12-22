@@ -3,6 +3,8 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+import Qt.labs.folderlistmodel
+
 import FileSystemModule
 
 pragma ComponentBehavior: Bound
@@ -185,17 +187,72 @@ ApplicationWindow {
             //     SplitView.fillHeight: true
             // }
             Column {
-                id: reightpan
+                id: rightpan
                 SplitView.fillWidth: true
                 SplitView.fillHeight: true
 
-                // Component 1: Visible when showFirst is true
+                // Component 1:
                 Rectangle {
+                    id: gallery
                     visible: root.show_dir_file == 1
-                    height: 100
-                    width: parent.width
-                    color: "skyblue"
-                    Text { anchors.centerIn: parent; text: `This is a gallery: ${root.currentFilePath} ...` }
+                    height: rightpan.height
+                    width: rightpan.width
+                    color: "transparent"
+                    Text {
+                        color: "lightgrey"
+                        anchors.centerIn: rightpan;
+                        text: `This is a gallery: ${root.currentFilePath} : ${folderModel.folder} [${folderModel.count}]...`
+                    }
+
+                    onVisibleChanged: {
+                        if (visible) {
+                            // Force reload by resetting the folder property
+                            // var temp = myFolderModel.folder;
+                            folderModel.folder = "";
+                            folderModel.folder = Qt.resolvedUrl("file:" + root.currentFilePath);
+                            console.log('Changing the visibility on', root.currentFilePath, folderModel.count)
+                        }
+                    }
+
+                    ListView {
+                        id: filelist
+                        // anchors.fill: gallery
+                        height: rightpan.height
+                        width: rightpan.width
+
+                        model: FolderListModel {
+                            id: folderModel
+                            folder: root.currentFilePath
+                            showDirs: true        // Show directories
+                            showFiles: true       // Show regular files
+                            // nameFilters: ["*"]    // Filter for all files
+                        }
+                        // model: ["red", "grey", "silver", "pink"]
+
+                        delegate: Rectangle {
+                            width: filelist.width
+                            height: 30
+                            border.color: "#777"
+                            color: "darkgrey"
+
+                            required property string fileName
+
+                            Text {
+                                // anchors.centerIn: filelist
+                                text: fileName
+                                color: "white"
+                                // text: fileName // Role provided by FolderListModel
+                            }
+
+                            // mousearea {
+                            //     anchors.fill: filelist
+                            //     onclicked: {
+                            //         console.log("selected file:", filepath)
+                            //         showfilelist = !showfilelist // toggle flag on click
+                            //     }
+                            // }
+                        }
+                    }
                 }
 
                 // Component 2: Visible when showFirst is false
