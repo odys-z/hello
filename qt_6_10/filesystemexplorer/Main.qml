@@ -196,18 +196,26 @@ ApplicationWindow {
                 Rectangle {
                     id: gallery
                     visible: root.show_dir_file == 1
-                    height: rightpan.height
-                    width: rightpan.width
+                    height: parent.height
+                    width: parent.width
                     color: "transparent"
-                    Text {
-                        color: "lightgrey"
-                        anchors.centerIn: rightpan;
-                        text: `This is a gallery: ${root.currentFilePath} : ${folderModel.folder} [${folderModel.count}]...`
+                    Rectangle {
+                        id: folderbrief
+                        height: 50
+                        width: parent.width
+                        color: "#20302050"
+                        Text {
+                            color: "lightgrey"
+                            padding: 10
+                            anchors.centerIn: rightpan;
+                            text: `This is a gallery: ${root.currentFilePath} : ${folderModel.folder} [${folderModel.count}]...`
+                        }
                     }
 
                     ListView {
                         id: filelist
                         // anchors.fill: gallery
+                        anchors.top: folderbrief.bottom
                         height: rightpan.height
                         width: rightpan.width
 
@@ -221,12 +229,17 @@ ApplicationWindow {
                         // model: ["red", "grey", "silver", "pink"]
 
                         delegate: Rectangle {
+                            id: fileitem
                             width: filelist.width
                             height: 30
                             border.color: "#777"
-                            color: "darkgrey"
+                            color: "transparent"
 
                             required property string fileName
+                            required property string filePath
+                            required property string fileSuffix
+                            required property string fileBaseName
+                            required property bool fileIsDir
 
                             Text {
                                 // anchors.centerIn: filelist
@@ -235,13 +248,13 @@ ApplicationWindow {
                                 // text: fileName // Role provided by FolderListModel
                             }
 
-                            // mousearea {
-                            //     anchors.fill: filelist
-                            //     onclicked: {
-                            //         console.log("selected file:", filepath)
-                            //         showfilelist = !showfilelist // toggle flag on click
-                            //     }
-                            // }
+                            MouseArea {
+                                anchors.fill: fileitem
+                                onClicked: {
+                                    console.log("selected file:", filePath)
+                                    console.log(`[Dir ${fileIsDir}]`, `[${fileSuffix}]`, fileBaseName)
+                                }
+                            }
                         }
                     }
                 }
