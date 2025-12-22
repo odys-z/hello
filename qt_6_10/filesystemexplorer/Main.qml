@@ -13,6 +13,7 @@ ApplicationWindow {
     property bool expandPath: false
     property bool showLineNumbers: true
     property string currentFilePath: ""
+    property int show_dir_file: 0
 
     width: 1100
     height: 600
@@ -167,21 +168,47 @@ ApplicationWindow {
                             root.show_dir_file = 0
                         }
                         onFolderClicked: path => {
+                            console.log(`Add some items in the list view ${path} ...`)
                             root.currentFilePath = path
-                            root.show_dir_file = 0
+                            root.show_dir_file = 1
                         }
                     }
                 }
             }
 
             // The main view that contains the editor.
-            Editor {
-                id: editor
-                showLineNumbers: root.showLineNumbers
-                currentFilePath: root.currentFilePath
+            // Editor {
+            //     id: editor
+            //     showLineNumbers: root.showLineNumbers
+            //     currentFilePath: root.currentFilePath
+            //     SplitView.fillWidth: true
+            //     SplitView.fillHeight: true
+            // }
+            Column {
+                id: reightpan
                 SplitView.fillWidth: true
                 SplitView.fillHeight: true
+
+                // Component 1: Visible when showFirst is true
+                Rectangle {
+                    visible: root.show_dir_file == 1
+                    height: 100
+                    width: parent.width
+                    color: "skyblue"
+                    Text { anchors.centerIn: parent; text: `This is a gallery: ${root.currentFilePath} ...` }
+                }
+
+                // Component 2: Visible when showFirst is false
+                Editor {
+                    id: editor
+                    visible: root.show_dir_file == 0
+                    showLineNumbers: root.showLineNumbers
+                    currentFilePath: root.currentFilePath
+                    height: parent.height
+                    width: parent.width
+                }
             }
+
         }
     }
 

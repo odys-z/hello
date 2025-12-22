@@ -110,10 +110,8 @@ Rectangle {
                             // representing a file.
                             if (!treeDelegate.hasChildren)
                                 root.fileClicked(treeDelegate.filePath)
-                            else {
-                                console.log(`Add some items in the list view ${treeDelegate.filePath} ...`)
+                            else
                                 root.folderClicked(treeDelegate.filePath)
-                            }
                         break;
                         case Qt.RightButton:
                             if (treeDelegate.hasChildren)
