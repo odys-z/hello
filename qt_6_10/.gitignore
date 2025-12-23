@@ -1,2 +1,4 @@
 debug-*
 build
+jre17
+*.jar
