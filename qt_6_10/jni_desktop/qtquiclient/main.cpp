@@ -2,6 +2,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QVariant>
 #include <QDir>
 
 int main(int argc, char *argv[])
@@ -24,8 +25,8 @@ int main(int argc, char *argv[])
                              QCoreApplication::exit(-1);
                          } else {
                              // Successfully loaded: connect your signal now
-                             QObject::connect(obj, SIGNAL(sig_postPing(QString)),
-                                              &myClass, SLOT(slt_postPing(QString)));
+                             QObject::connect(obj, SIGNAL(sig_postPing(QVariant)),
+                                              &myClass, SLOT(slt_postPing(QVariant)));
                              qDebug() << "sig_postPing connected ...";
                          }
                      }, Qt::QueuedConnection);

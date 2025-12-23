@@ -80,7 +80,7 @@ Window {
         }
     }
 
-    signal sig_postPing(jserv: string)
+    signal sig_postPing(jserv: var)
 
     Button {
         id: cppPost
@@ -103,7 +103,9 @@ Window {
         }
 
         onClicked: {
-            sig_postPing(jservPing.text);
+            // sig_postPing(jservPing.text);
+            sig_postPing({jserv: jservPing.text,
+                          timestamp: new Date().toISOString()});
             console.log(`[QML.cppPost] Singaling with ${jservPing.text}`);
         }
 
