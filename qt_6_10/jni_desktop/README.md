@@ -6,6 +6,42 @@ For test some implementation details.
 
 ## Sharing Json Object between QML & CPP
 
+* QML signal with QVariant (js var) to Cpp Slot
+
+  - Binding in main.cpp, and avoid segment error before QML page loaded.
+
+  ```
+    ////////////////////////// semantier.h //////////////////////////
+    class Semantier : public QObject
+    { Q_OBJECT
+    public:
+        Semantier();
+    public slots:
+        void slt_postPing(const QVariant &qvar) { }
+    };
+
+    //////////////////////////// Main.qml /////////////////////////// 
+    signal sig_postPing(jserv: var)
+
+    Button {
+        onClicked: {
+            sig_postPing({jserv: jservPing.text,
+                          timestamp: new Date().toISOString()});
+        }
+    }
+
+    //////////////////////////// main.cpp /////////////////////////// 
+    Semantier myClass;
+    QObject::connect(&engine,
+          &QQmlApplicationEngine::objectCreated,
+          &app,
+          [&myClass](QObject *obj, const QUrl &objUrl) {
+              QObject::connect(obj, SIGNAL(sig_postPing(QVariant)),
+                               &myClass, SLOT(slt_postPing(QVariant)));
+              qDebug() << "sig_postPing connected ...";
+          }, Qt::QueuedConnection);
+  ```
+
 ## Send Http Request to jserv
 
 * By QML
