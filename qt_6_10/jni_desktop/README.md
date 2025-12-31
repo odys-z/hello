@@ -4,19 +4,39 @@ For test some implementation details.
 
 ## JNI Back & Forth
 
+Google AI: Summary of Recommendations for 2025
+
+```
+  Goal 	      Recommended Tool    	Why?
+  Java UI     QtJambi               Direct bindings;
+  Development                       uses familiar Java syntax with Qt power.
+
+  Simple      JNI / QJniObject	    Native performance; part of the standard Qt library.
+  Java Calls
+
+  Complex     gRPC or WebSockets    Prevents crashes;
+  Logic                             allows different languages to scale independently.
+```
+
+* References
+
+  [1] [A Developer's Guide to Qt JNI: Mastering QJniEnvironment](https://runebook.dev/en/docs/qt/qjnienvironment/operator--gt)
+
+  [2] [Qt on Android Episode 5 - An introduction to JNI on Android, the Qt way](https://www.kdab.com/qt-android-episode-5/)
+
 ## Sharing Json Object between QML & CPP
 
 * QML signal with QVariant (js var) to Cpp Slot
 
-  - Binding in main.cpp, and avoid segment error before QML page loaded.
+  - Binding in main.cpp, and avoid segment error before the QML page loaded.
 
   ```
     ////////////////////////// semantier.h //////////////////////////
     class Semantier : public QObject
     { Q_OBJECT
-    public:
+      public:
         Semantier();
-    public slots:
+      public slots:
         void slt_postPing(const QVariant &qvar) { }
     };
 
