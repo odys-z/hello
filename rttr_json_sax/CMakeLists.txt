@@ -8,33 +8,33 @@ set(RTTR_BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
 set(RTTR_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(RTTR_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(RTTR_BUILD_INSTALLER OFF CACHE BOOL "" FORCE)
-set(RTTR_BUILD_INSTALLER OFF CACHE BOOL "" FORCE)
 set(CMAKE_COMPILER_IS_MSVC 1)
 set(RTTR_BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
 set(BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
 
 add_compile_options(/WX-)
 
-# 1. Find RTTR and nlohmann_json (Assumed installed on system or via vcpkg)
 # find_package(nlohmann_json 3.12.0 REQUIRED)
+
+# 1. Find RTTR and nlohmann_json (Assumed installed on system or via vcpkg)
+# See readme for install RTTR
 find_package(RTTR REQUIRED Core)
 
 include(FetchContent)
 
 # FetchContent_Declare(
-#   json
-#   URL https://github.com/nlohmann/json/releases/download/v3.12.0/json.tar.xz
-#   DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+#   rttr
+#   GIT_REPOSITORY https://github.com/rttrorg/rttr.git
+#   GIT_TAG v0.9.6 # Or the latest stable version
 # )
-# FetchContent_MakeAvailable(json)
+# FetchContent_MakeAvailable(rttr)
 
 FetchContent_Declare(
-  rttr
-  GIT_REPOSITORY https://github.com/rttrorg/rttr.git
-  GIT_TAG v0.9.6 # Or the latest stable version
+    json
+    URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
-
-FetchContent_MakeAvailable(rttr)
+FetchContent_MakeAvailable(json)
 
 # 2. Setup GoogleTest via FetchContent
 FetchContent_Declare(
@@ -50,3 +50,4 @@ FetchContent_MakeAvailable(googletest)
 # 3. Add Subdirectories
 add_subdirectory(src)
 add_subdirectory(tests)
+

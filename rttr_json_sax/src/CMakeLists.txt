@@ -7,9 +7,9 @@ target_include_directories(anson INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Link the required external libraries
 target_link_libraries(anson INTERFACE 
-    nlohmann_json::nlohmann_json 
     RTTR::Core
+    nlohmann_json::nlohmann_json
 )
 
 # If your library needs RTTR, link it here
-# target_link_libraries(anson INTERFACE rttr::Core)
+# target_link_libraries(anson INTERFACE RTTR::Core)

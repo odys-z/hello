@@ -1,3 +1,54 @@
+# A Cheap survey on C++ reflection
+
+* [Glaze](https://github.com/stephenberry/glaze.git) 
+
+    With template an macro preprocessing, and not possible to forward request according to envelope types.
+    The read / write customize can not adapted easily to deserialize envelope.type. 
+
+    antson.cmake tag: glaze-deprecate
+
+* [getml/Reflect-cpp](https://github.com/getml/reflect-cpp)
+
+    Also by tempalte, and uses *flatten* for super class's fields. If implement with non-aggregate types,
+    that makes even instancing a class is complicate, not to mention that envelopes cannot be subclasses
+    of Anson.
+
+```
+    // subclass makes compile errors.
+    struct EchoReq : public AnsonBody {
+        rfl::Flatten<AnsonBody> base;
+        string echo;
+
+        // Not here, requires aggregate types. 
+        // EchoReq() { this->base.value_.anson.value_.type = "io.oz.echo.EchoReq"; }
+        // EchoReq(string& echo) : EchoReq() {
+        //     this->echo = echo;
+        // }
+    };
+```
+
+The compiler errors:
+
+```
+    string json = rfl::json::write(echobd);
+
+    ~\github\antson\antson.reflact_cpp\build\MSVC2022_64\_deps\reflect-cpp-src\include\rfl\internal\bind_to_tuple.hpp:43: error: C3643: "EchoReq": 无法分解 "EchoReq" 和 "AnsonBody" 中具有非静态数据成员的类型
+    ~\github\antson\antson.reflact_cpp\build\MSVC2022_64\_deps\reflect-cpp-src\include\rfl\internal\bind_to_tuple.hpp(43): error C3643: "EchoReq": 无法分解 "EchoReq" 和 "AnsonBody" 中具有非静态数据成员的类型
+    ~\github\antson\antson.reflact_cpp\tests\hello_rfl_test.cpp(84): note: 参见“EchoReq::echo”的声明
+    ~\github\antson\antson.reflact_cpp\tests\hello_rfl_test.cpp(68): note: 参见“AnsonBody::anson”的声明
+    ~\github\antson\antson.reflact_cpp\build\MSVC2022_64\_deps\reflect-cpp-src\include\rfl\internal\bind_to_tuple.hpp(43): note: 模板实例化上下文(最早的实例化上下文)为
+    ~\github\antson\antson.reflact_cpp\tests\hello_rfl_test.cpp(103): note: 查看对正在编译的函数 模板 实例化“std::string rfl::json::write<,EchoReq>(const _T0 &,const yyjson_write_flag)”的引用
+```
+
+    antson.cmake tag: reflect-cpp-deprecate
+
+* [RTTR](https://www.rttr.org/)
+
+   This is the dynamic way. And Unreal Engine has reflection functions based on it.
+
+   One of the restrictions of RTTR is it requirs one and only one RTTR_REGISTRATION block.
+   See [#106](https://github.com/rttrorg/rttr/issues/106).
+
 # Build & Install RTTR
 
 Download from the [download page](https://www.rttr.org/doc/master/building_install_page.html).
@@ -72,4 +123,4 @@ the path where the rttr-config.cmake exists.
 1. [JSONify All Things, Extending the nlohmann/json Library](https://www.kdab.com/jsonify-with-nlohmann-json/#:~:text=7%20comments,extending%20the%20library%20a%20bit.),
 Nicolas Arnaud-Cormos, 14 April 2022
 
-1. []
+1. [RTTR Issue #106](https://github.com/rttrorg/rttr/issues/106), one and only one RTTR_REGISTRATION block
