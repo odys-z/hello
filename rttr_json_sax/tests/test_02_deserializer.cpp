@@ -47,10 +47,12 @@ TEST(Anson, AnsonBody) {
 
 TEST(Anson, AnsonMsg) {
 
+    using Req = AnsonMsg<EchoReq>;
+
     // type m = type::get_by_name("anson::AnsonMsg");
-    type m = type::get<anson::AnsonMsg>();
+    type m = type::get<anson::AnsonMsg<EchoReq>>();
     rttr::variant v = m.create({std::string("echo")});
-    shared_ptr<anson::AnsonMsg> msg = v.convert<shared_ptr<anson::AnsonMsg>>();
+    shared_ptr<Req> msg = v.convert<shared_ptr<Req>>();
     cout << "[1] msg.port: " << msg->port << NL;
     ASSERT_EQ("io.odysz.jprotocol.AnsonMsg", msg->type);
     ASSERT_EQ("echo", msg->port);

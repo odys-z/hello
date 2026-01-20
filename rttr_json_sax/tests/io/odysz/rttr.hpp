@@ -35,11 +35,12 @@ RTTR_REGISTRATION {
         .property("a", &AnsonBody::a)
         ;
 
-    rttr::registration::class_<AnsonMsg>("anson::AnsonMsg")
+    using Req = AnsonMsg<EchoReq>;
+    rttr::registration::class_<Req>("anson::AnsonMsg<EchoReq>")
         .constructor<std::string>()
          (policy::ctor::as_std_shared_ptr,
           default_arguments(string("-port-")) )
-        .property("port", &AnsonMsg::port)
+        .property("port", &Req::port)
         ;
 }
 
@@ -53,6 +54,8 @@ public:
     bool key(string_t& val) override { m_current_key = val; return true; }
 
     bool string(string_t& val) override {
+#include <rttr/type.h>
+#include <rttr/registration>
         auto prop = m_instance.get_type().get_property(m_current_key);
         std::cout << "on-string(): {" << m_current_key << ": " << val << "}\n";
         if (prop) prop.set_value(m_instance, val);
@@ -62,6 +65,10 @@ public:
     }
 
     bool binary(binary_t& val) override {
+#include <rttr/type.h>
+#include <rttr/type.h>
+#include <rttr/registration>
+#include <rttr/registration>
         auto prop = m_instance.get_type().get_property(m_current_key);
         if (prop) prop.set_value(m_instance, val);
         return true;

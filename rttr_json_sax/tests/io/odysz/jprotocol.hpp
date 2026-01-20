@@ -14,18 +14,6 @@ public:
     RTTR_ENABLE(Anson)
 };
 
-// template<typename T>
-class AnsonMsg: public Anson {
-public:
-    // vector<T&> body;
-
-    string port;
-
-    AnsonMsg(string port) : Anson("io.odysz.jprotocol.AnsonMsg"), port(port) {}
-
-    RTTR_ENABLE()
-};
-
 class EchoReq: public AnsonBody {
 public:
     string echo;
@@ -34,5 +22,22 @@ public:
 
     RTTR_ENABLE()
 };
+
+// template<std::derived_from<AnsonBody> T = AnsonBody>
+template <
+    typename T,
+    typename = std::enable_if_t<std::is_base_of_v<AnsonBody, T>>
+    >
+class AnsonMsg: public Anson {
+public:
+    vector<shared_ptr<T>> body;
+
+    string port;
+
+    AnsonMsg(string port) : Anson("io.odysz.jprotocol.AnsonMsg"), port(port) {}
+
+    RTTR_ENABLE()
+};
+
 }
 

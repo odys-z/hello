@@ -1,9 +1,9 @@
 #pragma once
-#include <nlohmann/json.hpp>
-#include <rttr/type.h>
-#include <rttr/registration>
 #include <string>
 #include <iostream>
+// #include <rttr/type.h>
+#include <rttr/registration>
+#include <nlohmann/json.hpp>
 
 #define NL '\n'
 
