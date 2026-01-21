@@ -10,11 +10,15 @@ TEST(Hello, RTTR) {
     // will create an instance of ns_3d::node as std::shared_ptr<ns_3d::node>
     variant var = t.create({std::string("MyNode")});
     std::cout << "[1] type " << var.get_type().get_name() << "\n";
+    ASSERT_EQ("classstd::shared_ptr<classns_3d::node>", var.get_type().get_name());
+
     // sets/gets a property
     property prop = t.get_property("name");
     // remark: you can also set a member, although the instance is of type: 'std::shared_ptr<T>'
     prop.set_value(var, std::string("A New Name"));
     std::cout << "[2] name " << prop.get_value(var).to_string() << "\n";
+    ASSERT_EQ("A New Name", prop.get_value(var).to_string());
+
     // retrieve the stored meta data of the property
     std::cout << "[3] MetaData TOOL_TIP: " << prop.get_metadata("TOOL_TIP").to_string() << "\n";
     // invoke a method

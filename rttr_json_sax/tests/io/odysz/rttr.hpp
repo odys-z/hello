@@ -35,11 +35,18 @@ RTTR_REGISTRATION {
         .property("a", &AnsonBody::a)
         ;
 
+    rttr::registration::enumeration<Port>("PortType")(
+        rttr::value("query", Port::query),
+        rttr::value("update", Port::update),
+        rttr::value("echo", Port::echo)
+        );
+
     using Req = AnsonMsg<EchoReq>;
     rttr::registration::class_<Req>("anson::AnsonMsg<EchoReq>")
-        .constructor<std::string>()
-         (policy::ctor::as_std_shared_ptr,
-          default_arguments(string("-port-")) )
+        // .constructor<std::string>()
+        //  (policy::ctor::as_std_shared_ptr,
+        //   default_arguments(string("-port-")) )
+        .constructor<Port>()
         .property("port", &Req::port)
         ;
 }
@@ -54,8 +61,6 @@ public:
     bool key(string_t& val) override { m_current_key = val; return true; }
 
     bool string(string_t& val) override {
-#include <rttr/type.h>
-#include <rttr/registration>
         auto prop = m_instance.get_type().get_property(m_current_key);
         std::cout << "on-string(): {" << m_current_key << ": " << val << "}\n";
         if (prop) prop.set_value(m_instance, val);
@@ -65,10 +70,6 @@ public:
     }
 
     bool binary(binary_t& val) override {
-#include <rttr/type.h>
-#include <rttr/type.h>
-#include <rttr/registration>
-#include <rttr/registration>
         auto prop = m_instance.get_type().get_property(m_current_key);
         if (prop) prop.set_value(m_instance, val);
         return true;
@@ -88,8 +89,87 @@ public:
     bool start_object(std::size_t elements) override { return true; }
     bool end_object() override { return true; }
     bool start_array(std::size_t elements) override { return true; }
-    bool end_array() override { return true; }
+
+    bool end_array() override {
+        // auto prop = m_instance.get_type().get_property(m_current_key);
+        std::cout << "end-array(): " << m_current_key << "\n";
+        return true;
+    }
+
     bool parse_error(std::size_t, const std::string&, const nlohmann::json::exception&) override { return false; }
 };
 
+using json = nlohmann::json;
+using namespace rttr;
 
+void serialize_anson(std::ostream& os, rttr::variant var) {
+    if (!var.is_valid()) {
+        os << "null";
+        return;
+    }
+
+    type t = var.get_type();
+
+    // 1. Handle Sequential Containers (vector<shared_ptr<T>>)
+    if (t.is_sequential_container()) {
+        variant_sequential_view view = var.create_sequential_view();
+        os << "[";
+        bool first = true;
+        for (const auto& item : view) {
+            if (!first) os << ",";
+            serialize_anson(os, item);
+            first = false;
+        }
+        os << "]";
+        return;
+    }
+
+    // 2. Handle Wrappers (shared_ptr, unique_ptr)
+    if (t.is_wrapper()) {
+        serialize_anson(os, var.extract_wrapped_value());
+        return;
+    }
+
+    // 3. Handle Primitives (int, float, bool)
+    if (t.is_arithmetic()) {
+        // Let nlohmann::json handle numeric formatting
+        if (t == type::get<bool>()) {
+            os << (var.get_value<bool>() ? "true" : "false");
+        } else {
+            os << var.to_string();
+        }
+        return;
+    }
+
+    // 3. NEW: Handle Enums
+    if (t.is_enumeration()) {
+        rttr::enumeration e = t.get_enumeration();
+        std::string name = e.value_to_name(var).to_string();
+        if (name.empty()) {
+            // Fallback to integer if name is not registered
+            os << var.to_string();
+        } else {
+            os << nlohmann::json(name).dump();
+        }
+        return;
+    }
+
+    // 4. Handle Strings (Properly escaped)
+    if (t == type::get<std::string>()) {
+        os << json(var.get_value<std::string>()).dump();
+        return;
+    }
+
+    // 5. Handle Objects (Anson, AnsonBody, EchoReq)
+    os << "{";
+    bool first = true;
+    for (auto& prop : t.get_properties()) {
+        if (!first) os << ",";
+
+        os << "\"" << prop.get_name() << "\":";
+        serialize_anson(os, prop.get_value(var));
+
+        first = false;
+    }
+    os << "}";
+}
