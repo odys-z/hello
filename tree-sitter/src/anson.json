@@ -1,0 +1,5 @@
+{ "type"   : "gen.cmake.CSettings",
+  "src"    : ".",
+  "headers": ["io/odysz/anson.h", "io/odysz/jprotocol.h"],
+  "json_h" : "io/odysz/json.hpp"
+}
