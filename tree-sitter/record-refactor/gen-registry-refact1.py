@@ -84,6 +84,8 @@ def extract_class_member(caps: Dict[str, List[Node]], cname: str, meta: MetaClas
         is_static = any(s.text.decode('utf8') == "static" for s in caps.get("storage", []))
         decl_node = caps["field_decl"][0]
 
+        # LLM output with it's queries.
+        #
         # Unwrap to check if it's a function prototype hidden in a field_declaration
         # curr = decl_node
         # while curr and curr.type in ["pointer_declarator", "reference_declarator"]:

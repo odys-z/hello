@@ -80,3 +80,22 @@ LLM Programming Record: https://gemini.google.com/share/7281e5a2fe5c
         MsgCode MetaEnum(verbose=False, __type__='__main__.MetaEnum', etype='MsgCode', enums=['ok', 'exSession', 'exSemantic', 'exIo', 'exTransct', 'exDA', 'exGeneral', 'ext'])
 
       Can this be used to show that LLM is acctually knowing nothing of the query syntax but can get close to the correct answer?
+
+3. Other issues
+
+   3.1 The functions API (signature) can be optimized
+   
+      ```
+      if cname not in found_classes:
+          base = caps['base_name'][0].text.decode('utf8') if 'base_name' in caps else None
+          found_classes[cname] = MetaClass(cname=cname, base=base)
+
+      extract_class_member(caps, cname, found_classes[cname])
+      ```
+    
+    Should this can be better?
+      
+      ```
+      # create MetaClass if not exists, put into found_classes
+      extract_class_member(found_classes, caps)
+      ```
