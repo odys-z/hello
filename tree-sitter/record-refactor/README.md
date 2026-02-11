@@ -52,6 +52,11 @@
   LLM results can be this:
 
   ```
+    # Parser
+    if base == "AnsonBody" and cname not in anson_body_subclasses:
+        anson_body_subclasses.append((cname, base))
+
+    # Generator
     # Specialized AnsonMsg Template Registration
     for sub, base in anson_body_subclasses:
         output.append(f"{indent}// Specialized AnsonMsg for {sub}")
