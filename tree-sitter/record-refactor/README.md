@@ -1,6 +1,74 @@
-# LLM Refactoring
+# About
 
-LLM Programming Record: https://gemini.google.com/share/7281e5a2fe5c
+[LLM Programming Record](https://gemini.google.com/share/7281e5a2fe5c)
+
+# LLM can create illusions
+
+* Example:
+
+  While using *CppHeaderParser* for generating parse, asked:
+
+  ```
+    config file gen.json:
+
+        { "type": "io.oz.gen.cmake.settings",
+           "src": ["io/odysz/anson.h","io/odysz/jprotocol.h"],
+            "gen": "json.h"
+        }
+
+    use this lib to load the file, gen.json: https://github.com/odys-z/antson/tree/master/py3 (stop if you don't understand)
+
+    modify this if you understand my question: https://github.com/odys-z/antson/tree/master/semantics.py3 
+  ```
+
+  The output even confused the Anson repository's creator:
+
+  ```
+    1 I don't think there are anson.util and AnsonProtocol. You need carefully have a look at the tests. https://github.com/odys-z/antson/tree/master/py3/test
+
+    2. The deserialized type must be adde to semantics.py3, https://github.com/odys-z/antson/tree/master/semantics.py3 (I own the repo, you tell me how to upgrade)
+
+    try again.
+  ```
+
+  LLM can be take as failed at this question. For human, he should first questioning the deserialization
+  process or the dependency of Semantics.py3. (The Agent works as an itorating process of thinking or optimization?)
+
+# LLM Abstracting Abilities
+
+* Ask:
+
+  ```
+    Now let's base our talk on this file. Handling the template classes, say, AnsonMsg. Later when found somewhere it is used, say AnosnMsg<EchoReq>, generate entt registration like this:
+
+        entt::meta_factory<anson::EchoReq>()
+            .type("EchoReq"_hs)
+            .ctor<>()
+            .ctor<const std::string&>()
+            .base<anson::AnsonBody>()
+            .data<&anson::EchoReq::echo>("echo"_hs, "echo");
+  ```
+
+  LLM results can be this:
+
+  ```
+    # Specialized AnsonMsg Template Registration
+    for sub, base in anson_body_subclasses:
+        output.append(f"{indent}// Specialized AnsonMsg for {sub}")
+        output.append(f"{indent}entt::meta_factory<{namespace}::AnsonMsg<{namespace}::{sub}>>()")
+        output.append(f"{indent * 2}.type(\"AnsonMsg{sub}\"_hs)")
+        output.append(f"{indent * 2}.base<{namespace}::{base}>()")
+
+        # TODO FIXME LLM Error
+        output.append(f"{indent * 2}.data<&{namespace}::AnsonMsg<{namespace}::{sub}>::port>(\"port\"_hs, \"port\")")
+        output.append(f"{indent * 2}.data<&{namespace}::AnsonMsg<{namespace}::{sub}>::body>(\"body\"_hs, \"body\");\n")
+  ```
+
+  It shouldn't be handled case by case. My hypothesis is that LLM cannot apply OOP principals to
+  the attentions collected by it's learnt model.
+
+
+# LLM Refactoring
 
 * Ask Gemini:
 
