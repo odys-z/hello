@@ -1,6 +1,10 @@
-# About
+# DEPRECATED
 
-Hello Slint.
+DON'T USE THIS!
+
+They hava a template at here: 
+https://github.com/slint-ui/slint-cpp-template
+
 
 # Setup
 
