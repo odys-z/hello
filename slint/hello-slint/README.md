@@ -10,14 +10,14 @@ Hello Slint.
 
 1. Download rust-init at [Rust](https://rustup.rs/)
 
-1. (Optinal) setup Rust mirror
+2. (Optinal) setup Rust mirror
 
 ```
     export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
     export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 ```
 
-1. Install Rust
+3. Install Rust
 
 ```
     ./rustup-init.exe
@@ -25,7 +25,7 @@ Hello Slint.
 
 Close and restart VS Code.
 
-1. Check Cargo
+4. Check Cargo
 
 ```
     $ rustc --version
