@@ -22,7 +22,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-slint/Discord_SurrealismUI-main
+slint/surrealism/Discord_SurrealismUI-main
+slint/surrealism/surrealism-ui-nightly
 
 # Visual Studio 2015 cache/options directory
 .vs/
