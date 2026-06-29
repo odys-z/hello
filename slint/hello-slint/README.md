@@ -67,6 +67,11 @@ The project uses MinGW GCC 16.0.1
     cmake -G "MinGW Makefiles" -B build
 ```
 
+Or use a global cache to prevent keeping downloading slint:
+
+```
+    cmake -G "MinGW Makefiles" -B build -DFETCHCONTENT_BASE_DIR="C:/CMakeCache"
+```
 
 Debug with MinGW GCC 16.0.1 & GDB in VS Code with [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack).
 

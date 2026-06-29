@@ -1,17 +1,46 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, StandardListView } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
-    in-out property<int> counter: 42;
-    callback request-increase-value();
-    VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
-        }
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
+    title: "C++ File Explorer";
+    width: 800px;
+    height: 600px;
+
+    // Properties exposed to C++ backend
+    in property <[StandardListViewItem]> current-files;
+    in property <string> current-path: "/";
+    
+    // Callbacks sent to C++ backend
+    callback open-item(string);
+    callback go-up();
+
+    VerticalLayout {
+        // Top navigation bar
+        HorizontalLayout {
+            padding: 8px;
+            spacing: 8px;
+            Button { 
+                text: "Up"; 
+                clicked => { root.go-up(); }
+            }
+            Text { 
+                text: root.current-path;
+                vertical-alignment: center;
+                font-size: 14px;
             }
         }
-     }
+
+        // Main explorer split screen
+        HorizontalLayout {
+            // Main directory view
+            StandardListView {
+                model: root.current-files;
+                current-item-changed(index) => {
+                    // Logic to handle selection or direct double clicks
+                    if (root.current-files[index].text != "") {
+                        root.open-item(root.current-files[index].text);
+                    }
+                }
+            }
+        }
+    }
 }
