@@ -64,7 +64,7 @@ The project uses MinGW GCC 16.0.1
 ```
 
 
-Debug with MinGW GCC 16.0.1 & GDB in VS Code.
+Debug with MinGW GCC 16.0.1 & GDB in VS Code with [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack).
 
 Add a customer downloaded MingGW & GCC to system environment, start VS Code and in CMake, scan the kit and select it.
 
