@@ -68,4 +68,4 @@ Debug with MinGW GCC 16.0.1 & GDB in VS Code.
 
 Add a customer downloaded MingGW & GCC to system environment, start VS Code and in CMake, scan the kit and select it.
 
-[debug](./debug.png)
+![debug](./debug.png)
