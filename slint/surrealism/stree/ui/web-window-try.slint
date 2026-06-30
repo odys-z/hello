@@ -1,0 +1,28 @@
+export component AppWindow inherits Window {
+    title: "Slint + Webview Example";
+    width: 800px;
+    height: 600px;
+
+    // Output properties that C++ can read when Slint resizes
+    out property <length> webview-x: webview-container.absolute-position.x;
+    out property <length> webview-y: webview-container.absolute-position.y;
+    out property <length> webview-width: webview-container.width;
+    out property <length> webview-height: webview-container.height;
+
+    VerticalLayout {
+        padding: 20px;
+        spacing: 10px;
+
+        Text {
+            text: "This header is native Slint UI";
+            font-size: 18px;
+            horizontal-alignment: center;
+        }
+
+        // The parent container that the webview must fit inside
+        webview-container := Rectangle {
+            background: #1a1a1a;
+            // It expands automatically to fill the remaining layout space
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "slint.libraryPaths": {
+        // "surrealism": "../Discord_SurrealismUI-main/ui/index.slint"
+        "surrealism": "../surrealism-ui-nightly"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.compilerPath": "C:/Qt-6.10/mingw64-gcc16.1.0/bin/g++.exe",
+
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "C:/CMakeCache/webview-src/core/include"
+    ],
+
+    // 2. FORCE IntelliSense to merge includePath with the CMake provider
+    "C_Cpp.inlineHints.parameterTypes.enabled": true,
+    "C_Cpp.default.forcedInclude": [],
+    "C_Cpp.intelliSenseEngine": "default"
+}

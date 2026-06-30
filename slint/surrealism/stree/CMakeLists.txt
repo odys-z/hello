@@ -4,6 +4,8 @@ project(surrealtree LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_executable(${PROJECT_NAME} src/main.cpp)
+
 # find_package(Slint REQUIRED)
 include(FetchContent)
 FetchContent_Declare(
@@ -14,12 +16,31 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Slint)
 
-# slint_compile_ui(ui/app_window.slint
-#     INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}../Discord_SurrealismUI-main"
-# )
+get_filename_component(SURREALISM_UI_DIR 
+    "${CMAKE_CURRENT_SOURCE_DIR}/../surrealism-ui-nightly" 
+    ABSOLUTE
+)
 
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE Slint::Slint)
+FetchContent_Declare(
+    webview
+    GIT_REPOSITORY https://github.com/webview/webview
+    GIT_TAG 0.12.0
+    )
+FetchContent_MakeAvailable(webview)
+
+message(STATUS "=========================================== CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
+message(STATUS "=========================================== SURREALISM_UI_DIR = ${SURREALISM_UI_DIR}")
+message(STATUS "=========================================== webview_SOURCE_DIR = ${webview_SOURCE_DIR}")
+
+
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    ${webview_SOURCE_DIR}
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    webview::core # V0.12.0 Not webview::webview or webview. don't trust Gemini too much.
+    Slint::Slint
+)
 
 slint_target_sources(${PROJECT_NAME}
     ui/app-window.slint
