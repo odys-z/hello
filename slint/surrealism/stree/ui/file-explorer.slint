@@ -1,21 +1,21 @@
-import { SButton } from "@surrealism/index.slint"; 
-import { TreeData } from "@surrealism/use/index.slint"; 
-import { FileTree } from "./file-tree.slint";
+import { STree, SButton } from "@surrealism/index.slint"; 
+import { TreeData, UseIcons } from "@surrealism/use/index.slint"; 
+// import { FileTree, TreeData } from "./file-tree.slint";
 
 // The schema layout that will be compiled directly into standard C++ structs
-export struct TreeItem {
-    icon: image,
-    label: string,
-    extra: string,          // Stores absolute directory paths
-    is_expanded: bool,
-    is_dir: bool,
-    selected: bool,
-    binding_info: string,
-}
+// export struct TreeItem {
+//     icon: image,
+//     label: string,
+//     extra: string,          // Stores absolute directory paths
+//     is_expanded: bool,
+//     is_dir: bool,
+//     selected: bool,
+//     binding_info: string,
+// }
 
 export component FilesystemExplorer inherits Rectangle {
     // Expose data and core events to the parent menu window structure
-    in-out property <TreeData> tree_data;
+    // in-out property <TreeData> tree_data;
     
     callback item_clicked(string, bool);
     callback trigger_sync();
@@ -23,15 +23,65 @@ export component FilesystemExplorer inherits Rectangle {
     VerticalLayout {
         spacing: 12px;
 
-        FileTree {
+        // FileTree {
+        //     vertical-stretch: 1;
+        //     theme: Dark;
+        //     tree-data: root.tree_data;
+            
+        //     clicked(index, label, extra) => {
+        //         root.item_clicked(extra, false); 
+        //     }
+        // }
+        STree {
             vertical-stretch: 1;
             theme: Dark;
-            tree-data: root.tree_data;
+            // tree-data: root.tree_data;
             
             clicked(index, label, extra) => {
                 root.item_clicked(extra, false); 
             }
         }
+        // STree {
+        //     y: 10px;
+        //     theme: Dark;
+        //     height: 45%;
+        //     width: 96%;
+        //     // tree-data: {
+        //     // icon : UseIcons.icons.Folder_filled,
+        //     // label: "SurrealismUI",
+        //     // extra:"",
+        //     // children:[
+        //     //     {
+        //     //     icon:UseIcons.icons.FileCode,
+        //     //     label:"slint.slint",
+        //     //     extra:"12KB", 
+        //     //     },
+        //     //     {
+        //     //     icon:UseIcons.icons.FileCode,
+        //     //     label:"surrealism.slint",
+        //     //     extra:"126KB", 
+        //     //     },
+        //     //     {
+        //     //     // icon:@image-url("../../icons/file-jpg.svg"),
+        //     //     label:"icon.jpg",
+        //     //     extra:"196KB", 
+        //     //     },
+        //     //     {
+        //     //     // icon:@image-url("../../icons/file-gif.svg"),
+        //     //     label:"ui.gif",
+        //     //     extra:"91KB", 
+        //     //     },
+        //     //     {
+        //     //     // icon:@image-url("../../icons/file-gif.svg"),
+        //     //     label:"ui2.gif",
+        //     //     extra:"107KB", 
+        //     //     }
+        //     // ]
+        //     // };
+        //     // clicked(i,n,e)=>{
+        //     //     // debug(n);
+        //     // }
+        // }
 
         HorizontalLayout {
             alignment: end;

@@ -6,6 +6,8 @@ import { SAlert } from "@surrealism/src/alert/index.slint";
 
 import { TreeData } from "./file-tree.slint";
 import { FilesystemExplorer } from "./file-explorer.slint";
+import { TableViewPage } from "./table_view_page.slint";
+import { CustomTableViewPage } from "./custom-table.slint";
 
 export component App inherits Window {
     height: 600px;
@@ -35,6 +37,13 @@ export component App inherits Window {
         width: menu.width;
         clip: false;
         menu:=SMenu {
+          menu-data:[
+            {id:"0",icon:UseIcons.icons.FileCode,name:"Code"},
+            {id:"1",icon:UseIcons.icons.Search,name:"Search"},
+            {id:"2",icon:UseIcons.icons.Folder,name:"Help"},
+            {id:"3",icon:UseIcons.icons.Help,name:"Help"},
+          ];
+
           change(index, data) => {
             debug(index, data);
             router-index = index;
@@ -133,11 +142,17 @@ export component App inherits Window {
 
         if (router-index == 2) : Rectangle {
           background: #b0d0d0;
-          // Text { text: "Welcome to Page 3: Settings View"; }
-          FilesystemExplorer {
-            width: 100%;
-            // height: 100%;
-          }
+          // Uncomment the following line to reproduce slint compiler bug.
+          // FilesystemExplorer { width: 100%; height: 100%; }
+
+          // Cannot handle icon?
+          // TableViewPage { width: 100%; height: 100%; }
+
+          CustomTableViewPage { width: 100%; height: 100%; }
+        }
+        if (router-index == 3) : Rectangle {
+          background: #b0d0d0;
+          TableViewPage { width: 100%; height: 100%; }
         }
       }
     }

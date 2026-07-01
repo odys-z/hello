@@ -1,0 +1,76 @@
+import { HorizontalBox, ScrollView, GroupBox, StyleMetrics } from "std-widgets.slint";
+
+export struct CustomRowData {
+    has_icon: bool,
+    icons: [image],
+    text_col1: string,
+    text_col2: string,
+}
+
+export component CustomTableViewPage {
+    // 1. Define your own structured data
+    property <[CustomRowData]> custom_rows: [
+        { has_icon: true,
+          icons: [@image-url("imgs/add.svg"), @image-url("imgs/dash.svg")],
+          text_col1: "Item 1.2", text_col2: "Item 1.3" },
+        { has_icon: false, icons: [], text_col1: "Item 2.2", text_col2: "Item 2.3" },
+    ];
+
+    HorizontalBox {
+        vertical-stretch: 1;
+        GroupBox {
+            title: "Custom Table View with Icons";
+
+            VerticalLayout {
+                // Table Header
+                HorizontalLayout {
+                    padding: 8px;
+                    Text { text: "Icon / Col 1"; width: 30%; font-weight: 700; }
+                    Text { text: "Header 2"; width: 35%; font-weight: 700; }
+                    Text { text: "Header 3"; width: 35%; font-weight: 700; }
+                }
+
+                // Table Body Rows
+                ScrollView {
+                    VerticalLayout {
+                        for row in root.custom_rows : Rectangle {
+                            background: rgba(0, 0, 0, 0.02);
+                            height: 40px;
+
+                            HorizontalLayout {
+                                padding: 8px;
+                                // vertical-alignment: center;
+
+                                // Column 1: Renders the SVG if present
+                                HorizontalLayout {
+                                    width: 30%;
+                                    spacing: 8px;
+                                    // vertical-alignment: center;
+                                    // if (row.has_icon) : Image {
+                                    //     source: row.icons[0];
+                                    //     width: 32px;
+                                    //     height: 32px;
+                                    // }
+                                    for icon in row.icons : Image {
+                                        source: icon;
+                                        width: 32px;
+                                        height: 32px;
+                                    }
+                                    if (!row.has_icon) : Text {
+                                        text: row.text_col1;
+                                    }
+                                }
+
+                                // Column 2
+                                Text { width: 35%; text: row.text_col1; vertical-alignment: center; }
+
+                                // Column 3
+                                Text { width: 35%; text: row.text_col2; vertical-alignment: center; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

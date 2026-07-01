@@ -123,7 +123,7 @@ export component FileTree inherits SCard {
   in-out property <TreeData> tree-data : DefaultSTreeProps.tree-data;
   callback clicked(int,string,string);
   view:=VerticalLayout {
-    parent-root:= TreeItem{
+    parent-item:= TreeItem {
       card-height: root.font-size;
       width: 100%;
       theme: root.theme;
@@ -141,13 +141,20 @@ export component FileTree inherits SCard {
     }
     children-view:= ScrollView { 
       // viewport-height: tree-data.children.length * parent-root.height;
-      viewport-height: 1200px;
+      visible: tree-data.children.length > 0;
+      viewport-height: self.visible ? (tree-data.children.length * parent-item.height) : 0px;
+      viewport-width: self.visible ? parent-item.width : 0px;
+
+      horizontal_scrollbar_policy : ScrollBarPolicy.always-off;
+      vertical_scrollbar_policy : ScrollBarPolicy.always-off;
+
       VerticalLayout {
         padding-left: root.padding-left / 2;
         padding-right: root.padding-right / 2;
-        for item[index] in tree-data.children: TreeItem{
+        for item[index] in tree-data.children: TreeItem {
           card-height: root.item-font-size;
-          width: 100%;
+          // width: self.visible ? 100% : 0%;
+          width: true ? 100% : 0%;
           theme: root.theme;
           item-index: index;
           item-icon: item.icon;
@@ -163,5 +170,25 @@ export component FileTree inherits SCard {
         }
       }
     }
+      // VerticalLayout {
+      //   padding-left: root.padding-left / 2;
+      //   padding-right: root.padding-right / 2;
+      //   for item[index] in tree-data.children: TreeItem {
+      //     card-height: root.item-font-size;
+      //     width: self.visible ? 100% : 0%;
+      //     theme: root.theme;
+      //     item-index: index;
+      //     item-icon: item.icon;
+      //     item-name: item.label;
+      //     item-extra: item.extra;
+      //     font-size: root.item-font-size;
+      //     font-italic: root.item-font-italic;
+      //     font-family: root.item-font-family;
+      //     font-weight: root.item-font-weight;
+      //     clicked(i,n,e) => {
+      //       root.clicked(i,n,e);
+      //     }
+      //   }
+      // }
   }
 }

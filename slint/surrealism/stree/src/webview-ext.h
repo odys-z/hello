@@ -94,7 +94,7 @@ void launch_webview_window(slint::ComponentWeakHandle<App> weak_ui_handle) {
     webview::webview w(true, nullptr);
     w.set_title("Popup Webview");
     w.set_size(600, 500, WEBVIEW_HINT_NONE);
-    w.navigate("https://github.com/webview/webview");
+    w.navigate("http://127.0.0.1:8960/login.html");
 
     // 3. Notify Slint UI that the window is now active
     slint::invoke_from_event_loop([weak_ui_handle]() {
