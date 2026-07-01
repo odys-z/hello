@@ -1,0 +1,44 @@
+import { SButton } from "@surrealism/index.slint"; 
+import { TreeData } from "@surrealism/use/index.slint"; 
+import { FileTree } from "./file-tree.slint";
+
+// The schema layout that will be compiled directly into standard C++ structs
+export struct TreeItem {
+    icon: image,
+    label: string,
+    extra: string,          // Stores absolute directory paths
+    is_expanded: bool,
+    is_dir: bool,
+    selected: bool,
+    binding_info: string,
+}
+
+export component FilesystemExplorer inherits Rectangle {
+    // Expose data and core events to the parent menu window structure
+    in-out property <TreeData> tree_data;
+    
+    callback item_clicked(string, bool);
+    callback trigger_sync();
+
+    VerticalLayout {
+        spacing: 12px;
+
+        FileTree {
+            vertical-stretch: 1;
+            theme: Dark;
+            tree-data: root.tree_data;
+            
+            clicked(index, label, extra) => {
+                root.item_clicked(extra, false); 
+            }
+        }
+
+        HorizontalLayout {
+            alignment: end;
+            SButton {
+                text: "Synchronize System Records";
+                clicked => { root.trigger_sync(); }
+            }
+        }
+    }
+}

@@ -4,6 +4,9 @@ import { STip } from "@surrealism/src/tip/index.slint";
 import { STag } from "@surrealism/src/tag/index.slint";
 import { SAlert } from "@surrealism/src/alert/index.slint";
 
+import { TreeData } from "./file-tree.slint";
+import { FilesystemExplorer } from "./file-explorer.slint";
+
 export component App inherits Window {
     height: 600px;
     width: 800px;
@@ -21,6 +24,9 @@ export component App inherits Window {
     out property <length> web_height;
 
     in-out property <string> webview-status: "Webview not started";
+
+    in-out property <TreeData> tree_data;
+    callback item_clicked(string, bool);
 
     HorizontalLayout {
       left-wrapper:=Rectangle {
@@ -125,14 +131,23 @@ export component App inherits Window {
           Text { text: "Welcome to Page 2: Tree Explorer View"; }
         }
 
-        if (router-index == 2) : Rectangle {
-            background: #b0d0d0;
-            Text { text: "Welcome to Page 3: Settings View"; }
-        }
+        // if (router-index == 2) : Rectangle {
+        //   background: #b0d0d0;
+        //   // Text { text: "Welcome to Page 3: Settings View"; }
+        //   FilesystemExplorer {
+        //     width: 100%;
+        //     // height: 100%;
+        //   }
+        // }
       }
     }
     alert:= SAlert {
       result-type: Success;
       text: "Credits to: SurrealismUI, a Slint UI Library for CMake!";
+    }
+
+    popup:=STip {
+      text: "Credits to: SurrealismUI";
+      position: Bottom;
     }
 }

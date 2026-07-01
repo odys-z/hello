@@ -61,3 +61,21 @@
     ```
 
 1. Embed a WebView
+
+    Currently Slint cannot embed a product ready webview window. That's not released.
+
+    To popup a separate window,
+
+    ```
+      webview::webview w(true, nullptr);
+      w.set_title("Popup Webview");
+      w.set_size(600, 500, WEBVIEW_HINT_NONE);
+      
+      // The script run at onload().
+      w.init("window.addEventListener('DOMContentLoaded', () => { if(typeof foo === 'function') foo(); });");
+
+      w.navigate("https://github.com/webview/webview");
+    ```
+
+1. Implement a Filesystem Explorer
+
