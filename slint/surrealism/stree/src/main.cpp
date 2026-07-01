@@ -19,7 +19,8 @@ int main(int argc, char **argv)
 
         if (index == 0) {
         } else if (index == 1) {
-            show_and_align_webview(ui.operator->(), wv, "https://your-target-url.com");
+            // show_and_align_webview(ui.operator->(), wv, "https://github.com/odys-z");
+            launch_webview_window(ui);
         } else if (index == 2) {
         } else {
         }

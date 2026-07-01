@@ -75,3 +75,44 @@ std::unique_ptr<webview::webview>& show_and_align_webview(App* app, std::unique_
 
     return wv;
 }
+
+std::atomic<bool> is_webview_open(false);
+
+void launch_webview_window(slint::ComponentWeakHandle<App> weak_ui_handle) {
+    // 1. Guard against opening multiple windows at the exact same time
+    if (is_webview_open.exchange(true)) {
+        // If it was already true, update Slint text and exit thread immediately
+        slint::invoke_from_event_loop([weak_ui_handle]() {
+            if (auto ui = weak_ui_handle.lock()) {
+                (*ui)->set_webview_status("A webview window is already open!");
+            }
+        });
+        return;
+    }
+
+    // 2. Initialize a brand new webview window instance
+    webview::webview w(true, nullptr);
+    w.set_title("Popup Webview");
+    w.set_size(600, 500, WEBVIEW_HINT_NONE);
+    w.navigate("https://github.com/webview/webview");
+
+    // 3. Notify Slint UI that the window is now active
+    slint::invoke_from_event_loop([weak_ui_handle]() {
+        if (auto ui = weak_ui_handle.lock()) {
+            (*ui)->set_webview_status("Webview window is active.");
+        }
+    });
+
+    // 4. This blocks the background thread until the user closes this specific webview window
+    w.run(); 
+
+    // 5. Cleanup: The user closed the window. Reset our guard flag so it can open again next click!
+    is_webview_open.store(false);
+
+    // 6. Update Slint UI status text
+    slint::invoke_from_event_loop([weak_ui_handle]() {
+        if (auto ui = weak_ui_handle.lock()) {
+            (*ui)->set_webview_status("Webview closed. Click button to reopen.");
+        }
+    });
+}

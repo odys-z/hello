@@ -20,6 +20,8 @@ export component App inherits Window {
     out property <length> web_width;
     out property <length> web_height;
 
+    in-out property <string> webview-status: "Webview not started";
+
     HorizontalLayout {
       left-wrapper:=Rectangle {
         z: 111;
@@ -119,10 +121,6 @@ export component App inherits Window {
         }
 
         if (router-index == 1) : webview_slot := Rectangle {
-          // root.web_x: self.absolute-x;
-          // root.web_y: self.absolute-y;
-          // root.web_width: self.width;
-          // root.web_height: self.height;
           background: #e0e0e0;
           Text { text: "Welcome to Page 2: Tree Explorer View"; }
         }
