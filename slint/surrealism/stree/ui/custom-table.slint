@@ -8,7 +8,6 @@ export struct CustomRowData {
 }
 
 export component CustomTableViewPage {
-    // 1. Define your own structured data
     property <[CustomRowData]> custom_rows: [
         { has_icon: true,
           icons: [@image-url("imgs/add.svg"), @image-url("imgs/dash.svg")],
@@ -40,17 +39,10 @@ export component CustomTableViewPage {
                             HorizontalLayout {
                                 padding: 8px;
                                 // vertical-alignment: center;
-
-                                // Column 1: Renders the SVG if present
                                 HorizontalLayout {
                                     width: 30%;
                                     spacing: 8px;
-                                    // vertical-alignment: center;
-                                    // if (row.has_icon) : Image {
-                                    //     source: row.icons[0];
-                                    //     width: 32px;
-                                    //     height: 32px;
-                                    // }
+
                                     for icon in row.icons : Image {
                                         source: icon;
                                         width: 32px;
@@ -61,10 +53,8 @@ export component CustomTableViewPage {
                                     }
                                 }
 
-                                // Column 2
                                 Text { width: 35%; text: row.text_col1; vertical-alignment: center; }
 
-                                // Column 3
                                 Text { width: 35%; text: row.text_col2; vertical-alignment: center; }
                             }
                         }

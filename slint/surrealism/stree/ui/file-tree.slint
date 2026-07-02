@@ -139,6 +139,8 @@ export component FileTree inherits SCard {
         root.clicked(i,n,e);
       }
     }
+
+    // 2026-07-01: cannot compile with ScrollView. See Readme.md for details. Use VerticalLayout instead.
     children-view:= ScrollView { 
       // viewport-height: tree-data.children.length * parent-root.height;
       visible: tree-data.children.length > 0;

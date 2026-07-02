@@ -17,7 +17,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Slint)
 
 get_filename_component(SURREALISM_UI_DIR 
-    "${CMAKE_CURRENT_SOURCE_DIR}/../surrealism-ui-nightly" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/../surrealism-0.5.3" 
     ABSOLUTE
 )
 

@@ -15,7 +15,6 @@
     ```
       {
         "slint.libraryPaths": {
-            // "surrealism": "../Discord_SurrealismUI-main/ui/index.slint"
             "surrealism": "../surrealism-ui-nightly"
         }
       }
