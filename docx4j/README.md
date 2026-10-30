@@ -99,3 +99,37 @@ unmarshalled style = Heading1
 - `Emulator.getNumber` is stateful (counters advance per call): call it once per paragraph, in order.
 - If `outline(resolver=…)` and `outline(manual=…)` ever differ on your files, the manual walk
   shows exactly which rule produced the value - that's where a template plugin would hook in.
+
+## License and patents
+
+### This demo
+
+The demo sources (`FactsDemo.java`, `JaxbBasics.java`, `gen_sample.py`) and the generated
+`samples/tricky.docx` are covered by this repository's [MIT License](../LICENSE).
+
+### The .docx format and Microsoft patents
+
+`.docx` is Office Open XML (OOXML), standardized as ECMA-376 and ISO/IEC 29500.
+
+Microsoft covers its patent claims: **[Open Specification Promise (OSP)](https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/1c24c7c8-28b0-4ce1-a47d-95fe1ff504bc)**
+(revised February 24, 2023), includes
+"Office Open XML 1.0 - Ecma-376", "Office Open XML ISO/IEC 29500:2008" and
+"Office Open XML ISO/IEC 29500:2012".
+
+What the OSP means for code like this:
+
+- Microsoft irrevocably promises not to assert its *necessary* patent claims against anyone
+  making, using or distributing an implementation, **to the extent it conforms** to a covered
+  specification. No signature or notice to Microsoft is required.
+- Partial implementations (reading only some elements, as this demo does) are covered.
+- The promise is suspended for anyone who sues Microsoft for patent infringement over its own
+  implementation of the same specification.
+- It covers Microsoft's patents only, gives no assurance about third-party patents, and grants
+  no copyright in the specification documents themselves.
+- Microsoft-specific extensions beyond ECMA-376 / ISO 29500 (e.g. `w14`, `w15` namespaces)
+  are documented separately; check the OSP list for the specific `[MS-…]` document before
+  relying on them.
+
+Reference: Microsoft's [OSP FAQ](https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/03347966-f8ff-4d53-a05e-63419d4132e2).
+
+*This section is a summary for orientation, not legal advice.*
