@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Live rST playground (Sphinx)</title>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p>
+      Credits to <a href="https://github.com/Alessandro-Battiato/rst-playground">Alessandro Battiato/rst-playground</a>.
+      Renders with Sphinx and sphinx_rtd_theme in the browser (Pyodide), styled by the Portfolio site's resources.
+    </p>
+    <form>
+      <label for="rst-input">reStructuredText input (index.rst)</label>
+      <label for="html-output">HTML output</label>
+      <textarea name="rst_input" id="rst-input" autofocus="true"></textarea>
+      <iframe id="html-output"></iframe>
+    </form>
+    <button id="run" type="button" disabled="disabled">Run</button>
+    <span id="status">Loading…</span>
+
+    <script src="script.js"></script>
+  </body>
+</html>
