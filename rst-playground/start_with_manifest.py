@@ -88,11 +88,20 @@ def write_manifest() -> None:
         print(f"  skipped {s}")
 
 
+class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
+    """Static files with "Cache-Control: no-cache": the browser asks again on every load
+    (a cheap 304 when unchanged), so edits to the .rst files show up after a page reload."""
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
+
 def serve(port: int) -> None:
-    """Same as `python3 -m http.server PORT` in this folder: fetch() and the blob
+    """Like `python3 -m http.server PORT` in this folder: fetch() and the blob
     preview need http://, not file://."""
     try:
-        server = http.server.ThreadingHTTPServer(("", port), http.server.SimpleHTTPRequestHandler)
+        server = http.server.ThreadingHTTPServer(("", port), NoCacheHandler)
     except OSError as e:
         sys.exit(f"Cannot listen on port {port}: {e.strerror}. Try --port <other>.")
     print(f"\nPreview: http://localhost:{port}/index.xhtml   (Ctrl+C to stop)")

@@ -61,10 +61,9 @@ async function main() {
   setStatus("Loading the Sphinx source…");
   const count = await loadSource(pyodide);
 
-  // Start from the real index.rst unless something was typed while loading.
-  if (!inputTextarea.value.trim()) {
-    inputTextarea.value = pyodide.FS.readFile(`${SRC}/index.rst`, { encoding: "utf8" });
-  }
+  // Start from the current index.rst on disk. Always overwrite: on reload the browser may
+  // restore the textarea's old text, which would hide changes made to the file.
+  inputTextarea.value = pyodide.FS.readFile(`${SRC}/index.rst`, { encoding: "utf8" });
 
   setStatus(`Ready in ${seconds(start)}, ${count} source files loaded. Edit index.rst and press Run.`);
   runButton.disabled = false;
@@ -77,7 +76,7 @@ async function main() {
 // manifest leaves out anyway. Sphinx still copies static/custom.css into its own
 // build/html/_static/, unused by the preview; add_css_file() in conf.py puts its <link> in the page.
 async function loadSource(pyodide) {
-  const manifestResponse = await fetch(MANIFEST_URL);
+  const manifestResponse = await fetch(MANIFEST_URL, { cache: "no-cache" });
   if (!manifestResponse.ok) {
     throw new Error(`Cannot load ${MANIFEST_URL}: ${manifestResponse.status}. Run start_with_manifest.py first.`);
   }
@@ -86,7 +85,7 @@ async function loadSource(pyodide) {
 
   await Promise.all(manifest.files.map(async (file) => {
     const url = new URL(file, sourceUrl);
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: "no-cache" }); // always check for a newer copy
     if (!response.ok) throw new Error(`Cannot load ${url}: ${response.status}`);
     const path = `${SRC}/${file}`;
     pyodide.FS.mkdirTree(path.slice(0, path.lastIndexOf("/")));
