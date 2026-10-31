@@ -56,6 +56,17 @@ A CPython interpreter with its own in-memory disk, driven through a few APIs:
 - In memory: everything is gone on reload (hence reinstall + refetch at start-up).
 - Shares the page's thread: the UI waits during a build (bigger projects → Web Worker).
 
+## Credits
+
+- [rst-playground](https://github.com/waldyrious/rst-playground) by Waldir Pimenta and contributors
+  (this copy started from the fork [Alessandro-Battiato/rst-playground](https://github.com/Alessandro-Battiato/rst-playground)):
+  the page layout and the Pyodide + docutils idea. ISC License, see [LICENSE-rst-playground.md](LICENSE-rst-playground.md).
+- [Pyodide](https://pyodide.org) ([GitHub](https://github.com/pyodide/pyodide)): CPython on WebAssembly,
+  loaded from the jsDelivr CDN. MPL-2.0.
+- Running inside it: [Sphinx](https://www.sphinx-doc.org) (BSD-2-Clause),
+  [sphinx_rtd_theme](https://github.com/readthedocs/sphinx_rtd_theme) (MIT),
+  [docutils](https://docutils.sourceforge.io) (public domain / BSD).
+
 ## Debug (DevTools console)
 
 ```js
