@@ -10,8 +10,8 @@
 //
 // Layout (hello/ and odys-z.github.io/ side by side; the three sphinx/ entries are symlinks):
 //   hello/rst-playground/
-//     index.xhtml, script.js, style.css, make_manifest.py
-//     sphinx/manifest.json   written by make_manifest.py
+//     index.xhtml, script.js, style.css, start_with_manifest.py
+//     sphinx/manifest.json   written by start_with_manifest.py
 //     sphinx/source  -> ../../../odys-z.github.io/sphinx/products/portfolio/source
 //     sphinx/_static -> ../../../odys-z.github.io/products/portfolio/_static
 //     sphinx/_images -> ../../../odys-z.github.io/products/portfolio/_images
@@ -27,7 +27,7 @@ const statusText = document.getElementById("status");
 // sends "Access-Control-Allow-Origin: *"; check once in DevTools.
 const ASSETS_BASE = new URL("sphinx/", location.href).href;
 
-// List of source files to load, written by make_manifest.py.
+// List of source files to load, written by start_with_manifest.py.
 const MANIFEST_URL = new URL("sphinx/manifest.json", location.href).href;
 
 // Folders in Pyodide's in-memory filesystem, as in the Makefile's English build:
@@ -79,7 +79,7 @@ async function main() {
 async function loadSource(pyodide) {
   const manifestResponse = await fetch(MANIFEST_URL);
   if (!manifestResponse.ok) {
-    throw new Error(`Cannot load ${MANIFEST_URL}: ${manifestResponse.status}. Run make_manifest.py first.`);
+    throw new Error(`Cannot load ${MANIFEST_URL}: ${manifestResponse.status}. Run start_with_manifest.py first.`);
   }
   const manifest = await manifestResponse.json();
   const sourceUrl = new URL(manifest.source, location.href); // "sphinx/source/", relative to this page

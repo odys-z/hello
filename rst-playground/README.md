@@ -24,6 +24,15 @@ rst-playground/
   sphinx/_images -> ../../../odys-z.github.io/products/portfolio/_images
 ```
 
+Create the links once, from `rst-playground/`:
+
+```bash
+mkdir -p sphinx
+ln -s ../../../odys-z.github.io/sphinx/products/portfolio/source sphinx/source
+ln -s ../../../odys-z.github.io/products/portfolio/_static sphinx/_static
+ln -s ../../../odys-z.github.io/products/portfolio/_images sphinx/_images
+```
+
 Symlink targets are relative to `sphinx/`, hence three `../`.
 Create each link once: a second `ln -s` puts a stray link *inside* the target folder.
 
