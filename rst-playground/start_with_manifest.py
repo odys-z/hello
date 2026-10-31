@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Write sphinx/manifest.json: the Sphinx source files the playground loads into Pyodide.
+"""Write sphinx/manifest.json (the Sphinx source files the playground loads into Pyodide),
+then serve the playground and print its URL.
 
-Run from hello/rst-playground/ after the source changes (a page added, renamed or removed):
+    python3 make_manifest.py              # manifest + server on http://localhost:8997/
+    python3 make_manifest.py --port 8000
+    python3 make_manifest.py --no-serve   # manifest only
 
-    python3 make_manifest.py
+Run it again after the source changes (a page added, renamed or removed).
 
 Layout it expects (both are symlinks into the odys-z.github.io checkout next to hello/):
 
@@ -15,12 +18,16 @@ script.js fetches each listed file from sphinx/source/ and writes it to the same
 under /sphinx/source/ in Pyodide. Only the English build is listed: the language folders
 (zh-CN, zh-TW, ...) are separate builds, found by the same rule as the Makefile.
 """
+import argparse
+import http.server
 import json
 import os
 import re
 import sys
 from pathlib import Path
 
+# Paths are relative to this script's folder (hello/rst-playground/), wherever it is run from.
+HERE = Path(__file__).resolve().parent
 SOURCE = Path("sphinx/source")
 OUTPUT = Path("sphinx/manifest.json")
 
@@ -34,8 +41,20 @@ SKIP_FOLDERS = {"__pycache__", "_build", "_templates"}
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Write sphinx/manifest.json and serve the playground.")
+    parser.add_argument("--port", type=int, default=8997, help="HTTP port (default 8997)")
+    parser.add_argument("--no-serve", action="store_true", help="only write the manifest")
+    args = parser.parse_args()
+
+    os.chdir(HERE)
+    write_manifest()
+    if not args.no_serve:
+        serve(args.port)
+
+
+def write_manifest() -> None:
     if not SOURCE.is_dir():
-        sys.exit(f"{SOURCE} not found. Run from hello/rst-playground/ and create the symlink first.")
+        sys.exit(f"{SOURCE} not found. Create the symlinks first (see README.md).")
 
     files, skipped = [], []
     for root, dirs, names in os.walk(SOURCE, followlinks=True):
@@ -67,6 +86,22 @@ def main() -> None:
     print(f"{OUTPUT}: {len(files)} files, {total // 1024} KB")
     for s in skipped:
         print(f"  skipped {s}")
+
+
+def serve(port: int) -> None:
+    """Same as `python3 -m http.server PORT` in this folder: fetch() and the blob
+    preview need http://, not file://."""
+    try:
+        server = http.server.ThreadingHTTPServer(("", port), http.server.SimpleHTTPRequestHandler)
+    except OSError as e:
+        sys.exit(f"Cannot listen on port {port}: {e.strerror}. Try --port <other>.")
+    print(f"\nPreview: http://localhost:{port}/index.xhtml   (Ctrl+C to stop)")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nStopped.")
+    finally:
+        server.server_close()
 
 
 if __name__ == "__main__":
