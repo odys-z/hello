@@ -159,12 +159,14 @@ public class FactsDemo {
             List<String> cells = new ArrayList<>();
             for (Object co : tr.getContent()) {
                 if (!(XmlUtils.unwrap(co) instanceof Tc tc)) continue;
-                String cell = text(tc);
+                // soft breaks / paragraphs inside a cell -> " {br} ", keeping one line per table
+                String cell = String.join(" {br} ", text(tc).lines()
+                        .map(String::strip).filter(l -> !l.isEmpty()).toList());
                 TcPr pr = tc.getTcPr();
                 if (pr != null && pr.getGridSpan() != null)
                     cell += " {colspan=" + pr.getGridSpan().getVal() + "}";
-                if (pr != null && pr.getVMerge() != null)   // val "restart" starts; null continues
-                    cell += pr.getVMerge().getVal() == null ? " {vmerge-cont}" : " {vmerge-start}";
+                if (pr != null && pr.getVMerge() != null)   // val "restart" starts; null or "continue" continues
+                    cell += "restart".equals(pr.getVMerge().getVal()) ? " {vmerge-start}" : " {vmerge-cont}";
                 cells.add(cell);
             }
             rows.add(String.join(" | ", cells));
@@ -184,10 +186,13 @@ public class FactsDemo {
         o = XmlUtils.unwrap(o);
         if (o instanceof Text t) sb.append(t.getValue());
         else if (o instanceof R.Tab) sb.append('\t');
+        else if (o instanceof Br || o instanceof R.Cr) sb.append('\n');   // soft line break
         else if (o instanceof SdtElement se && se.getSdtContent() != null)
             for (Object c : se.getSdtContent().getContent()) collect(c, sb);
         else if (o instanceof ContentAccessor ca) {
             if (o instanceof Tc && sb.length() > 0) sb.append(' ');
+            else if (o instanceof P && sb.length() > 0 && sb.charAt(sb.length() - 1) != '\n')
+                sb.append('\n');                                  // paragraph boundary, e.g. inside a cell
             for (Object c : ca.getContent()) collect(c, sb);
         }
     }
